@@ -1,0 +1,1 @@
+UniProt ID	Reference genome build	disease	provenance	evidence	isAssociated	Database IDP51587	UniProt release 2014_07	http://www.ebi.ac.uk/efo/EFO_0000305	http://www.targetvalidation.org/cttv_core#DatabaseProvenance	http://purl.obolibrary.org/obo/ECO_0001103	yes	Uniprot

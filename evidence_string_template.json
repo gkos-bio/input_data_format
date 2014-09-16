@@ -11,31 +11,31 @@
 				"property_name_3": "XXXX"
 			}	
 		}	
-	}
+	},
 
 	"provenance": {
 		
 		"date_asserted": "Date the assertion was made expressed as a string: YY-MM-DD",
 		"is_associated": "yes or no; for our first round, we will focus only on positive findings so just use 'yes' for now.",
 		
-		"type" {
+		"type": {
 			
 			"literature": {
 				"true" : "boolean value; 1 or 0",
 				"pubmed_refs": ["Array: Please provide the supporting pubmed IDs."]
-			}
+			},
 			
 			"expert": {
 				"true" : "boolean value; 1 or 0",
 				"statement": "Can you describe the association in a few sentences?"
-			}
+			},
 			
 			"database": {
 				"true" : "boolean value; 1 or 0",
 				"id": "Please provide a unique database name e.g. Uniprot/Reactome/GWAS_catalog",
 				"version": "The version of this database"
 			}
-		}
+		},
 		
 		"evidence_codes": ["Array: Choose all the relevant evidence codes from the file evidence_codes.txt to support this evidence. If an appropriate code does not exist, please email a request to malone@ebi.ac.u, cc: samiul.x.hasan@gsk.com"],
 		
@@ -44,12 +44,12 @@
 			"linkouts:": [
 				{"nice_name":"An array of nice_name&url tags; nice name for the URL", "url": "URL entry point in your application"}
 			]
-		}
+		},
 
 		"association_score": {
 			"probability": "If you can provide a probability from 0-1 for this association, please provide it here",
 			"p-value": "If you can provide a p-value for this association, please provide it here"
-		}
+		},
 		
 		"experimental_evidence_specific": {
 			"property_name_1": "XXXX: add as many properties as you like but please make sure these are concepts that a disease expert will be able to understand",
@@ -57,7 +57,7 @@
 			"property_name_3": "XXXX"
 		}
 
-	}
+	},
 
 	"biological_object": {
 		

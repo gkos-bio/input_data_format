@@ -37,7 +37,7 @@
 			}
 		},
 		
-		"evidence_codes": ["Array: Choose all the relevant evidence codes from the file evidence_codes.txt to support this evidence. If an appropriate code does not exist, please email a request to malone@ebi.ac.u, cc: samiul.x.hasan@gsk.com"],
+		"evidence_codes": ["Array: Choose all the relevant evidence codes from the file cttv_evidence_codes.xlsx to support this evidence. If an appropriate code does not exist, please email a request to malone@ebi.ac.u, cc: samiul.x.hasan@gsk.com"],
 		
 		"urls": {
 			"biojs": "full address of the supporting biojs component if it exists",

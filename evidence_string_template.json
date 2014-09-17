@@ -35,8 +35,8 @@
 				"id": "Please provide a unique database name e.g. Uniprot/Reactome/GWAS_catalog",
 				"version": "The version of this database",
 				"dbxref": {
-					id: "if the evidence is obtained from another database, please provide the name here",
-					url: "The entry point in the dbxref database that cttv should point to"
+					"id": "if the evidence is obtained from another database, please provide the name here",
+					"url": "The entry point in the dbxref database that cttv should point to"
 				}
 			}
 		},
@@ -45,7 +45,7 @@
 		
 		"urls": {
 			"biojs": "full address of the supporting biojs component if it exists",
-			"linkouts:": [
+			"linkouts": [
 				{"nice_name":"An array of nice_name&url tags; nice name for the URL", "url": "URL entry point in your application"}
 			]
 		},

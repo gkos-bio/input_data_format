@@ -35,10 +35,12 @@
 				"id": "Please provide a unique database name e.g. Uniprot/Reactome/GWAS_catalog",
 				"version": "The version of this database",
 				"dbxref": {
-					"id": "if the evidence is obtained from another database, please provide the name here",
-					"url": "The entry point in the dbxref database that cttv should point to"
+					"id": "if the evidence has been obtained from another database, please provide the name here",
+					"url": "The entry point in the dbxref database that cttv should point to",
+					"version": "Version of the dbxref database"
 				}
 			}
+			
 		},
 		
 		"evidence_codes": ["Array: Choose all the relevant evidence codes from the file cttv_evidence_codes.xlsx to support this evidence. If an appropriate code does not exist, please email a request to malone@ebi.ac.u, cc: samiul.x.hasan@gsk.com"],

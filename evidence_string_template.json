@@ -33,7 +33,11 @@
 			"database": {
 				"true" : "boolean value; 1 or 0",
 				"id": "Please provide a unique database name e.g. Uniprot/Reactome/GWAS_catalog",
-				"version": "The version of this database"
+				"version": "The version of this database",
+				"dbxref": {
+					id: "if the evidence is obtained from another database, please provide the name here",
+					url: "The entry point in the dbxref database that cttv should point to"
+				}
 			}
 		},
 		

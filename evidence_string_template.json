@@ -1,6 +1,6 @@
 {
 	"biological_subject": {	
-		"about": "An Ensembl geneID or an Uniprot protein ID",
+		"about": "An Ensembl geneID or an Uniprot protein ID. If this is a EFO disease/phenotype (Rare Disease project), please include the full URI.",
 		"properties": {
 			"association_context": "Choose_one: gene, gene_allele, gene_in_ld_region, gene_variant, gene_in_epigenetic_regulation_complex, transcript, transcript_isoform, protein, protein_complex, protein_isoform, protein_signaling_pathway",
 			"associated_subjects": ["Array: If this association is also about other genes or proteins, please provide the additional Ensembl/Uniprot IDs as an array. Examples where you might need these are in gene_in_ld_region, gene_in_epigenetic_regulation_complex, protein_complex, protein_isoform, protein_pathway"],
@@ -15,8 +15,8 @@
 
 	"provenance": {
 		
-		"date_asserted": "Date the assertion was made expressed as a string: YY-MM-DD",
-		"is_associated": "yes or no; for our first round, we will focus only on positive findings so just use 'yes' for now.",
+		"date_asserted": "Date the assertion was made expressed using javascript standard: 2014-09-11T10:59:43.511Z",
+		"is_associated": "boolen value; for our first round, we will focus only on positive findings so just use '1' for now.",
 		
 		"type": {
 			

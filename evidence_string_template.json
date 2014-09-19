@@ -27,7 +27,13 @@
 			
 			"expert": {
 				"true" : "boolean value; 1 or 0",
-				"statement": "Can you describe the association in a few sentences?"
+				"statement": "Can you describe the association in a few sentences?",
+				"author": {
+					"name": "author's name",
+					"organization": "organization name",
+					"email": "email address"
+				}
+				
 			},
 			
 			"database": {

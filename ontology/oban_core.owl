@@ -22,6 +22,53 @@
     <!-- 
     ///////////////////////////////////////////////////////////////////////////////////////
     //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://purl.org/oban/association_has_object -->
+
+    <owl:ObjectProperty rdf:about="http://purl.org/oban/association_has_object">
+        <rdfs:label>association has object</rdfs:label>
+        <rdfs:domain rdf:resource="http://purl.org/oban/association"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://purl.org/oban/association_has_subject -->
+
+    <owl:ObjectProperty rdf:about="http://purl.org/oban/association_has_subject">
+        <rdfs:label>association has subject</rdfs:label>
+        <rdfs:domain rdf:resource="http://purl.org/oban/association"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/malone/ontologies/2014/8/untitled-ontology-130#object_has_association -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/malone/ontologies/2014/8/untitled-ontology-130#object_has_association">
+        <rdfs:label>object has association</rdfs:label>
+        <rdfs:range rdf:resource="http://purl.org/oban/association"/>
+        <owl:inverseOf rdf:resource="http://purl.org/oban/association_has_object"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/malone/ontologies/2014/8/untitled-ontology-130#subject_has_association -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/malone/ontologies/2014/8/untitled-ontology-130#subject_has_association">
+        <rdfs:label>subject has association</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
     // Classes
     //
     ///////////////////////////////////////////////////////////////////////////////////////
@@ -34,6 +81,14 @@
 
     <owl:Class rdf:about="http://purl.org/oban/association">
         <rdfs:label>association</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/malone/ontologies/2014/8/untitled-ontology-130#provenance -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/malone/ontologies/2014/8/untitled-ontology-130#provenance">
+        <rdfs:label>provenance</rdfs:label>
     </owl:Class>
 </rdf:RDF>
 

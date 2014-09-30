@@ -1,12 +1,12 @@
-@prefix : <http://www.semanticweb.org/malone/ontologies/2014/8/untitled-ontology-130#> .
+@prefix : <http://purl.org/oban/> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix xml: <http://www.w3.org/XML/1998/namespace> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
-@base <http://www.semanticweb.org/malone/ontologies/2014/8/untitled-ontology-130> .
+@base <http://purl.org/oban/oban_core.owl> .
 
-<http://www.semanticweb.org/malone/ontologies/2014/8/untitled-ontology-130> rdf:type owl:Ontology .
+<http://purl.org/oban/oban_core.owl> rdf:type owl:Ontology .
 
 
 #################################################################
@@ -38,57 +38,77 @@
 
 ###  http://purl.org/oban/association_has_object
 
-<http://purl.org/oban/association_has_object> rdf:type owl:ObjectProperty ;
-                                              
-                                              rdfs:label "association has object" ;
-                                              
-                                              rdfs:domain <http://purl.org/oban/association> .
+:association_has_object rdf:type owl:ObjectProperty ;
+                        
+                        rdfs:label "association has object" ;
+                        
+                        rdfs:domain :association .
+
+
+
+###  http://purl.org/oban/association_has_object_property
+
+:association_has_object_property rdf:type owl:ObjectProperty ;
+                                 
+                                 rdfs:label "association has object property" ;
+                                 
+                                 rdfs:domain :association .
 
 
 
 ###  http://purl.org/oban/association_has_subject
 
-<http://purl.org/oban/association_has_subject> rdf:type owl:ObjectProperty ;
-                                               
-                                               rdfs:label "association has subject" ;
-                                               
-                                               rdfs:domain <http://purl.org/oban/association> .
+:association_has_subject rdf:type owl:ObjectProperty ;
+                         
+                         rdfs:label "association has subject" ;
+                         
+                         rdfs:domain :association .
+
+
+
+###  http://purl.org/oban/association_has_subject_property
+
+:association_has_subject_property rdf:type owl:ObjectProperty ;
+                                  
+                                  rdfs:label "association has subject property" ;
+                                  
+                                  rdfs:domain :association .
 
 
 
 ###  http://purl.org/oban/has_provenance
 
-<http://purl.org/oban/has_provenance> rdf:type owl:ObjectProperty ;
-                                      
-                                      rdfs:label "has provenance" .
+:has_provenance rdf:type owl:ObjectProperty ;
+                
+                rdfs:label "has provenance" .
 
 
 
 ###  http://purl.org/oban/object_has_association
 
-<http://purl.org/oban/object_has_association> rdf:type owl:ObjectProperty ;
-                                              
-                                              rdfs:label "object has association" ;
-                                              
-                                              rdfs:range <http://purl.org/oban/association> ;
-                                              
-                                              owl:inverseOf <http://purl.org/oban/association_has_object> .
+:object_has_association rdf:type owl:ObjectProperty ;
+                        
+                        rdfs:label "object has association" ;
+                        
+                        rdfs:range :association ;
+                        
+                        owl:inverseOf :association_has_object .
 
 
 
 ###  http://purl.org/oban/subject_has_association
 
-<http://purl.org/oban/subject_has_association> rdf:type owl:ObjectProperty ;
-                                               
-                                               rdfs:label "subject has association" ;
-                                               
-                                               owl:inverseOf <http://purl.org/oban/association_has_subject> .
+:subject_has_association rdf:type owl:ObjectProperty ;
+                         
+                         rdfs:label "subject has association" ;
+                         
+                         owl:inverseOf :association_has_subject .
 
 
 
 ###  http://www.w3.org/2002/07/owl#topObjectProperty
 
-owl:topObjectProperty rdfs:range <http://purl.org/oban/association> .
+owl:topObjectProperty rdfs:range :association .
 
 
 
@@ -111,13 +131,13 @@ owl:topObjectProperty rdfs:range <http://purl.org/oban/association> .
 
 ###  http://purl.org/oban/association
 
-<http://purl.org/oban/association> rdf:type owl:Class ;
-                                   
-                                   rdfs:label "association" .
+:association rdf:type owl:Class ;
+             
+             rdfs:label "association" .
 
 
 
-###  http://www.semanticweb.org/malone/ontologies/2014/8/untitled-ontology-130#provenance
+###  http://purl.org/oban/provenance
 
 :provenance rdf:type owl:Class ;
             

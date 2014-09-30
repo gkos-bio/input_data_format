@@ -1,150 +1,161 @@
-@prefix : <http://www.semanticweb.org/malone/ontologies/2014/8/untitled-ontology-130#> .
-@prefix owl: <http://www.w3.org/2002/07/owl#> .
-@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
-@prefix xml: <http://www.w3.org/XML/1998/namespace> .
-@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
-@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
-@base <http://www.semanticweb.org/malone/ontologies/2014/8/untitled-ontology-130> .
-
-<http://www.semanticweb.org/malone/ontologies/2014/8/untitled-ontology-130> rdf:type owl:Ontology .
+<?xml version="1.0"?>
 
 
-#################################################################
-#
-#    Object Properties
-#
-#################################################################
+<!DOCTYPE rdf:RDF [
+    <!ENTITY owl "http://www.w3.org/2002/07/owl#" >
+    <!ENTITY xsd "http://www.w3.org/2001/XMLSchema#" >
+    <!ENTITY xml "http://www.w3.org/XML/1998/namespace" >
+    <!ENTITY rdfs "http://www.w3.org/2000/01/rdf-schema#" >
+    <!ENTITY rdf "http://www.w3.org/1999/02/22-rdf-syntax-ns#" >
+]>
 
 
-###  http://purl.obolibrary.org/obo/RO_0002472
-
-<http://purl.obolibrary.org/obo/RO_0002472> rdf:type owl:ObjectProperty ;
-                                            
-                                            rdfs:label "is evidence for" ;
-                                            
-                                            owl:inverseOf <http://purl.obolibrary.org/obo/RO_0002558> .
-
-
-
-###  http://purl.obolibrary.org/obo/RO_0002558
-
-<http://purl.obolibrary.org/obo/RO_0002558> rdf:type owl:ObjectProperty ;
-                                            
-                                            rdfs:label "has evidence" ;
-                                            
-                                            rdfs:range <http://purl.obolibrary.org/obo/ECO_0000000> .
+<rdf:RDF xmlns="http://purl.org/oban/"
+     xml:base="http://purl.org/oban/"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace">
+    <owl:Ontology rdf:about="http://purl.org/oban/oban_core.owl"/>
+    
 
 
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
 
-###  http://purl.org/oban/association_has_object
-
-<http://purl.org/oban/association_has_object> rdf:type owl:ObjectProperty ;
-                                              
-                                              rdfs:label "association has object" ;
-                                              
-                                              rdfs:domain <http://purl.org/oban/association> .
-
-
-
-###  http://purl.org/oban/association_has_object_property
-
-<http://purl.org/oban/association_has_object_property> rdf:type owl:ObjectProperty ;
-                                                       
-                                                       rdfs:label "association has object property" ;
-                                                       
-                                                       rdfs:domain <http://purl.org/oban/association> .
+    
 
 
+    <!-- http://purl.obolibrary.org/obo/RO_0002472 -->
 
-###  http://purl.org/oban/association_has_subject
-
-<http://purl.org/oban/association_has_subject> rdf:type owl:ObjectProperty ;
-                                               
-                                               rdfs:label "association has subject" ;
-                                               
-                                               rdfs:domain <http://purl.org/oban/association> .
-
+    <owl:ObjectProperty rdf:about="http://purl.obolibrary.org/obo/RO_0002472">
+        <rdfs:label>is evidence for</rdfs:label>
+        <owl:inverseOf rdf:resource="http://purl.obolibrary.org/obo/RO_0002558"/>
+    </owl:ObjectProperty>
+    
 
 
-###  http://purl.org/oban/association_has_subject_property
+    <!-- http://purl.obolibrary.org/obo/RO_0002558 -->
 
-<http://purl.org/oban/association_has_subject_property> rdf:type owl:ObjectProperty ;
-                                                        
-                                                        rdfs:label "association has subject property" ;
-                                                        
-                                                        rdfs:domain <http://purl.org/oban/association> .
-
-
-
-###  http://purl.org/oban/has_provenance
-
-<http://purl.org/oban/has_provenance> rdf:type owl:ObjectProperty ;
-                                      
-                                      rdfs:label "has provenance" .
+    <owl:ObjectProperty rdf:about="http://purl.obolibrary.org/obo/RO_0002558">
+        <rdfs:label>has evidence</rdfs:label>
+        <rdfs:range rdf:resource="http://purl.obolibrary.org/obo/ECO_0000000"/>
+    </owl:ObjectProperty>
+    
 
 
+    <!-- http://purl.org/oban/association_has_object -->
 
-###  http://purl.org/oban/object_has_association
-
-<http://purl.org/oban/object_has_association> rdf:type owl:ObjectProperty ;
-                                              
-                                              rdfs:label "object has association" ;
-                                              
-                                              rdfs:range <http://purl.org/oban/association> ;
-                                              
-                                              owl:inverseOf <http://purl.org/oban/association_has_object> .
+    <owl:ObjectProperty rdf:about="http://purl.org/oban/association_has_object">
+        <rdfs:label>association has object</rdfs:label>
+        <rdfs:domain rdf:resource="http://purl.org/oban/association"/>
+    </owl:ObjectProperty>
+    
 
 
+    <!-- http://purl.org/oban/association_has_object_property -->
 
-###  http://purl.org/oban/subject_has_association
-
-<http://purl.org/oban/subject_has_association> rdf:type owl:ObjectProperty ;
-                                               
-                                               rdfs:label "subject has association" ;
-                                               
-                                               owl:inverseOf <http://purl.org/oban/association_has_subject> .
-
+    <owl:ObjectProperty rdf:about="http://purl.org/oban/association_has_object_property">
+        <rdfs:label>association has object property</rdfs:label>
+        <rdfs:domain rdf:resource="http://purl.org/oban/association"/>
+    </owl:ObjectProperty>
+    
 
 
-###  http://www.w3.org/2002/07/owl#topObjectProperty
+    <!-- http://purl.org/oban/association_has_subject -->
 
-owl:topObjectProperty rdfs:range <http://purl.org/oban/association> .
-
-
-
-
-
-#################################################################
-#
-#    Classes
-#
-#################################################################
+    <owl:ObjectProperty rdf:about="http://purl.org/oban/association_has_subject">
+        <rdfs:label>association has subject</rdfs:label>
+        <rdfs:domain rdf:resource="http://purl.org/oban/association"/>
+    </owl:ObjectProperty>
+    
 
 
-###  http://purl.obolibrary.org/obo/ECO_0000000
+    <!-- http://purl.org/oban/association_has_subject_property -->
 
-<http://purl.obolibrary.org/obo/ECO_0000000> rdf:type owl:Class ;
-                                             
-                                             rdfs:label "evidence" .
-
-
-
-###  http://purl.org/oban/association
-
-<http://purl.org/oban/association> rdf:type owl:Class ;
-                                   
-                                   rdfs:label "association" .
+    <owl:ObjectProperty rdf:about="http://purl.org/oban/association_has_subject_property">
+        <rdfs:label>association has subject property</rdfs:label>
+        <rdfs:domain rdf:resource="http://purl.org/oban/association"/>
+    </owl:ObjectProperty>
+    
 
 
+    <!-- http://purl.org/oban/has_provenance -->
 
-###  http://purl.org/oban/provenance
-
-<http://purl.org/oban/provenance> rdf:type owl:Class ;
-                                  
-                                  rdfs:label "provenance" .
-
-
+    <owl:ObjectProperty rdf:about="http://purl.org/oban/has_provenance">
+        <rdfs:label>has provenance</rdfs:label>
+    </owl:ObjectProperty>
+    
 
 
-###  Generated by the OWL API (version 3.4.2) http://owlapi.sourceforge.net
+    <!-- http://purl.org/oban/object_has_association -->
+
+    <owl:ObjectProperty rdf:about="http://purl.org/oban/object_has_association">
+        <rdfs:label>object has association</rdfs:label>
+        <rdfs:range rdf:resource="http://purl.org/oban/association"/>
+        <owl:inverseOf rdf:resource="http://purl.org/oban/association_has_object"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://purl.org/oban/subject_has_association -->
+
+    <owl:ObjectProperty rdf:about="http://purl.org/oban/subject_has_association">
+        <rdfs:label>subject has association</rdfs:label>
+        <owl:inverseOf rdf:resource="http://purl.org/oban/association_has_subject"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.w3.org/2002/07/owl#topObjectProperty -->
+
+    <rdf:Description rdf:about="&owl;topObjectProperty">
+        <rdfs:range rdf:resource="http://purl.org/oban/association"/>
+    </rdf:Description>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/ECO_0000000 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/ECO_0000000">
+        <rdfs:label>evidence</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.org/oban/association -->
+
+    <owl:Class rdf:about="http://purl.org/oban/association">
+        <rdfs:label>association</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.org/oban/provenance -->
+
+    <owl:Class rdf:about="http://purl.org/oban/provenance">
+        <rdfs:label>provenance</rdfs:label>
+    </owl:Class>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 3.4.2) http://owlapi.sourceforge.net -->
 

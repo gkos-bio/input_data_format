@@ -5,17 +5,21 @@
     <!ENTITY owl "http://www.w3.org/2002/07/owl#" >
     <!ENTITY xsd "http://www.w3.org/2001/XMLSchema#" >
     <!ENTITY rdfs "http://www.w3.org/2000/01/rdf-schema#" >
+    <!ENTITY cttvcore "http://www.targetvalidation.org/cttv_core" >
     <!ENTITY rdf "http://www.w3.org/1999/02/22-rdf-syntax-ns#" >
 ]>
 
 
-<rdf:RDF xmlns="http://www.semanticweb.org/malone/ontologies/2014/8/untitled-ontology-132#"
-     xml:base="http://www.semanticweb.org/malone/ontologies/2014/8/untitled-ontology-132"
+<rdf:RDF xmlns="&cttvcore;#"
+     xml:base="http://www.targetvalidation.org/cttv_core"
      xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
      xmlns:owl="http://www.w3.org/2002/07/owl#"
      xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
-     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
-    <owl:Ontology rdf:about="http://www.semanticweb.org/malone/ontologies/2014/8/untitled-ontology-132">
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:cttvcore="http://www.targetvalidation.org/cttv_core">
+    <owl:Ontology rdf:about="http://www.targetvalidation.org/cttv_core">
+        <owl:imports rdf:resource="http://edamontology.org"/>
+        <owl:imports rdf:resource="http://purl.obolibrary.org/obo/eco.owl"/>
         <owl:imports rdf:resource="http://purl.org/oban/oban_core.owl"/>
     </owl:Ontology>
     
@@ -32,9 +36,54 @@
     
 
 
-    <!-- http://purl.org/oban/GWAS_SNP_to_trait_association -->
+    <!-- http://purl.obolibrary.org/obo/ECO_0000203 -->
 
-    <owl:Class rdf:about="http://purl.org/oban/GWAS_SNP_to_trait_association">
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/ECO_0000203">
+        <rdfs:label>automatic assertion</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/ECO_0000217"/>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/ECO_0000217 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/ECO_0000217">
+        <rdfs:label>assertion method</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/ECO_0000218 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/ECO_0000218">
+        <rdfs:label>manual assertion</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/ECO_0000217"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.targetvalidation.org/cttv_core/GWAS_SNP_to_trait_association -->
+
+    <owl:Class rdf:about="&cttvcore;/GWAS_SNP_to_trait_association">
+        <rdfs:label>GWAS SNP to trait association</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.org/oban/association"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.targetvalidation.org/cttv_core/disease_to_phenotype_association -->
+
+    <owl:Class rdf:about="&cttvcore;/disease_to_phenotype_association">
+        <rdfs:label>disease to phenotype association</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.org/oban/association"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.targetvalidation.org/cttv_core/gene_to_disease_association -->
+
+    <owl:Class rdf:about="&cttvcore;/gene_to_disease_association">
+        <rdfs:label>gene to disease association</rdfs:label>
         <rdfs:subClassOf rdf:resource="http://purl.org/oban/association"/>
     </owl:Class>
 </rdf:RDF>

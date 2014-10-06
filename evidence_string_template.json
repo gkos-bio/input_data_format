@@ -64,6 +64,49 @@
 		},
 		
 		"experimental_evidence_specific": {
+			
+			"evidence_chain": {
+				"0": {
+					"biological_subject": {
+						"about": "e.g. ensembl geneID if this is a GWAS experiment" 	
+					},
+					"provenance": {
+						"evidence_codes": ["","",""],
+						"experimental_evidence_specific": {
+							"property1":"e.g. distance between gene start and SNPID if the SNP is in an intergenic region",
+							"property2":"",
+							"property3":""
+						},
+						"association_score": {
+							"probability": "If you can provide a probability from 0-1 for this association, please provide it here",
+							"p-value": "If you can provide a p-value for this association, please provide it here"
+						}
+					},
+					"biological_object": {
+						"about": "an intermediate biological resource e.g. a SNP rsID" 	
+					}
+				},
+				"1": {
+					"biological_subject": {
+						"about": "the above intermediate biological resource (e.g. SNP rsID)" 	
+					},
+					"provenance": {
+						"evidence_codes": ["","",""],
+						"experimental_evidence_specific": {
+							"property1":"",
+							"property2":"",
+							"property3":""
+						},
+						"association_score": {
+							"probability": "If you can provide a probability from 0-1 for this association, please provide it here",
+							"p-value": "e.g. statistical p-value association between the SNP rsID and the disease/phenotype"
+						}
+					},
+					"biological_object": {
+						"about": "a disease or phenotype EFO term" 	
+					}
+				}
+			},
 			"property_name_1": "XXXX: add as many properties as you like but please make sure these are concepts that a disease expert will be able to understand",
 			"property_name_2": "XXXX",
 			"property_name_3": "XXXX"

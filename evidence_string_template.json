@@ -103,7 +103,27 @@
 						}
 					},
 					"biological_object": {
-						"about": "a disease or phenotype EFO term" 	
+						"about": "an intermediate EFO phenotype term e.g. 'high LDL levels'" 	
+					}
+				},
+				"2": {
+					"biological_subject": {
+						"about": "the above intermediate EFO phenotype - high LDL levels" 	
+					},
+					"provenance": {
+						"evidence_codes": ["","",""],
+						"experimental_evidence_specific": {
+							"property1":"",
+							"property2":"",
+							"property3":""
+						},
+						"association_score": {
+							"probability": "If you can provide a probability from 0-1 for this association, please provide it here",
+							"p-value": "e.g. statistical p-value association between the SNP rsID and the disease/phenotype"
+						}
+					},
+					"biological_object": {
+						"about": "the EFO disease term for atherosclerosis" 	
 					}
 				}
 			},

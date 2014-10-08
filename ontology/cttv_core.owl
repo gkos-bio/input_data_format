@@ -32,35 +32,6 @@
     <!-- 
     ///////////////////////////////////////////////////////////////////////////////////////
     //
-    // Data properties
-    //
-    ///////////////////////////////////////////////////////////////////////////////////////
-     -->
-
-    
-
-
-    <!-- http://purl.org/oban/date_association_created -->
-
-    <owl:DatatypeProperty rdf:about="http://purl.org/oban/date_association_created">
-        <rdfs:label>date association created</rdfs:label>
-        <obo:IAO_0000115>The date the association was created in this format (i.e. in this representation). This is NOT the date the association was originally made (e.g. NOT the date it was written in a paper).</obo:IAO_0000115>
-    </owl:DatatypeProperty>
-    
-
-
-    <!-- http://purl.org/oban/has_pubmed_id -->
-
-    <owl:DatatypeProperty rdf:about="http://purl.org/oban/has_pubmed_id">
-        <rdfs:label>has pubmed id</rdfs:label>
-        <obo:IAO_0000115>Pubmed ID identifying the publication in which the association was published.</obo:IAO_0000115>
-    </owl:DatatypeProperty>
-    
-
-
-    <!-- 
-    ///////////////////////////////////////////////////////////////////////////////////////
-    //
     // Classes
     //
     ///////////////////////////////////////////////////////////////////////////////////////

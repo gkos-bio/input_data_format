@@ -3,6 +3,7 @@
 
 <!DOCTYPE rdf:RDF [
     <!ENTITY owl "http://www.w3.org/2002/07/owl#" >
+    <!ENTITY obo "http://purl.obolibrary.org/obo/" >
     <!ENTITY xsd "http://www.w3.org/2001/XMLSchema#" >
     <!ENTITY rdfs "http://www.w3.org/2000/01/rdf-schema#" >
     <!ENTITY cttvcore "http://www.targetvalidation.org/cttv_core" >
@@ -12,14 +13,17 @@
 
 <rdf:RDF xmlns="&cttvcore;#"
      xml:base="http://www.targetvalidation.org/cttv_core"
+     xmlns:obo="http://purl.obolibrary.org/obo/"
      xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
      xmlns:owl="http://www.w3.org/2002/07/owl#"
      xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
      xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
      xmlns:cttvcore="http://www.targetvalidation.org/cttv_core">
     <owl:Ontology rdf:about="http://www.targetvalidation.org/cttv_core">
+        <owl:versionInfo>0.1</owl:versionInfo>
+        <obo:date>8th October 2014</obo:date>
         <owl:imports rdf:resource="http://edamontology.org"/>
-        <owl:imports rdf:resource="http://purl.obolibrary.org/obo/eco.owl"/>
+        <owl:imports rdf:resource="&obo;eco.owl"/>
         <owl:imports rdf:resource="http://purl.org/oban/oban_core.owl"/>
     </owl:Ontology>
     
@@ -36,10 +40,20 @@
     
 
 
+    <!-- http://purl.org/oban/date_association_created -->
+
+    <owl:DatatypeProperty rdf:about="http://purl.org/oban/date_association_created">
+        <rdfs:label>date association created</rdfs:label>
+        <obo:IAO_0000115>The date the association was created in this format (i.e. in this representation). This is NOT the date the association was originally made (e.g. NOT the date it was written in a paper).</obo:IAO_0000115>
+    </owl:DatatypeProperty>
+    
+
+
     <!-- http://purl.org/oban/has_pubmed_id -->
 
     <owl:DatatypeProperty rdf:about="http://purl.org/oban/has_pubmed_id">
         <rdfs:label>has pubmed id</rdfs:label>
+        <obo:IAO_0000115>Pubmed ID identifying the publication in which the association was published.</obo:IAO_0000115>
     </owl:DatatypeProperty>
     
 
@@ -57,16 +71,16 @@
 
     <!-- http://purl.obolibrary.org/obo/ECO_0000203 -->
 
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/ECO_0000203">
+    <owl:Class rdf:about="&obo;ECO_0000203">
         <rdfs:label>automatic assertion</rdfs:label>
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/ECO_0000217"/>
+        <rdfs:subClassOf rdf:resource="&obo;ECO_0000217"/>
     </owl:Class>
     
 
 
     <!-- http://purl.obolibrary.org/obo/ECO_0000217 -->
 
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/ECO_0000217">
+    <owl:Class rdf:about="&obo;ECO_0000217">
         <rdfs:label>assertion method</rdfs:label>
     </owl:Class>
     
@@ -74,9 +88,9 @@
 
     <!-- http://purl.obolibrary.org/obo/ECO_0000218 -->
 
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/ECO_0000218">
+    <owl:Class rdf:about="&obo;ECO_0000218">
         <rdfs:label>manual assertion</rdfs:label>
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/ECO_0000217"/>
+        <rdfs:subClassOf rdf:resource="&obo;ECO_0000217"/>
     </owl:Class>
     
 

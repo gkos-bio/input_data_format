@@ -2,7 +2,7 @@
 	"biological_subject": {	
 		"about": "An Ensembl geneID or an Uniprot protein ID.",
 		"properties": {
-			"association_context": "Choose_one: gene, gene_allele, gene_in_ld_region, gene_variant, gene_in_epigenetic_regulation_complex, transcript, transcript_isoform, protein, protein_complex, protein_isoform, protein_signaling_pathway",
+			"association_context": "Choose_one: gene, gene_allele, gene_in_ld_region, gene_variant, gene_in_epigenetic_regulation_complex, transcript, transcript_isoform, protein, protein_complex_homopolymer, protein_complex_heteropolymer, protein_isoform, protein_signaling_pathway",
 			"associated_subjects": ["Array: If this association is also about other genes or proteins, please provide the additional Ensembl/Uniprot IDs as an array. Examples where you might need these are in gene_in_ld_region, gene_in_epigenetic_regulation_complex, protein_complex, protein_isoform, protein_pathway"],
 			
 			"experimental_evidence_specific": {

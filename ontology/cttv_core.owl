@@ -71,6 +71,21 @@
     </owl:Class>
     
 
+    <owl:Class rdf:about="&cttvcore;/LiteratureProvenance">
+        <rdfs:label>literature provenance</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.org/oban/provenance"/>
+    </owl:Class>    
+
+    <owl:Class rdf:about="&cttvcore;/DatabaseProvenance">
+        <rdfs:label>database provenance</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.org/oban/provenance"/>
+    </owl:Class>      
+
+    <owl:Class rdf:about="&cttvcore;/ExpertProvenance">
+        <rdfs:label>expert provenance</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.org/oban/provenance"/>
+    </owl:Class> 
+    
 
     <!-- http://purl.org/oban/http://www.targetvalidation.org/cttv_core/experiment/transcript_isoform -->
 

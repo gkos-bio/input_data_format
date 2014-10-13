@@ -24,10 +24,10 @@
      xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
      xmlns:cttvcore="http://www.targetvalidation.org/cttv_core">
     <owl:Ontology rdf:about="http://www.targetvalidation.org/cttv_core">
-        <dc:creator>James Malone</dc:creator>
-        <dc:creator>Samiul Hasan</dc:creator>
-        <owl:versionInfo>0.1</owl:versionInfo>
         <obo:date>13th October 2014</obo:date>
+        <owl:versionInfo>0.1</owl:versionInfo>
+        <dc:creator>Samiul Hasan</dc:creator>
+        <dc:creator>James Malone</dc:creator>
         <owl:imports rdf:resource="http://edamontology.org"/>
         <owl:imports rdf:resource="&obo;eco.owl"/>
         <owl:imports rdf:resource="http://purl.org/oban/oban_core.owl"/>
@@ -71,21 +71,6 @@
     </owl:Class>
     
 
-    <owl:Class rdf:about="&cttvcore;/LiteratureProvenance">
-        <rdfs:label>literature provenance</rdfs:label>
-        <rdfs:subClassOf rdf:resource="http://purl.org/oban/provenance"/>
-    </owl:Class>    
-
-    <owl:Class rdf:about="&cttvcore;/DatabaseProvenance">
-        <rdfs:label>database provenance</rdfs:label>
-        <rdfs:subClassOf rdf:resource="http://purl.org/oban/provenance"/>
-    </owl:Class>      
-
-    <owl:Class rdf:about="&cttvcore;/ExpertProvenance">
-        <rdfs:label>expert provenance</rdfs:label>
-        <rdfs:subClassOf rdf:resource="http://purl.org/oban/provenance"/>
-    </owl:Class> 
-    
 
     <!-- http://purl.org/oban/http://www.targetvalidation.org/cttv_core/experiment/transcript_isoform -->
 
@@ -95,11 +80,38 @@
     
 
 
+    <!-- http://www.targetvalidation.org/cttv_core/DatabaseProvenance -->
+
+    <owl:Class rdf:about="&cttvcore;/DatabaseProvenance">
+        <rdfs:label>database provenance</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.org/oban/provenance"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.targetvalidation.org/cttv_core/ExpertProvenance -->
+
+    <owl:Class rdf:about="&cttvcore;/ExpertProvenance">
+        <rdfs:label>expert provenance</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.org/oban/provenance"/>
+    </owl:Class>
+    
+
+
     <!-- http://www.targetvalidation.org/cttv_core/GWAS_SNP_to_trait_association -->
 
     <owl:Class rdf:about="&cttvcore;/GWAS_SNP_to_trait_association">
         <rdfs:label>GWAS SNP to trait association</rdfs:label>
         <rdfs:subClassOf rdf:resource="http://purl.org/oban/association"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.targetvalidation.org/cttv_core/LiteratureProvenance -->
+
+    <owl:Class rdf:about="&cttvcore;/LiteratureProvenance">
+        <rdfs:label>literature provenance</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.org/oban/provenance"/>
     </owl:Class>
     
 
@@ -118,6 +130,20 @@
     <owl:Class rdf:about="&cttvcore;/gene_to_disease_association">
         <rdfs:label>gene to disease association</rdfs:label>
         <rdfs:subClassOf rdf:resource="http://purl.org/oban/association"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.targetvalidation.org/cttv_core/experiment/cttv_biological_activity -->
+
+    <owl:Class rdf:about="&cttvcore;/experiment/cttv_biological_activity"/>
+    
+
+
+    <!-- http://www.targetvalidation.org/cttv_core/experiment/down -->
+
+    <owl:Class rdf:about="&cttvcore;/experiment/down">
+        <rdfs:subClassOf rdf:resource="&cttvcore;/experiment/cttv_biological_activity"/>
     </owl:Class>
     
 
@@ -222,6 +248,22 @@
 
     <owl:Class rdf:about="&cttvcore;/experiment/transcript">
         <rdfs:subClassOf rdf:resource="&cttvcore;/experiment/experiment"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.targetvalidation.org/cttv_core/experiment/unknown -->
+
+    <owl:Class rdf:about="&cttvcore;/experiment/unknown">
+        <rdfs:subClassOf rdf:resource="&cttvcore;/experiment/cttv_biological_activity"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.targetvalidation.org/cttv_core/experiment/up -->
+
+    <owl:Class rdf:about="&cttvcore;/experiment/up">
+        <rdfs:subClassOf rdf:resource="&cttvcore;/experiment/cttv_biological_activity"/>
     </owl:Class>
 </rdf:RDF>
 

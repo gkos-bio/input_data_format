@@ -1,0 +1,126 @@
+[
+    {
+        "biological_subject": {
+            "about": "ensembl:ENSG00000127720",
+            "properties": {
+                "association_context": "cttvexp:transcript",
+                "activity": "cttvexp:down"
+            }
+        },
+        "provenance": {
+            "association_score": "4.18e-05",
+            "type": {
+                "database": {
+                    "version": "NA",
+                    "true": 1,
+                    "id": "Expression_Atlas"
+                }
+            },
+            "urls": {
+                "linkouts": [
+                    {
+                        "url": "http://www.ebi.ac.uk/arrayexpress/E-MEXP-3628",
+                        "nice_name": "ArrayExpress Experiment overview"
+                    },
+                    {
+                        "url": "http://wwwdev.ebi.ac.uk/gxa/experiments/E-MEXP-3628?geneQuery=ENSG00000127720",
+                        "nice_name": "Gene expression in Expression Atlas"
+                    }
+                ]
+            },
+            "experimental_evidence_specific": {
+                "study_id": "E-MEXP-3628",
+                "comparison_name": "'osteosarcoma' vs 'normal'",
+                "log2_fold_change": -1.21
+            },
+            "is_associated": 1,
+            "evidence_codes": [
+                "obo:ECO_0000356"
+            ],
+            "date_asserted": "2014-10-16T07:55:03Z"
+        },
+        "biological_object": {
+            "about": "efo:EFO_0000637",
+            "properties": {
+                "experimental_evidence_specific": {
+                    "test_group": {
+                        "efo:EFO_0000635": "efo:EFO_0000298",
+                        "efo:EFO_0000408": "efo:EFO_0000637",
+                        "obo:OBI_0100026": "obo:NCBITaxon_9606",
+                        "obo:OBI_0001472": "fresh specimen"
+                    },
+                    "reference_group": {
+                        "efo:EFO_0000635": "efo:EFO_0000298",
+                        "efo:EFO_0000408": "efo:EFO_0000761",
+                        "obo:OBI_0100026": "obo:NCBITaxon_9606",
+                        "obo:OBI_0001472": "fresh specimen"
+                    }
+                },
+                "biosamples": [
+                    "efo:EFO_0000298"
+                ]
+            }
+        }
+    },
+    {
+        "biological_subject": {
+            "about": "ensembl:ENSG00000109819",
+            "properties": {
+                "association_context": "cttvexp:transcript",
+                "activity": "cttvexp:down"
+            }
+        },
+        "provenance": {
+            "association_score": "3.04e-11",
+            "type": {
+                "database": {
+                    "version": "NA",
+                    "true": 1,
+                    "id": "Expression_Atlas"
+                }
+            },
+            "urls": {
+                "linkouts": [
+                    {
+                        "url": "http://www.ebi.ac.uk/arrayexpress/E-GEOD-18842",
+                        "nice_name": "ArrayExpress Experiment overview"
+                    },
+                    {
+                        "url": "http://wwwdev.ebi.ac.uk/gxa/experiments/E-GEOD-18842?geneQuery=ENSG00000109819",
+                        "nice_name": "Gene expression in Expression Atlas"
+                    }
+                ]
+            },
+            "experimental_evidence_specific": {
+                "study_id": "E-GEOD-18842",
+                "comparison_name": "'non-small cell lung cancer' vs 'normal'",
+                "log2_fold_change": -1
+            },
+            "is_associated": 1,
+            "evidence_codes": [
+                "obo:ECO_0000356"
+            ],
+            "date_asserted": "2014-10-16T07:55:03Z"
+        },
+        "biological_object": {
+            "about": "efo:EFO_0003060",
+            "properties": {
+                "experimental_evidence_specific": {
+                    "test_group": {
+                        "efo:EFO_0000635": "obo:UBERON_0002048",
+                        "efo:EFO_0000408": "efo:EFO_0003060",
+                        "obo:OBI_0100026": "obo:NCBITaxon_9606"
+                    },
+                    "reference_group": {
+                        "efo:EFO_0000635": "obo:UBERON_0002048",
+                        "efo:EFO_0000408": "efo:EFO_0000761",
+                        "obo:OBI_0100026": "obo:NCBITaxon_9606"
+                    }
+                },
+                "biosamples": [
+                    "obo:UBERON_0002048"
+                ]
+            }
+        }
+    }
+]

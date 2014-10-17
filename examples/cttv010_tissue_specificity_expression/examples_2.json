@@ -8,7 +8,9 @@
             }
         },
         "provenance": {
-            "association_score": "4.18e-05",
+            "association_score": {
+                "p-value": "4.18e-05"
+            },
             "type": {
                 "database": {
                     "version": "NA",
@@ -71,7 +73,9 @@
             }
         },
         "provenance": {
-            "association_score": "3.04e-11",
+            "association_score": {
+                "p-value": "3.04e-11"
+            },
             "type": {
                 "database": {
                     "version": "NA",

@@ -1,9 +1,8 @@
 {
 	"biological_subject": {	
-		"about": "uniprot:P25100",
+		"about": ["uniprot:P25100", "uniprot:P35348", "uniprot:P35368"],
 		"properties": {
 			"association_context": "cttvexp:protein_complex_heteropolymer",
-			"associated_subjects": ["uniprot:P35348", "uniprot:P35368"],
 			"activity": "cttvexp:down"	
 		}	
 	},
@@ -43,6 +42,9 @@
 			
 			"evidence_chain": {
 				"0": {
+					"biological_subject": {
+						"about": ["uniprot:P25100", "uniprot:P35348", "uniprot:P35368"]
+					},
 					"provenance": {
 						"experimental_evidence_specific": {
 							"MOLECULE_NAME" : "Prazosin",
@@ -63,6 +65,9 @@
 						"experimental_evidence_specific": {
 							"comment" : "Marketed drug indication"
 						}
+					},
+					"biological_object": {
+						"about": "efo:EFO_0000537"						
 					}
 				}
 			}

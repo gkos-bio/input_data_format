@@ -10,9 +10,9 @@
 
 ### Resources used in this example:
 - **cttvexp:protein_complex_heteropolymer** comprised of 3 protein subunits:
-	1. 	uniprot:P25100
-	1. 	uniprot:P35348
-	1. 	uniprot:P35368
+	1. 	**uniprot:P25100**
+	1. 	**uniprot:P35348**
+	1. 	**uniprot:P35368**
 - **cttvexp:down** because the drug is an antagonist
 
 - **Evidence codes:**

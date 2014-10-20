@@ -1,6 +1,6 @@
 {
 	"biological_subject": {	
-		"about": ["uniprot:P25100"],
+		"about": "uniprot:P25100",
 		"properties": {
 			"association_context": "cttvexp:protein_complex_heteropolymer",
 			"associated_subjects": ["uniprot:P35348", "uniprot:P35368"],

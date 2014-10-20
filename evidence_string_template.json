@@ -1,9 +1,9 @@
 {
 	"biological_subject": {	
-		"about": "[Example: ensembl:ENSG00000127720 OR uniprot:Q13563] An Ensembl geneID or an Uniprot protein ID.",
+		"about": "[Example: ensembl:ENSG00000127720 OR uniprot:Q13563] An array of Ensembl geneIDs or Uniprot protein IDs. Array = protein complex",
 		"properties": {
 			"association_context": "[Example: cttvexp:gene ] Choose_one: cttvexp:gene, cttvexp:gene_allele, cttvexp:gene_in_ld_region, cttvexp:gene_variant, cttvexp:gene_in_epigenetic_regulation_complex, cttvexp:transcript, cttvexp:transcript_isoform, cttvexp:protein, cttvexp:protein_complex_homopolymer, cttvexp:protein_complex_heteropolymer, cttvexp:protein_isoform, cttvexp:protein_signaling_pathway",
-			"associated_subjects": ["[Example: \"uniprot:P05067\", \"uniprot:Q9HC29\"] Array: If this association is also about other genes or proteins, please provide the additional Ensembl/Uniprot IDs as an array. Examples where you might need these are in gene_in_ld_region, gene_in_epigenetic_regulation_complex, protein_complex, protein_isoform, protein_pathway"],
+			"associated_subjects": ["[Example: \"uniprot:P05067\", \"uniprot:Q9HC29\"] Array: If this association is also about other genes or proteins, please provide the additional Ensembl/Uniprot IDs as an array. Examples where you might need these are in gene_in_ld_region, gene_in_epigenetic_regulation_complex, protein_isoform, protein_pathway"],
 			"activity": "[Example: cttvexp:up] Choose one: cttvexp:up, cttvexp:down or cttvexp:unknown",			
 			"experimental_evidence_specific": {
 				"property_name_1": "XXXX: add as many properties as you like but please make sure these are concepts that a disease expert will be able to understand",
@@ -136,7 +136,7 @@
 
 	"biological_object": {
 		
-		"about": "[Example: efo:EFO_0000637] A disease or a phenotype expressed using its EFO term",
+		"about": "[Example: efo:EFO_0000637] A disease or a phenotype expressed using its EFO term. This can be an array if there is an outcome of multiple phenotypes",
 		"properties": {
 			"biosamples": ["[Example: \"obo:UBERON_0000948\", \"obo:CL_0002553\"] Array: affected tissues and cells expressed using their EFO terms"],
 			"experimental_evidence_specific": {

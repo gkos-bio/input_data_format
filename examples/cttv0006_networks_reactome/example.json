@@ -1,0 +1,98 @@
+{
+	"biological_subject": {	
+		"about": ["uniprot:Q9H2B4","uniprot:P50443"],
+		"properties": {
+			"association_context": "cttvexp:protein_complex_heteropolymer",
+			"activity": "cttvexp:down"
+		}	
+	},
+
+	"provenance": {
+		
+		"date_asserted": "2014-09-11T10:59:43.511Z",
+		"is_associated": 1,
+		
+		"type": {
+			
+			"literature": {
+				"true" : 1,
+				"pubmed_refs": [11448940, 8528239, 7923357 ]
+			},
+			
+			"expert": {
+				"true" : 1				
+			},
+			
+			"database": {
+				"true" : 1,
+				"id": "Reactome",
+				"version": "50"
+			}
+			
+		},
+		
+		"evidence_codes": ["obo:ECO_0000205"],
+		
+		"urls": {
+			"linkouts": [
+				{"nice_name":"Reactome disease pathway", "url": "http://www.reactome.org/PathwayBrowser/#REACT_267687.1"}
+			]
+		},
+		
+		"experimental_evidence_specific": {
+			
+			"evidence_chain": {
+				"0": {
+					"biological_subject": {
+						"about": "uniprot:P50443" 	
+					},
+					"provenance": {
+						"evidence_codes": ["obo:ECO_0001113"],
+						"experimental_evidence_specific": {
+							"mutations":["255E", "A585Vfs*6", "L483P", "R178X", "N425D"]
+						}
+					},
+					"biological_object": {
+						"about": "obo:ECO_0001113" 	
+					}
+				},
+				"1": {
+					"biological_subject": {
+						"about": "obo:ECO_0001113" 	
+					},
+					"provenance": {
+						"experimental_evidence_specific": {
+							"comment": "Impaired disease pathway: Defective SLC26A2 causes chondrodysplasias"
+						}						
+					},
+					"biological_object": {
+						"about": "reactome:REACT_267687.1" 
+					}
+				},
+				"2": {
+					"biological_subject": {
+						"about": "reactome:REACT_267687.1" 	
+					},
+					"provenance": {},
+					"biological_object": {
+						"about": "chebi:CHEBI_16189" 	
+					}
+				},
+				"3": {
+					"biological_subject": {
+						"about": "chebi:CHEBI_16189" 	
+					},
+					"provenance": {},
+					"biological_object": {
+						"about": "orphanet:Orphanet_93298" 	
+					}
+				}
+			}
+		}
+
+	},
+
+	"biological_object": {
+		"about": "orphanet:Orphanet_93298"	
+	}
+}

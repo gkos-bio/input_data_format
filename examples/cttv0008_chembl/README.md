@@ -1,12 +1,14 @@
-An example of an evidence string that links "biological target" to its
-disease association via drug.
+An example of an evidence string that links "biological target" to its disease indication via drug.
+==============
 
-Subject: A protein complex heteropolymer
-Intermediate link: Prazosin (An adrenergic alpha1-antagonist)
-Object: Cardiovascular disease
+Evidence string main components:
+--------------
+- Subject: A protein complex heteropolymer
+- Intermediate link: Prazosin (An adrenergic alpha1-antagonist)
+- Object: Cardiovascular disease
 
 Resources used in this example:
-
+--------------
 	cttvexp:protein_complex_heteropolymer comprised of 3 protein subunits:
 		"uniprot:P25100"
 		"uniprot:P35348"

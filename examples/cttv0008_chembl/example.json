@@ -43,12 +43,6 @@
 			
 			"evidence_chain": {
 				"0": {
-					"biological_subject": {
-						"about": "uniprot:P25100",
-						"properties": {
-							"associated_subjects": ["uniprot:P35348", "uniprot:P35368"]	
-						}
-					},
 					"provenance": {
 						"experimental_evidence_specific": {
 							"MOLECULE_NAME" : "Prazosin",
@@ -65,9 +59,10 @@
 					"biological_subject": {
 						"about": "chembl:CHEMBL2" 	
 					},
-					"provenance": {	},
-					"biological_object": {
-						"about": "efo:EFO_0000537" 	
+					"provenance": {
+						"experimental_evidence_specific": {
+							"comment" : "Marketed drug indication"
+						}
 					}
 				}
 			}

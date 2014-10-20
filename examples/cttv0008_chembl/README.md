@@ -1,9 +1,12 @@
 ## An example of an evidence string that links "biological target" to its disease indication via drug.
 
 ### Evidence string triple:
-- **Subject:** A protein complex heteropolymer
-- **Provenance:** Prazosin (An adrenergic alpha1-antagonist)
-- **Object:** Cardiovascular disease
+
+1. **Target:** A heteropolymeric protein complex (alpha adrenergic receptor complex)
+3. **Evidence chain:**
+	- **Link 0:** The drug **Prazosin**, which exhibits activity against alpha1 adrenergic receptors
+	- **Link 1:** The marketed disease indication of **Prazosin**, Cardiovascular disease
+4. **Disease:** Cardiovascular disease
 
 ### Resources used in this example:
 - **cttvexp:protein_complex_heteropolymer** comprised of 3 protein subunits:

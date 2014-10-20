@@ -31,3 +31,8 @@ Resources used in this example:
 	efo:EFO_0000537 #The EFO resource ID for hypertension, the marketed drug
 	indication (Did a Google search for this)
 	obo:UBERON_0004535 #The EFO resource ID for cardiovascular system
+	
+ChEMBL entry points:
+--------------
+- ChEMBL molecule information: https://www.ebi.ac.uk/chembl/compound/inspect/CHEMBL2
+- ChEMBL target information: https://www.ebi.ac.uk/chembl/target/inspect/CHEMBL2094251

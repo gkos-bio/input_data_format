@@ -44,7 +44,7 @@
 			"evidence_chain": {
 				"0": {
 					"biological_subject": {
-						"about": ["uniprot:P25100"],
+						"about": "uniprot:P25100",
 						"properties": {
 							"associated_subjects": ["uniprot:P35348", "uniprot:P35368"]	
 						}

@@ -54,12 +54,12 @@
 						}
 					},
 					"biological_object": {
-						"about": "chembl:CHEMBL2" 	
+						"about": "chembl.compound:CHEMBL2" 	
 					}
 				},
 				"1": {
 					"biological_subject": {
-						"about": "chembl:CHEMBL2" 	
+						"about": "chembl.compound:CHEMBL2" 	
 					},
 					"provenance": {
 						"experimental_evidence_specific": {

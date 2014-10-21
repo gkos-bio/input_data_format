@@ -2,8 +2,8 @@
 	"biological_subject": {	
 		"about": ["uniprot:Q9H2B4","uniprot:P50443"],
 		"properties": {
-			"association_context": "cttvexp:protein_complex_heteropolymer",
-			"activity": "cttvexp:down"
+			"association_context": "cttvexp:protein",
+			"activity": "cttvexp:loss_of_function"
 		}	
 	},
 
@@ -47,8 +47,9 @@
 						"about": "uniprot:P50443" 	
 					},
 					"provenance": {
-						"evidence_codes": ["obo:ECO_0001113"],
+						"evidence_codes": ["obo:ECO_0000205", "obo:ECO_0001113"],
 						"experimental_evidence_specific": {
+							"comment":"Best characterized mutations",
 							"mutations":["255E", "A585Vfs*6", "L483P", "R178X", "N425D"]
 						}
 					},
@@ -69,18 +70,9 @@
 						"about": "reactome:REACT_267687.1" 
 					}
 				},
-				"2": {
-					"biological_subject": {
-						"about": "reactome:REACT_267687.1" 	
-					},
-					"provenance": {},
-					"biological_object": {
-						"about": "chebi:CHEBI_16189" 	
-					}
-				},
 				"3": {
 					"biological_subject": {
-						"about": "chebi:CHEBI_16189" 	
+						"about": "reactome:REACT_267687.1"  	
 					},
 					"provenance": {},
 					"biological_object": {

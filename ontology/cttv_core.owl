@@ -140,6 +140,22 @@
     
 
 
+    <!-- http://www.targetvalidation.org/cttv_core/experiment/decreased_transcript_level -->
+
+    <owl:Class rdf:about="&cttvcore;/experiment/decreased_transcript_level">
+        <rdfs:subClassOf rdf:resource="&cttvcore;/experiment/down"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.targetvalidation.org/cttv_core/experiment/decreased_translational_product_level -->
+
+    <owl:Class rdf:about="&cttvcore;/experiment/decreased_translational_product_level">
+        <rdfs:subClassOf rdf:resource="&cttvcore;/experiment/down"/>
+    </owl:Class>
+    
+
+
     <!-- http://www.targetvalidation.org/cttv_core/experiment/down -->
 
     <owl:Class rdf:about="&cttvcore;/experiment/down">
@@ -152,6 +168,14 @@
 
     <owl:Class rdf:about="&cttvcore;/experiment/experiment">
         <rdfs:label>cttv experiment target</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.targetvalidation.org/cttv_core/experiment/gain_of_function -->
+
+    <owl:Class rdf:about="&cttvcore;/experiment/gain_of_function">
+        <rdfs:subClassOf rdf:resource="&cttvcore;/experiment/up"/>
     </owl:Class>
     
 
@@ -192,6 +216,46 @@
 
     <owl:Class rdf:about="&cttvcore;/experiment/gene_variant">
         <rdfs:subClassOf rdf:resource="&cttvcore;/experiment/gene"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.targetvalidation.org/cttv_core/experiment/increased_transcript_level -->
+
+    <owl:Class rdf:about="&cttvcore;/experiment/increased_transcript_level">
+        <rdfs:subClassOf rdf:resource="&cttvcore;/experiment/up"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.targetvalidation.org/cttv_core/experiment/increased_translational_product_level -->
+
+    <owl:Class rdf:about="&cttvcore;/experiment/increased_translational_product_level">
+        <rdfs:subClassOf rdf:resource="&cttvcore;/experiment/up"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.targetvalidation.org/cttv_core/experiment/loss_of_function -->
+
+    <owl:Class rdf:about="&cttvcore;/experiment/loss_of_function">
+        <rdfs:subClassOf rdf:resource="&cttvcore;/experiment/down"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.targetvalidation.org/cttv_core/experiment/partial_loss_of_function -->
+
+    <owl:Class rdf:about="&cttvcore;/experiment/partial_loss_of_function">
+        <rdfs:subClassOf rdf:resource="&cttvcore;/experiment/down"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.targetvalidation.org/cttv_core/experiment/pro_protein -->
+
+    <owl:Class rdf:about="&cttvcore;/experiment/pro_protein">
+        <rdfs:subClassOf rdf:resource="&cttvcore;/experiment/protein"/>
     </owl:Class>
     
 

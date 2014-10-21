@@ -1,6 +1,6 @@
 {
 	"biological_subject": {	
-		"about": ["uniprot:Q9H2B4","uniprot:P50443"],
+		"about": ["uniprot:P50443"],
 		"properties": {
 			"association_context": "cttvexp:protein",
 			"activity": "cttvexp:loss_of_function"

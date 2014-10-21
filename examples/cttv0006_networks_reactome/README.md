@@ -1,10 +1,10 @@
 
 
-## An evidence string example: Association between a protein complex and a disease via curated Reactome pathway evidence
+## An evidence string example: Association between a protein and a disease via curated Reactome pathway evidence
+
+*Bijay Jassal, Samiul Hasan*
 
 ###Reactome disease annotation: [Defective SLC26A2 causes chondrodysplasias](http://www.reactome.org/PathwayBrowser/#REACT_267687.1)
-
-*Bijay Jassal*
 
 The **SLC26A1 and 2 genes** encode sulfate transporter proteins that facilitate sulfate uptake into cells, critical in cartilage for sulfation of proteoglycans and extracellular matrix organization. **Defects in SLC26A2** result in impaired SO4(2-) transport leading to insufficient sulfation of cartilage proteoglycans. Defective SLC26A2 is implicated in the pathogenesis of a spectrum of autosomal recessive human chondrodysplasias. Severity of symptoms range from **mild (achondrogenesis type 1B (ACG-1B; MIM:600972)** to **intermediate (atelosteogenesis type II; MIM256050)** to **severe (achondrogenesis type 1B; MIM:600972)** (Superti-Furga et al. 1996, Dwyer et al. 2010).
 
@@ -12,12 +12,7 @@ The SLC26A1 and 2 genes encode proteins that facilitate sulfate uptake into cell
 
 ###From above Reactome annotation, CTTV evidence string needs to capture:
 
-*Samiul Hasan*
-
-**Note:**
-- This example is only for the disease outcome *achondrogenesis type 1B*. One would need to create a separate evidence instance for *atelosteogenesis type II*.
-- In Reactome, sets are treated as proteins (mostly from protein families) that can carry out the same function. In this example, both SLC26A1 and SLC26A2 are a set. However, the mutations occur in SLC26A2 only.
-
+**Note:** This example is only for the disease outcome *achondrogenesis type 1B*. One would need to create a separate evidence instance for *atelosteogenesis type II*.
 
 1. **Target:** The protein SLC26A2
 3. **Evidence chain:**
@@ -26,6 +21,8 @@ The SLC26A1 and 2 genes encode proteins that facilitate sulfate uptake into cell
 4. **Disease:** The disease outcome 'achondrogenesis type 1B (ACG-1B; MIM:600972)' [A child term of chondrodysplasias]
 
 ### Resources used in this example:
+
+**Note:** All examples are from [identifers.org](http://identifiers.org/)
 
 - **cttvexp:protein**:
 	- 	**uniprot:P50443** (SLC26A2)

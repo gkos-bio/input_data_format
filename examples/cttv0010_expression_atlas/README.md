@@ -1,5 +1,7 @@
 ## 2 examples of RNA-expression-based "evidence strings"
 
+**Note:** All namespaces, other than "cttv:, cttvexp:" are from [identifers.org](http://identifiers.org/)
+
 1. **Downregulation of METTL25 in an osteosarcoma study:**
 	
     Original source: http://wwwdev.ebi.ac.uk/gxa/experiments/E-MEXP-3628?geneQuery=ENSG00000127720

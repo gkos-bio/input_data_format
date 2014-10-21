@@ -22,7 +22,7 @@ The SLC26A1 and 2 genes encode proteins that facilitate sulfate uptake into cell
 
 ### Resources used in this example:
 
-**Note:** All examples are from [identifers.org](http://identifiers.org/)
+**Note:** All namespaces, other than "cttv:, cttvexp:" are from [identifers.org](http://identifiers.org/)
 
 - **cttvexp:protein**:
 	- 	**uniprot:P50443** (SLC26A2)

@@ -9,6 +9,9 @@
 4. **Disease:** Cardiovascular disease
 
 ### Resources used in this example:
+
+**Note:** All namespaces, other than "cttv:, cttvexp:" are from [identifers.org](http://identifiers.org/)
+
 - **cttvexp:protein_complex_heteropolymer** comprised of 3 protein subunits:
 	1. 	**uniprot:P25100**
 	1. 	**uniprot:P35348**

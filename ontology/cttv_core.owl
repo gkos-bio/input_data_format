@@ -340,7 +340,7 @@
 
     <owl:Class rdf:about="&cttvcore;/experiment/selectivity_group">
         <rdfs:subClassOf rdf:resource="&cttvcore;/experiment/protein"/>
-        <rdfs:comment>Target is a pair of proteins for which the selectivity has been assessed</rdfs:comment>
+        <rdfs:comment>Target is a pair of proteins for which the selectivity has been assessed </rdfs:comment>
     </owl:Class>
     
 

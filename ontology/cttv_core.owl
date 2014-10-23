@@ -134,6 +134,15 @@
     
 
 
+    <!-- http://www.targetvalidation.org/cttv_core/experiment/chimeric_protein -->
+
+    <owl:Class rdf:about="&cttvcore;/experiment/chimeric_protein">
+        <rdfs:subClassOf rdf:resource="&cttvcore;/experiment/protein"/>
+        <rdfs:comment>Target is a fusion of two different proteins, either a synthetic construct or naturally occurring fusion protein</rdfs:comment>
+    </owl:Class>
+    
+
+
     <!-- http://www.targetvalidation.org/cttv_core/experiment/cttv_biological_activity -->
 
     <owl:Class rdf:about="&cttvcore;/experiment/cttv_biological_activity"/>
@@ -264,6 +273,7 @@
 
     <owl:Class rdf:about="&cttvcore;/experiment/protein">
         <rdfs:subClassOf rdf:resource="&cttvcore;/experiment/experiment"/>
+        <rdfs:comment>Target is a single protein chain</rdfs:comment>
     </owl:Class>
     
 
@@ -276,10 +286,19 @@
     
 
 
+    <!-- http://www.targetvalidation.org/cttv_core/experiment/protein_complex_group -->
+
+    <owl:Class rdf:about="&cttvcore;/experiment/protein_complex_group">
+        <rdfs:subClassOf rdf:resource="&cttvcore;/experiment/protein_complex"/>
+        <rdfs:comment>Target is a poorly defined protein complex, where subunit composition is unclear (e.g., GABA-A receptor)</rdfs:comment>
+    </owl:Class>
+    
+
+
     <!-- http://www.targetvalidation.org/cttv_core/experiment/protein_complex_heteropolymer -->
 
     <owl:Class rdf:about="&cttvcore;/experiment/protein_complex_heteropolymer">
-        <rdfs:subClassOf rdf:resource="&cttvcore;/experiment/protein_complex_homopolymer"/>
+        <rdfs:subClassOf rdf:resource="&cttvcore;/experiment/protein_complex"/>
     </owl:Class>
     
 
@@ -300,10 +319,28 @@
     
 
 
+    <!-- http://www.targetvalidation.org/cttv_core/experiment/protein_nucleic_acid_complex -->
+
+    <owl:Class rdf:about="&cttvcore;/experiment/protein_nucleic_acid_complex">
+        <rdfs:subClassOf rdf:resource="&cttvcore;/experiment/protein_complex"/>
+        <rdfs:comment>Target is a complex consisting of both protein and nucleic-acid components (e.g., ribosome)</rdfs:comment>
+    </owl:Class>
+    
+
+
     <!-- http://www.targetvalidation.org/cttv_core/experiment/protein_signalling_pathway -->
 
     <owl:Class rdf:about="&cttvcore;/experiment/protein_signalling_pathway">
         <rdfs:subClassOf rdf:resource="&cttvcore;/experiment/protein"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.targetvalidation.org/cttv_core/experiment/selectivity_group -->
+
+    <owl:Class rdf:about="&cttvcore;/experiment/selectivity_group">
+        <rdfs:subClassOf rdf:resource="&cttvcore;/experiment/protein"/>
+        <rdfs:comment>Target is a pair of proteins for which the selectivity has been assessed</rdfs:comment>
     </owl:Class>
     
 

@@ -143,9 +143,9 @@
     
 
 
-    <!-- http://www.targetvalidation.org/cttv_core/experiment/cttv_biological_activity -->
+    <!-- http://www.targetvalidation.org/cttv_core/experiment/cttv_activity -->
 
-    <owl:Class rdf:about="&cttvcore;/experiment/cttv_biological_activity"/>
+    <owl:Class rdf:about="&cttvcore;/experiment/cttv_activity"/>
     
 
 
@@ -168,23 +168,25 @@
     <!-- http://www.targetvalidation.org/cttv_core/experiment/down -->
 
     <owl:Class rdf:about="&cttvcore;/experiment/down">
-        <rdfs:subClassOf rdf:resource="&cttvcore;/experiment/cttv_biological_activity"/>
+        <rdfs:subClassOf rdf:resource="&cttvcore;/experiment/cttv_activity"/>
     </owl:Class>
     
 
 
-    <!-- http://www.targetvalidation.org/cttv_core/experiment/drug_agonism -->
+    <!-- http://www.targetvalidation.org/cttv_core/experiment/drug_negative_modulator -->
 
-    <owl:Class rdf:about="&cttvcore;/experiment/drug_agonism">
-        <rdfs:subClassOf rdf:resource="&cttvcore;/experiment/up"/>
-    </owl:Class>
-    
-
-
-    <!-- http://www.targetvalidation.org/cttv_core/experiment/drug_antogonism -->
-
-    <owl:Class rdf:about="&cttvcore;/experiment/drug_antogonism">
+    <owl:Class rdf:about="&cttvcore;/experiment/drug_negative_modulator">
         <rdfs:subClassOf rdf:resource="&cttvcore;/experiment/down"/>
+        <rdfs:comment>Negatively effects the normal functioning of a protein e.g., receptor antagonist, inverse agonist or negative allosteric modulator</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.targetvalidation.org/cttv_core/experiment/drug_positive_modulator -->
+
+    <owl:Class rdf:about="&cttvcore;/experiment/drug_positive_modulator">
+        <rdfs:subClassOf rdf:resource="&cttvcore;/experiment/up"/>
+        <rdfs:comment>Positively effects the normal functioning of a protein e.g., receptor agonist, positive allosteric modulator, ion channel activator</rdfs:comment>
     </owl:Class>
     
 
@@ -192,7 +194,7 @@
     <!-- http://www.targetvalidation.org/cttv_core/experiment/experiment -->
 
     <owl:Class rdf:about="&cttvcore;/experiment/experiment">
-        <rdfs:label>cttv experiment target</rdfs:label>
+        <rdfs:label>cttv target</rdfs:label>
     </owl:Class>
     
 
@@ -407,7 +409,7 @@
     <!-- http://www.targetvalidation.org/cttv_core/experiment/unknown -->
 
     <owl:Class rdf:about="&cttvcore;/experiment/unknown">
-        <rdfs:subClassOf rdf:resource="&cttvcore;/experiment/cttv_biological_activity"/>
+        <rdfs:subClassOf rdf:resource="&cttvcore;/experiment/cttv_activity"/>
     </owl:Class>
     
 
@@ -415,7 +417,7 @@
     <!-- http://www.targetvalidation.org/cttv_core/experiment/up -->
 
     <owl:Class rdf:about="&cttvcore;/experiment/up">
-        <rdfs:subClassOf rdf:resource="&cttvcore;/experiment/cttv_biological_activity"/>
+        <rdfs:subClassOf rdf:resource="&cttvcore;/experiment/cttv_activity"/>
     </owl:Class>
 </rdf:RDF>
 

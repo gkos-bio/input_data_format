@@ -23,10 +23,10 @@
      xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
      xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
      xmlns:cttvcore="http://www.targetvalidation.org/cttv_core">
-    <owl:Ontology rdf:about="http://www.targetvalidation.org/cttv_core">
+    <owl:Ontology rdf:about="&cttvcore;/experiment">
+        <dc:creator>Samiul Hasan</dc:creator>
         <obo:date>13th October 2014</obo:date>
         <owl:versionInfo>0.1</owl:versionInfo>
-        <dc:creator>Samiul Hasan</dc:creator>
         <dc:creator>James Malone</dc:creator>
         <owl:imports rdf:resource="http://edamontology.org"/>
         <owl:imports rdf:resource="&obo;eco.owl"/>
@@ -75,7 +75,7 @@
     <!-- http://purl.org/oban/http://www.targetvalidation.org/cttv_core/experiment/transcript_isoform -->
 
     <owl:Class rdf:about="http://purl.org/oban/&cttvcore;/experiment/transcript_isoform">
-        <rdfs:subClassOf rdf:resource="&cttvcore;/experiment/transcript"/>
+        <rdfs:subClassOf rdf:resource="&cttvcore;/experiment/transcript_evidence"/>
     </owl:Class>
     
 
@@ -137,7 +137,7 @@
     <!-- http://www.targetvalidation.org/cttv_core/experiment/chimeric_protein -->
 
     <owl:Class rdf:about="&cttvcore;/experiment/chimeric_protein">
-        <rdfs:subClassOf rdf:resource="&cttvcore;/experiment/protein"/>
+        <rdfs:subClassOf rdf:resource="&cttvcore;/experiment/protein_evidence"/>
         <rdfs:comment>Target is a fusion of two different proteins, either a synthetic construct or naturally occurring fusion protein</rdfs:comment>
     </owl:Class>
     
@@ -173,6 +173,22 @@
     
 
 
+    <!-- http://www.targetvalidation.org/cttv_core/experiment/drug_agonism -->
+
+    <owl:Class rdf:about="&cttvcore;/experiment/drug_agonism">
+        <rdfs:subClassOf rdf:resource="&cttvcore;/experiment/up"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.targetvalidation.org/cttv_core/experiment/drug_antogonism -->
+
+    <owl:Class rdf:about="&cttvcore;/experiment/drug_antogonism">
+        <rdfs:subClassOf rdf:resource="&cttvcore;/experiment/down"/>
+    </owl:Class>
+    
+
+
     <!-- http://www.targetvalidation.org/cttv_core/experiment/experiment -->
 
     <owl:Class rdf:about="&cttvcore;/experiment/experiment">
@@ -192,7 +208,8 @@
     <!-- http://www.targetvalidation.org/cttv_core/experiment/gene -->
 
     <owl:Class rdf:about="&cttvcore;/experiment/gene">
-        <rdfs:subClassOf rdf:resource="&cttvcore;/experiment/experiment"/>
+        <rdfs:subClassOf rdf:resource="&cttvcore;/experiment/gene_evidence"/>
+        <rdfs:comment>a single gene</rdfs:comment>
     </owl:Class>
     
 
@@ -200,7 +217,15 @@
     <!-- http://www.targetvalidation.org/cttv_core/experiment/gene_allele -->
 
     <owl:Class rdf:about="&cttvcore;/experiment/gene_allele">
-        <rdfs:subClassOf rdf:resource="&cttvcore;/experiment/gene"/>
+        <rdfs:subClassOf rdf:resource="&cttvcore;/experiment/gene_evidence"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.targetvalidation.org/cttv_core/experiment/gene_evidence -->
+
+    <owl:Class rdf:about="&cttvcore;/experiment/gene_evidence">
+        <rdfs:subClassOf rdf:resource="&cttvcore;/experiment/experiment"/>
     </owl:Class>
     
 
@@ -208,7 +233,7 @@
     <!-- http://www.targetvalidation.org/cttv_core/experiment/gene_in_LD_region -->
 
     <owl:Class rdf:about="&cttvcore;/experiment/gene_in_LD_region">
-        <rdfs:subClassOf rdf:resource="&cttvcore;/experiment/gene"/>
+        <rdfs:subClassOf rdf:resource="&cttvcore;/experiment/gene_evidence"/>
     </owl:Class>
     
 
@@ -216,7 +241,8 @@
     <!-- http://www.targetvalidation.org/cttv_core/experiment/gene_in_epigenetic_regulation_complex -->
 
     <owl:Class rdf:about="&cttvcore;/experiment/gene_in_epigenetic_regulation_complex">
-        <rdfs:subClassOf rdf:resource="&cttvcore;/experiment/gene"/>
+        <rdfs:subClassOf rdf:resource="&cttvcore;/experiment/gene_evidence"/>
+        <rdfs:comment>a set of genes predicted to participate in an epigenetic regulation network.</rdfs:comment>
     </owl:Class>
     
 
@@ -224,7 +250,7 @@
     <!-- http://www.targetvalidation.org/cttv_core/experiment/gene_variant -->
 
     <owl:Class rdf:about="&cttvcore;/experiment/gene_variant">
-        <rdfs:subClassOf rdf:resource="&cttvcore;/experiment/gene"/>
+        <rdfs:subClassOf rdf:resource="&cttvcore;/experiment/gene_evidence"/>
     </owl:Class>
     
 
@@ -264,7 +290,7 @@
     <!-- http://www.targetvalidation.org/cttv_core/experiment/pro_protein -->
 
     <owl:Class rdf:about="&cttvcore;/experiment/pro_protein">
-        <rdfs:subClassOf rdf:resource="&cttvcore;/experiment/protein"/>
+        <rdfs:subClassOf rdf:resource="&cttvcore;/experiment/protein_evidence"/>
     </owl:Class>
     
 
@@ -272,8 +298,8 @@
     <!-- http://www.targetvalidation.org/cttv_core/experiment/protein -->
 
     <owl:Class rdf:about="&cttvcore;/experiment/protein">
-        <rdfs:subClassOf rdf:resource="&cttvcore;/experiment/experiment"/>
-        <rdfs:comment>Target is a single protein chain</rdfs:comment>
+        <rdfs:subClassOf rdf:resource="&cttvcore;/experiment/protein_evidence"/>
+        <rdfs:comment>a single protein</rdfs:comment>
     </owl:Class>
     
 
@@ -281,7 +307,7 @@
     <!-- http://www.targetvalidation.org/cttv_core/experiment/protein_complex -->
 
     <owl:Class rdf:about="&cttvcore;/experiment/protein_complex">
-        <rdfs:subClassOf rdf:resource="&cttvcore;/experiment/protein"/>
+        <rdfs:subClassOf rdf:resource="&cttvcore;/experiment/protein_evidence"/>
     </owl:Class>
     
 
@@ -311,10 +337,27 @@
     
 
 
+    <!-- http://www.targetvalidation.org/cttv_core/experiment/protein_evidence -->
+
+    <owl:Class rdf:about="&cttvcore;/experiment/protein_evidence">
+        <rdfs:subClassOf rdf:resource="&cttvcore;/experiment/experiment"/>
+        <rdfs:comment>Target is a single protein chain</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.targetvalidation.org/cttv_core/experiment/protein_family -->
+
+    <owl:Class rdf:about="&cttvcore;/experiment/protein_family">
+        <rdfs:subClassOf rdf:resource="&cttvcore;/experiment/protein_evidence"/>
+    </owl:Class>
+    
+
+
     <!-- http://www.targetvalidation.org/cttv_core/experiment/protein_isoform -->
 
     <owl:Class rdf:about="&cttvcore;/experiment/protein_isoform">
-        <rdfs:subClassOf rdf:resource="&cttvcore;/experiment/protein"/>
+        <rdfs:subClassOf rdf:resource="&cttvcore;/experiment/protein_evidence"/>
     </owl:Class>
     
 
@@ -331,7 +374,7 @@
     <!-- http://www.targetvalidation.org/cttv_core/experiment/protein_signalling_pathway -->
 
     <owl:Class rdf:about="&cttvcore;/experiment/protein_signalling_pathway">
-        <rdfs:subClassOf rdf:resource="&cttvcore;/experiment/protein"/>
+        <rdfs:subClassOf rdf:resource="&cttvcore;/experiment/protein_evidence"/>
     </owl:Class>
     
 
@@ -339,7 +382,7 @@
     <!-- http://www.targetvalidation.org/cttv_core/experiment/selectivity_group -->
 
     <owl:Class rdf:about="&cttvcore;/experiment/selectivity_group">
-        <rdfs:subClassOf rdf:resource="&cttvcore;/experiment/protein"/>
+        <rdfs:subClassOf rdf:resource="&cttvcore;/experiment/protein_evidence"/>
         <rdfs:comment>Target is a pair of proteins for which the selectivity has been assessed </rdfs:comment>
     </owl:Class>
     
@@ -348,6 +391,14 @@
     <!-- http://www.targetvalidation.org/cttv_core/experiment/transcript -->
 
     <owl:Class rdf:about="&cttvcore;/experiment/transcript">
+        <rdfs:subClassOf rdf:resource="&cttvcore;/experiment/transcript_evidence"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.targetvalidation.org/cttv_core/experiment/transcript_evidence -->
+
+    <owl:Class rdf:about="&cttvcore;/experiment/transcript_evidence">
         <rdfs:subClassOf rdf:resource="&cttvcore;/experiment/experiment"/>
     </owl:Class>
     

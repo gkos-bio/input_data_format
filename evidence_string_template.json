@@ -15,7 +15,7 @@
 	"provenance": {
 		
 		"date_asserted": "Date the assertion was made expressed using javascript standard: 2014-09-11T10:59:43.511Z",
-		"is_associated": "true; boolen value; for our first round, we will focus only on positive findings so just use 'true' for now.",
+		"is_associated": "true; boolen value; for our first round, we will focus only on positive findings so just use 'true' for now",
 		
 		"type": {
 			

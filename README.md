@@ -10,3 +10,5 @@ data as CTTV evidence strings.
 1. **examples**	- this folder contains example instances of json strings produced by different CTTV pipeline projects.
 
 1. **ontology** - The CTTV core association ontology.
+
+1. **scripts** - JSON-formatting/preparation scripts written by CTTV project members.

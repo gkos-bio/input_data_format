@@ -25,7 +25,7 @@
 	1. **obo:ECO_0001113** (point mutation evidence)	
 	1. **obo:ECO_0000053** computational combinatorial evidence (A type of combinatorial analysis where data are combined and evaluated by an algorithm.)
 
-- **Provenance types:** Provenance types are literature, expert and database since this is published GWAS data in the GWAS catalog
+- **Provenance types:** Provenance types are literature, expert and database since this is (assumed) published GWAS data in the GWAS catalog
 	
 - **dbsnp:rs9802421** The dbSNP resource ID for the predicted SNP
 

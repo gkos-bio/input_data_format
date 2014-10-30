@@ -10,7 +10,10 @@
 		"about": ["ensembl:ENSG9023124"],
 		"properties": {
 			"association_context": "cttvexp:gene_allele",
-			"activity": "cttvexp:unknown",
+			"activity": "cttvexp:unknown"
+		},
+		
+		"experimental_evidence_specific" : {
 			"Rank" : "3",
 			"Consequence" : "missense_variant",
 			"sift" : "tolerated(0.39)",
@@ -18,7 +21,9 @@
 			"Domain1" : "pfam:PF00619",
 			"Domain2" : "prosite:PS50209",
 			"Domain3" : "supfam:SSF47986"
-		}	
+		}
+		
+		
 	},
 
 	"provenance": {
@@ -63,7 +68,7 @@
 						"association_score": {
 							"probability": "0.0202556065553751"
 						},
-						"properties" : {
+						"experimental_evidence_specific" : {
 							"a1 (risk allele)" : "C",
 							"a2 (other allele)" : "T",
 							"OR" : "0.8538",
@@ -82,7 +87,7 @@
 					},
 					"provenance": {
 						"evidence_codes": ["obo:ECO_0000177", "obo:ECO_0001113"],
-						"properties": {
+						"experimental_evidence_specific": {
 							"HDRSIG" : "HD106_sig1"
 						},
 						"association_score": {

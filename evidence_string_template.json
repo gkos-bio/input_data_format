@@ -8,14 +8,18 @@
 
 	"biological_subject": {	
 		"about": "[Example: ensembl:ENSG00000127720 OR uniprot:Q13563] An array of Ensembl geneIDs or Uniprot protein IDs. Array = protein complex",
+		
 		"properties": {
 			"association_context": "[Example: cttvexp:gene ] Choose_one: cttvexp:gene, cttvexp:gene_allele, cttvexp:gene_in_ld_region, cttvexp:gene_variant, cttvexp:gene_in_epigenetic_regulation_complex, cttvexp:transcript, cttvexp:transcript_isoform, cttvexp:protein, cttvexp:protein_complex_homopolymer, cttvexp:protein_complex_heteropolymer, cttvexp:protein_isoform, cttvexp:protein_signaling_pathway",
-			"activity": "[Example: cttvexp:up] Choose one: cttvexp:up, cttvexp:down or cttvexp:unknown",
-			
+			"activity": "[Example: cttvexp:up] Choose one: cttvexp:up, cttvexp:down or cttvexp:unknown"
+		},
+		
+		"experimental_evidence_specific" : {
 			"key1" : "value1(string); these are specific to the type of evidence",
 			"key2" : "value2(string)",
 			"key3" : "value3(string)"
-		}	
+		}
+		
 	},
 
 	"provenance": {
@@ -68,11 +72,13 @@
 			"p-value": "If you can provide a p-value for this association, please provide it here"
 		},
 		
-		"properties": {
-
+		"experimental_evidence_specific": {
 			"key1" : "value1(string); these are specific to the type of evidence",
 			"key2" : "value2(string)",
-			"key3" : "value3(string)",
+			"key3" : "value3(string)"
+		},
+		
+		"properties": {
 			
 			"evidence_chain": {
 				"0": {
@@ -81,7 +87,7 @@
 					},
 					"provenance": {
 						"evidence_codes": ["","",""],
-						"properties": {
+						"experimental_evidence_specific": {
 							"key1" : "value1(string); these are specific to the type of evidence",
 							"key2" : "value2(string)",
 							"key3" : "value3(string)"
@@ -101,7 +107,7 @@
 					},
 					"provenance": {
 						"evidence_codes": ["","",""],
-						"properties": {
+						"experimental_evidence_specific": {
 							"key1" : "value1(string); these are specific to the type of evidence",
 							"key2" : "value2(string)",
 							"key3" : "value3(string)"
@@ -121,7 +127,7 @@
 					},
 					"provenance": {
 						"evidence_codes": ["","",""],
-						"properties": {
+						"experimental_evidence_specific": {
 							"key1" : "value1(string); these are specific to the type of evidence",
 							"key2" : "value2(string)",
 							"key3" : "value3(string)"
@@ -144,11 +150,12 @@
 		
 		"about": "[Example: efo:EFO_0000637] A disease or a phenotype expressed using its EFO term. This can be an array if there is an outcome of multiple phenotypes",
 		"properties": {
-			"biosamples": ["[Example: \"obo:UBERON_0000948\", \"obo:CL_0002553\"] Array: affected tissues and cells expressed using their EFO terms"],
-			
+			"biosamples": ["[Example: \"obo:UBERON_0000948\", \"obo:CL_0002553\"] Array: affected tissues and cells expressed using their EFO terms"]	
+		},
+		"experimental_evidence_specific" : {
 			"key1" : "value1(string); these are specific to the type of evidence",
 			"key2" : "value2(string)",
-			"key3" : "value3(string)"			
+			"key3" : "value3(string)"
 		}
 		
 	}

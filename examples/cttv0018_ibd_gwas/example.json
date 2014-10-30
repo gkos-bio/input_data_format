@@ -1,0 +1,104 @@
+{
+	"unique_db_ref": {
+		"studyID" : "myStudyID",
+		"Gene" : "ENSG9023124",
+		"Disease" : "efo:EFO_0000555",
+		"SNP" : "dbsnp:rs9802421"
+	},
+
+	"biological_subject": {	
+		"about": ["ensembl:ENSG9023124"],
+		"properties": {
+			"association_context": "cttvexp:gene_allele",
+			"activity": "cttvexp:unknown",
+			"Rank" : "3",
+			"Consequence" : "missense_variant",
+			"sift" : "tolerated(0.39)",
+			"XCDDP" : "6.546",
+			"Domain1" : "pfam:PF00619",
+			"Domain2" : "prosite:PS50209",
+			"Domain3" : "supfam:SSF47986"
+		}	
+	},
+
+	"provenance": {
+		
+		"date_asserted": "2014-09-11T10:59:43.511Z",
+		"is_associated": true,
+		
+		"type": {
+			
+			"literature": {
+				"true" : true,
+				"pubmed_refs": [10092561]
+			},
+			
+			"expert": {
+				"true" : true
+			},
+			
+			"database": {
+				"true" : true,
+				"id": "GWAS_catalog",
+				"version": "The version of this database"
+			}
+			
+		},
+
+		"urls": {
+			"linkouts": [
+				{"nice_name":"GWAS catalog study", "url": "http://www.genome.gov/gwastudies/myStudyLink"}
+			]
+		},
+
+		"properties": {
+			
+			"evidence_chain": {
+				"0": {
+					"biological_subject": {
+						"about": "ensembl:ENSG9023124" 	
+					},
+					"provenance": {
+						"evidence_codes": ["obo:ECO_0000053"],
+						"association_score": {
+							"probability": "0.0202556065553751"
+						},
+						"properties" : {
+							"a1 (risk allele)" : "C",
+							"a2 (other allele)" : "T",
+							"OR" : "0.8538",
+							"FREQ" : "0.5624",
+							"variation" : "9_139266496_C/T"
+						}
+						
+					},
+					"biological_object": {
+						"about": "dbsnp:rs9802421" 	
+					}
+				},
+				"1": {
+					"biological_subject": {
+						"about": "dbsnp:rs9802421" 	
+					},
+					"provenance": {
+						"evidence_codes": ["obo:ECO_0000177", "obo:ECO_0001113"],
+						"properties": {
+							"HDRSIG" : "HD106_sig1"
+						},
+						"association_score": {
+							"p-value": "1.316E-44"
+						}
+					},
+					"biological_object": {
+						"about": "efo:EFO_0000555" 	
+					}
+				}
+			}
+		}
+
+	},
+
+	"biological_object": {
+		"about": "efo:EFO_0000555"
+	}
+}

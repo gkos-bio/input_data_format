@@ -14,15 +14,16 @@
 
 - **cttvexp:gene_allele** involving the following gene:
 	1. 	**ensembl:ENSG9023124**
+		2. 	**pfam:PF00719** Affected PFAM domain
+		3. 	**prosite:PS50309** Affected prosite domain
+		4. 	**supfam:SSF47186** Affected superfamily domain
 
-- **cttvexp:loss_of_function** because a computational analysis predicted loss of function
+- **cttvexp:uknown** because sift prediction is that the mutation is tolerated(0.39)
 
 - **Evidence codes:**
 	1. 	**obo:ECO_0000177:** genomic context evidence (An evidence type that is based on the location of a gene, which gives rise to a gene product, within the genome.)
 	1. **obo:ECO_0001113** (point mutation evidence)	
-	1. **obo:ECO_0000053** computational combinatorial evidence (A type of combinatorial analysis where data are combined and evaluated by an algorithm.)	
-
-
+	1. **obo:ECO_0000053** computational combinatorial evidence (A type of combinatorial analysis where data are combined and evaluated by an algorithm.)
 
 - **Provenance types:** Provenance types are literature, expert and database since this is published GWAS data in the GWAS catalog
 	

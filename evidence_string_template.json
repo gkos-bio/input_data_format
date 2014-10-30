@@ -3,7 +3,6 @@
 		"about": "[Example: ensembl:ENSG00000127720 OR uniprot:Q13563] An array of Ensembl geneIDs or Uniprot protein IDs. Array = protein complex",
 		"properties": {
 			"association_context": "[Example: cttvexp:gene ] Choose_one: cttvexp:gene, cttvexp:gene_allele, cttvexp:gene_in_ld_region, cttvexp:gene_variant, cttvexp:gene_in_epigenetic_regulation_complex, cttvexp:transcript, cttvexp:transcript_isoform, cttvexp:protein, cttvexp:protein_complex_homopolymer, cttvexp:protein_complex_heteropolymer, cttvexp:protein_isoform, cttvexp:protein_signaling_pathway",
-			"associated_subjects": ["[Example: \"uniprot:P05067\", \"uniprot:Q9HC29\"] Array: If this association is also about other genes or proteins, please provide the additional Ensembl/Uniprot IDs as an array. Examples where you might need these are in gene_in_ld_region, gene_in_epigenetic_regulation_complex, protein_isoform, protein_pathway"],
 			"activity": "[Example: cttvexp:up] Choose one: cttvexp:up, cttvexp:down or cttvexp:unknown",
 			
 			"key1" : "value1(string); these are specific to the type of evidence",

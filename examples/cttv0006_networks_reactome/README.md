@@ -15,9 +15,7 @@ The SLC26A1 and 2 genes encode proteins that facilitate sulfate uptake into cell
 **Note:** This example is only for the disease outcome *achondrogenesis type 1B*. One would need to create a separate evidence instance for *atelosteogenesis type II*.
 
 1. **Target:** The protein SLC26A2
-3. **Evidence chain:**
-	- **Link 0:** SLC26A2 having 5 disease-associated mutations (for achondrogenesis type 1B)
-	- **Link 1:** The activity of this impaired protein in a pathway reaction
+3. **Evidence:** SLC26A2 having 5 disease-associated mutations (for achondrogenesis type 1B)
 4. **Disease:** The disease outcome 'achondrogenesis type 1B (ACG-1B; MIM:600972)' [A child term of chondrodysplasias]
 
 ### Resources used in this example:

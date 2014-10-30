@@ -1,4 +1,11 @@
 {
+	"unique_db_ref": {
+		"key" : "value; will discuss at hackathon; these are a unique set of key-val fields in the originalDB that could help us track the version of the association",
+		"key e.g. studyID" : "value",
+		"key e.g. probeID" : "value",
+		"key e.g. sampleID" : "value"
+	},
+
 	"biological_subject": {	
 		"about": "[Example: ensembl:ENSG00000127720 OR uniprot:Q13563] An array of Ensembl geneIDs or Uniprot protein IDs. Array = protein complex",
 		"properties": {

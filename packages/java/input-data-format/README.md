@@ -8,7 +8,8 @@ This folder is a Maven project (Java language) responsible for defining an objec
 It will also be possible to automatically generate a JSON schema, from the Java source code.
 
 Updating the JSON schema:
-It is intended that upon changing the schema (object model), we also update the project's version. To do this, update the <version/> value in pom.xml.
+
+It is intended that upon changing the schema (object model), we also update the project's version. To do this, update the 'version' value in pom.xml.
 
 The current developers on the project are Antonio Fabregat Mundo (fabregat), Oscar Forner-Martinez (oforner) and Edward Turner (eddturner).
 

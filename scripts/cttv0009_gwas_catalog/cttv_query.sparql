@@ -1,0 +1,23 @@
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX owl: <http://www.w3.org/2002/07/owl#>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+PREFIX dc: <http://purl.org/dc/elements/1.1/>
+PREFIX dcterms: <http://purl.org/dc/terms/>
+PREFIX oban: <http://purl.org/oban/>
+PREFIX ro: <http://www.obofoundry.org/ro/ro.owl#>
+PREFIX efo: <http://www.ebi.ac.uk/efo/>
+PREFIX gt: <http://rdf.ebi.ac.uk/terms/gwas/>
+PREFIX gd: <http://rdf.ebi.ac.uk/dataset/gwas/>
+
+SELECT DISTINCT ?snp ?pubmed_id ?date ?pvalue ?trait
+WHERE {
+  ?association a gt:TraitAssociation ;
+               gt:has_p_value ?pvalue ;
+               oban:has_subject ?snp ;
+               oban:has_object ?trait ;
+               ro:part_of ?study .
+  
+  ?study gt:has_pubmed_id ?pubmed_id .
+  ?study gt:has_publication_date ?date .
+}

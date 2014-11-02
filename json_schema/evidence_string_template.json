@@ -30,12 +30,11 @@
 		"type": {
 			
 			"literature": {
-				"true" : "boolean value; true or false",
 				"pubmed_refs": ["Array: Please provide the supporting pubmed IDs."]
 			},
 			
 			"expert": {
-				"true" : "boolean value; true or false",
+				"status" : "boolean value; true or false",
 				"statement": "Can you describe the association in a few sentences?",
 				"author": {
 					"name": "author's name",
@@ -46,7 +45,6 @@
 			},
 			
 			"database": {
-				"true" : "boolean value; true or false",
 				"id": "Please provide a unique database name e.g. Uniprot/Reactome/GWAS_catalog",
 				"version": "The version of this database",
 				"dbxref": {

@@ -11,6 +11,6 @@ data as CTTV evidence strings.
 
 1. **ontology** - The CTTV core association ontology.
 
-1. **scripts** - JSON-formatting/preparation scripts written by CTTV project members.
+1. **scripts** - JSON-preparation scripts written by CTTV project members.
 
 1. **packages** - Software packages written for generating CTTV "evidence string" objects

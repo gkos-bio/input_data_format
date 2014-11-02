@@ -1,7 +1,7 @@
 #!/usr/bin/perl
 #!/usr/bin/perl -d:ptkdb
 #
-# U-WMSERVICE\sxh87951,S-1-5-21-1229272821-1123561945-682003330-1629074
+# Samiul Hasan,S-1-5-21-1229272821-1123561945-682003330-1629074
 # Sun Nov  2 14:25:55 2014
 #
 # 
@@ -158,7 +158,7 @@ If you don't know what that means visit http://perl.com/
 
 =head1 AUTHOR
 
-Copyright (C) U-WMSERVICE\sxh87951,S-1-5-21-1229272821-1123561945-682003330-1629074 2014
+Copyright (C) Samiul Hasan,S-1-5-21-1229272821-1123561945-682003330-1629074 2014
 All rights reserved
 
 =cut

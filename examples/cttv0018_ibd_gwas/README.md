@@ -10,7 +10,7 @@
 
 ### Resources used in this example:
 
-**Note:** All namespaces, other than "cttv:, cttvexp:" are from [identifers.org / MIRIAM registry](http://www.ebi.ac.uk/miriam/main/collections/)
+**Note:** All namespaces, other than "[cttv:, cttvexp](../../json_schema/cttv_uris_namespaces.md):" are from [identifers.org / MIRIAM registry](http://www.ebi.ac.uk/miriam/main/collections/)
 
 - **cttvexp:gene_allele** involving the following gene:
 	1. 	**ensembl:ENSG9023124**
@@ -20,12 +20,12 @@
 
 - **cttvexp:uknown** because sift prediction is that the mutation is tolerated(0.39)
 
-- **Evidence codes:**
+- [**Evidence codes:**](../../json_schema/evidence_codes.md)
 	1. 	**obo:ECO_0000177:** genomic context evidence (An evidence type that is based on the location of a gene, which gives rise to a gene product, within the genome.)
 	1. **obo:ECO_0001113** (point mutation evidence)	
 	1. **obo:ECO_0000053** computational combinatorial evidence (A type of combinatorial analysis where data are combined and evaluated by an algorithm.)
 
-- **Provenance types:** Provenance types are literature, expert and database since this is (assumed) published GWAS data in the GWAS catalog
+- [**Provenance types:**](../../json_schema/cttv_uris_namespaces.md) Provenance types are literature, expert and database since this is (assumed) published GWAS data in the GWAS catalog
 	
 - **dbsnp:rs9802421** The dbSNP resource ID for the predicted SNP
 
@@ -34,4 +34,4 @@
 	1. **efo:EFO_0000555** The EFO resource ID for IBD
 	
 ### GWAS catalog entry points:
-- **Study in GWAS catalog:** http://www.genome.gov/gwastudies/myStudyLink
+- **Study in GWAS catalog (mockup example):** http://www.genome.gov/gwastudies/myStudyLink

@@ -2,15 +2,15 @@
 
 Various files describing how to format data as CTTV evidence strings:
 
-1. **examples**	- Example instances of json strings produced by different CTTV pipeline projects.
-1. **json_schema** - The primary json schema against which json instances will be validated.
-1. **ontology** - The CTTV core association ontology.
-1. **scripts** - JSON-preparation scripts written by CTTV project members.
-1. **packages** - Software packages written for generating CTTV "evidence string" objects
+1. [**examples**](./examples/)	- Example instances of json strings produced by different CTTV pipeline projects.
+1. [**json_schema**](./json_schema/) - The primary json schema against which json instances will be validated.
+1. [**ontology**](./ontology/) - The CTTV core association ontology.
+1. [**scripts**](./scripts/) - JSON-preparation scripts written by CTTV project members.
+1. [**packages**](./packages/) - Software packages written for generating CTTV "evidence string" objects
 
 ## What is the CTTV evidence string format?
 
-** Samiul Hasan (samiul.x.hasanATgsk.com) **
+**Samiul Hasan (samiul.x.hasanATgsk.com)**
 
 #### Aim
 

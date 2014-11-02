@@ -1,15 +1,6 @@
 # Namespace prefixes and resources in CTTV ontology
 **These are all the resources specified in the current CTTV core ontology:**
 
-## CTTV core: For internal CTTV-core-ontology mapping:
-resource | comment | Where to use in JSON | prefix | url
-:-------:|:------:|:---:|:-------:|:-------------------:
-**cttv:DatabaseProvenance** | **Database provenance. Mapped to {provenance}{type} in CTTV json schema.** | CTTV core: For internal CTTV-core-ontology mapping | cttv | http://www.targetvalidation.org/cttv_core/DatabaseProvenance
-**cttv:LiteratureProvenance** | **Literature provenance. Mapped to {provenance}{type} in CTTV json schema.** | CTTV core: For internal CTTV-core-ontology mapping | cttv | http://www.targetvalidation.org/cttv_core/LiteratureProvenance
-**cttv:ExpertProvenance** | **Expert provenance. Mapped to {provenance}{type} in CTTV json schema.** | CTTV core: For internal CTTV-core-ontology mapping | cttv | http://www.targetvalidation.org/cttv_core/ExpertProvenance
-**cttv:GWAS_SNP_to_trait_association** | - | CTTV core: For internal CTTV-core-ontology mapping | cttv | http://www.targetvalidation.org/cttv_core/GWAS_SNP_to_trait_association
-**cttv:gene_to_disease_association** | - | CTTV core: For internal CTTV-core-ontology mapping | cttv | http://www.targetvalidation.org/cttv_core/gene_to_disease_association
-**cttv:disease_to_phenotype_association** | - | CTTV core: For internal CTTV-core-ontology mapping | cttv | http://www.targetvalidation.org/cttv_core/disease_to_phenotype_association
 ## CTTV experiment: For association_context OR activity fields:
 resource | comment | Where to use in JSON | prefix | url
 :-------:|:------:|:---:|:-------:|:-------------------:
@@ -48,3 +39,14 @@ resource | comment | Where to use in JSON | prefix | url
 **cttvexp:transcript_evidence** | **superclass of transcript evidence types. Please choose one of its children classes.** | CTTV experiment: For association_context OR activity fields | cttvexp | http://www.targetvalidation.org/cttv_core/experiment/transcript_evidence
 **cttvexp:transcript_isoform** | **The target is a transcript isoform.** | CTTV experiment: For association_context OR activity fields | cttvexp | http://www.targetvalidation.org/cttv_core/experiment/transcript_isoform
 **cttvexp:gene** | **target is a single gene** | CTTV experiment: For association_context OR activity fields | cttvexp | http://www.targetvalidation.org/cttv_core/experiment/gene
+
+## CTTV core: For internal CTTV-core-ontology mapping:
+resource | comment | Where to use in JSON | prefix | url
+:-------:|:------:|:---:|:-------:|:-------------------:
+**cttv:DatabaseProvenance** | **Database provenance. Mapped to {provenance}{type} in CTTV json schema.** | CTTV core: For internal CTTV-core-ontology mapping | cttv | http://www.targetvalidation.org/cttv_core/DatabaseProvenance
+**cttv:LiteratureProvenance** | **Literature provenance. Mapped to {provenance}{type} in CTTV json schema.** | CTTV core: For internal CTTV-core-ontology mapping | cttv | http://www.targetvalidation.org/cttv_core/LiteratureProvenance
+**cttv:ExpertProvenance** | **Expert provenance. Mapped to {provenance}{type} in CTTV json schema.** | CTTV core: For internal CTTV-core-ontology mapping | cttv | http://www.targetvalidation.org/cttv_core/ExpertProvenance
+**cttv:GWAS_SNP_to_trait_association** | - | CTTV core: For internal CTTV-core-ontology mapping | cttv | http://www.targetvalidation.org/cttv_core/GWAS_SNP_to_trait_association
+**cttv:gene_to_disease_association** | - | CTTV core: For internal CTTV-core-ontology mapping | cttv | http://www.targetvalidation.org/cttv_core/gene_to_disease_association
+**cttv:disease_to_phenotype_association** | - | CTTV core: For internal CTTV-core-ontology mapping | cttv | http://www.targetvalidation.org/cttv_core/disease_to_phenotype_association
+

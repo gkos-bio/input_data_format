@@ -2,17 +2,20 @@
 **These are all the resources specified in the current CTTV core ontology:**
 
 ## CTTV core: For internal database mapping:
+
 resource | prefix | url | comment | Where to use in JSON
---------|--------|--------|--------
+:-------:|:------:|:---:|:-------:|:-------------------:
 cttv:DatabaseProvenance | cttv | http://www.targetvalidation.org/cttv_core/DatabaseProvenance | - | CTTV core: For internal database mapping
 cttv:LiteratureProvenance | cttv | http://www.targetvalidation.org/cttv_core/LiteratureProvenance | - | CTTV core: For internal database mapping
 cttv:ExpertProvenance | cttv | http://www.targetvalidation.org/cttv_core/ExpertProvenance | - | CTTV core: For internal database mapping
 cttv:GWAS_SNP_to_trait_association | cttv | http://www.targetvalidation.org/cttv_core/GWAS_SNP_to_trait_association | - | CTTV core: For internal database mapping
 cttv:gene_to_disease_association | cttv | http://www.targetvalidation.org/cttv_core/gene_to_disease_association | - | CTTV core: For internal database mapping
 cttv:disease_to_phenotype_association | cttv | http://www.targetvalidation.org/cttv_core/disease_to_phenotype_association | - | CTTV core: For internal database mapping
+
 ## CTTV experiment: For association_context and activity fields:
+
 resource | prefix | url | comment | Where to use in JSON
---------|--------|--------|--------
+:-------:|:------:|:---:|:-------:|:-------------------:
 cttvexp:protein_nucleic_acid_complex | cttvexp | http://www.targetvalidation.org/cttv_core/experiment/protein_nucleic_acid_complex | Target is a complex consisting of both protein and nucleic-acid components (e.g., ribosome) | CTTV experiment: For association_context and activity fields
 cttvexp:protein_complex_homopolymer | cttvexp | http://www.targetvalidation.org/cttv_core/experiment/protein_complex_homopolymer | - | CTTV experiment: For association_context and activity fields
 cttvexp:increased_transcript_level | cttvexp | http://www.targetvalidation.org/cttv_core/experiment/increased_transcript_level | - | CTTV experiment: For association_context and activity fields

@@ -2,12 +2,12 @@
 
 Tech leads, please update this document if you start using any new evidence codes.
 
-1. ###Rare2Common (CTTV005)
+### 1. Rare2Common (CTTV005)
 **Tech lead: jamesmalone**
 
 Evidence codes: NA since this is an ontology project.
 
-1. ###Networks - Reactome (CTTV006)
+### 2. Networks - Reactome (CTTV006)
 **Tech lead: fabregat**
 
 | Evidence code | Label | Description |
@@ -15,7 +15,7 @@ Evidence codes: NA since this is an ontology project.
 | obo:ECO_0000205 |curator inference|An evidence type that is based on conclusions drawn by a curator.
 | obo:ECO_0000001 | inference from background scientific knowledge | A curator inference that links the current annotation to a different evidence-based annotation via background knowledge of the curator.|
 
-1. ### Networks - Intact (CTTV006)
+### 3. Networks - Intact (CTTV006)
 **Tech lead: maitesin**
 
 | Evidence code | Label | Description |
@@ -23,7 +23,7 @@ Evidence codes: NA since this is an ontology project.
 | obo:ECO_0000205 |curator inference|An evidence type that is based on conclusions drawn by a curator.
 | obo:ECO_0000001 | inference from background scientific knowledge | A curator inference that links the current annotation to a different evidence-based annotation via background knowledge of the curator.|
 
-1. ### ChEMBL (CTTV008)
+### 4. ChEMBL (CTTV008)
 **Tech lead: mark-davies**
 
 | Evidence code | Label | Description |
@@ -32,7 +32,7 @@ Evidence codes: NA since this is an ontology project.
 | obo:ECO_0000001 | inference from background scientific knowledge | A curator inference that links the current annotation to a different evidence-based annotation via background knowledge of the curator.|
 | obo:ECO_0000360 | biological target-disease association via drug |  - |
 
-1. ### GWAS catalog (CTTV009)
+### 5. GWAS catalog (CTTV009)
 **Tech lead: tburdett**
 
 | Evidence code | Label | Description |
@@ -43,7 +43,7 @@ Evidence codes: NA since this is an ontology project.
 |obo:ECO_0000053 | computational combinatorial evidence | A type of combinatorial analysis where data are combined and evaluated by an algorithm.|
 
 
-1. ### Tissue specificity (CTTV010)
+### 6. Tissue specificity (CTTV010)
 **Tech lead: mkeays**
 
 | Evidence code | Label | Description |
@@ -54,7 +54,7 @@ Evidence codes: NA since this is an ontology project.
 |obo:ECO_0000359 | differential geneset expression from RNA-seq experiment | Gene set enrichment analysis (GSEA) shows that a functional classification (e.g. reaction pathway, Gene Ontology term, etc) has statistically significant over-representation in a group of genes showing differential expression when assayed using an RNA sequencing platform.|
 
 
-1. ### Uniprot (CTTV011)
+### 7. Uniprot (CTTV011)
 **Tech lead: eddturner**
 
 | Evidence code | Label | Description |
@@ -62,7 +62,7 @@ Evidence codes: NA since this is an ontology project.
 | obo:ECO_0000205 |curator inference|An evidence type that is based on conclusions drawn by a curator.
 | obo:ECO_0000001 | inference from background scientific knowledge | A curator inference that links the current annotation to a different evidence-based annotation via background knowledge of the curator.|
 
-1. ### Variation (CTTV012)
+### 8. Variation (CTTV012)
 **Tech lead: javild**
 
 | Evidence code | Label | Description |
@@ -72,7 +72,7 @@ Evidence codes: NA since this is an ontology project.
 |obo:ECO_0000205 | curator inference | An evidence type that is based on conclusions drawn by a curator.|
 |obo:ECO_0000053 | computational combinatorial evidence | A type of combinatorial analysis where data are combined and evaluated by an algorithm.|
 
-1. ### IBD_GWAS (CTTV018)
+### 9. IBD_GWAS (CTTV018)
 **Tech lead: slwest**
 
 | Evidence code | Label | Description |

@@ -10,7 +10,7 @@
 
 ### Resources used in this example:
 
-**Note:** All namespaces, other than "cttv:, cttvexp:" are from [identifers.org](http://identifiers.org/)
+**Note:** All namespaces, other than "[cttv:, cttvexp](../../json_schema/cttv_uris_namespaces.md):" are from [identifers.org / MIRIAM registry](http://www.ebi.ac.uk/miriam/main/collections/)
 
 - **cttvexp:protein_complex_heteropolymer** comprised of 3 protein subunits:
 	1. 	**uniprot:P25100**
@@ -18,12 +18,12 @@
 	1. 	**uniprot:P35368**
 - **cttvexp:down** because the drug is an antagonist
 
-- **Evidence codes:**
+- [**Evidence codes:**](../../json_schema/evidence_codes.md)
 	1. **obo:ECO_0000360** Evidence code for: biological target-disease 
 	association via drug
 	1. **obo:ECO_0000205** Evidence code for: curator inference
 
-- **Provenance types:** Provenance types are literature, expert and database since this is curated literature evidence from the ChEMBL database.
+- [**Provenance types:**](../../json_schema/cttv_uris_namespaces.md) Provenance types are literature, expert and database since this is curated literature evidence from the ChEMBL database.
 	
 - **chembl:CHEMBL2:** The ChEMBL resource ID for Prazosin
 

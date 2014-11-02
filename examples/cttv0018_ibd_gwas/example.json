@@ -34,16 +34,14 @@
 		"type": {
 			
 			"literature": {
-				"true" : true,
 				"pubmed_refs": [10092561]
 			},
 			
 			"expert": {
-				"true" : true
+				"status" : true
 			},
 			
 			"database": {
-				"true" : true,
 				"id": "GWAS_catalog",
 				"version": "The version of this database"
 			}

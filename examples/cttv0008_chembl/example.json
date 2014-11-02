@@ -3,29 +3,27 @@
 		"about": ["uniprot:P25100", "uniprot:P35348", "uniprot:P35368"],
 		"properties": {
 			"association_context": "cttvexp:protein_complex_heteropolymer",
-			"activity": "cttvexp:down"	
+			"activity": "cttvexp:drug_negative_modulator"	
 		}	
 	},
 
 	"provenance": {
 		
 		"date_asserted": "2014-09-11T10:59:43.511Z",
-		"is_associated": 1,
+		"is_associated": true,
 		"evidence_codes": ["obo:ECO_0000360", "obo:ECO_0000205"],
 		
 		"type": {
 			
 			"literature": {
-				"true" : 1,
 				"pubmed_refs": [9135028,9276013,7731013,2879919,2886664,2884316,2863377,2886664]
 			},
 			
 			"expert": {
-				"true" : 1
+				"status" : true
 			},
 			
 			"database": {
-				"true" : 1,
 				"id": "ChEMBL",
 				"version": "19"
 			}

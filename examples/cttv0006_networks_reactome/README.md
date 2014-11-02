@@ -20,18 +20,18 @@ The SLC26A1 and 2 genes encode proteins that facilitate sulfate uptake into cell
 
 ### Resources used in this example:
 
-**Note:** All namespaces, other than "cttv:, cttvexp:" are from [identifers.org](http://identifiers.org/)
+**Note:** All namespaces, other than "[cttv:, cttvexp](../../json_schema/cttv_uris_namespaces.md):" are from [identifers.org / MIRIAM registry](http://www.ebi.ac.uk/miriam/main/collections/)
 
 - **cttvexp:protein**:
 	- 	**uniprot:P50443** (SLC26A2)
 
 - **cttvexp:loss_of_function** because normal biological activity of SLC26A2 is impaired due to mutations.
 
-- **Evidence codes:**
+- [**Evidence codes:**](../../json_schema/evidence_codes.md)
 	1. **obo:ECO_0000205** Evidence code for: curator inference
 
 
-- **Provenance types:** Provenance types are literature, expert and database since this is curated literature evidence from the Reactome database.
+- [**Provenance types:**](../../json_schema/cttv_uris_namespaces.md) Provenance types are literature, expert and database since this is curated literature evidence from the Reactome database.
 
 - **EFO terms:**
 	1. **obo:ECO_0001113** Evidence code for: point mutation evidence

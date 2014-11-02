@@ -308,7 +308,7 @@
 
     <owl:Class rdf:about="&cttvcore;/experiment/protein">
         <rdfs:subClassOf rdf:resource="&cttvcore;/experiment/protein_evidence"/>
-        <rdfs:comment>Target is a single protein chain </rdfs:comment>
+        <rdfs:comment>Target is a single protein chain</rdfs:comment>
     </owl:Class>
     
 
@@ -390,7 +390,7 @@
 
     <owl:Class rdf:about="&cttvcore;/experiment/selectivity_group">
         <rdfs:subClassOf rdf:resource="&cttvcore;/experiment/protein_evidence"/>
-        <rdfs:comment>Target is a pair of proteins for which the selectivity has been assessed </rdfs:comment>
+        <rdfs:comment>Target is a pair of proteins for which the selectivity has been assessed</rdfs:comment>
     </owl:Class>
     
 

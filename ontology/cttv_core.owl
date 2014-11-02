@@ -72,14 +72,6 @@
     
 
 
-    <!-- http://purl.org/oban/http://www.targetvalidation.org/cttv_core/experiment/transcript_isoform -->
-
-    <owl:Class rdf:about="http://purl.org/oban/&cttvcore;/experiment/transcript_isoform">
-        <rdfs:subClassOf rdf:resource="&cttvcore;/experiment/transcript_evidence"/>
-    </owl:Class>
-    
-
-
     <!-- http://www.targetvalidation.org/cttv_core/DatabaseProvenance -->
 
     <owl:Class rdf:about="&cttvcore;/DatabaseProvenance">
@@ -402,6 +394,14 @@
 
     <owl:Class rdf:about="&cttvcore;/experiment/transcript_evidence">
         <rdfs:subClassOf rdf:resource="&cttvcore;/experiment/experiment"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.targetvalidation.org/cttv_core/experiment/transcript_isoform -->
+
+    <owl:Class rdf:about="&cttvcore;/experiment/transcript_isoform">
+        <rdfs:subClassOf rdf:resource="&cttvcore;/experiment/transcript_evidence"/>
     </owl:Class>
     
 

@@ -1,262 +1,258 @@
 {
-  "type" : "object",
-  "id" : "urn:jsonschema:org:cttv:input:model:EvidenceString",
-  "properties" : {
-    "provenance" : {
-      "type" : "object",
-      "id" : "urn:jsonschema:org:cttv:input:model:Provenance",
-      "properties" : {
-        "associated_score" : {
-          "type" : "object",
-          "id" : "urn:jsonschema:org:cttv:input:model:AssociationScore",
-          "properties" : {
-            "p-value" : {
-              "type" : "integer"
+  "type": "object",
+  "id": "urn:jsonschema:org:cttv:input:model:EvidenceString",
+  "properties": {
+    "provenance": {
+      "type": "object",
+      "id": "urn:jsonschema:org:cttv:input:model:Provenance",
+      "properties": {
+        "associated_score": {
+          "type": "object",
+          "id": "urn:jsonschema:org:cttv:input:model:AssociationScore",
+          "properties": {
+            "p-value": {
+              "type": "integer"
             },
-            "probability" : {
-              "type" : "integer"
+            "probability": {
+              "type": "integer"
             }
           }
         },
-        "urls" : {
-          "type" : "object",
-          "id" : "urn:jsonschema:org:cttv:input:model:ProvenanceUrls",
-          "properties" : {
-            "biojs" : {
-              "type" : "string"
+        "urls": {
+          "type": "object",
+          "id": "urn:jsonschema:org:cttv:input:model:ProvenanceUrls",
+          "properties": {
+            "biojs": {
+              "type": "string"
             },
-            "linkouts" : {
-              "type" : "array",
-              "items" : {
-                "type" : "object",
-                "id" : "urn:jsonschema:org:cttv:input:model:LinkOut",
-                "properties" : {
-                  "nice_name" : {
-                    "type" : "string"
+            "linkouts": {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "id": "urn:jsonschema:org:cttv:input:model:LinkOut",
+                "properties": {
+                  "nice_name": {
+                    "type": "string"
                   },
-                  "url" : {
-                    "type" : "string"
+                  "url": {
+                    "type": "string"
                   }
                 }
               }
             }
           }
         },
-        "experimental_evidence_specific" : {
-          "type" : "object",
-          "id" : "urn:jsonschema:org:cttv:input:model:ExperimentalEvidenceSpecific",
-          "properties" : {
-            "evidence_chain" : {
-              "type" : "object",
-              "additionalProperties" : {
-                "type" : "object",
-                "id" : "urn:jsonschema:org:cttv:input:model:ChainEvidence",
-                "properties" : {
-                  "provenance" : {
-                    "type" : "object",
-                    "id" : "urn:jsonschema:org:cttv:input:model:ChainEvidenceProvenance",
-                    "properties" : {
-                      "association_score" : {
-                        "type" : "object",
-                        "$ref" : "urn:jsonschema:org:cttv:input:model:AssociationScore"
+        "experimental_evidence_specific": {
+          "type": "object",
+          "id": "urn:jsonschema:org:cttv:input:model:ExperimentalEvidenceSpecific",
+          "properties": {
+            "evidence_chain": {
+              "type": "object",
+              "additionalProperties": {
+                "type": "object",
+                "id": "urn:jsonschema:org:cttv:input:model:ChainEvidence",
+                "properties": {
+                  "provenance": {
+                    "type": "object",
+                    "id": "urn:jsonschema:org:cttv:input:model:ChainEvidenceProvenance",
+                    "properties": {
+                      "association_score": {
+                        "type": "object",
+                        "$ref": "urn:jsonschema:org:cttv:input:model:AssociationScore"
                       },
-                      "experimental_evidence_specific" : {
-                        "type" : "object",
-                        "additionalProperties" : {
-                          "type" : "string"
+                      "experimental_evidence_specific": {
+                        "type": "object",
+                        "additionalProperties": {
+                          "type": "string"
                         }
                       },
-                      "evidence_codes" : {
-                        "type" : "array",
-                        "items" : {
-                          "type" : "string"
+                      "evidence_codes": {
+                        "type": "array",
+                        "items": {
+                          "type": "string"
                         }
                       }
                     }
                   },
-                  "biological_object" : {
-                    "type" : "object",
-                    "id" : "urn:jsonschema:org:cttv:input:model:ChainBiologicalObject",
-                    "properties" : {
-                      "about" : {
-                        "type" : "string"
+                  "biological_object": {
+                    "type": "object",
+                    "id": "urn:jsonschema:org:cttv:input:model:ChainBiologicalObject",
+                    "properties": {
+                      "about": {
+                        "type": "string"
                       }
                     }
                   },
-                  "biological_subject" : {
-                    "type" : "object",
-                    "id" : "urn:jsonschema:org:cttv:input:model:ChainBiologicalSubject",
-                    "properties" : {
-                      "about" : {
-                        "type" : "string"
+                  "biological_subject": {
+                    "type": "object",
+                    "id": "urn:jsonschema:org:cttv:input:model:ChainBiologicalSubject",
+                    "properties": {
+                      "about": {
+                        "type": "string"
                       }
                     }
                   }
                 }
               }
             },
-            "properties" : {
-              "type" : "object",
-              "additionalProperties" : {
-                "type" : "string"
+            "properties": {
+              "type": "object",
+              "additionalProperties": {
+                "type": "string"
               }
             }
           }
         },
-        "is_associated" : {
-          "type" : "boolean"
+        "is_associated": {
+          "type": "boolean"
         },
-        "date_asserted" : {
-          "type" : "integer",
-          "format" : "UTC_MILLISEC"
+        "date_asserted": {
+          "type": "string"
         },
-        "type" : {
-          "type" : "object",
-          "id" : "urn:jsonschema:org:cttv:input:model:ProvenanceType",
-          "properties" : {
-            "expert" : {
-              "type" : "object",
-              "id" : "urn:jsonschema:org:cttv:input:model:ProvenanceExpert",
-              "properties" : {
-                "statement" : {
-                  "type" : "string"
+        "type": {
+          "type": "object",
+          "id": "urn:jsonschema:org:cttv:input:model:ProvenanceType",
+          "properties": {
+            "expert": {
+              "type": "object",
+              "id": "urn:jsonschema:org:cttv:input:model:ProvenanceExpert",
+              "properties": {
+                "statement": {
+                  "type": "string"
                 },
-                "author" : {
-                  "type" : "object",
-                  "id" : "urn:jsonschema:org:cttv:input:model:ProvenanceAuthor",
-                  "properties" : {
-                    "organization" : {
-                      "type" : "string"
+                "author": {
+                  "type": "object",
+                  "id": "urn:jsonschema:org:cttv:input:model:ProvenanceAuthor",
+                  "properties": {
+                    "organization": {
+                      "type": "string"
                     },
-                    "email" : {
-                      "type" : "string"
+                    "email": {
+                      "type": "string"
                     },
-                    "name" : {
-                      "type" : "string"
+                    "name": {
+                      "type": "string"
                     }
                   }
                 },
-                "true" : {
-                  "type" : "boolean"
+                "true": {
+                  "type": "boolean"
                 }
               }
             },
-            "literature" : {
-              "type" : "object",
-              "id" : "urn:jsonschema:org:cttv:input:model:ProvenanceLiterature",
-              "properties" : {
-                "true" : {
-                  "type" : "integer"
+            "literature": {
+              "type": "object",
+              "id": "urn:jsonschema:org:cttv:input:model:ProvenanceLiterature",
+              "properties": {
+                "true": {
+                  "type": "boolean"
                 },
-                "pubmed_refs" : {
-                  "type" : "array",
-                  "items" : {
-                    "type" : "integer"
+                "pubmed_refs": {
+                  "type": "array",
+                  "items": {
+                    "type": "integer"
                   }
                 }
               }
             },
-            "database" : {
-              "type" : "object",
-              "id" : "urn:jsonschema:org:cttv:input:model:ProvenanceDatabase",
-              "properties" : {
-                "dbxref" : {
-                  "type" : "object",
-                  "id" : "urn:jsonschema:org:cttv:input:model:ProvenanceDatabaseXRef",
-                  "properties" : {
-                    "id" : {
-                      "type" : "string"
+            "database": {
+              "type": "object",
+              "id": "urn:jsonschema:org:cttv:input:model:ProvenanceDatabase",
+              "properties": {
+                "dbxref": {
+                  "type": "object",
+                  "id": "urn:jsonschema:org:cttv:input:model:ProvenanceDatabaseXRef",
+                  "properties": {
+                    "id": {
+                      "type": "string"
                     },
-                    "url" : {
-                      "type" : "string"
+                    "url": {
+                      "type": "string"
                     },
-                    "version" : {
-                      "type" : "string"
+                    "version": {
+                      "type": "string"
                     }
                   }
                 },
-                "id" : {
-                  "type" : "string"
+                "id": {
+                  "type": "string"
                 },
-                "true" : {
-                  "type" : "integer"
+                "true": {
+                  "type": "boolean"
                 },
-                "version" : {
-                  "type" : "string"
+                "version": {
+                  "type": "string"
                 }
               }
             }
           }
         },
-        "evidence_codes" : {
-          "type" : "array",
-          "items" : {
-            "type" : "string"
+        "evidence_codes": {
+          "type": "array",
+          "items": {
+            "type": "string"
           }
         }
       }
     },
-    "biological_object" : {
-      "type" : "object",
-      "id" : "urn:jsonschema:org:cttv:input:model:BiologicalObject",
-      "properties" : {
-        "about" : {
-          "type" : "array",
-          "items" : {
-            "type" : "string"
-          }
+    "biological_object": {
+      "type": "object",
+      "id": "urn:jsonschema:org:cttv:input:model:BiologicalObject",
+      "properties": {
+        "about": {
+          "type": "string"
         },
-        "properties" : {
-          "type" : "object",
-          "id" : "urn:jsonschema:org:cttv:input:model:BiologicalObjectProperties",
-          "properties" : {
-            "biosamples" : {
-              "type" : "array",
-              "items" : {
-                "type" : "string"
+        "properties": {
+          "type": "object",
+          "id": "urn:jsonschema:org:cttv:input:model:BiologicalObjectProperties",
+          "properties": {
+            "biosamples": {
+              "type": "array",
+              "items": {
+                "type": "string"
               }
             },
-            "experimental_evidence_specific" : {
-              "type" : "object",
-              "additionalProperties" : {
-                "type" : "string"
+            "experimental_evidence_specific": {
+              "type": "object",
+              "additionalProperties": {
+                "type": "string"
               }
             }
           }
         }
       }
     },
-    "biological_subject" : {
-      "type" : "object",
-      "id" : "urn:jsonschema:org:cttv:input:model:BiologicalSubject",
-      "properties" : {
-        "about" : {
-          "type" : "array",
-          "items" : {
-            "type" : "string"
+    "biological_subject": {
+      "type": "object",
+      "id": "urn:jsonschema:org:cttv:input:model:BiologicalSubject",
+      "properties": {
+        "about": {
+          "type": "array",
+          "items": {
+            "type": "string"
           }
         },
-        "properties" : {
-          "type" : "object",
-          "id" : "urn:jsonschema:org:cttv:input:model:BiologicalSubjectProperties",
-          "properties" : {
-            "association_context" : {
-              "type" : "string"
+        "properties": {
+          "type": "object",
+          "id": "urn:jsonschema:org:cttv:input:model:BiologicalSubjectProperties",
+          "properties": {
+            "association_context": {
+              "type": "string"
             },
-            "experimental_evidence_specific" : {
-              "type" : "object",
-              "additionalProperties" : {
-                "type" : "string"
+            "experimental_evidence_specific": {
+              "type": "object",
+              "additionalProperties": {
+                "type": "string"
               }
             },
-            "associated_subjects" : {
-              "type" : "array",
-              "items" : {
-                "type" : "string"
+            "associated_subjects": {
+              "type": "array",
+              "items": {
+                "type": "string"
               }
             },
-            "activity" : {
-              "type" : "string"
+            "activity": {
+              "type": "string"
             }
           }
         }
@@ -264,4 +260,3 @@
     }
   }
 }
-

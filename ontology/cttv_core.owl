@@ -77,6 +77,7 @@
     <owl:Class rdf:about="&cttvcore;/DatabaseProvenance">
         <rdfs:label>database provenance</rdfs:label>
         <rdfs:subClassOf rdf:resource="http://purl.org/oban/provenance"/>
+        <rdfs:comment>Database provenance. Mapped to {provenance}{type} in CTTV json schema.</rdfs:comment>
     </owl:Class>
     
 
@@ -86,6 +87,7 @@
     <owl:Class rdf:about="&cttvcore;/ExpertProvenance">
         <rdfs:label>expert provenance</rdfs:label>
         <rdfs:subClassOf rdf:resource="http://purl.org/oban/provenance"/>
+        <rdfs:comment>Expert provenance. Mapped to {provenance}{type} in CTTV json schema.</rdfs:comment>
     </owl:Class>
     
 
@@ -104,6 +106,7 @@
     <owl:Class rdf:about="&cttvcore;/LiteratureProvenance">
         <rdfs:label>literature provenance</rdfs:label>
         <rdfs:subClassOf rdf:resource="http://purl.org/oban/provenance"/>
+        <rdfs:comment>Literature provenance. Mapped to {provenance}{type} in CTTV json schema.</rdfs:comment>
     </owl:Class>
     
 
@@ -145,6 +148,7 @@
 
     <owl:Class rdf:about="&cttvcore;/experiment/decreased_transcript_level">
         <rdfs:subClassOf rdf:resource="&cttvcore;/experiment/down"/>
+        <rdfs:comment>Transcript level is reduced in a RNA experiment.</rdfs:comment>
     </owl:Class>
     
 
@@ -153,6 +157,7 @@
 
     <owl:Class rdf:about="&cttvcore;/experiment/decreased_translational_product_level">
         <rdfs:subClassOf rdf:resource="&cttvcore;/experiment/down"/>
+        <rdfs:comment>Decreased traslation / decreased protein quantity measured in an experiment.</rdfs:comment>
     </owl:Class>
     
 
@@ -195,6 +200,7 @@
 
     <owl:Class rdf:about="&cttvcore;/experiment/gain_of_function">
         <rdfs:subClassOf rdf:resource="&cttvcore;/experiment/up"/>
+        <rdfs:comment>gain of function detected in a genetics experiment.</rdfs:comment>
     </owl:Class>
     
 
@@ -203,7 +209,7 @@
 
     <owl:Class rdf:about="&cttvcore;/experiment/gene">
         <rdfs:subClassOf rdf:resource="&cttvcore;/experiment/gene_evidence"/>
-        <rdfs:comment>a single gene</rdfs:comment>
+        <rdfs:comment>target is a single gene</rdfs:comment>
     </owl:Class>
     
 
@@ -212,6 +218,7 @@
 
     <owl:Class rdf:about="&cttvcore;/experiment/gene_allele">
         <rdfs:subClassOf rdf:resource="&cttvcore;/experiment/gene_evidence"/>
+        <rdfs:comment>target is a gene allele</rdfs:comment>
     </owl:Class>
     
 
@@ -220,6 +227,7 @@
 
     <owl:Class rdf:about="&cttvcore;/experiment/gene_evidence">
         <rdfs:subClassOf rdf:resource="&cttvcore;/experiment/experiment"/>
+        <rdfs:comment>superclass of gene evidence types. Please choose one of its children classes.</rdfs:comment>
     </owl:Class>
     
 
@@ -228,6 +236,7 @@
 
     <owl:Class rdf:about="&cttvcore;/experiment/gene_in_LD_region">
         <rdfs:subClassOf rdf:resource="&cttvcore;/experiment/gene_evidence"/>
+        <rdfs:comment>target is a set of genes mapped to a specific LD region.</rdfs:comment>
     </owl:Class>
     
 
@@ -236,7 +245,7 @@
 
     <owl:Class rdf:about="&cttvcore;/experiment/gene_in_epigenetic_regulation_complex">
         <rdfs:subClassOf rdf:resource="&cttvcore;/experiment/gene_evidence"/>
-        <rdfs:comment>a set of genes predicted to participate in an epigenetic regulation network.</rdfs:comment>
+        <rdfs:comment>target is a set of genes predicted to participate in an epigenetic regulation network.</rdfs:comment>
     </owl:Class>
     
 
@@ -245,6 +254,7 @@
 
     <owl:Class rdf:about="&cttvcore;/experiment/gene_variant">
         <rdfs:subClassOf rdf:resource="&cttvcore;/experiment/gene_evidence"/>
+        <rdfs:comment>target is a gene variant.</rdfs:comment>
     </owl:Class>
     
 
@@ -253,6 +263,7 @@
 
     <owl:Class rdf:about="&cttvcore;/experiment/increased_transcript_level">
         <rdfs:subClassOf rdf:resource="&cttvcore;/experiment/up"/>
+        <rdfs:comment>Transcript level is increased in a RNA experiment.</rdfs:comment>
     </owl:Class>
     
 
@@ -261,6 +272,7 @@
 
     <owl:Class rdf:about="&cttvcore;/experiment/increased_translational_product_level">
         <rdfs:subClassOf rdf:resource="&cttvcore;/experiment/up"/>
+        <rdfs:comment>Increased traslation / increased protein quantity measured in an experiment.</rdfs:comment>
     </owl:Class>
     
 
@@ -269,6 +281,7 @@
 
     <owl:Class rdf:about="&cttvcore;/experiment/loss_of_function">
         <rdfs:subClassOf rdf:resource="&cttvcore;/experiment/down"/>
+        <rdfs:comment>loss of function detected in a genetics experiment.</rdfs:comment>
     </owl:Class>
     
 
@@ -277,6 +290,7 @@
 
     <owl:Class rdf:about="&cttvcore;/experiment/partial_loss_of_function">
         <rdfs:subClassOf rdf:resource="&cttvcore;/experiment/down"/>
+        <rdfs:comment>partial loss of function detected in a genetics experiment.</rdfs:comment>
     </owl:Class>
     
 
@@ -285,6 +299,7 @@
 
     <owl:Class rdf:about="&cttvcore;/experiment/pro_protein">
         <rdfs:subClassOf rdf:resource="&cttvcore;/experiment/protein_evidence"/>
+        <rdfs:comment>target is a pro protein that will undergo further modifications to become mature.</rdfs:comment>
     </owl:Class>
     
 
@@ -293,7 +308,7 @@
 
     <owl:Class rdf:about="&cttvcore;/experiment/protein">
         <rdfs:subClassOf rdf:resource="&cttvcore;/experiment/protein_evidence"/>
-        <rdfs:comment>a single protein</rdfs:comment>
+        <rdfs:comment>Target is a single protein chain </rdfs:comment>
     </owl:Class>
     
 
@@ -302,6 +317,8 @@
 
     <owl:Class rdf:about="&cttvcore;/experiment/protein_complex">
         <rdfs:subClassOf rdf:resource="&cttvcore;/experiment/protein_evidence"/>
+        <rdfs:comment>protein complex - this is a superclass. Target is a defined protein complex, consisting of multiple subunits 
+</rdfs:comment>
     </owl:Class>
     
 
@@ -319,6 +336,7 @@
 
     <owl:Class rdf:about="&cttvcore;/experiment/protein_complex_heteropolymer">
         <rdfs:subClassOf rdf:resource="&cttvcore;/experiment/protein_complex"/>
+        <rdfs:comment>target is a heteropolymeric protein complex.</rdfs:comment>
     </owl:Class>
     
 
@@ -327,6 +345,7 @@
 
     <owl:Class rdf:about="&cttvcore;/experiment/protein_complex_homopolymer">
         <rdfs:subClassOf rdf:resource="&cttvcore;/experiment/protein_complex"/>
+        <rdfs:comment>target is a homopolymeric protein complex.</rdfs:comment>
     </owl:Class>
     
 
@@ -335,7 +354,7 @@
 
     <owl:Class rdf:about="&cttvcore;/experiment/protein_evidence">
         <rdfs:subClassOf rdf:resource="&cttvcore;/experiment/experiment"/>
-        <rdfs:comment>Target is a single protein chain</rdfs:comment>
+        <rdfs:comment>superclass of protein evidence types. Please choose one of its children classes.</rdfs:comment>
     </owl:Class>
     
 
@@ -344,6 +363,8 @@
 
     <owl:Class rdf:about="&cttvcore;/experiment/protein_family">
         <rdfs:subClassOf rdf:resource="&cttvcore;/experiment/protein_evidence"/>
+        <rdfs:comment>Target is a group of closely related proteins
+</rdfs:comment>
     </owl:Class>
     
 
@@ -365,14 +386,6 @@
     
 
 
-    <!-- http://www.targetvalidation.org/cttv_core/experiment/protein_signalling_pathway -->
-
-    <owl:Class rdf:about="&cttvcore;/experiment/protein_signalling_pathway">
-        <rdfs:subClassOf rdf:resource="&cttvcore;/experiment/protein_evidence"/>
-    </owl:Class>
-    
-
-
     <!-- http://www.targetvalidation.org/cttv_core/experiment/selectivity_group -->
 
     <owl:Class rdf:about="&cttvcore;/experiment/selectivity_group">
@@ -386,6 +399,7 @@
 
     <owl:Class rdf:about="&cttvcore;/experiment/transcript">
         <rdfs:subClassOf rdf:resource="&cttvcore;/experiment/transcript_evidence"/>
+        <rdfs:comment>Target is a single transcript. Cannot ascertain whether the evidence is about an isoform.</rdfs:comment>
     </owl:Class>
     
 
@@ -394,6 +408,7 @@
 
     <owl:Class rdf:about="&cttvcore;/experiment/transcript_evidence">
         <rdfs:subClassOf rdf:resource="&cttvcore;/experiment/experiment"/>
+        <rdfs:comment>superclass of transcript evidence types. Please choose one of its children classes.</rdfs:comment>
     </owl:Class>
     
 
@@ -402,6 +417,7 @@
 
     <owl:Class rdf:about="&cttvcore;/experiment/transcript_isoform">
         <rdfs:subClassOf rdf:resource="&cttvcore;/experiment/transcript_evidence"/>
+        <rdfs:comment>The target is a transcript isoform.</rdfs:comment>
     </owl:Class>
     
 
@@ -410,6 +426,7 @@
 
     <owl:Class rdf:about="&cttvcore;/experiment/unknown">
         <rdfs:subClassOf rdf:resource="&cttvcore;/experiment/cttv_activity"/>
+        <rdfs:comment>biological activity of target in disease is difficult to predict / unknown.</rdfs:comment>
     </owl:Class>
     
 

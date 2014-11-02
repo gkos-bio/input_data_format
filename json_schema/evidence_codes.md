@@ -1,4 +1,4 @@
-## List of evidence codes that will be used by different CTTV pipeline projects
+## Evidence codes used by different CTTV pipeline projects
 
 Tech leads, please update this document if you start using any new evidence codes.
 

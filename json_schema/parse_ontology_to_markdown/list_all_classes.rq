@@ -1,0 +1,8 @@
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX : <http://www.w3.org/2002/07/owl#>
+
+SELECT ?s ?c
+WHERE {
+	?s a :Class .
+	OPTIONAL { ?s rdfs:comment $c . }
+}

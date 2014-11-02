@@ -54,7 +54,7 @@ else {
 my $ONTOFILE = "../../ontology/cttv_core.owl";
 my $cmd = "rdf.arq --data $ONTOFILE --query list_all_classes.rq --results TSV | grep cttv";
 my %ns = (
-  "http://www.targetvalidation.org/cttv_core" => { 'prefix' => "cttv", 'desc' => 'CTTV core: For internal database mapping' } ,
+  "http://www.targetvalidation.org/cttv_core" => { 'prefix' => "cttv", 'desc' => 'CTTV core: For internal CTTV-core-ontology mapping' } ,
   "http://www.targetvalidation.org/cttv_core/experiment" => { 'prefix' => "cttvexp", 'desc' => 'CTTV experiment: For association_context OR activity fields' }
 );
 ###############PARAMETERS
@@ -69,7 +69,7 @@ open(ONTO, "$cmd|");
 while (my $o = <ONTO>) {
     chomp($o);
     my ($uri, $res) = ($o =~ /\<(\S+)\/(\S+)\>/);
-    my $comment = ($o =~ /\t\"(.+)\"/) ? $1 : "-";
+    my $comment = ($o =~ /\t\"(.+)\"/) ? "**$1**" : "-";
     
     #print "$uri -> $res -> $comment\n";
     
@@ -98,7 +98,7 @@ foreach my $n (sort keys %ns) {
             my ($res, $com) = ($h->[0], $h->[1]);
             DEBUG "$h\n";
             
-            print OUT "$prefix:$res | $com | $desc | $prefix | $url/$res\n";
+            print OUT "**$prefix:$res** | $com | $desc | $prefix | $url/$res\n";
             
         }
         print "\n\n";

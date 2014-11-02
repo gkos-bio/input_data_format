@@ -70,6 +70,7 @@ while (my $o = <ONTO>) {
     chomp($o);
     my ($uri, $res) = ($o =~ /\<(\S+)\/(\S+)\>/);
     my $comment = ($o =~ /\t\"(.+)\"/) ? "**$1**" : "-";
+    $comment =~ s/\s*\*\*/\*\*/;
     
     #print "$uri -> $res -> $comment\n";
     

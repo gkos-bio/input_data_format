@@ -1,4 +1,13 @@
 # Namespace prefixes and resources in CTTV ontology
+
+## CTTV target ontology
+The figure below shows the various definitions of 'target' as used in the CTTV core ontology. One of these terms needs to be used in the {biological_subject}{association_context} field of the JSON file to specify what kind of target you are describing:
+![CTTV target ontology](../help/images/target_ontology.png)
+
+## CTTV biological activity (in disease) ontology
+The figure below shows the various definitions of 'biological activity' as used in the CTTV core ontology. One of these terms needs to be used in the {biological_subject}{activity} field of the JSON file to specify what kind of biological activity was observed in the target-disease association:
+![CTTV activity ontology](../help/images/activity_ontology.png)
+
 **These are all the resources specified in the current CTTV core ontology:**
 
 ## CTTV core: For internal CTTV-core-ontology mapping:

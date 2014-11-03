@@ -1,5 +1,6 @@
 {
     "type": "object",
+    "$schema": "http://json-schema.org/draft-03/schema",
     "id": "urn:jsonschema:org:cttv:input:model:EvidenceString",
     "properties": {
         "biological_subject": {
@@ -15,7 +16,7 @@
                         "type": "string",
                         "minItems": 1,
                         "uniqueItems": true,
-                        "pattern": "^miriam\:\S+\:\S+"
+                        "pattern": "^miriam:[a-fA-F0-9]+:[.]+"
                     }
                 },
                 "properties": {
@@ -24,12 +25,12 @@
                     "properties": {
                         "association_context": {
                             "type": "string",
-                            "pattern": "^miriam\:cttvexp\:\S+$",
+                            "pattern": "^miriam:cttvexp:[.]+$",
                             "description": "This field is REQUIRED IF your biological_subject is a CTTV target. i.e. if the regex pattern match in biological_subject is ^miriam:ensembl or ^miriam:uniprot. It must represent a field in the CTTV core 'target' ontology. See https://github.com/CTTV/input_data_format/blob/master/json_schema/cttv_uris_namespaces.md"
                         },
                         "activity": {
                             "type": "string",
-                            "pattern": "^miriam\:cttvexp\:\S+$",
+                            "pattern": "^miriam:cttvexp:[.]+$",
                             "description": "This field is REQUIRED IF your biological_subject is a CTTV target. i.e. if the regex pattern match in biological_subject is ^miriam:ensembl or ^miriam:uniprot. The value must represent a field in the CTTV core 'biological activity' ontology. See https://github.com/CTTV/input_data_format/blob/master/json_schema/cttv_uris_namespaces.md"
                         },
                         "experimental_evidence_specific": {
@@ -55,7 +56,7 @@
                     "description": "array of evidence codes in this format: miriam:obo:ECO_nnnnnnn",
                     "items": {
                         "type": "string",
-                        "pattern": "^miriam\:\obo\:ECO\_\d{7,7}$"
+                        "pattern": "^miriam:obo:ECO_[0-9]{7,7}$"
                     }
                 },
                 "associated_score": {
@@ -96,7 +97,7 @@
                                     "url": {
                                         "type": "string",
                                         "required": false,
-                                        "pattern": "^http\S+",
+                                        "pattern": "^http[.]+",
                                         "description": "A foreign URL, which the user can dig into for provenance about the association."
                                     }
                                 }
@@ -149,7 +150,7 @@
                                         "email": {
                                             "required": false,
                                             "type": "string",
-                                            "pattern": "\S+\@\S+"
+                                            "pattern": "^[.]+@[.]+"
                                         },
                                         "name": {
                                             "type": "string"
@@ -224,7 +225,7 @@
                         "type": "string",
                         "minItems": 1,
                         "uniqueItems": true,
-                        "pattern": "^miriam\:\S+\:\S+"
+                        "pattern": "^miriam:[a-fA-F0-9]+:[.]+$"
                     }
                 },
                 "properties": {
@@ -240,7 +241,7 @@
                               "type": "string",
                               "minItems": 1,
                               "uniqueItems": true,
-                              "pattern": "^miriam\:\S+\:\S+$"
+                              "pattern": "^miriam:[a-fA-F0-9]+:[.]+$"
                             }
                         },
                         "experimental_evidence_specific": {

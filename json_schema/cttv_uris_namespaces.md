@@ -1,6 +1,15 @@
 # Namespace prefixes and resources in CTTV ontology
 **These are all the resources specified in the current CTTV core ontology:**
 
+## CTTV core: For internal CTTV-core-ontology mapping:
+resource | comment | Where to use in JSON | prefix | url
+:-------:|:------:|:---:|:-------:|:-------------------:
+**cttv:DatabaseProvenance** | **Database provenance. Mapped to {provenance}{type} in CTTV json schema.** | CTTV core: For internal CTTV-core-ontology mapping | cttv | http://www.targetvalidation.org/cttv_core/DatabaseProvenance
+**cttv:LiteratureProvenance** | **Literature provenance. Mapped to {provenance}{type} in CTTV json schema.** | CTTV core: For internal CTTV-core-ontology mapping | cttv | http://www.targetvalidation.org/cttv_core/LiteratureProvenance
+**cttv:ExpertProvenance** | **Expert provenance. Mapped to {provenance}{type} in CTTV json schema.** | CTTV core: For internal CTTV-core-ontology mapping | cttv | http://www.targetvalidation.org/cttv_core/ExpertProvenance
+**cttv:GWAS_SNP_to_trait_association** | - | CTTV core: For internal CTTV-core-ontology mapping | cttv | http://www.targetvalidation.org/cttv_core/GWAS_SNP_to_trait_association
+**cttv:gene_to_disease_association** | - | CTTV core: For internal CTTV-core-ontology mapping | cttv | http://www.targetvalidation.org/cttv_core/gene_to_disease_association
+**cttv:disease_to_phenotype_association** | - | CTTV core: For internal CTTV-core-ontology mapping | cttv | http://www.targetvalidation.org/cttv_core/disease_to_phenotype_association
 ## CTTV experiment: For association_context OR activity fields:
 resource | comment | Where to use in JSON | prefix | url
 :-------:|:------:|:---:|:-------:|:-------------------:
@@ -14,8 +23,8 @@ resource | comment | Where to use in JSON | prefix | url
 **cttvexp:increased_transcript_level** | **Transcript level is increased in a RNA experiment.** | CTTV experiment: For association_context OR activity fields | cttvexp | http://www.targetvalidation.org/cttv_core/experiment/increased_transcript_level
 **cttvexp:chimeric_protein** | **Target is a fusion of two different proteins, either a synthetic construct or naturally occurring fusion protein** | CTTV experiment: For association_context OR activity fields | cttvexp | http://www.targetvalidation.org/cttv_core/experiment/chimeric_protein
 **cttvexp:gene_in_LD_region** | **target is a set of genes mapped to a specific LD region.** | CTTV experiment: For association_context OR activity fields | cttvexp | http://www.targetvalidation.org/cttv_core/experiment/gene_in_LD_region
-**cttvexp:transcript** | **Target is a single transcript. Cannot ascertain whether the evidence is about an isoform.** | CTTV experiment: For association_context OR activity fields | cttvexp | http://www.targetvalidation.org/cttv_core/experiment/transcript
 **cttvexp:selectivity_group** | **Target is a pair of proteins for which the selectivity has been assessed** | CTTV experiment: For association_context OR activity fields | cttvexp | http://www.targetvalidation.org/cttv_core/experiment/selectivity_group
+**cttvexp:transcript** | **Target is a single transcript. Cannot ascertain whether the evidence is about an isoform.** | CTTV experiment: For association_context OR activity fields | cttvexp | http://www.targetvalidation.org/cttv_core/experiment/transcript
 **cttvexp:gene_variant** | **target is a gene variant.** | CTTV experiment: For association_context OR activity fields | cttvexp | http://www.targetvalidation.org/cttv_core/experiment/gene_variant
 **cttvexp:protein_complex** | **protein complex - this is a superclass. Target is a defined protein complex, consisting of multiple subunits \n** | CTTV experiment: For association_context OR activity fields | cttvexp | http://www.targetvalidation.org/cttv_core/experiment/protein_complex
 **cttvexp:protein_isoform** | - | CTTV experiment: For association_context OR activity fields | cttvexp | http://www.targetvalidation.org/cttv_core/experiment/protein_isoform
@@ -28,6 +37,7 @@ resource | comment | Where to use in JSON | prefix | url
 **cttvexp:increased_translational_product_level** | **Increased traslation / increased protein quantity measured in an experiment.** | CTTV experiment: For association_context OR activity fields | cttvexp | http://www.targetvalidation.org/cttv_core/experiment/increased_translational_product_level
 **cttvexp:protein_complex_heteropolymer** | **target is a heteropolymeric protein complex.** | CTTV experiment: For association_context OR activity fields | cttvexp | http://www.targetvalidation.org/cttv_core/experiment/protein_complex_heteropolymer
 **cttvexp:gene_allele** | **target is a gene allele** | CTTV experiment: For association_context OR activity fields | cttvexp | http://www.targetvalidation.org/cttv_core/experiment/gene_allele
+**cttvexp:predicted_damaging** | - | CTTV experiment: For association_context OR activity fields | cttvexp | http://www.targetvalidation.org/cttv_core/experiment/predicted_damaging
 **cttvexp:gene_in_epigenetic_regulation_complex** | **target is a set of genes predicted to participate in an epigenetic regulation network.** | CTTV experiment: For association_context OR activity fields | cttvexp | http://www.targetvalidation.org/cttv_core/experiment/gene_in_epigenetic_regulation_complex
 **cttvexp:protein_complex_group** | **Target is a poorly defined protein complex, where subunit composition is unclear (e.g., GABA-A receptor)** | CTTV experiment: For association_context OR activity fields | cttvexp | http://www.targetvalidation.org/cttv_core/experiment/protein_complex_group
 **cttvexp:protein_evidence** | **superclass of protein evidence types. Please choose one of its children classes.** | CTTV experiment: For association_context OR activity fields | cttvexp | http://www.targetvalidation.org/cttv_core/experiment/protein_evidence
@@ -39,14 +49,3 @@ resource | comment | Where to use in JSON | prefix | url
 **cttvexp:transcript_evidence** | **superclass of transcript evidence types. Please choose one of its children classes.** | CTTV experiment: For association_context OR activity fields | cttvexp | http://www.targetvalidation.org/cttv_core/experiment/transcript_evidence
 **cttvexp:transcript_isoform** | **The target is a transcript isoform.** | CTTV experiment: For association_context OR activity fields | cttvexp | http://www.targetvalidation.org/cttv_core/experiment/transcript_isoform
 **cttvexp:gene** | **target is a single gene** | CTTV experiment: For association_context OR activity fields | cttvexp | http://www.targetvalidation.org/cttv_core/experiment/gene
-
-## CTTV core: For internal CTTV-core-ontology mapping:
-resource | comment | Where to use in JSON | prefix | url
-:-------:|:------:|:---:|:-------:|:-------------------:
-**cttv:DatabaseProvenance** | **Database provenance. Mapped to {provenance}{type} in CTTV json schema.** | CTTV core: For internal CTTV-core-ontology mapping | cttv | http://www.targetvalidation.org/cttv_core/DatabaseProvenance
-**cttv:LiteratureProvenance** | **Literature provenance. Mapped to {provenance}{type} in CTTV json schema.** | CTTV core: For internal CTTV-core-ontology mapping | cttv | http://www.targetvalidation.org/cttv_core/LiteratureProvenance
-**cttv:ExpertProvenance** | **Expert provenance. Mapped to {provenance}{type} in CTTV json schema.** | CTTV core: For internal CTTV-core-ontology mapping | cttv | http://www.targetvalidation.org/cttv_core/ExpertProvenance
-**cttv:GWAS_SNP_to_trait_association** | - | CTTV core: For internal CTTV-core-ontology mapping | cttv | http://www.targetvalidation.org/cttv_core/GWAS_SNP_to_trait_association
-**cttv:gene_to_disease_association** | - | CTTV core: For internal CTTV-core-ontology mapping | cttv | http://www.targetvalidation.org/cttv_core/gene_to_disease_association
-**cttv:disease_to_phenotype_association** | - | CTTV core: For internal CTTV-core-ontology mapping | cttv | http://www.targetvalidation.org/cttv_core/disease_to_phenotype_association
-

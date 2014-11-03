@@ -295,6 +295,14 @@
     
 
 
+    <!-- http://www.targetvalidation.org/cttv_core/experiment/predicted_damaging -->
+
+    <owl:Class rdf:about="&cttvcore;/experiment/predicted_damaging">
+        <rdfs:subClassOf rdf:resource="&cttvcore;/experiment/unknown"/>
+    </owl:Class>
+    
+
+
     <!-- http://www.targetvalidation.org/cttv_core/experiment/pro_protein -->
 
     <owl:Class rdf:about="&cttvcore;/experiment/pro_protein">

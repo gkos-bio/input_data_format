@@ -1,10 +1,10 @@
 [
     {
         "biological_subject": {
-            "about": "ensembl:ENSG00000127720",
+            "about": ["miriam:ensembl:ENSG00000127720"],
             "properties": {
-                "association_context": "cttvexp:transcript",
-                "activity": "cttvexp:decreased_transcript_level"
+                "association_context": "miriam:cttvexp:transcript",
+                "activity": "miriam:cttvexp:decreased_transcript_level"
             }
         },
         "provenance": {
@@ -36,20 +36,20 @@
             },
             "is_associated": true,
             "evidence_codes": [
-                "obo:ECO_0000356"
+                "miriam:obo:ECO_0000356"
             ],
             "date_asserted": "2014-10-16T07:55:03Z"
         },
         "biological_object": {
-            "about": "efo:EFO_0000637",
+            "about": ["miriam:efo:EFO_0000637"],
             "properties": {
-                "experimental_evidence_specific": {
-                    "test_group" : "efo:EFO_0000637",
-                    "reference_group" : "efo:EFO_0000761"
-                },
                 "biosamples": [
-                    "efo:EFO_0000298"
-                ]
+                    "miriam:efo:EFO_0000298"
+                ],
+                "experimental_evidence_specific": {
+                    "test_group" : "miriam:efo:EFO_0000637",
+                    "reference_group" : "miriam:efo:EFO_0000761"
+                }
             }
         }
     }

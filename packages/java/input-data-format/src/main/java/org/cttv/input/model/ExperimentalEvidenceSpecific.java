@@ -1,5 +1,6 @@
 package org.cttv.input.model;
 
+import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.HashMap;
@@ -8,6 +9,7 @@ import java.util.Map;
 /**
  * @author Antonio Fabregat <fabregat@ebi.ac.uk>
  */
+@JsonInclude(JsonInclude.Include.NON_NULL)
 public class ExperimentalEvidenceSpecific {
 
     private Map<String, ChainEvidence> evidenceChain;

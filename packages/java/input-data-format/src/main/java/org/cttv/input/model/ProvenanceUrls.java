@@ -3,6 +3,7 @@ package org.cttv.input.model;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonInclude.Include;
 
+import java.util.LinkedList;
 import java.util.List;
 
 /**
@@ -13,9 +14,20 @@ public class ProvenanceUrls {
     private String biojs;
     private List<LinkOut> linkouts;
 
-    public ProvenanceUrls(String biojs, List<LinkOut> linkouts) {
+    public ProvenanceUrls() {
+        //Nothing here
+    }
+
+    public void setBiojs(String biojs) {
         this.biojs = biojs;
-        this.linkouts = linkouts;
+    }
+
+    public boolean addLinkOout(LinkOut linkOut){
+        if(linkOut==null) return false;
+        if(linkouts==null){
+            linkouts = new LinkedList<LinkOut>();
+        }
+        return linkouts.add(linkOut);
     }
 
     public String getBiojs() {

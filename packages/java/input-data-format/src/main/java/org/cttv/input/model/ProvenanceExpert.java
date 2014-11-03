@@ -13,9 +13,15 @@ public class ProvenanceExpert {
     private String statement;
     private ProvenanceAuthor author;
 
-    public ProvenanceExpert(boolean isTrue, String statement, ProvenanceAuthor author) {
+    public ProvenanceExpert(boolean isTrue){
         this.isTrue = isTrue;
+    }
+
+    public void setStatement(String statement){
         this.statement = statement;
+    }
+
+    public void setAuthor(ProvenanceAuthor author) {
         this.author = author;
     }
 

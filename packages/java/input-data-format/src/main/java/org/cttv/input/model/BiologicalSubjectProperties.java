@@ -1,11 +1,11 @@
 package org.cttv.input.model;
 
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonInclude.Include;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.HashMap;
+import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
 
@@ -20,10 +20,16 @@ public class BiologicalSubjectProperties {
     private String activity;
     private Map<String, String> experimentalEvidenceSpecific;
 
-    public BiologicalSubjectProperties(AssociationContext associationContext, List<String> associatedSubjects, String activity) {
+    public BiologicalSubjectProperties(AssociationContext associationContext, Activity activity) {
         this.associationContext = associationContext.getContext();
-        this.associatedSubjects = associatedSubjects;
-        this.activity = activity;
+        this.activity = activity.getActivity();
+    }
+
+    public boolean addAssociatedSubjects(String associatedSubject){
+        if(this.associatedSubjects==null){
+            this.associatedSubjects = new LinkedList<String>();
+        }
+        return this.associatedSubjects.add(associatedSubject);
     }
 
     public String putExperimentalEvidenceSpecific(String propertyName, String value){

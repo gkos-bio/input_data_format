@@ -4,6 +4,7 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonInclude.Include;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
+import java.util.LinkedList;
 import java.util.List;
 
 /**
@@ -11,16 +12,24 @@ import java.util.List;
  */
 @JsonInclude(Include.NON_NULL)
 public class ProvenanceLiterature {
-    private int isTrue;
+    private boolean isTrue;
     private List<Long> pubmedRefs;
 
-    public ProvenanceLiterature(int isTrue, List<Long> pubmedRefs) {
-        this.isTrue = isTrue;
-        this.pubmedRefs = pubmedRefs;
+    public ProvenanceLiterature() {
+        this.isTrue = false;
+    }
+
+    public boolean addPubmdRef(Long pubmedRef){
+        if(pubmedRef==null) return false;
+        if(pubmedRefs==null){
+            pubmedRefs = new LinkedList<Long>();
+        }
+        isTrue = true;
+        return pubmedRefs.add(pubmedRef);
     }
 
     @JsonProperty("true")
-    public int getIsTrue() {
+    public boolean getIsTrue() {
         return isTrue;
     }
 

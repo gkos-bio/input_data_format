@@ -9,20 +9,23 @@ import com.fasterxml.jackson.annotation.JsonProperty;
  */
 @JsonInclude(Include.NON_NULL)
 public class ProvenanceDatabase {
-    private int isTrue;
+    private boolean isTrue;
     private String id;
     private String version;
     private ProvenanceDatabaseXRef dbXref;
 
-    public ProvenanceDatabase(int isTrue, String id, String version, ProvenanceDatabaseXRef dbXref) {
-        this.isTrue = isTrue;
+    public ProvenanceDatabase(String id, String version) {
+        this.isTrue = true;
         this.id = id;
         this.version = version;
+    }
+
+    public void setDbXref(ProvenanceDatabaseXRef dbXref) {
         this.dbXref = dbXref;
     }
 
     @JsonProperty("true")
-    public int getIsTrue() {
+    public boolean getIsTrue() {
         return isTrue;
     }
 

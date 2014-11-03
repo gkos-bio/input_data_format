@@ -4,6 +4,7 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonInclude.Include;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
+import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.List;
 
@@ -21,9 +22,24 @@ public class Provenance {
     private AssociationScore associationScore;
     private ExperimentalEvidenceSpecific experimentalEvidenceSpecific;
 
+    public Provenance(Date dateAsserted,
+                      boolean isAssociated,
+                      ProvenanceType type,
+                      List<String> evidenceCodes,
+                      ProvenanceUrls urls,
+                      ExperimentalEvidenceSpecific experimentalEvidenceSpecific) {
+        this.dateAsserted = dateAsserted;
+        this.isAssociated = isAssociated;
+        this.type = type;
+        this.evidenceCodes = evidenceCodes;
+        this.urls = urls;
+        this.experimentalEvidenceSpecific = experimentalEvidenceSpecific;
+    }
+
     @JsonProperty("date_asserted")
-    public Date getDateAsserted() {
-        return dateAsserted;
+    public String getDateAsserted() {
+        SimpleDateFormat formatter = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss.SSSXXX");
+        return formatter.format(dateAsserted);
     }
 
     @JsonProperty("is_associated")
@@ -52,5 +68,9 @@ public class Provenance {
     @JsonProperty("experimental_evidence_specific")
     public ExperimentalEvidenceSpecific getExperimentalEvidenceSpecific() {
         return experimentalEvidenceSpecific;
+    }
+
+    public void setAssociationScore(AssociationScore associationScore) {
+        this.associationScore = associationScore;
     }
 }

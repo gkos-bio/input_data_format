@@ -36,7 +36,7 @@
                         "experimental_evidence_specific": {
                             "type": "object",
                             "required": false,
-                            "description" : "Use this to add any string-based key:value pairs that you want to use to describe your biological subject.",
+                            "description": "Use this to add any string-based key:value pairs that you want to use to describe your biological subject.",
                             "additionalProperties": {
                                 "type": "string"
                             }
@@ -59,7 +59,7 @@
                         "pattern": "^miriam:obo:ECO_[0-9]{7,7}$"
                     }
                 },
-                "associated_score": {
+                "association_score": {
                     "type": "object",
                     "required": false,
                     "id": "urn:jsonschema:org:cttv:input:model:AssociationScore",
@@ -106,6 +106,16 @@
                     }
                 },
                 "properties": {
+                    "type": "object",
+                    "id": "urn:jsonschema:org:cttv:input:model:ProvenanceProperties",
+                    "experimental_evidence_specific": {
+                        "type": "object",
+                        "required": false,
+                        "description": "Use this to add any string-based key:value pairs that you want to use to describe your biological object.",
+                        "additionalProperties": {
+                            "type": "string"
+                        }
+                    },
                     "evidence_chain": {
                         "id": "urn:jsonschema:org:cttv:input:model:EvidenceChain",
                         "type": "array",
@@ -238,16 +248,16 @@
                             "required": false,
                             "description": "An array of affected tissues expressed using its EFO term e.g. miriam:obo:UBERON_0004535, the EFO resource ID for cardiovascular system",
                             "items": {
-                              "type": "string",
-                              "minItems": 1,
-                              "uniqueItems": true,
-                              "pattern": "^miriam:[a-fA-F0-9]+:[.]+$"
+                                "type": "string",
+                                "minItems": 1,
+                                "uniqueItems": true,
+                                "pattern": "^miriam:[a-fA-F0-9]+:[.]+$"
                             }
                         },
                         "experimental_evidence_specific": {
                             "type": "object",
                             "required": false,
-                            "description" : "Use this to add any string-based key:value pairs that you want to use to describe your biological object.",
+                            "description": "Use this to add any string-based key:value pairs that you want to use to describe your biological object.",
                             "additionalProperties": {
                                 "type": "string"
                             }

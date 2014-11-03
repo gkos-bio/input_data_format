@@ -20,21 +20,21 @@ The SLC26A1 and 2 genes encode proteins that facilitate sulfate uptake into cell
 
 ### Resources used in this example:
 
-**Note:** All namespaces, other than "[cttv:, cttvexp](../../json_schema/cttv_uris_namespaces.md):" are from [identifers.org / MIRIAM registry](http://www.ebi.ac.uk/miriam/main/collections/)
+**Note:** All namespaces, other than "[miriam:cttv:, miriam:cttvexp](../../json_schema/cttv_uris_namespaces.md):" already exist in [identifers.org / MIRIAM registry](http://www.ebi.ac.uk/miriam/main/collections/). We will request addition of the cttv-specific terms to MIRIAM registry once the CTTV platform is in beta development.
 
-- **cttvexp:protein**:
-	- 	**uniprot:P50443** (SLC26A2)
+- **miriam:cttvexp:protein**:
+	- 	**miriam:uniprot:P50443** (SLC26A2)
 
-- **cttvexp:loss_of_function** because normal biological activity of SLC26A2 is impaired due to mutations.
+- **miriam:cttvexp:loss_of_function** because normal biological activity of SLC26A2 is impaired due to mutations.
 
 - [**Evidence codes:**](../../json_schema/evidence_codes.md)
-	1. **obo:ECO_0000205** Evidence code for: curator inference
+	1. **miriam:obo:ECO_0000205** Evidence code for: curator inference
 
 
 - [**Provenance types:**](../../json_schema/cttv_uris_namespaces.md) Provenance types are literature, expert and database since this is curated literature evidence from the Reactome database.
 
 - **EFO terms:**
-	1. **obo:ECO_0001113** Evidence code for: point mutation evidence
-	2. **orphanet:Orphanet_93298:** EFO term for 'achondrogenesis type 1B (ACG-1B; MIM:600972)'
+	1. **miriam:obo:ECO_0001113** Evidence code for: point mutation evidence
+	2. **miriam:orphanet:Orphanet_93298:** EFO term for 'achondrogenesis type 1B (ACG-1B; MIM:600972)'
 
 ### Reactome entry points: http://www.reactome.org/PathwayBrowser/#REACT_267687.1

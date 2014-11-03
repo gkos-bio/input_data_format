@@ -1,9 +1,9 @@
 {
 	"biological_subject": {	
-		"about": ["uniprot:P50443"],
+		"about": ["miriam:uniprot:P50443"],
 		"properties": {
-			"association_context": "cttvexp:protein",
-			"activity": "cttvexp:loss_of_function"
+			"association_context": "miriam:cttvexp:protein",
+			"activity": "miriam:cttvexp:loss_of_function"
 		}	
 	},
 
@@ -29,7 +29,7 @@
 			
 		},
 		
-		"evidence_codes": ["obo:ECO_0000205", "obo:ECO_0001113"],
+		"evidence_codes": ["miriam:obo:ECO_0000205", "miriam:obo:ECO_0001113"],
 		
 		"urls": {
 			"linkouts": [
@@ -46,6 +46,6 @@
 	},
 
 	"biological_object": {
-		"about": "orphanet:Orphanet_93298"	
+		"about": ["miriam:orphanet:Orphanet_93298"]	
 	}
 }

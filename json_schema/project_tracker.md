@@ -84,7 +84,7 @@ Evidence string structure:
 
 |biological_subject (target) | provenance has evidence chain | biological_object (disease) | example|
 |----------------------------|-------------------------------|-----------------------------|--------|
-|[child term of protein_evidence as an array](./cttv_uris_namespaces.md)|no|[EFO disease or phenotype as an array](http://www.ebi.ac.uk/efo/)|[click here](../examples/cttv0008_chembl)|
+|[child term of protein_evidence as an array](./cttv_uris_namespaces.md)|yes|[EFO disease or phenotype as an array](http://www.ebi.ac.uk/efo/)|[click here](../examples/cttv0008_chembl)|
 
 Additional information:
 
@@ -104,6 +104,12 @@ obo:ECO_0001113 | point mutation evidence | |
 obo:ECO_0000205 | curator inference | An evidence type that is based on conclusions drawn by a curator.|
 obo:ECO_0000053 | computational combinatorial evidence | A type of combinatorial analysis where data are combined and evaluated by an algorithm.|
 
+Evidence string structure:
+
+|biological_subject (target) | provenance has evidence chain | biological_object (disease) | example|
+|----------------------------|-------------------------------|-----------------------------|--------|
+|[child term of gene_evidence as an array](./cttv_uris_namespaces.md)|yes|[EFO disease or phenotype as an array](http://www.ebi.ac.uk/efo/)|[click here](../examples/cttv0018_ibd_gwas)|
+
 Additional information:
 
 |Download URL|Fields used to uniquely identify target-disease associations|
@@ -121,6 +127,12 @@ obo:ECO_0000356 | differential gene expression from microarray experiment | A ge
 obo:ECO_0000357 | differential gene expression from RNA-seq experiment | A gene is found to show statistically significant increase or decrease in expression in some condition relative to an appropriate control condition, when expression levels are assayed using an RNA sequencing platform.|
 obo:ECO_0000358 | differential geneset expression from microarray experiment | Gene set enrichment analysis (GSEA) shows that a functional classification (e.g. reaction pathway, Gene Ontology term, etc) has statistically significant over-representation in a group of genes showing differential expression when assayed using a microarray platform.|
 obo:ECO_0000359 | differential geneset expression from RNA-seq experiment | Gene set enrichment analysis (GSEA) shows that a functional classification (e.g. reaction pathway, Gene Ontology term, etc) has statistically significant over-representation in a group of genes showing differential expression when assayed using an RNA sequencing platform.|
+
+Evidence string structure:
+
+|biological_subject (target) | provenance has evidence chain | biological_object (disease) | example|
+|----------------------------|-------------------------------|-----------------------------|--------|
+|[child term of transcript_evidence as an array](./cttv_uris_namespaces.md)|yes|[EFO disease or phenotype as an array](http://www.ebi.ac.uk/efo/)|[click here](../examples/cttv0010_expression_atlas)|
 
 Additional information:
 
@@ -162,6 +174,12 @@ obo:ECO_0001113 | point mutation evidence | |
 obo:ECO_0000205 | curator inference | An evidence type that is based on conclusions drawn by a curator.|
 obo:ECO_0000053 | computational combinatorial evidence | A type of combinatorial analysis where data are combined and evaluated by an algorithm.|
 
+Evidence string structure:
+
+|biological_subject (target) | provenance has evidence chain | biological_object (disease) | example|
+|----------------------------|-------------------------------|-----------------------------|--------|
+|[child term of gene_evidence as an array](./cttv_uris_namespaces.md)|yes|[EFO disease or phenotype as an array](http://www.ebi.ac.uk/efo/)|[click here](../examples/cttv0018_ibd_gwas)|
+
 Additional information:
 
 |Download URL|Fields used to uniquely identify target-disease associations|
@@ -179,6 +197,12 @@ obo:ECO_0000177 | genomic context evidence | An evidence type that is based on t
 obo:ECO_0001113 | point mutation evidence | |
 obo:ECO_0000205 | curator inference | An evidence type that is based on conclusions drawn by a curator.|
 obo:ECO_0000053 | computational combinatorial evidence | A type of combinatorial analysis where data are combined and evaluated by an algorithm.|
+
+Evidence string structure:
+
+|biological_subject (target) | provenance has evidence chain | biological_object (disease) | example|
+|----------------------------|-------------------------------|-----------------------------|--------|
+|[child term of gene_evidence as an array](./cttv_uris_namespaces.md)|yes|[EFO disease or phenotype as an array](http://www.ebi.ac.uk/efo/)|[click here](../examples/cttv0018_ibd_gwas)|
 
 Additional information:
 

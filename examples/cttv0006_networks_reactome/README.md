@@ -27,7 +27,7 @@ The SLC26A1 and 2 genes encode proteins that facilitate sulfate uptake into cell
 
 - **miriam:cttvexp:loss_of_function** because normal biological activity of SLC26A2 is impaired due to mutations.
 
-- [**Evidence codes:**](../../json_schema/evidence_codes.md)
+- [**Evidence codes:**](../../json_schema/project_tracker.md)
 	1. **miriam:obo:ECO_0000205** Evidence code for: curator inference
 
 

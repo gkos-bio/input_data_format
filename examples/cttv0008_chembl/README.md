@@ -18,7 +18,7 @@
 	1. 	**miriam:uniprot:P35368**
 - **miriam:cttvexp:down** because the drug is an antagonist
 
-- [**Evidence codes:**](../../json_schema/evidence_codes.md)
+- [**Evidence codes:**](../../json_schema/project_tracker.md)
 	1. **miriam:obo:ECO_0000360** Evidence code for: biological target-disease 
 	association via drug
 	1. **miriam:obo:ECO_0000205** Evidence code for: curator inference

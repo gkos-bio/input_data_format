@@ -34,8 +34,8 @@ The aim of this document is to centralize answers to key questions about the CTT
 #### 1. Which evidence codes should I use?
 - We are using the **[Evidence Codes Ontology](http://bioportal.bioontology.org/ontologies/ECO).**
 - Please provide evidence codes using this syntax: **"miriam:obo:ECO_nnnnnnn"**.
-- To see which evidence codes are assigned to your project, **[please click here](../json_schema/evidence_codes.md)**
-- If you need to use additional evidence codes to the ones above, please make sure you **[update this github markdown document](../json_schema/evidence_codes.md)** with your new codes
+- To see which evidence codes are assigned to your project, **[please click here](../json_schema/project_tracker.md)**
+- If you need to use additional evidence codes to the ones above, please make sure you **[update this github markdown document](../json_schema/project_tracker.md)** with your new codes
 - For requesting new evidence codes, please contact **jamesmalone, cc samiulxhasan**
 
 ## 'Creating evidence string JSONs' questions
@@ -50,7 +50,7 @@ No. You don't need to create these.
 A list of examples can be [browsed here](../examples)
 
 #### 4. Do I provide my data as a JSON data service or or as one large array?
-For now, please create a JSON array (one large file) and provide us with the URL to download this. Please **[update this github markdown document](../json_schema/evidence_codes.md)** with your download URL. Once a CTTV production environment is in place, we will aim to establish a common fileshare for all groups to upload their JSON files. 
+For now, please create a JSON array (one large file) and provide us with the URL to download this. Please **[update this github markdown document](../json_schema/project_tracker.md)** with your download URL. Once a CTTV production environment is in place, we will aim to establish a common fileshare for all groups to upload their JSON files. 
 
 #### 5. How do I validate the data I am providing?
 Working on a JSON validation example today that we can show - using one of:
@@ -65,7 +65,7 @@ Antonio's JSON schema validator
 This is in development. You can [pull the latest version from here](../packages)
 
 #### 7. How can I uniquely identify a “target-disease” association JSON in my JSON array?
-This is an important requirement as we will need to track whether a unique "target-disease" association has changed properties between release cycles. Please **[update this github markdown document](../json_schema/evidence_codes.md)**
+This is an important requirement as we will need to track whether a unique "target-disease" association has changed properties between release cycles. Please **[update this github markdown document](../json_schema/project_tracker.md)**
 to tell us which combination of fields in your JSON array makes one JSON distinct from another.
 
 #### 8. When do I use an 'evidence chain'?

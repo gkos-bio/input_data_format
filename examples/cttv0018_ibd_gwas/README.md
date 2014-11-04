@@ -20,7 +20,7 @@
 
 - **miriam:cttvexp:predicted_damaging** because sift prediction is that the mutation is uncertain / tolerated(0.39).
 
-- [**Evidence codes:**](../../json_schema/evidence_codes.md)
+- [**Evidence codes:**](../../json_schema/project_tracker.md)
 	1. 	**miriam:obo:ECO_0000177:** genomic context evidence (An evidence type that is based on the location of a gene, which gives rise to a gene product, within the genome.)
 	1. **miriam:obo:ECO_0001113** (point mutation evidence)	
 	1. **miriam:obo:ECO_0000053** computational combinatorial evidence (A type of combinatorial analysis where data are combined and evaluated by an algorithm.)

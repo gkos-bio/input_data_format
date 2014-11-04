@@ -2,6 +2,7 @@
     "type": "object",
     "$schema": "http://json-schema.org/draft-03/schema",
     "id": "urn:jsonschema:org:cttv:input:model:EvidenceString",
+    "title": "CTTV JSON Schema Test Version",
     "properties": {
         "biological_subject": {
             "type": "object",
@@ -16,7 +17,7 @@
                         "type": "string",
                         "minItems": 1,
                         "uniqueItems": true,
-                        "pattern": "^miriam:[a-fA-F0-9]+:[.]+"
+                        "pattern": "^miriam:.+:.+"
                     }
                 },
                 "properties": {
@@ -25,12 +26,12 @@
                     "properties": {
                         "association_context": {
                             "type": "string",
-                            "pattern": "^miriam:cttvexp:[.]+$",
+                            "pattern": "^miriam:cttvexp:.+$",
                             "description": "This field is REQUIRED IF your biological_subject is a CTTV target. i.e. if the regex pattern match in biological_subject is ^miriam:ensembl or ^miriam:uniprot. It must represent a field in the CTTV core 'target' ontology. See https://github.com/CTTV/input_data_format/blob/master/json_schema/cttv_uris_namespaces.md"
                         },
                         "activity": {
                             "type": "string",
-                            "pattern": "^miriam:cttvexp:[.]+$",
+                            "pattern": "^miriam:cttvexp:.+$",
                             "description": "This field is REQUIRED IF your biological_subject is a CTTV target. i.e. if the regex pattern match in biological_subject is ^miriam:ensembl or ^miriam:uniprot. The value must represent a field in the CTTV core 'biological activity' ontology. See https://github.com/CTTV/input_data_format/blob/master/json_schema/cttv_uris_namespaces.md"
                         },
                         "experimental_evidence_specific": {
@@ -97,7 +98,7 @@
                                     "url": {
                                         "type": "string",
                                         "required": false,
-                                        "pattern": "^http[.]+",
+                                        "pattern": "^http.+",
                                         "description": "A foreign URL, which the user can dig into for provenance about the association."
                                     }
                                 }
@@ -235,7 +236,7 @@
                         "type": "string",
                         "minItems": 1,
                         "uniqueItems": true,
-                        "pattern": "^miriam:[a-fA-F0-9]+:[.]+$"
+                        "pattern": "^miriam:.+:.+$"
                     }
                 },
                 "properties": {
@@ -251,7 +252,7 @@
                                 "type": "string",
                                 "minItems": 1,
                                 "uniqueItems": true,
-                                "pattern": "^miriam:[a-fA-F0-9]+:[.]+$"
+                                "pattern": "^miriam:.+:.+"
                             }
                         },
                         "experimental_evidence_specific": {

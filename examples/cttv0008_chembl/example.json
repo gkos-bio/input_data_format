@@ -98,7 +98,7 @@
         ],
         "properties": {
             "biosamples": [
-                "obo:UBERON_0004535"
+                "miriam:obo:UBERON_0004535"
             ]
         }
     }

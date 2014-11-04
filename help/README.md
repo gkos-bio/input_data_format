@@ -53,6 +53,10 @@ A list of examples can be [browsed here](../examples)
 For now, please create a JSON array (one large file) and provide us with the URL to download this. Please **[update this github markdown document](../json_schema/project_tracker.md)** with your download URL. Once a CTTV production environment is in place, we will aim to establish a common fileshare for all groups to upload their JSON files. 
 
 #### 5. How do I validate the data I am providing?
+
+[JSON schema lint validator](http://jsonschemalint.com/)
+
+
 Working on a JSON validation example today that we can show - using one of:
 JSON validator
 Create a schema from a JSON file

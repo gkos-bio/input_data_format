@@ -94,9 +94,9 @@ obo:ECO_0000359 | differential geneset expression from RNA-seq experiment | Gene
 
 Additional information:
 
-Download URL|Fields used to uniquely identify target-disease associations|
-------------|
-http://www.ebi.ac.uk/~mkeays/cttv/expression_atlas_cttv_evidence_strings.json|1. Entrez gene: **{biological_subject}{about}[0]**, 2. studyID: **{provenance}{experimental_evidence_specific}{study_id}**, 3. Comparison name: **{provenance}{experimental_evidence_specific}{comparison_name}**
+|Download URL|Fields used to uniquely identify target-disease associations|
+|------------|------------------------------------------------------------|
+|http://www.ebi.ac.uk/~mkeays/cttv/expression_atlas_cttv_evidence_strings.json|1. Entrez gene: **{biological_subject}{about}[0]**, 2. studyID: **{provenance}{experimental_evidence_specific}{study_id}**, 3. Comparison name: **{provenance}{experimental_evidence_specific}{comparison_name}**|
 
 ### 7. Uniprot (CTTV011)
 **Tech lead: eddturner**

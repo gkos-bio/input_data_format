@@ -1,6 +1,18 @@
-## Evidence codes used by different CTTV pipeline projects
-
-Tech leads, please update this document if you start using any new evidence codes.
+# Purpose of this document
+This live document is intended to keep track of data/information required of/being used by different CTTV pipeline projects.
+<!-- START doctoc generated TOC please keep comment here to allow auto update -->
+<!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
+**Table of Contents**
+  - [1. Rare2Common (CTTV005)](#1-rare2common-cttv005)
+  - [2. Networks - Reactome (CTTV006)](#2-networks---reactome-cttv006)
+  - [3. Networks - Intact (CTTV006)](#3-networks---intact-cttv006)
+  - [4. ChEMBL (CTTV008)](#4-chembl-cttv008)
+  - [5. GWAS catalog (CTTV009)](#5-gwas-catalog-cttv009)
+  - [6. Tissue specificity (CTTV010)](#6-tissue-specificity-cttv010)
+  - [7. Uniprot (CTTV011)](#7-uniprot-cttv011)
+  - [8. Variation (CTTV012)](#8-variation-cttv012)
+  - [9. IBD_GWAS (CTTV018)](#9-ibd_gwas-cttv018)
+<!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
 ### 1. Rare2Common (CTTV005)
 **Tech lead: jamesmalone**
@@ -22,6 +34,11 @@ Evidence code | Label | Description
 --------|--------|--------
 obo:ECO_0000205 |curator inference|An evidence type that is based on conclusions drawn by a curator.
 obo:ECO_0000001 | inference from background scientific knowledge | A curator inference that links the current annotation to a different evidence-based annotation via background knowledge of the curator.
+
+Evidence string structure:
+biological_subject (target) | provenance has evidence chain | biological_object (disease) | example
+--------|--------|--------
+[child term of protein_evidence as an array](./cttv_uris_namespaces.md)|no|[EFO disease or phenotype as an array](http://www.ebi.ac.uk/efo/)|[click here](../examples/cttv0006_networks_reactome)
 
 Additional information:
 

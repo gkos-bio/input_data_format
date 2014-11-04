@@ -49,17 +49,13 @@ to tell us which combination of fields in your JSON array makes one JSON distinc
 
 #### When do I use an 'evidence chain'?
 You use this when there are >1 independent analytical steps used to associate a target with a disease. There are 2 examples you can look at:
-1. [biological target to disease association via drug:](../examples/cttv0008_chembl)
-	- There are 2 independent analyses in this that has resulted in a chain:
-    	
-        (1) Experimental analysis carried out to associate a protein/protein complex target to a drug
-        (2) Clinical analysis carried out to associate the drug to its effect in disease
+1. [biological target to disease association via drug - ](../examples/cttv0008_chembl) There are 2 independent analyses in this that has resulted in a chain:
+        1. **Experimental analysis** carried out to associate a protein/protein complex target to a drug
+        1. **Clinical analysis** carried out to associate the drug to its effect in disease
 
-1. [gene to disease association via snp:](../examples/cttv0018_ibd_gwas)
-	- There are 2 independent analyses in this that has resulted in a chain:
-    	
-        (1) Computational analysis carried out to associate a gene target to its nearest nucleotide polymorphism
-        (2) Genetics analysis carried out to associate the nucleotide polymorphism to its effect in disease
+1. [gene to disease association via snp - ](../examples/cttv0018_ibd_gwas) There are 2 independent analyses in this that has resulted in a chain:
+        1. **Computational analysis** carried out to associate a gene target to its nearest nucleotide polymorphism
+        1. **Genetics analysis** carried out to associate the nucleotide polymorphism to its effect in disease
 
 ## Miriam registry questions
 

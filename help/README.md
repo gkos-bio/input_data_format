@@ -19,19 +19,19 @@ Sam will explain the "Responsibility assignment matrix"
 
 ## 'Creating evidence string JSONs' questions
 
-#### 2. Which fields are mandatory in the JSON schema?
+#### 1. Which fields are mandatory in the JSON schema?
 Please look through the [CTTV JSON schema](../json_schema/evidence_string_schema.json) for fields marked as **"required" : true**
 
-#### 3. Should I use ‘null’ when a field is not mandatory?
+#### 2. Should I use ‘null’ when a field is not mandatory?
 No. You don't need to create these.
 
-#### 4. Where can I see an example of the type of data I am trying to fit?
+#### 3. Where can I see an example of the type of data I am trying to fit?
 A list of examples can be [browsed here](../examples)
 
-#### 5. Do I provide my data as a JSON data service or or as one large array?
+#### 4. Do I provide my data as a JSON data service or or as one large array?
 For now, please create a JSON array (one large file) and provide us with the URL to download this. Please **[update this github markdown document](../json_schema/evidence_codes.md)** with your download URL. Once a CTTV production environment is in place, we will aim to establish a common fileshare for all groups to upload their JSON files. 
 
-#### 6. How do I validate the data I am providing?
+#### 5. How do I validate the data I am providing?
 Working on a JSON validation example today that we can show - using one of:
 JSON validator
 Create a schema from a JSON file
@@ -40,19 +40,19 @@ A lint tool for JSON Schema
 Python JSON Schema validator
 Antonio's JSON schema validator
 
-#### 7. Do you have a package I can use to write out CTTV-JSON files?
+#### 6. Do you have a package I can use to write out CTTV-JSON files?
 This is in development. You can [pull the latest version from here](../packages)
 
-#### 8. How can I uniquely identify a “target-disease” association JSON in my JSON array?
+#### 7. How can I uniquely identify a “target-disease” association JSON in my JSON array?
 This is an important requirement as we will need to track whether a unique "target-disease" association has changed properties between release cycles. Please **[update this github markdown document](../json_schema/evidence_codes.md)**
 to tell us which combination of fields in your JSON array makes one JSON distinct from another.
 
-#### 9. When do I use an 'evidence chain'?
+#### 8. When do I use an 'evidence chain'?
 You use this when there are >1 independent analytical steps used to associate a target with a disease. There are 2 examples you can look at:
 
-	1. [biological target to disease association via drug - ](../examples/cttv0008_chembl) There are 2 independent analyses in this that has resulted in a chain: 1) **Experimental analysis** carried out to associate a protein/protein complex target to a drug, 2) **Clinical analysis** carried out to associate the drug to its effect in disease
+- [biological target to disease association via drug - ](../examples/cttv0008_chembl) There are 2 independent analyses in this that has resulted in a chain: 1) **Experimental analysis** carried out to associate a protein/protein complex target to a drug, 2) **Clinical analysis** carried out to associate the drug to its effect in disease
 
-	2. [gene to disease association via snp - ](../examples/cttv0018_ibd_gwas) There are 2 independent analyses in this that has resulted in a chain: 1) **Computational analysis** carried out to associate a gene target to its nearest nucleotide polymorphism, 2) **Genetics analysis** carried out to associate the nucleotide polymorphism to its effect in disease
+- [gene to disease association via snp - ](../examples/cttv0018_ibd_gwas) There are 2 independent analyses in this that has resulted in a chain: 1) **Computational analysis** carried out to associate a gene target to its nearest nucleotide polymorphism, 2) **Genetics analysis** carried out to associate the nucleotide polymorphism to its effect in disease
 
 ## Miriam registry questions
 

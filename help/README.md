@@ -1,13 +1,34 @@
-# Answers to Common Questions
+<!-- START doctoc generated TOC please keep comment here to allow auto update -->
+<!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
 
-[TOC]
+# Purpose of this document
+The aim of this document is to centralize answers to key questions about the CTTV evidence string JSON format. It is intended to be read by individuals working on preparing their data to fit this model.
 
-## Preparation
-#### 1. How do I prepare for this hackathon (Is it really a hackathon)?
-#### 2. What is expected for 8th December integration day?
+**Table of Contents**
 
-#### Who is responsible for what?
-Sam will explain the "Responsibility assignment matrix"
+  - ['Evidence code' questions](#evidence-code-questions)
+      - [1. Which evidence codes should I use?](#1-which-evidence-codes-should-i-use)
+  - ['Creating evidence string JSONs' questions](#creating-evidence-string-jsons-questions)
+      - [1. Which fields are mandatory in the JSON schema?](#1-which-fields-are-mandatory-in-the-json-schema)
+      - [2. Should I use ‘null’ when a field is not mandatory?](#2-should-i-use-‘null’-when-a-field-is-not-mandatory)
+      - [3. Where can I see an example of the type of data I am trying to fit?](#3-where-can-i-see-an-example-of-the-type-of-data-i-am-trying-to-fit)
+      - [4. Do I provide my data as a JSON data service or or as one large array?](#4-do-i-provide-my-data-as-a-json-data-service-or-or-as-one-large-array)
+      - [5. How do I validate the data I am providing?](#5-how-do-i-validate-the-data-i-am-providing)
+      - [6. Do you have a package I can use to write out CTTV-JSON files?](#6-do-you-have-a-package-i-can-use-to-write-out-cttv-json-files)
+      - [7. How can I uniquely identify a “target-disease” association JSON in my JSON array?](#7-how-can-i-uniquely-identify-a-“target-disease”-association-json-in-my-json-array)
+      - [8. When do I use an 'evidence chain'?](#8-when-do-i-use-an-evidence-chain)
+  - [Miriam registry questions](#miriam-registry-questions)
+      - [1. What is the Miriam registry and what is its relevance to the CTTV platform?](#1-what-is-the-miriam-registry-and-what-is-its-relevance-to-the-cttv-platform)
+      - [2. When do I use the “miriam” namespace prefix in the JSON?](#2-when-do-i-use-the-“miriam”-namespace-prefix-in-the-json)
+      - [3. 'miriam:cttv:' and 'miriam:cttvexp:' URNs don't exist in MIRIAM yet. Which specific CTTV URNs can I use?](#3-miriamcttv-and-miriamcttvexp-urns-dont-exist-in-miriam-yet-which-specific-cttv-urns-can-i-use)
+  - [Experimental factors ontology (EFO) questions](#experimental-factors-ontology-efo-questions)
+      - [1. What if my disease term does not currently map to EFO?](#1-what-if-my-disease-term-does-not-currently-map-to-efo)
+      - [2. Where can I get more information about how to map terms to EFO?](#2-where-can-i-get-more-information-about-how-to-map-terms-to-efo)
+
+<!-- END doctoc generated TOC please keep comment here to allow auto update -->
+
+
+
 
 ## 'Evidence code' questions
 #### 1. Which evidence codes should I use?
@@ -104,6 +125,9 @@ If you have a disease term which isn't yet mapped to EFO, please:
         }
     }
 ```
+
+#### 2. Where can I get more information about how to map terms to EFO?
+See [jamesmalone and tonyburdett's Confluence WIKI](https://www.ebi.ac.uk/seqdb/confluence/display/CTTV/Ontology+Annotation) (Only for those with CTTV Confluence accounts)
 
 
 

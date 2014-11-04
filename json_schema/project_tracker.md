@@ -36,9 +36,10 @@ obo:ECO_0000205 |curator inference|An evidence type that is based on conclusions
 obo:ECO_0000001 | inference from background scientific knowledge | A curator inference that links the current annotation to a different evidence-based annotation via background knowledge of the curator.
 
 Evidence string structure:
-biological_subject (target) | provenance has evidence chain | biological_object (disease) | example
---------|--------|--------
-[child term of protein_evidence as an array](./cttv_uris_namespaces.md)|no|[EFO disease or phenotype as an array](http://www.ebi.ac.uk/efo/)|[click here](../examples/cttv0006_networks_reactome)
+
+|biological_subject (target) | provenance has evidence chain | biological_object (disease) | example|
+|----------------------------|-------------------------------|-----------------------------|--------|
+|[child term of protein_evidence as an array](./cttv_uris_namespaces.md)|no|[EFO disease or phenotype as an array](http://www.ebi.ac.uk/efo/)|[click here](../examples/cttv0006_networks_reactome)|
 
 Additional information:
 

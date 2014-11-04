@@ -4,7 +4,7 @@
 
 1. **Target:** An Ensembl gene
 3. **Evidence chain:**
-	- **Link 0:** a SNP (rs9802421) predicted to be associated between the gene and Irritable bowel disease (IBD)
+	- **Link 0:** a SNP (rs9802421) predicted to be associated between the gene and Irritable bowel syndrome
 	- **Link 1:** IBD
 4. **Disease:** IBD
 
@@ -31,7 +31,7 @@
 
 - The disease indication:
 
-	1. **miriam:efo:EFO_0000555** The EFO resource ID for IBD
+	1. **miriam:efo:EFO_0000555** The EFO resource ID for Irritable bowel syndrome
 	
 ### GWAS catalog entry points:
 - **Study in GWAS catalog (mockup example):** http://www.genome.gov/gwastudies/myStudyLink

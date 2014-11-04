@@ -1,10 +1,10 @@
-<!-- START doctoc generated TOC please keep comment here to allow auto update -->
-<!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
-
 # Purpose of this document
 The aim of this document is to centralize answers to key questions about the CTTV evidence string JSON format. It is intended to be read by individuals working on preparing their data to fit this model.
 
-**Table of Contents**
+<!-- START doctoc generated TOC please keep comment here to allow auto update -->
+<!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
+
+**Table of Contents**  
 
   - ['Evidence code' questions](#evidence-code-questions)
       - [1. Which evidence codes should I use?](#1-which-evidence-codes-should-i-use)
@@ -26,9 +26,6 @@ The aim of this document is to centralize answers to key questions about the CTT
       - [2. Where can I get more information about how to map terms to EFO?](#2-where-can-i-get-more-information-about-how-to-map-terms-to-efo)
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
-
-
-
 
 ## 'Evidence code' questions
 #### 1. Which evidence codes should I use?
@@ -56,8 +53,8 @@ For now, please create a JSON array (one large file) and provide us with the URL
 
 For the first hackathon this month, we are going to use the [online JSON schema lint validator](http://jsonschemalint.com/). You can run a quick test:
 - Open [JSON schema lint validator](http://jsonschemalint.com/) in your web browser
-- Copy the [CTTV JSON schema]() into the 'JSON Schema' box
-- Copy the [example ChEMBL JSON instance]() into the 'JSON' box
+- Copy the [CTTV JSON schema](https://github.com/CTTV/input_data_format/blob/master/json_schema/evidence_string_schema.json) into the 'JSON Schema' box
+- Copy the [example ChEMBL JSON instance](https://github.com/CTTV/input_data_format/blob/master/examples/cttv0008_chembl/example.json) into the 'JSON' box
 - Both boxes should light up green if all has worked!
 - Try changing some values in the 'JSON' box and see if the schema still validates it!
 

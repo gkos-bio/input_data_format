@@ -3,14 +3,14 @@
 [TOC]
 
 ## Preparation
-1. #### How do I prepare for this hackathon (Is it really a hackathon)?
-1. #### What is expected for 8th December integration day?
+#### 1. How do I prepare for this hackathon (Is it really a hackathon)?
+#### 2. What is expected for 8th December integration day?
 
 #### Who is responsible for what?
 Sam will explain the "Responsibility assignment matrix"
 
 ## 'Evidence code' questions
-1. #### Which evidence codes should I use?
+#### 1. Which evidence codes should I use?
 - We are using the **[Evidence Codes Ontology](http://bioportal.bioontology.org/ontologies/ECO).**
 - Please provide evidence codes using this syntax: **"miriam:obo:ECO_nnnnnnn"**.
 - To see which evidence codes are assigned to your project, **[please click here](../json_schema/evidence_codes.md)**
@@ -19,19 +19,19 @@ Sam will explain the "Responsibility assignment matrix"
 
 ## 'Creating evidence string JSONs' questions
 
-1. #### Which fields are mandatory in the JSON schema?
+#### 2. Which fields are mandatory in the JSON schema?
 Please look through the [CTTV JSON schema](../json_schema/evidence_string_schema.json) for fields marked as **"required" : true**
 
-1. #### Should I use ‘null’ when a field is not mandatory?
+#### 3. Should I use ‘null’ when a field is not mandatory?
 No. You don't need to create these.
 
-1. #### Where can I see an example of the type of data I am trying to fit?
+#### 4. Where can I see an example of the type of data I am trying to fit?
 A list of examples can be [browsed here](../examples)
 
-1. #### Do I provide my data as a JSON data service or or as one large array?
+#### 5. Do I provide my data as a JSON data service or or as one large array?
 For now, please create a JSON array (one large file) and provide us with the URL to download this. Please **[update this github markdown document](../json_schema/evidence_codes.md)** with your download URL. Once a CTTV production environment is in place, we will aim to establish a common fileshare for all groups to upload their JSON files. 
 
-1. #### How do I validate the data I am providing?
+#### 6. How do I validate the data I am providing?
 Working on a JSON validation example today that we can show - using one of:
 JSON validator
 Create a schema from a JSON file
@@ -40,14 +40,14 @@ A lint tool for JSON Schema
 Python JSON Schema validator
 Antonio's JSON schema validator
 
-1. #### Do you have a package I can use to write out CTTV-JSON files?
+#### 7. Do you have a package I can use to write out CTTV-JSON files?
 This is in development. You can [pull the latest version from here](../packages)
 
-1. #### How can I uniquely identify a “target-disease” association JSON in my JSON array?
+#### 8. How can I uniquely identify a “target-disease” association JSON in my JSON array?
 This is an important requirement as we will need to track whether a unique "target-disease" association has changed properties between release cycles. Please **[update this github markdown document](../json_schema/evidence_codes.md)**
 to tell us which combination of fields in your JSON array makes one JSON distinct from another.
 
-1. #### When do I use an 'evidence chain'?
+#### 9. When do I use an 'evidence chain'?
 You use this when there are >1 independent analytical steps used to associate a target with a disease. There are 2 examples you can look at:
 
 	1. [biological target to disease association via drug - ](../examples/cttv0008_chembl) There are 2 independent analyses in this that has resulted in a chain: 1) **Experimental analysis** carried out to associate a protein/protein complex target to a drug, 2) **Clinical analysis** carried out to associate the drug to its effect in disease

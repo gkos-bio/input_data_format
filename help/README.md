@@ -54,16 +54,12 @@ For now, please create a JSON array (one large file) and provide us with the URL
 
 #### 5. How do I validate the data I am providing?
 
-[JSON schema lint validator](http://jsonschemalint.com/)
-
-
-Working on a JSON validation example today that we can show - using one of:
-JSON validator
-Create a schema from a JSON file
-A lint tool for JSON
-A lint tool for JSON Schema
-Python JSON Schema validator
-Antonio's JSON schema validator
+For the first hackathon this month, we are going to use the [online JSON schema lint validator](http://jsonschemalint.com/). You can run a quick test:
+- Open [JSON schema lint validator](http://jsonschemalint.com/) in your web browser
+- Copy the [CTTV JSON schema]() into the 'JSON Schema' box
+- Copy the [example ChEMBL JSON instance]() into the 'JSON' box
+- Both boxes should light up green if all has worked!
+- Try changing some values in the 'JSON' box and see if the schema still validates it!
 
 #### 6. Do you have a package I can use to write out CTTV-JSON files?
 This is in development. You can [pull the latest version from here](../packages)
@@ -115,8 +111,10 @@ By using URNs recognized by MIRIAM, we can point the CTTV web application to pre
 ## Experimental factors ontology (EFO) questions
 #### 1. What if my disease term does not currently map to EFO?
 If you have a disease term which isn't yet mapped to EFO, please:
+
 1. Use the efo code **'miriam:efo:EFO_0000000'** in the JSON **{biological_object}{about}** field.
 1. Provide your unmapped term under '**{biological_object}{properties}{experimental_evidence_specific}{unmapped_disease_term}**'
+    
 ```javascript
     "biological_object": {
         "about": [

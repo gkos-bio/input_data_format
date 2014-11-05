@@ -1,12 +1,16 @@
 {
+	"unique_association_fields": {
+		"biological_subjects":"miriam:uniprot:P50443",
+		"reactome_id":"REACT_267687.1",
+		"biological_objects":"miriam:orphanet:Orphanet_93298"
+	},
 	"biological_subject": {	
-		"about": ["uniprot:P50443"],
+		"about": ["miriam:uniprot:P50443"],
 		"properties": {
-			"association_context": "cttvexp:protein",
-			"activity": "cttvexp:loss_of_function"
+			"association_context": "miriam:cttvexp:protein",
+			"activity": "miriam:cttvexp:loss_of_function"
 		}	
 	},
-
 	"provenance": {
 		
 		"date_asserted": "2014-09-11T10:59:43.511Z",
@@ -29,7 +33,7 @@
 			
 		},
 		
-		"evidence_codes": ["obo:ECO_0000205", "obo:ECO_0001113"],
+		"evidence_codes": ["miriam:obo:ECO_0000205", "miriam:obo:ECO_0001113"],
 		
 		"urls": {
 			"linkouts": [
@@ -38,14 +42,12 @@
 		},
 		
 		"experimental_evidence_specific": {
-			"common_mutations":"255E, A585Vfs*6, L483P, R178X, N425D",
-			"key (string)":"value - string",
-			"key2(string)":"value2 - string"
+			"common_mutations":"255E, A585Vfs*6, L483P, R178X, N425D"
 		}
 		
 	},
 
 	"biological_object": {
-		"about": "orphanet:Orphanet_93298"	
+		"about": ["miriam:orphanet:Orphanet_93298"]	
 	}
 }

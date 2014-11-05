@@ -1,0 +1,160 @@
+# Purpose of this document
+The aim of this document is to centralize answers to key questions about the CTTV evidence string JSON format. It is intended to be read by individuals working on preparing their data to fit this model.
+
+<!-- START doctoc generated TOC please keep comment here to allow auto update -->
+<!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
+
+**Table of Contents**  
+
+  - ['Evidence code' questions](#evidence-code-questions)
+      - [1. Which evidence codes should I use?](#1-which-evidence-codes-should-i-use)
+  - ['Creating evidence string JSONs' questions](#creating-evidence-string-jsons-questions)
+      - [1. Which fields are mandatory in the JSON schema?](#1-which-fields-are-mandatory-in-the-json-schema)
+      - [2. Should I use ‘null’ when a field is not mandatory?](#2-should-i-use-‘null’-when-a-field-is-not-mandatory)
+      - [3. Where can I see an example of the type of data I am trying to fit?](#3-where-can-i-see-an-example-of-the-type-of-data-i-am-trying-to-fit)
+      - [4. Do I provide my data as a JSON data service or or as one large array?](#4-do-i-provide-my-data-as-a-json-data-service-or-or-as-one-large-array)
+      - [5. How do I validate the data I am providing?](#5-how-do-i-validate-the-data-i-am-providing)
+      - [6. Do you have a package I can use to write out CTTV-JSON files?](#6-do-you-have-a-package-i-can-use-to-write-out-cttv-json-files)
+      - [7. How can I uniquely identify a “target-disease” association JSON in my JSON array?](#7-how-can-i-uniquely-identify-a-“target-disease”-association-json-in-my-json-array)
+      - [8. When do I use an 'evidence chain'?](#8-when-do-i-use-an-evidence-chain)
+  - [Miriam registry questions](#miriam-registry-questions)
+      - [1. What is the Miriam registry and what is its relevance to the CTTV platform?](#1-what-is-the-miriam-registry-and-what-is-its-relevance-to-the-cttv-platform)
+      - [2. When do I use the “miriam” namespace prefix in the JSON?](#2-when-do-i-use-the-“miriam”-namespace-prefix-in-the-json)
+      - [3. 'miriam:cttv:' and 'miriam:cttvexp:' URNs don't exist in MIRIAM yet. Which specific CTTV URNs can I use?](#3-miriamcttv-and-miriamcttvexp-urns-dont-exist-in-miriam-yet-which-specific-cttv-urns-can-i-use)
+  - [Experimental factors ontology (EFO) questions](#experimental-factors-ontology-efo-questions)
+      - [1. What if my disease term does not currently map to EFO?](#1-what-if-my-disease-term-does-not-currently-map-to-efo)
+      - [2. Where can I get more information about how to map terms to EFO?](#2-where-can-i-get-more-information-about-how-to-map-terms-to-efo)
+
+<!-- END doctoc generated TOC please keep comment here to allow auto update -->
+
+## 'Evidence code' questions
+#### 1. Which evidence codes should I use?
+- We are using the **[Evidence Codes Ontology](http://bioportal.bioontology.org/ontologies/ECO).**
+- Please provide evidence codes using this syntax: **"miriam:obo:ECO_nnnnnnn"**.
+- To see which evidence codes are assigned to your project, **[please click here](../json_schema/project_tracker.md)**
+- If you need to use additional evidence codes to the ones above, please make sure you **[update this github markdown document](../json_schema/project_tracker.md)** with your new codes
+- For requesting new evidence codes, please contact **jamesmalone, cc samiulxhasan**
+
+## 'Creating evidence string JSONs' questions
+
+#### 1. Which fields are mandatory in the JSON schema?
+Please look through the [CTTV JSON schema](../json_schema/evidence_string_schema.json) for fields marked as **"required" : true**
+
+#### 2. Should I use ‘null’ when a field is not mandatory?
+No. You don't need to create these.
+
+#### 3. Where can I see an example of the type of data I am trying to fit?
+A list of examples can be [browsed here](../examples)
+
+#### 4. Do I provide my data as a JSON data service or or as one large array?
+For now, please create a JSON array (one large file) and provide us with the URL to download this. Please **[update this github markdown document](../json_schema/project_tracker.md)** with your download URL. Once a CTTV production environment is in place, we will aim to establish a common fileshare for all groups to upload their JSON files. 
+
+#### 5. How do I validate the data I am providing?
+
+- You can do this using an **online validator** like [JSON schema lint validator](http://jsonschemalint.com/):
+	- Open [JSON schema lint validator](http://jsonschemalint.com/) in your web browser
+	- Copy the [CTTV JSON schema](https://github.com/CTTV/input_data_format/blob/master/json_schema/evidence_string_schema.json) into the 'JSON Schema' box
+	- Copy the [example ChEMBL JSON instance](https://github.com/CTTV/input_data_format/blob/master/examples/cttv0008_chembl/example.json) into the 'JSON' box
+	- Both boxes should light up green if all has worked!
+	- Try changing some values in the 'JSON' box and see if the schema still validates it!
+
+- You can do this **locally** using [our python script](../scripts/cttv0001_core_db/json_schema_validator)
+- The [JSON processor jq](http://stedolan.github.io/jq/) is also powerful.
+
+#### 6. Do you have a package I can use to write out CTTV-JSON files?
+This is in development. You can [pull the latest version from here](../packages)
+
+#### 7. What is the 'unique_association_fields' codeblock in the JSON?
+We need to know whether a given "target-disease" association can be uniquely identified in your database. This is an important requirement as we will need to track whether a unique "target-disease" association has changed properties (e.g. p-values) between release cycles. The **'unique_association_fields'** is, therefore, implemented in the schema to capture an array of key:value pairs in your data that can help with this. This will be different between different data providers so please use a set of keys that is specific to your database and that is consistent between release cycles. Here are some examples:
+
+```javascript
+For ArrayAtlas:
+
+    "unique_association_fields": {
+        "geneID" : "ENSG00000127720",
+        "study_id" : "E-MEXP-3628",
+        "comparison_name" : "'osteosarcoma' vs 'normal'"
+    }
+
+For Reactome:
+
+	"unique_association_fields": {
+		"biological_subjects":"miriam:uniprot:P50443",
+		"reactome_id":"REACT_267687.1",
+		"biological_objects":"miriam:orphanet:Orphanet_93298"
+	}
+
+```
+
+
+
+#### 8. When do I use an 'evidence chain'?
+You use this when there are >1 independent analytical steps used to associate a target with a disease. There are 2 examples you can look at:
+
+- [biological target to disease association via drug - ](../examples/cttv0008_chembl) There are 2 independent analyses in this that has resulted in a chain: 1) **Experimental analysis** carried out to associate a protein/protein complex target to a drug, 2) **Clinical analysis** carried out to associate the drug to its effect in disease
+
+- [gene to disease association via snp - ](../examples/cttv0018_ibd_gwas) There are 2 independent analyses in this that has resulted in a chain: 1) **Computational analysis** carried out to associate a gene target to its nearest nucleotide polymorphism, 2) **Genetics analysis** carried out to associate the nucleotide polymorphism to its effect in disease
+
+## Miriam registry questions
+
+#### 1. What is the Miriam registry and what is its relevance to the CTTV platform?
+[Link to MIRIAM registry](http://www.ebi.ac.uk/miriam/main/collections/): This is maintained by the [Biomodels group](http://www.ebi.ac.uk/biomodels-main/) at the EBI.
+It provides a URN to URL mapping service. For example:
+
+```javascript
+example URN = "miriam:eco:ECO:0001113"
+
+URLs resolved by Miriam = 
+"http://www.ebi.ac.uk/ontology-lookup/?termId=ECO%3A0001113",
+"http://purl.bioontology.org/ontology/ECO/ECO%3A0001113"
+```
+
+By using URNs recognized by MIRIAM, we can point the CTTV web application to pre-resolved URLs.
+
+#### 2. When do I use the “miriam” namespace prefix in the JSON?
+- Please use the **'miriam:'** prefix whenever you are referring to an identifiable biological entity that has a valid miriam namespace.
+- Examples: **miriam:uniprot:P25100, miriam:obo:ECO_0000360, miriam:chembl:CHEMBL2**
+- Check the [miriam registry](http://www.ebi.ac.uk/miriam/main/collections/) to check if it exists.
+- These are typically used as **biological_subject** or **biological_object** resources but can be used elsewhere too (e.g. within the **'experimental_evidence_specific'** codeblock).
+- When referring to cttv-specific resources, please use **'miriam:'** prefix as well. For example **'miriam:cttvexp:gene'**. We will request addition of the CTTV specific resources to the MIRIAM registry once the software is in beta release.
+
+#### 3. 'miriam:cttv:' and 'miriam:cttvexp:' URNs don't exist in MIRIAM yet. Which specific CTTV URNs can I use?
+- You can browse the list of the URNs [here](../json_schema/cttv_uris_namespaces.md). These correspond to the terms in the  [CTTV core ontology](../ontology/cttv_core.owl).
+- These are the **'biological_subject'** fields in the JSON where this is used ([full example](../examples/cttv0008_chembl)):
+```javascript
+        "properties": {
+            "association_context": "miriam:cttvexp:protein_complex_heteropolymer",
+            "activity": "miriam:cttvexp:drug_negative_modulator"
+        }
+```
+
+## Experimental factors ontology (EFO) questions
+#### 1. What if my disease term does not currently map to EFO?
+If you have a disease term which isn't yet mapped to EFO, please:
+
+1. Use the efo code **'miriam:efo:EFO_0000000'** in the JSON **{biological_object}{about}[0]** field.
+1. Provide your unmapped term under '**{biological_object}{properties}{experimental_evidence_specific}{unmapped_disease_term}**'
+    
+```javascript
+    "biological_object": {
+        "about": [
+            "miriam:efo:EFO_0000000"
+        ],
+        "properties": {
+            "experimental_evidence_specific": {
+                "unmapped_disease_term" : "disease X which is not in EFO"
+            }
+        }
+    }
+```
+
+#### 2. Where can I get more information about how to map terms to EFO?
+See [jamesmalone and tonyburdett's Confluence WIKI](https://www.ebi.ac.uk/seqdb/confluence/display/CTTV/Ontology+Annotation) (Only for those with CTTV Confluence accounts)
+
+
+
+
+
+
+
+

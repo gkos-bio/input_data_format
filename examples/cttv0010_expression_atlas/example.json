@@ -1,0 +1,63 @@
+{
+    "unique_association_fields": {
+        "geneID" : "ENSG00000127720",
+        "study_id" : "E-MEXP-3628",
+        "comparison_name" : "'osteosarcoma' vs 'normal'"
+    },
+    "biological_subject": {
+        "about": [
+            "miriam:ensembl:ENSG00000127720"
+        ],
+        "properties": {
+            "association_context": "miriam:cttvexp:transcript",
+            "activity": "miriam:cttvexp:decreased_transcript_level"
+        }
+    },
+    "provenance": {
+        "association_score": {
+            "p-value": 4.18e-05
+        },
+        "type": {
+            "database": {
+                "version": "NA",
+                "id": "Expression_Atlas"
+            }
+        },
+        "urls": {
+            "linkouts": [
+                {
+                    "url": "http://www.ebi.ac.uk/arrayexpress/E-MEXP-3628",
+                    "nice_name": "ArrayExpress Experiment overview"
+                },
+                {
+                    "url": "http://wwwdev.ebi.ac.uk/gxa/experiments/E-MEXP-3628?geneQuery=ENSG00000127720",
+                    "nice_name": "Gene expression in Expression Atlas"
+                }
+            ]
+        },
+        "experimental_evidence_specific": {
+            "study_id": "E-MEXP-3628",
+            "comparison_name": "'osteosarcoma' vs 'normal'",
+            "log2_fold_change": "-1.21"
+        },
+        "is_associated": true,
+        "evidence_codes": [
+            "miriam:obo:ECO_0000356"
+        ],
+        "date_asserted": "2014-10-16T07:55:03Z"
+    },
+    "biological_object": {
+        "about": [
+            "miriam:efo:EFO_0000637"
+        ],
+        "properties": {
+            "biosamples": [
+                "miriam:efo:EFO_0000298"
+            ],
+            "experimental_evidence_specific": {
+                "test_group": "miriam:efo:EFO_0000637",
+                "reference_group": "miriam:efo:EFO_0000761"
+            }
+        }
+    }
+}

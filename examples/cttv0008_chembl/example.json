@@ -1,84 +1,105 @@
 {
-	"biological_subject": {	
-		"about": ["uniprot:P25100", "uniprot:P35348", "uniprot:P35368"],
-		"properties": {
-			"association_context": "cttvexp:protein_complex_heteropolymer",
-			"activity": "cttvexp:drug_negative_modulator"	
-		}	
-	},
-
-	"provenance": {
-		
-		"date_asserted": "2014-09-11T10:59:43.511Z",
-		"is_associated": true,
-		"evidence_codes": ["obo:ECO_0000360", "obo:ECO_0000205"],
-		
-		"type": {
-			
-			"literature": {
-				"pubmed_refs": [9135028,9276013,7731013,2879919,2886664,2884316,2863377,2886664]
-			},
-			
-			"expert": {
-				"status" : true
-			},
-			
-			"database": {
-				"id": "ChEMBL",
-				"version": "19"
-			}
-		},
-		
-		"urls": {
-			"linkouts": [
-				{"nice_name":"ChEMBL molecule information", "url": "https://www.ebi.ac.uk/chembl/compound/inspect/CHEMBL2"},
-				{"nice_name":"ChEMBL target information", "url": "https://www.ebi.ac.uk/chembl/target/inspect/CHEMBL2094251"}
-			]
-		},
-		
-		"experimental_evidence_specific": {
-			
-			"evidence_chain": {
-				"0": {
-					"biological_subject": {
-						"about": ["uniprot:P25100", "uniprot:P35348", "uniprot:P35368"]
-					},
-					"provenance": {
-						"experimental_evidence_specific": {
-							"MOLECULE_NAME" : "Prazosin",
-							"MOLECULE_TYPE" : "Small molecule",
-							"MECHANISM_OF_ACTION" : "Adrenergic receptor alpha-1 antagonist",
-							"ACTION_TYPE":"ANTAGONIST"
-						}
-					},
-					"biological_object": {
-						"about": "chembl.compound:CHEMBL2" 	
-					}
-				},
-				"1": {
-					"biological_subject": {
-						"about": "chembl.compound:CHEMBL2" 	
-					},
-					"provenance": {
-						"experimental_evidence_specific": {
-							"comment" : "Marketed drug indication"
-						}
-					},
-					"biological_object": {
-						"about": "efo:EFO_0000537"						
-					}
-				}
-			}
-		}
-
-	},
-
-	"biological_object": {
-		
-		"about": "efo:EFO_0000537",
-		"properties": {
-			"biosamples": ["obo:UBERON_0004535"]			
-		}
-		
-	}
+    "biological_subject": {
+        "about": [
+            "miriam:uniprot:P25100",
+            "miriam:uniprot:P35348",
+            "miriam:uniprot:P35368"
+        ],
+        "properties": {
+            "association_context": "miriam:cttvexp:protein_complex_heteropolymer",
+            "activity": "miriam:cttvexp:drug_negative_modulator"
+        }
+    },
+    "provenance": {
+        "date_asserted": "2014-09-11T10:59:43.511Z",
+        "is_associated": true,
+        "evidence_codes": [
+            "miriam:obo:ECO_0000360",
+            "miriam:obo:ECO_0000205"
+        ],
+        "type": {
+            "literature": {
+                "pubmed_refs": [
+                    9135028,
+                    9276013,
+                    7731013,
+                    2879919,
+                    2886664,
+                    2884316,
+                    2863377,
+                    2886664
+                ]
+            },
+            "expert": {
+                "status": true
+            },
+            "database": {
+                "id": "ChEMBL",
+                "version": "19"
+            }
+        },
+        "urls": {
+            "linkouts": [
+                {
+                    "nice_name": "ChEMBL molecule information",
+                    "url": "https://www.ebi.ac.uk/chembl/compound/inspect/CHEMBL2"
+                },
+                {
+                    "nice_name": "ChEMBL target information",
+                    "url": "https://www.ebi.ac.uk/chembl/target/inspect/CHEMBL2094251"
+                }
+            ]
+        },
+        "evidence_chain": [
+            {
+                "biological_subject": {
+                    "about": [
+                        "miriam:uniprot:P25100",
+                        "miriam:uniprot:P35348",
+                        "miriam:uniprot:P35368"
+                    ]
+                },
+                "provenance": {
+                    "experimental_evidence_specific": {
+                        "MOLECULE_NAME": "Prazosin",
+                        "MOLECULE_TYPE": "Small molecule",
+                        "MECHANISM_OF_ACTION": "Adrenergic receptor alpha-1 antagonist",
+                        "ACTION_TYPE": "ANTAGONIST"
+                    }
+                },
+                "biological_object": {
+                    "about": [
+                        "miriam:chembl.compound:CHEMBL2"
+                    ]
+                }
+            },
+            {
+                "biological_subject": {
+                    "about": [
+                        "miriam:chembl.compound:CHEMBL2"
+                    ]
+                },
+                "provenance": {
+                    "experimental_evidence_specific": {
+                        "comment": "Marketed drug indication"
+                    }
+                },
+                "biological_object": {
+                    "about": [
+                        "miriam:efo:EFO_0000537"
+                    ]
+                }
+            }
+        ]
+    },
+    "biological_object": {
+        "about": [
+            "miriam:efo:EFO_0000537"
+        ],
+        "properties": {
+            "biosamples": [
+                "miriam:obo:UBERON_0004535"
+            ]
+        }
+    }
 }

@@ -1,4 +1,9 @@
 {
+	"unique_association_fields": {
+		"biological_subjects":"miriam:uniprot:P50443",
+		"reactome_id":"REACT_267687.1",
+		"biological_objects":"miriam:orphanet:Orphanet_93298"
+	},
 	"biological_subject": {	
 		"about": ["miriam:uniprot:P50443"],
 		"properties": {
@@ -6,7 +11,6 @@
 			"activity": "miriam:cttvexp:loss_of_function"
 		}	
 	},
-
 	"provenance": {
 		
 		"date_asserted": "2014-09-11T10:59:43.511Z",
@@ -38,9 +42,7 @@
 		},
 		
 		"experimental_evidence_specific": {
-			"common_mutations":"255E, A585Vfs*6, L483P, R178X, N425D",
-			"key (string)":"value - string",
-			"key2(string)":"value2 - string"
+			"common_mutations":"255E, A585Vfs*6, L483P, R178X, N425D"
 		}
 		
 	},

@@ -109,7 +109,7 @@ By using URNs recognized by MIRIAM, we can point the CTTV web application to pre
 #### 1. What if my disease term does not currently map to EFO?
 If you have a disease term which isn't yet mapped to EFO, please:
 
-1. Use the efo code **'miriam:efo:EFO_0000000'** in the JSON **{biological_object}{about}** field.
+1. Use the efo code **'miriam:efo:EFO_0000000'** in the JSON **{biological_object}{about}[0]** field.
 1. Provide your unmapped term under '**{biological_object}{properties}{experimental_evidence_specific}{unmapped_disease_term}**'
     
 ```javascript

@@ -51,12 +51,15 @@ For now, please create a JSON array (one large file) and provide us with the URL
 
 #### 5. How do I validate the data I am providing?
 
-For the first hackathon this month, we are going to use the [online JSON schema lint validator](http://jsonschemalint.com/). You can run a quick test:
-- Open [JSON schema lint validator](http://jsonschemalint.com/) in your web browser
-- Copy the [CTTV JSON schema](https://github.com/CTTV/input_data_format/blob/master/json_schema/evidence_string_schema.json) into the 'JSON Schema' box
-- Copy the [example ChEMBL JSON instance](https://github.com/CTTV/input_data_format/blob/master/examples/cttv0008_chembl/example.json) into the 'JSON' box
-- Both boxes should light up green if all has worked!
-- Try changing some values in the 'JSON' box and see if the schema still validates it!
+- You can do this using an **online validator** like [JSON schema lint validator](http://jsonschemalint.com/):
+	- Open [JSON schema lint validator](http://jsonschemalint.com/) in your web browser
+	- Copy the [CTTV JSON schema](https://github.com/CTTV/input_data_format/blob/master/json_schema/evidence_string_schema.json) into the 'JSON Schema' box
+	- Copy the [example ChEMBL JSON instance](https://github.com/CTTV/input_data_format/blob/master/examples/cttv0008_chembl/example.json) into the 'JSON' box
+	- Both boxes should light up green if all has worked!
+	- Try changing some values in the 'JSON' box and see if the schema still validates it!
+
+- You can do this **locally** using [our python script](../scripts/cttv0001_core_db/json_schema_validator)
+- The [JSON processor jq](http://stedolan.github.io/jq/) is also powerful.
 
 #### 6. Do you have a package I can use to write out CTTV-JSON files?
 This is in development. You can [pull the latest version from here](../packages)

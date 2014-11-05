@@ -42,7 +42,7 @@ miriam:cttvexp:transcript_evidence
     miriam:cttvexp:transcript_isoform
 ```
 
-## CTTV biological activity (in disease) ontology
+## CTTV biological activity [in disease] ontology
 The figure below shows the various definitions of 'biological activity' as used in the CTTV core ontology. One of these terms needs to be used in the **{biological_subject}{activity}** field of the JSON file to specify what kind of biological activity was observed in the target-disease association:
 
 ![CTTV activity ontology](../help/images/activity_ontology.png)

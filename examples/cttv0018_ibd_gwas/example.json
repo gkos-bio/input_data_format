@@ -5,30 +5,16 @@
         ],
         "properties": {
             "association_context": "miriam:cttvexp:gene",
-            "activity": "miriam:cttvexp:predicted_damaging",
-            "experimental_evidence_specific": {
-                "Rank out of n SNPs": "3",
-                "Consequence": "missense_variant",
-                "sift": "tolerated(0.39)",
-                "CADDP": "6.546",
-                "probability of being causual": "0.0202556065553751",
-                "Domain1": "miriam:pfam:PF00619",
-                "Domain2": "miriam:prosite:PS50209",
-                "Domain3": "miriam:supfam:SSF47986"
-            }
+            "activity": "miriam:cttvexp:predicted_damaging"
         }
     },
     "provenance": {
         "date_asserted": "2014-09-11T10:59:43.511Z",
         "is_associated": true,
-                    "evidence_codes": [
-                        "miriam:obo:ECO_0000177",
-                        "miriam:obo:ECO_0001113"
-                    ],
-
-        "association_score": {
-            "p-value": 1.316e-44
-        },
+        "evidence_codes": [
+            "miriam:obo:ECO_0000177",
+            "miriam:obo:ECO_0001113"
+        ],
         "type": {
             "literature": {
                 "pubmed_refs": [
@@ -50,7 +36,9 @@
         "evidence_chain": [
             {
                 "biological_subject": {
-                    "about": [ "miriam:ensembl:ENSG9023124" ]
+                    "about": [
+                        "miriam:ensembl:ENSG9023124"
+                    ]
                 },
                 "provenance": {
                     "evidence_codes": [
@@ -63,23 +51,35 @@
                             "odds ratio [std error]": "0.8538 [+-0.0001]",
                             "freq_a1": "0.5624",
                             "variation": "9_139266496_C/T",
-                            "genome_build": "37"
+                            "genome_build": "37",
+                            "Rank out of n SNPs": "3",
+                            "Consequence": "missense_variant",
+                            "sift": "tolerated(0.39)",
+                            "CADDP": "6.546",
+                            "probability of being causual": "0.0202556065553751"
                         }
                     }
                 },
                 "biological_object": {
-                    "about": [ "miriam:dbsnp:rs9802421" ]
+                    "about": [
+                        "miriam:dbsnp:rs9802421"
+                    ]
                 }
             },
             {
                 "biological_subject": {
-                    "about": [ "miriam:dbsnp:rs9802421" ]
+                    "about": [
+                        "miriam:dbsnp:rs9802421"
+                    ]
                 },
                 "provenance": {
                     "evidence_codes": [
                         "miriam:obo:ECO_0000177",
                         "miriam:obo:ECO_0001113"
                     ],
+                    "association_score": {
+                        "p-value": 1.316e-44
+                    },
                     "properties": {
                         "experimental_evidence_specific": {
                             "HDRSIG": "HD106_sig1"
@@ -87,7 +87,9 @@
                     }
                 },
                 "biological_object": {
-                    "about": [ "miriam:efo:EFO_0003767" ]
+                    "about": [
+                        "miriam:efo:EFO_0003767"
+                    ]
                 }
             }
         ]

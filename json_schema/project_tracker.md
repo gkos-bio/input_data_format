@@ -20,13 +20,10 @@ This live document is intended to keep track of data/information required of/bei
 ## 1. Rare2Common (CTTV005)
 **Tech lead: jamesmalone**
 
-Evidence codes: NA since this is an ontology project.
+Evidence codes: Doesn't apply
 
-Additional information:
+**Download URL:** PLEASE FILL THIS IN
 
-|Download URL|Fields used to uniquely identify target-disease associations|
-|------------|------------------------------------------------------------|
-|http://     |
 
 ## 2. Networks - Reactome (CTTV006)
 **Tech lead: fabregat**
@@ -44,11 +41,7 @@ Evidence string structure:
 |----------------------------|-------------------------------|-----------------------------|--------|
 |[child term of protein_evidence as an array](./cttv_uris_namespaces.md)|no|[EFO disease or phenotype as an array](http://www.ebi.ac.uk/efo/)|[click here](../examples/cttv0006_networks_reactome)|
 
-Additional information:
-
-|Download URL|Fields used to uniquely identify target-disease associations|
-|------------|------------------------------------------------------------|
-|http://     |
+**Download URL:** PLEASE FILL THIS IN
 
 ## 3. Networks - Intact (CTTV006)
 **Tech lead: maitesin**
@@ -66,11 +59,7 @@ Evidence string structure:
 |----------------------------|-------------------------------|-----------------------------|--------|
 |[child term of protein_evidence as an array](./cttv_uris_namespaces.md)|no|[EFO disease or phenotype as an array](http://www.ebi.ac.uk/efo/)|[nearest example (Reactome); click here](../examples/cttv0006_networks_reactome)|
 
-Additional information:
-
-|Download URL|Fields used to uniquely identify target-disease associations|
-|------------|------------------------------------------------------------|
-|http://     |
+**Download URL:** PLEASE FILL THIS IN
 
 ## 4. ChEMBL (CTTV008)
 **Tech lead: mark-davies**
@@ -89,11 +78,7 @@ Evidence string structure:
 |----------------------------|-------------------------------|-----------------------------|--------|
 |[child term of protein_evidence as an array](./cttv_uris_namespaces.md)|yes|[EFO disease or phenotype as an array](http://www.ebi.ac.uk/efo/)|[click here](../examples/cttv0008_chembl)|
 
-Additional information:
-
-|Download URL|Fields used to uniquely identify target-disease associations|
-|------------|------------------------------------------------------------|
-|http://     |
+**Download URL:** PLEASE FILL THIS IN
 
 ## 5. GWAS catalog (CTTV009)
 **Tech lead: tburdett**
@@ -113,11 +98,7 @@ Evidence string structure:
 |----------------------------|-------------------------------|-----------------------------|--------|
 |[child term of gene_evidence as an array](./cttv_uris_namespaces.md)|yes|[EFO disease or phenotype as an array](http://www.ebi.ac.uk/efo/)|[nearest GWAS example (click here)](../examples/cttv0018_ibd_gwas)|
 
-Additional information:
-
-|Download URL|Fields used to uniquely identify target-disease associations|
-|------------|------------------------------------------------------------|
-|http://     |
+**Download URL:** PLEASE FILL THIS IN
 
 ## 6. Tissue specificity (CTTV010)
 **Tech lead: mkeays**
@@ -135,13 +116,9 @@ Evidence string structure:
 
 |biological_subject (target) | provenance has evidence chain | biological_object (disease) | example|
 |----------------------------|-------------------------------|-----------------------------|--------|
-|[child term of transcript_evidence as an array](./cttv_uris_namespaces.md)|yes|[EFO disease or phenotype as an array](http://www.ebi.ac.uk/efo/)|[click here](../examples/cttv0010_expression_atlas)|
+|[child term of transcript_evidence as an array](./cttv_uris_namespaces.md)|no|[EFO disease or phenotype as an array](http://www.ebi.ac.uk/efo/)|[click here](../examples/cttv0010_expression_atlas)|
 
-Additional information:
-
-|Download URL|Fields used to uniquely identify target-disease associations|
-|------------|------------------------------------------------------------|
-|http://www.ebi.ac.uk/~mkeays/cttv/expression_atlas_cttv_evidence_strings.json|1. Entrez gene: **{biological_subject}{about}[0]**, 2. studyID: **{provenance}{experimental_evidence_specific}{study_id}**, 3. Comparison name: **{provenance}{experimental_evidence_specific}{comparison_name}**|
+**Download URL:** http://www.ebi.ac.uk/~mkeays/cttv/expression_atlas_cttv_evidence_strings.json
 
 ## 7. Uniprot (CTTV011)
 **Tech lead: eddturner**
@@ -159,11 +136,7 @@ Evidence string structure:
 |----------------------------|-------------------------------|-----------------------------|--------|
 |[child term of protein_evidence as an array](./cttv_uris_namespaces.md)|no|[EFO disease or phenotype as an array](http://www.ebi.ac.uk/efo/)|[Nearest example - Reactome; click here](../examples/cttv0006_networks_reactome)|
 
-Additional information:
-
-|Download URL|Fields used to uniquely identify target-disease associations|
-|------------|------------------------------------------------------------|
-|http://     |
+**Download URL:** PLEASE FILL THIS IN
 
 ## 8. Variation (CTTV012)
 **Tech lead: javild**
@@ -183,11 +156,7 @@ Evidence string structure:
 |----------------------------|-------------------------------|-----------------------------|--------|
 |[child term of gene_evidence as an array](./cttv_uris_namespaces.md)|yes|[EFO disease or phenotype as an array](http://www.ebi.ac.uk/efo/)|[Nearest GWAS example; click here](../examples/cttv0018_ibd_gwas)|
 
-Additional information:
-
-|Download URL|Fields used to uniquely identify target-disease associations|
-|------------|------------------------------------------------------------|
-|http://     |
+**Download URL:** PLEASE FILL THIS IN
 
 ## 9. IBD_GWAS (CTTV018)
 **Tech lead: slwest**
@@ -207,8 +176,4 @@ Evidence string structure:
 |----------------------------|-------------------------------|-----------------------------|--------|
 |[child term of gene_evidence as an array](./cttv_uris_namespaces.md)|yes|[EFO disease or phenotype as an array](http://www.ebi.ac.uk/efo/)|[click here](../examples/cttv0018_ibd_gwas)|
 
-Additional information:
-
-|Download URL|Fields used to uniquely identify target-disease associations|
-|------------|------------------------------------------------------------|
-|http://     |
+**Download URL:** PLEASE FILL THIS IN

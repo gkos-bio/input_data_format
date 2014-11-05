@@ -2,8 +2,17 @@
     "type": "object",
     "$schema": "http://json-schema.org/draft-03/schema",
     "id": "urn:jsonschema:org:cttv:input:model:EvidenceString",
-    "title": "CTTV JSON Schema Test Version",
+    "title": "CTTV JSON Schema",
+    "version": "1.0",
     "properties": {
+        "unique_association_fields": {
+            "type": "object",
+            "required" : false,
+            "description": "Use this to add an array of string-based key:value pairs to uniquely identify this association in your database.",
+            "additionalProperties": {
+                "type": "string"
+            }
+        },
         "biological_subject": {
             "type": "object",
             "id": "urn:jsonschema:org:cttv:input:model:BiologicalSubject",

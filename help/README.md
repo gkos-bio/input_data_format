@@ -61,9 +61,29 @@ For the first hackathon this month, we are going to use the [online JSON schema 
 #### 6. Do you have a package I can use to write out CTTV-JSON files?
 This is in development. You can [pull the latest version from here](../packages)
 
-#### 7. How can I uniquely identify a “target-disease” association JSON in my JSON array?
-This is an important requirement as we will need to track whether a unique "target-disease" association has changed properties between release cycles. Please **[update this github markdown document](../json_schema/project_tracker.md)**
-to tell us which combination of fields in your JSON array makes one JSON distinct from another.
+#### 7. What is the 'unique_association_fields' codeblock in the JSON?
+We need to know whether a given "target-disease" association can be uniquely identified in your database. This is an important requirement as we will need to track whether a unique "target-disease" association has changed properties (e.g. p-values) between release cycles. The **'unique_association_fields'** is, therefore, implemented in the schema to capture an array of key:value pairs in your data that can help with this. This will be different between different data providers so please use a set of keys that is specific to your database and that is consistent between release cycles. Here are some examples:
+
+```javascript
+For ArrayAtlas:
+
+    "unique_association_fields": {
+        "geneID" : "ENSG00000127720",
+        "study_id" : "E-MEXP-3628",
+        "comparison_name" : "'osteosarcoma' vs 'normal'"
+    }
+
+For Reactome:
+
+	"unique_association_fields": {
+		"biological_subjects":"miriam:uniprot:P50443",
+		"reactome_id":"REACT_267687.1",
+		"biological_objects":"miriam:orphanet:Orphanet_93298"
+	}
+
+```
+
+
 
 #### 8. When do I use an 'evidence chain'?
 You use this when there are >1 independent analytical steps used to associate a target with a disease. There are 2 examples you can look at:

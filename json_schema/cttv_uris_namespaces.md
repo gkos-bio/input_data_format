@@ -57,7 +57,11 @@ miriam:cttvexp:down
     miriam:cttvexp:loss_of_function
     miriam:cttvexp:partial_loss_of_function
 miriam:cttvexp:unknown
-    miriam:cttvexp:predicted_damaging    
+    miriam:cttvexp:damaging
+    	miriam:cttvexp:damaging_to_target
+    miriam:cttvexp:predicted
+    	miriam:cttvexp:predicted_damaging
+        miriam:cttvexp:predicted_tolerated
 miriam:cttvexp:up
     miriam:cttvexp:drug_positive_modulator
     miriam:cttvexp:gain_of_function

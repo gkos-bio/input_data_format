@@ -144,6 +144,22 @@
     
 
 
+    <!-- http://www.targetvalidation.org/cttv_core/experiment/damaging -->
+
+    <owl:Class rdf:about="&cttvcore;/experiment/damaging">
+        <rdfs:subClassOf rdf:resource="&cttvcore;/experiment/unknown"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.targetvalidation.org/cttv_core/experiment/damaging_to_target -->
+
+    <owl:Class rdf:about="&cttvcore;/experiment/damaging_to_target">
+        <rdfs:subClassOf rdf:resource="&cttvcore;/experiment/damaging"/>
+    </owl:Class>
+    
+
+
     <!-- http://www.targetvalidation.org/cttv_core/experiment/decreased_transcript_level -->
 
     <owl:Class rdf:about="&cttvcore;/experiment/decreased_transcript_level">
@@ -295,10 +311,26 @@
     
 
 
+    <!-- http://www.targetvalidation.org/cttv_core/experiment/predicted -->
+
+    <owl:Class rdf:about="&cttvcore;/experiment/predicted">
+        <rdfs:subClassOf rdf:resource="&cttvcore;/experiment/unknown"/>
+    </owl:Class>
+    
+
+
     <!-- http://www.targetvalidation.org/cttv_core/experiment/predicted_damaging -->
 
     <owl:Class rdf:about="&cttvcore;/experiment/predicted_damaging">
-        <rdfs:subClassOf rdf:resource="&cttvcore;/experiment/unknown"/>
+        <rdfs:subClassOf rdf:resource="&cttvcore;/experiment/predicted"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.targetvalidation.org/cttv_core/experiment/predicted_tolerated -->
+
+    <owl:Class rdf:about="&cttvcore;/experiment/predicted_tolerated">
+        <rdfs:subClassOf rdf:resource="&cttvcore;/experiment/predicted"/>
     </owl:Class>
     
 
@@ -399,6 +431,14 @@
     <owl:Class rdf:about="&cttvcore;/experiment/selectivity_group">
         <rdfs:subClassOf rdf:resource="&cttvcore;/experiment/protein_evidence"/>
         <rdfs:comment>Target is a pair of proteins for which the selectivity has been assessed</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.targetvalidation.org/cttv_core/experiment/tolerated -->
+
+    <owl:Class rdf:about="&cttvcore;/experiment/tolerated">
+        <rdfs:subClassOf rdf:resource="&cttvcore;/experiment/unknown"/>
     </owl:Class>
     
 

@@ -1,0 +1,69 @@
+{
+  "unique_association_fields": {
+    // check with maria / claire about what is it that uniquely ids this json record.
+    "biological_subjects": "miriam:uniprot:P51587",
+    "uniprot_id": "P51587",
+    "publication_id": "some id"
+    "cv_id" : "some kind of controlled vocab id for the disease"
+  },
+  "biological_subject": {
+    "about": [
+      "miriam:uniprot:P50443"
+    ],
+    "properties": {
+      "association_context": "miriam:cttvexp:protein",
+      "activity": "miriam:cttvexp:loss_of_function" // ask claire to pick from here: https://github.com/CTTV/input_data_format/blob/master/json_schema/cttv_uris_namespaces.md
+    }
+  },
+  "provenance": {
+    "date_asserted": "2014-09-11T10:59:43.511Z",
+    "is_associated": true,
+    "type": {
+      "literature": {
+        "pubmed_refs": [
+          11448940,
+          8528239,
+          7923357
+        ]
+      },
+      "expert": {
+        "status": true
+      },
+      "database": {
+        "id": "UniProt",
+        "version": "get this (it's a number!)"
+      }
+    },
+    "evidence_codes": [
+    // see : https://github.com/CTTV/input_data_format/blob/master/json_schema/project_tracker.md#7-uniprot-cttv011
+    // check with claire for additional ones.
+    // (these just say some curator has looked at it)
+    // when creating this json object from Java -- include these three eco codes, + any others that we see associated
+    // with the object in the code (by analysing the UniProt entry object).
+      "miriam:obo:ECO_0000205",
+      "miriam:obo:ECO_0001113",
+      "miriam:obo:ECO_000269"
+    ],
+    "urls": { 
+      "linkouts": [
+        {
+          "nice_name": "UniProt entry",
+          "url": "http://www.uniprot.org/uniprot/P50443"
+        }
+      ]
+    },
+    "experimental_evidence_specific": {
+      // keep neet (not 100% needed for dec release -- just make sure this info can be retrieved from linkout url)
+      "natural variants??": "255E, A585Vfs*6, L483P, R178X, N425D"
+    }
+  },
+  "biological_object": {
+    // https://github.com/CTTV/input_data_format/tree/master/help#1-what-if-my-disease-term-does-not-currently-map-to-efo
+    // put existing omim / orphanet terms here if we have them.
+    // http://www.ebi.ac.uk/miriam
+    // http://www.ebi.ac.uk/miriam/main/collections/MIR:00000016
+    "about": [
+      "miriam:orphanet:Orphanet_93298"
+    ]
+  }
+}

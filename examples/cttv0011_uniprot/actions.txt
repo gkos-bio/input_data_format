@@ -1,0 +1,8 @@
+
+-- json dump file generator
+-- integrate existing omim->efo mappings into json dump file generator
+XX chat with maria re: omim->efo mappings and understood deliverables
+      Ian is expecting data, which will appear in central ftp dump location. No dump location finalised according to Sam. So where do we put it?
+-- find out where/when ftp dump location will be
+-- do "hackathon" examples and distribute with uniprot cttv members. ask for feedback.
+-- suggest clarity on github repos. there appears to be a input_data_format repo, will there be others? is there a, and what is the plan?

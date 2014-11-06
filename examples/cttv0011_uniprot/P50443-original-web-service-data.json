@@ -1,0 +1,14 @@
+{
+  "diseases": [
+    {
+      "about": "uniprot_assoc(1710349523)",
+      "uniprotId": "http://beta.uniprot.org/uniprot/P50443",
+      "referenceGenomeBuild": "UniProt release 2014.09",
+      "disease": "EFO not yet mapped",
+      "provenance": "http://www.targetvalidation.org/cttv_core#ExpertProvenance",
+      "isAssociated": "yes",
+      "databaseId": "UniProt",
+      "source": "http://omim.org/entry/222600"
+    }
+  ]
+}

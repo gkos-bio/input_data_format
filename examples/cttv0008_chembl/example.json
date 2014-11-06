@@ -1,4 +1,9 @@
 {
+    "validated_against_schema_version": 1.0,
+    "unique_association_fields": {
+       "miriam_uniprot": "P25100,P35348,P35368",
+       "miriam_chembl_compound": "CHEMBL2"
+    },
     "biological_subject": {
         "about": [
             "miriam:uniprot:P25100",

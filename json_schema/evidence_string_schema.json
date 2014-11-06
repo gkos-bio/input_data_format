@@ -5,10 +5,15 @@
     "title": "CTTV JSON Schema",
     "version": "1.0",
     "properties": {
+        "validated_against_schema_version": {
+            "description": "The schema version number against which the JSON object was validated.",
+            "required": true,
+            "type": "number"
+        },
         "unique_association_fields": {
+            "description": "A combination of keys whose values uniquely identify each JSON object. For some data sources, the values for some keys may be comma-separated concatenations",
             "type": "object",
-            "required" : false,
-            "description": "Use this to add an array of string-based key:value pairs to uniquely identify this association in your database.",
+            "required" : true,
             "additionalProperties": {
                 "type": "string"
             }

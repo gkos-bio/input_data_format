@@ -106,11 +106,11 @@ You use this when there are >1 independent analytical steps used to associate a 
 #### 9. {association_score}{probability} is a required field. But what if my dataset doesn't estimate probability?
 This is implemented to capture confidence in an assertion in the range 0-1. It is not strictly a probability. These are scenarios where one could calculate this:
 
-- **Curator uses their own numerical scores (e.g. in the range 1-10) to indicate strength of evidence: ** Please normalize the values to the range 0-1. Please check with your curation group whether this is possible.
+- **Curator uses their own numerical scores (e.g. in the range 1-10) to indicate strength of evidence:** Please normalize the values to the range 0-1. Please check with your curation group whether this is possible.
 
-- **If you have a ranked list of n targets in an analysis (e.g. top 20), **  you can reverse and normalize the ranked positions to the range 0-1.
+- **If you have a ranked list of n targets in an analysis (e.g. top 20),**  you can reverse and normalize the ranked positions to the range 0-1.
 
-- **If the above does not apply,** you can provide a **'null'** value to indicate to us that such a calculation does not apply to your data.
+- **If the above does not apply,** please provide a **'null'** value to indicate to us that such a calculation does not apply to your data.
 
 ## Miriam registry questions
 

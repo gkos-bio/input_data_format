@@ -38,7 +38,7 @@
                     "type": "object",
                     "id": "urn:jsonschema:org:cttv:input:model:BiologicalSubjectProperties",
                     "properties": {
-                        "association_context": {
+                        "target_type": {
                             "type": "string",
                             "pattern": "^http://identifiers.org/cttv[.]{1,1}target/.+$",
                             "description": "This field is REQUIRED IF your biological_subject is a CTTV target. i.e. if the regex pattern match in biological_subject is ^http://identifiers.org/ensembl or ^http://identifiers.org/uniprot. It must represent a field in the CTTV core 'target' ontology. See https://github.com/CTTV/input_data_format/blob/master/json_schema/cttv_uris_namespaces.md"
@@ -198,7 +198,8 @@
                                 "pubmed_refs": {
                                     "type": "array",
                                     "items": {
-                                        "type": "integer",
+                                        "type": "string",
+                                        "pattern": "http://identifiers.org/pubmed/[0-9]+$",
                                         "minItems": 1,
                                         "uniqueItems": true
                                     }

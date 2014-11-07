@@ -29,14 +29,14 @@
         "provenance_type": {
             "literature": {
                 "pubmed_refs": [
-                    9135028,
-                    9276013,
-                    7731013,
-                    2879919,
-                    2886664,
-                    2884316,
-                    2863377,
-                    2886664
+                    "http://identifiers.org/pubmed/9135028",
+                    "http://identifiers.org/pubmed/9276013",
+                    "http://identifiers.org/pubmed/7731013",
+                    "http://identifiers.org/pubmed/2879919",
+                    "http://identifiers.org/pubmed/2886664",
+                    "http://identifiers.org/pubmed/2884316",
+                    "http://identifiers.org/pubmed/2863377",
+                    "http://identifiers.org/pubmed/2886664"
                 ]
             },
             "expert": {

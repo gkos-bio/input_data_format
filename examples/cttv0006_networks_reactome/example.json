@@ -23,9 +23,9 @@
         "provenance_type": {
             "literature": {
                 "pubmed_refs": [
-                    11448940,
-                    8528239,
-                    7923357
+                    "http://identifiers.org/pubmed/11448940",
+                    "http://identifiers.org/pubmed/8528239",
+                    "http://identifiers.org/pubmed/7923357"
                 ]
             },
             "expert": {

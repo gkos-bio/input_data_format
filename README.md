@@ -1,3 +1,8 @@
+## Quick document links
+#### ![info](help/images/info.gif) [**CTTV pipeline projects and evidence strings**](json_schema/project_tracker.md)
+#### ![info](help/images/info.gif) [**CTTV evidence string FAQs**](help/README.md)
+#### ![info](help/images/info.gif) [**CTTV URIs and namespaces**](json_schema/cttv_uris_namespaces.md)
+
 ## Folder content
 
 1. [**help**](./help/)	- Frequently asked questions.
@@ -8,8 +13,6 @@
 1. [**packages**](./packages/) - Software packages written for generating CTTV "evidence string" objects
 
 ## What is the CTTV evidence string format?
-
-samiulxhasan
 
 #### Aim
 

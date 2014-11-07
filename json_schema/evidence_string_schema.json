@@ -93,6 +93,10 @@
                             "minimum": 0,
                             "maximum": 1,
                             "required": true
+                        },
+                        "probability_method": {
+                          "type": [ "string", "null" ],
+                          "required": true
                         }
                     }
                 },

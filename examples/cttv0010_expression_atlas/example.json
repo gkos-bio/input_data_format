@@ -17,6 +17,7 @@
     "evidence": {
         "association_score": {
             "probability": null,
+            "probability_method": null,
             "p-value": 0.0000418
         },
         "provenance_type": {

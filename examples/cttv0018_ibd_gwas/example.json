@@ -18,7 +18,8 @@
         "date_asserted": "2014-09-11T10:59:43.511Z",
         "is_associated": true,
         "association_score": {
-            "probability": null
+            "probability": null,
+	    "probability_method": null
         },
         "evidence_codes": [
             "http://identifiers.org/eco/ECO:0000177",
@@ -51,7 +52,8 @@
                 },
                 "evidence": {
                     "association_score": {
-                        "probability": null
+                        "probability": null,
+			"probability_method": null
                     },
                     "evidence_codes": [
                         "http://identifiers.org/obo:ECO_0000053"
@@ -84,6 +86,7 @@
                     ],
                     "association_score": {
                         "probability": 0.0202556065553751,
+			"probability_method": "Please describe the method used to calculate the probability",
                         "p-value": 1.316e-44
                     },
                     "properties": {

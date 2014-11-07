@@ -104,13 +104,13 @@ You use this when there are >1 independent analytical steps used to associate a 
 - [gene to disease association via snp - ](../examples/cttv0018_ibd_gwas) There are 2 independent analyses in this that has resulted in a chain: 1) **Computational analysis** carried out to associate a gene target to its nearest nucleotide polymorphism, 2) **Genetics analysis** carried out to associate the nucleotide polymorphism to its effect in disease
 
 #### 9. {association_score}{probability} is a required field. But what if my dataset doesn't estimate probability?
-This is implemented to capture confidence in an assertion in the range 0-1. It is not strictly a probability. These are scenarios where one could calculate this:
+This is an estimate of the confidence of an assertion (as a probability) in the range 0-1. It is expected that this number will be specific to pipeline projects. If you do provide this value, please also indicate the method used to calculate it using the **{association_score}{probability_method}** field (currently free text). The 'probability' itself is a relative value within a data type and is not directly comparable between data types. The following is an example scenario where one could calculate this:
 
 - **Curator uses their own numerical scores (e.g. in the range 1-10) to indicate strength of evidence:** Please normalize the values to the range 0-1. Please check with your curation group whether this is possible.
 
-- **If you have a ranked list of n targets in an analysis (e.g. top 20),**  you can reverse and normalize the ranked positions to the range 0-1.
-
 - **If the above does not apply,** please provide a **'null'** value to indicate to us that such a calculation does not apply to your data.
+
+The methods for scoring will inevitably evolve.
 
 ## Miriam registry questions
 

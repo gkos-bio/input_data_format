@@ -18,7 +18,8 @@
         "date_asserted": "2014-09-11T10:59:43.511Z",
         "is_associated": true,
         "association_score": {
-            "probability": null
+            "probability": null,
+	    "probability_method": null
         },
         "provenance_type": {
             "literature": {

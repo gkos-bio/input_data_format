@@ -1,28 +1,32 @@
 {
-    "validated_against_schema_version": 1.0,
+    "validated_against_schema_version": 1.1,
     "unique_association_fields": {
-       "miriam_uniprot": "P25100,P35348,P35368",
-       "miriam_chembl_compound": "CHEMBL2"
+        "chembl_molecules": "http://identifiers.org/chembl.compound/CHEMBL2",
+        "chembl_targets": "http://identifiers.org/uniprot/P25100,http://identifiers.org/uniprot/P35348,http://identifiers.org/uniprot/P35368",
+        "atc_classification": "http://identifiers.org/atc/C"
     },
     "biological_subject": {
         "about": [
-            "miriam:uniprot:P25100",
-            "miriam:uniprot:P35348",
-            "miriam:uniprot:P35368"
+            "http://identifiers.org/uniprot/P25100",
+            "http://identifiers.org/uniprot/P35348",
+            "http://identifiers.org/uniprot/P35368"
         ],
         "properties": {
-            "association_context": "miriam:cttvexp:protein_complex_heteropolymer",
-            "activity": "miriam:cttvexp:drug_negative_modulator"
+            "target_type": "http://identifiers.org/cttv.target/protein_complex_heteropolymer",
+            "activity": "http://identifiers.org/cttv.activity/drug_negative_modulator"
         }
     },
-    "provenance": {
+    "evidence": {
         "date_asserted": "2014-09-11T10:59:43.511Z",
         "is_associated": true,
         "evidence_codes": [
-            "miriam:obo:ECO_0000360",
-            "miriam:obo:ECO_0000205"
+            "http://identifiers.org/eco/ECO:0000360",
+            "http://identifiers.org/eco/ECO:0000205"
         ],
-        "type": {
+        "association_score": {
+            "probability": null
+        },
+        "provenance_type": {
             "literature": {
                 "pubmed_refs": [
                     9135028,
@@ -47,11 +51,11 @@
             "linkouts": [
                 {
                     "nice_name": "ChEMBL molecule information",
-                    "url": "https://www.ebi.ac.uk/chembl/compound/inspect/CHEMBL2"
+                    "url": "http://identifiers.org/chembl.compound/CHEMBL2"
                 },
                 {
                     "nice_name": "ChEMBL target information",
-                    "url": "https://www.ebi.ac.uk/chembl/target/inspect/CHEMBL2094251"
+                    "url": "http://identifiers.org/chembl.target/CHEMBL2094251"
                 }
             ]
         },
@@ -59,13 +63,13 @@
             {
                 "biological_subject": {
                     "about": [
-                        "miriam:uniprot:P25100",
-                        "miriam:uniprot:P35348",
-                        "miriam:uniprot:P35368"
+                        "http://identifiers.org/uniprot/P25100",
+                        "http://identifiers.org/uniprot/P35348",
+                        "http://identifiers.org/uniprot/P35368"
                     ]
                 },
-                "provenance": {
-                    "experimental_evidence_specific": {
+                "evidence": {
+                    "experiment_specific": {
                         "MOLECULE_NAME": "Prazosin",
                         "MOLECULE_TYPE": "Small molecule",
                         "MECHANISM_OF_ACTION": "Adrenergic receptor alpha-1 antagonist",
@@ -74,24 +78,24 @@
                 },
                 "biological_object": {
                     "about": [
-                        "miriam:chembl.compound:CHEMBL2"
+                        "http://identifiers.org/chembl.compound/CHEMBL2"
                     ]
                 }
             },
             {
                 "biological_subject": {
                     "about": [
-                        "miriam:chembl.compound:CHEMBL2"
+                        "http://identifiers.org/chembl.compound/CHEMBL2"
                     ]
                 },
-                "provenance": {
-                    "experimental_evidence_specific": {
+                "evidence": {
+                    "experiment_specific": {
                         "comment": "Marketed drug indication"
                     }
                 },
                 "biological_object": {
                     "about": [
-                        "miriam:efo:EFO_0000537"
+                        "http://identifiers.org/efo/EFO_0000537"
                     ]
                 }
             }
@@ -99,11 +103,11 @@
     },
     "biological_object": {
         "about": [
-            "miriam:efo:EFO_0000537"
+            "http://identifiers.org/efo/EFO_0000537"
         ],
         "properties": {
             "biosamples": [
-                "miriam:obo:UBERON_0004535"
+                "http://identifiers.org/obo/UBERON_0004535"
             ]
         }
     }

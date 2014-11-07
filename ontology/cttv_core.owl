@@ -72,9 +72,169 @@
     
 
 
-    <!-- http://www.targetvalidation.org/cttv_core/DatabaseProvenance -->
+    <!-- http://www.targetvalidation.org/activity/cttv_activity -->
 
-    <owl:Class rdf:about="&cttvcore;/DatabaseProvenance">
+    <owl:Class rdf:about="http://www.targetvalidation.org/activity/cttv_activity"/>
+    
+
+
+    <!-- http://www.targetvalidation.org/activity/damaging -->
+
+    <owl:Class rdf:about="http://www.targetvalidation.org/activity/damaging">
+        <rdfs:subClassOf rdf:resource="http://www.targetvalidation.org/activity/unknown"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.targetvalidation.org/activity/damaging_to_target -->
+
+    <owl:Class rdf:about="http://www.targetvalidation.org/activity/damaging_to_target">
+        <rdfs:subClassOf rdf:resource="http://www.targetvalidation.org/activity/damaging"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.targetvalidation.org/activity/decreased_transcript_level -->
+
+    <owl:Class rdf:about="http://www.targetvalidation.org/activity/decreased_transcript_level">
+        <rdfs:subClassOf rdf:resource="http://www.targetvalidation.org/activity/down"/>
+        <rdfs:comment>Transcript level is reduced in a RNA experiment.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.targetvalidation.org/activity/decreased_translational_product_level -->
+
+    <owl:Class rdf:about="http://www.targetvalidation.org/activity/decreased_translational_product_level">
+        <rdfs:subClassOf rdf:resource="http://www.targetvalidation.org/activity/down"/>
+        <rdfs:comment>Decreased traslation / decreased protein quantity measured in an experiment.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.targetvalidation.org/activity/down -->
+
+    <owl:Class rdf:about="http://www.targetvalidation.org/activity/down">
+        <rdfs:subClassOf rdf:resource="http://www.targetvalidation.org/activity/cttv_activity"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.targetvalidation.org/activity/drug_negative_modulator -->
+
+    <owl:Class rdf:about="http://www.targetvalidation.org/activity/drug_negative_modulator">
+        <rdfs:subClassOf rdf:resource="http://www.targetvalidation.org/activity/down"/>
+        <rdfs:comment>Negatively effects the normal functioning of a protein e.g., receptor antagonist, inverse agonist or negative allosteric modulator</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.targetvalidation.org/activity/drug_positive_modulator -->
+
+    <owl:Class rdf:about="http://www.targetvalidation.org/activity/drug_positive_modulator">
+        <rdfs:subClassOf rdf:resource="http://www.targetvalidation.org/activity/up"/>
+        <rdfs:comment>Positively effects the normal functioning of a protein e.g., receptor agonist, positive allosteric modulator, ion channel activator</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.targetvalidation.org/activity/gain_of_function -->
+
+    <owl:Class rdf:about="http://www.targetvalidation.org/activity/gain_of_function">
+        <rdfs:subClassOf rdf:resource="http://www.targetvalidation.org/activity/up"/>
+        <rdfs:comment>gain of function detected in a genetics experiment.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.targetvalidation.org/activity/increased_transcript_level -->
+
+    <owl:Class rdf:about="http://www.targetvalidation.org/activity/increased_transcript_level">
+        <rdfs:subClassOf rdf:resource="http://www.targetvalidation.org/activity/up"/>
+        <rdfs:comment>Transcript level is increased in a RNA experiment.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.targetvalidation.org/activity/increased_translational_product_level -->
+
+    <owl:Class rdf:about="http://www.targetvalidation.org/activity/increased_translational_product_level">
+        <rdfs:subClassOf rdf:resource="http://www.targetvalidation.org/activity/up"/>
+        <rdfs:comment>Increased traslation / increased protein quantity measured in an experiment.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.targetvalidation.org/activity/loss_of_function -->
+
+    <owl:Class rdf:about="http://www.targetvalidation.org/activity/loss_of_function">
+        <rdfs:subClassOf rdf:resource="http://www.targetvalidation.org/activity/down"/>
+        <rdfs:comment>loss of function detected in a genetics experiment.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.targetvalidation.org/activity/partial_loss_of_function -->
+
+    <owl:Class rdf:about="http://www.targetvalidation.org/activity/partial_loss_of_function">
+        <rdfs:subClassOf rdf:resource="http://www.targetvalidation.org/activity/down"/>
+        <rdfs:comment>partial loss of function detected in a genetics experiment.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.targetvalidation.org/activity/predicted -->
+
+    <owl:Class rdf:about="http://www.targetvalidation.org/activity/predicted">
+        <rdfs:subClassOf rdf:resource="http://www.targetvalidation.org/activity/unknown"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.targetvalidation.org/activity/predicted_damaging -->
+
+    <owl:Class rdf:about="http://www.targetvalidation.org/activity/predicted_damaging">
+        <rdfs:subClassOf rdf:resource="http://www.targetvalidation.org/activity/predicted"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.targetvalidation.org/activity/predicted_tolerated -->
+
+    <owl:Class rdf:about="http://www.targetvalidation.org/activity/predicted_tolerated">
+        <rdfs:subClassOf rdf:resource="http://www.targetvalidation.org/activity/predicted"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.targetvalidation.org/activity/tolerated -->
+
+    <owl:Class rdf:about="http://www.targetvalidation.org/activity/tolerated">
+        <rdfs:subClassOf rdf:resource="http://www.targetvalidation.org/activity/unknown"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.targetvalidation.org/activity/unknown -->
+
+    <owl:Class rdf:about="http://www.targetvalidation.org/activity/unknown">
+        <rdfs:subClassOf rdf:resource="http://www.targetvalidation.org/activity/cttv_activity"/>
+        <rdfs:comment>biological activity of target in disease is difficult to predict / unknown.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.targetvalidation.org/activity/up -->
+
+    <owl:Class rdf:about="http://www.targetvalidation.org/activity/up">
+        <rdfs:subClassOf rdf:resource="http://www.targetvalidation.org/activity/cttv_activity"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.targetvalidation.org/provenance/DatabaseProvenance -->
+
+    <owl:Class rdf:about="http://www.targetvalidation.org/provenance/DatabaseProvenance">
         <rdfs:label>database provenance</rdfs:label>
         <rdfs:subClassOf rdf:resource="http://purl.org/oban/provenance"/>
         <rdfs:comment>Database provenance. Mapped to {provenance}{type} in CTTV json schema.</rdfs:comment>
@@ -82,9 +242,9 @@
     
 
 
-    <!-- http://www.targetvalidation.org/cttv_core/ExpertProvenance -->
+    <!-- http://www.targetvalidation.org/provenance/ExpertProvenance -->
 
-    <owl:Class rdf:about="&cttvcore;/ExpertProvenance">
+    <owl:Class rdf:about="http://www.targetvalidation.org/provenance/ExpertProvenance">
         <rdfs:label>expert provenance</rdfs:label>
         <rdfs:subClassOf rdf:resource="http://purl.org/oban/provenance"/>
         <rdfs:comment>Expert provenance. Mapped to {provenance}{type} in CTTV json schema.</rdfs:comment>
@@ -92,18 +252,18 @@
     
 
 
-    <!-- http://www.targetvalidation.org/cttv_core/GWAS_SNP_to_trait_association -->
+    <!-- http://www.targetvalidation.org/provenance/GWAS_SNP_to_trait_association -->
 
-    <owl:Class rdf:about="&cttvcore;/GWAS_SNP_to_trait_association">
+    <owl:Class rdf:about="http://www.targetvalidation.org/provenance/GWAS_SNP_to_trait_association">
         <rdfs:label>GWAS SNP to trait association</rdfs:label>
         <rdfs:subClassOf rdf:resource="http://purl.org/oban/association"/>
     </owl:Class>
     
 
 
-    <!-- http://www.targetvalidation.org/cttv_core/LiteratureProvenance -->
+    <!-- http://www.targetvalidation.org/provenance/LiteratureProvenance -->
 
-    <owl:Class rdf:about="&cttvcore;/LiteratureProvenance">
+    <owl:Class rdf:about="http://www.targetvalidation.org/provenance/LiteratureProvenance">
         <rdfs:label>literature provenance</rdfs:label>
         <rdfs:subClassOf rdf:resource="http://purl.org/oban/provenance"/>
         <rdfs:comment>Literature provenance. Mapped to {provenance}{type} in CTTV json schema.</rdfs:comment>
@@ -111,378 +271,218 @@
     
 
 
-    <!-- http://www.targetvalidation.org/cttv_core/disease_to_phenotype_association -->
+    <!-- http://www.targetvalidation.org/provenance/disease_to_phenotype_association -->
 
-    <owl:Class rdf:about="&cttvcore;/disease_to_phenotype_association">
+    <owl:Class rdf:about="http://www.targetvalidation.org/provenance/disease_to_phenotype_association">
         <rdfs:label>disease to phenotype association</rdfs:label>
         <rdfs:subClassOf rdf:resource="http://purl.org/oban/association"/>
     </owl:Class>
     
 
 
-    <!-- http://www.targetvalidation.org/cttv_core/gene_to_disease_association -->
+    <!-- http://www.targetvalidation.org/provenance/gene_to_disease_association -->
 
-    <owl:Class rdf:about="&cttvcore;/gene_to_disease_association">
+    <owl:Class rdf:about="http://www.targetvalidation.org/provenance/gene_to_disease_association">
         <rdfs:label>gene to disease association</rdfs:label>
         <rdfs:subClassOf rdf:resource="http://purl.org/oban/association"/>
     </owl:Class>
     
 
 
-    <!-- http://www.targetvalidation.org/cttv_core/experiment/chimeric_protein -->
+    <!-- http://www.targetvalidation.org/target_type/chimeric_protein -->
 
-    <owl:Class rdf:about="&cttvcore;/experiment/chimeric_protein">
-        <rdfs:subClassOf rdf:resource="&cttvcore;/experiment/protein_evidence"/>
+    <owl:Class rdf:about="http://www.targetvalidation.org/target_type/chimeric_protein">
+        <rdfs:subClassOf rdf:resource="http://www.targetvalidation.org/target_type/protein_evidence"/>
         <rdfs:comment>Target is a fusion of two different proteins, either a synthetic construct or naturally occurring fusion protein</rdfs:comment>
     </owl:Class>
     
 
 
-    <!-- http://www.targetvalidation.org/cttv_core/experiment/cttv_activity -->
+    <!-- http://www.targetvalidation.org/target_type/cttv_target -->
 
-    <owl:Class rdf:about="&cttvcore;/experiment/cttv_activity"/>
-    
-
-
-    <!-- http://www.targetvalidation.org/cttv_core/experiment/damaging -->
-
-    <owl:Class rdf:about="&cttvcore;/experiment/damaging">
-        <rdfs:subClassOf rdf:resource="&cttvcore;/experiment/unknown"/>
+    <owl:Class rdf:about="http://www.targetvalidation.org/target_type/cttv_target">
+        <rdfs:comment></rdfs:comment>
     </owl:Class>
     
 
 
-    <!-- http://www.targetvalidation.org/cttv_core/experiment/damaging_to_target -->
+    <!-- http://www.targetvalidation.org/target_type/gene -->
 
-    <owl:Class rdf:about="&cttvcore;/experiment/damaging_to_target">
-        <rdfs:subClassOf rdf:resource="&cttvcore;/experiment/damaging"/>
-    </owl:Class>
-    
-
-
-    <!-- http://www.targetvalidation.org/cttv_core/experiment/decreased_transcript_level -->
-
-    <owl:Class rdf:about="&cttvcore;/experiment/decreased_transcript_level">
-        <rdfs:subClassOf rdf:resource="&cttvcore;/experiment/down"/>
-        <rdfs:comment>Transcript level is reduced in a RNA experiment.</rdfs:comment>
-    </owl:Class>
-    
-
-
-    <!-- http://www.targetvalidation.org/cttv_core/experiment/decreased_translational_product_level -->
-
-    <owl:Class rdf:about="&cttvcore;/experiment/decreased_translational_product_level">
-        <rdfs:subClassOf rdf:resource="&cttvcore;/experiment/down"/>
-        <rdfs:comment>Decreased traslation / decreased protein quantity measured in an experiment.</rdfs:comment>
-    </owl:Class>
-    
-
-
-    <!-- http://www.targetvalidation.org/cttv_core/experiment/down -->
-
-    <owl:Class rdf:about="&cttvcore;/experiment/down">
-        <rdfs:subClassOf rdf:resource="&cttvcore;/experiment/cttv_activity"/>
-    </owl:Class>
-    
-
-
-    <!-- http://www.targetvalidation.org/cttv_core/experiment/drug_negative_modulator -->
-
-    <owl:Class rdf:about="&cttvcore;/experiment/drug_negative_modulator">
-        <rdfs:subClassOf rdf:resource="&cttvcore;/experiment/down"/>
-        <rdfs:comment>Negatively effects the normal functioning of a protein e.g., receptor antagonist, inverse agonist or negative allosteric modulator</rdfs:comment>
-    </owl:Class>
-    
-
-
-    <!-- http://www.targetvalidation.org/cttv_core/experiment/drug_positive_modulator -->
-
-    <owl:Class rdf:about="&cttvcore;/experiment/drug_positive_modulator">
-        <rdfs:subClassOf rdf:resource="&cttvcore;/experiment/up"/>
-        <rdfs:comment>Positively effects the normal functioning of a protein e.g., receptor agonist, positive allosteric modulator, ion channel activator</rdfs:comment>
-    </owl:Class>
-    
-
-
-    <!-- http://www.targetvalidation.org/cttv_core/experiment/experiment -->
-
-    <owl:Class rdf:about="&cttvcore;/experiment/experiment">
-        <rdfs:label>cttv target</rdfs:label>
-    </owl:Class>
-    
-
-
-    <!-- http://www.targetvalidation.org/cttv_core/experiment/gain_of_function -->
-
-    <owl:Class rdf:about="&cttvcore;/experiment/gain_of_function">
-        <rdfs:subClassOf rdf:resource="&cttvcore;/experiment/up"/>
-        <rdfs:comment>gain of function detected in a genetics experiment.</rdfs:comment>
-    </owl:Class>
-    
-
-
-    <!-- http://www.targetvalidation.org/cttv_core/experiment/gene -->
-
-    <owl:Class rdf:about="&cttvcore;/experiment/gene">
-        <rdfs:subClassOf rdf:resource="&cttvcore;/experiment/gene_evidence"/>
+    <owl:Class rdf:about="http://www.targetvalidation.org/target_type/gene">
+        <rdfs:subClassOf rdf:resource="http://www.targetvalidation.org/target_type/gene_evidence"/>
         <rdfs:comment>target is a single gene</rdfs:comment>
     </owl:Class>
     
 
 
-    <!-- http://www.targetvalidation.org/cttv_core/experiment/gene_allele -->
+    <!-- http://www.targetvalidation.org/target_type/gene_allele -->
 
-    <owl:Class rdf:about="&cttvcore;/experiment/gene_allele">
-        <rdfs:subClassOf rdf:resource="&cttvcore;/experiment/gene_evidence"/>
+    <owl:Class rdf:about="http://www.targetvalidation.org/target_type/gene_allele">
+        <rdfs:subClassOf rdf:resource="http://www.targetvalidation.org/target_type/gene_evidence"/>
         <rdfs:comment>target is a gene allele</rdfs:comment>
     </owl:Class>
     
 
 
-    <!-- http://www.targetvalidation.org/cttv_core/experiment/gene_evidence -->
+    <!-- http://www.targetvalidation.org/target_type/gene_evidence -->
 
-    <owl:Class rdf:about="&cttvcore;/experiment/gene_evidence">
-        <rdfs:subClassOf rdf:resource="&cttvcore;/experiment/experiment"/>
+    <owl:Class rdf:about="http://www.targetvalidation.org/target_type/gene_evidence">
+        <rdfs:subClassOf rdf:resource="http://www.targetvalidation.org/target_type/cttv_target"/>
         <rdfs:comment>superclass of gene evidence types. Please choose one of its children classes.</rdfs:comment>
     </owl:Class>
     
 
 
-    <!-- http://www.targetvalidation.org/cttv_core/experiment/gene_in_LD_region -->
+    <!-- http://www.targetvalidation.org/target_type/gene_in_LD_region -->
 
-    <owl:Class rdf:about="&cttvcore;/experiment/gene_in_LD_region">
-        <rdfs:subClassOf rdf:resource="&cttvcore;/experiment/gene_evidence"/>
+    <owl:Class rdf:about="http://www.targetvalidation.org/target_type/gene_in_LD_region">
+        <rdfs:subClassOf rdf:resource="http://www.targetvalidation.org/target_type/gene_evidence"/>
         <rdfs:comment>target is a set of genes mapped to a specific LD region.</rdfs:comment>
     </owl:Class>
     
 
 
-    <!-- http://www.targetvalidation.org/cttv_core/experiment/gene_in_epigenetic_regulation_complex -->
+    <!-- http://www.targetvalidation.org/target_type/gene_in_epigenetic_regulation_complex -->
 
-    <owl:Class rdf:about="&cttvcore;/experiment/gene_in_epigenetic_regulation_complex">
-        <rdfs:subClassOf rdf:resource="&cttvcore;/experiment/gene_evidence"/>
+    <owl:Class rdf:about="http://www.targetvalidation.org/target_type/gene_in_epigenetic_regulation_complex">
+        <rdfs:subClassOf rdf:resource="http://www.targetvalidation.org/target_type/gene_evidence"/>
         <rdfs:comment>target is a set of genes predicted to participate in an epigenetic regulation network.</rdfs:comment>
     </owl:Class>
     
 
 
-    <!-- http://www.targetvalidation.org/cttv_core/experiment/gene_variant -->
+    <!-- http://www.targetvalidation.org/target_type/gene_variant -->
 
-    <owl:Class rdf:about="&cttvcore;/experiment/gene_variant">
-        <rdfs:subClassOf rdf:resource="&cttvcore;/experiment/gene_evidence"/>
+    <owl:Class rdf:about="http://www.targetvalidation.org/target_type/gene_variant">
+        <rdfs:subClassOf rdf:resource="http://www.targetvalidation.org/target_type/gene_evidence"/>
         <rdfs:comment>target is a gene variant.</rdfs:comment>
     </owl:Class>
     
 
 
-    <!-- http://www.targetvalidation.org/cttv_core/experiment/increased_transcript_level -->
+    <!-- http://www.targetvalidation.org/target_type/pro_protein -->
 
-    <owl:Class rdf:about="&cttvcore;/experiment/increased_transcript_level">
-        <rdfs:subClassOf rdf:resource="&cttvcore;/experiment/up"/>
-        <rdfs:comment>Transcript level is increased in a RNA experiment.</rdfs:comment>
-    </owl:Class>
-    
-
-
-    <!-- http://www.targetvalidation.org/cttv_core/experiment/increased_translational_product_level -->
-
-    <owl:Class rdf:about="&cttvcore;/experiment/increased_translational_product_level">
-        <rdfs:subClassOf rdf:resource="&cttvcore;/experiment/up"/>
-        <rdfs:comment>Increased traslation / increased protein quantity measured in an experiment.</rdfs:comment>
-    </owl:Class>
-    
-
-
-    <!-- http://www.targetvalidation.org/cttv_core/experiment/loss_of_function -->
-
-    <owl:Class rdf:about="&cttvcore;/experiment/loss_of_function">
-        <rdfs:subClassOf rdf:resource="&cttvcore;/experiment/down"/>
-        <rdfs:comment>loss of function detected in a genetics experiment.</rdfs:comment>
-    </owl:Class>
-    
-
-
-    <!-- http://www.targetvalidation.org/cttv_core/experiment/partial_loss_of_function -->
-
-    <owl:Class rdf:about="&cttvcore;/experiment/partial_loss_of_function">
-        <rdfs:subClassOf rdf:resource="&cttvcore;/experiment/down"/>
-        <rdfs:comment>partial loss of function detected in a genetics experiment.</rdfs:comment>
-    </owl:Class>
-    
-
-
-    <!-- http://www.targetvalidation.org/cttv_core/experiment/predicted -->
-
-    <owl:Class rdf:about="&cttvcore;/experiment/predicted">
-        <rdfs:subClassOf rdf:resource="&cttvcore;/experiment/unknown"/>
-    </owl:Class>
-    
-
-
-    <!-- http://www.targetvalidation.org/cttv_core/experiment/predicted_damaging -->
-
-    <owl:Class rdf:about="&cttvcore;/experiment/predicted_damaging">
-        <rdfs:subClassOf rdf:resource="&cttvcore;/experiment/predicted"/>
-    </owl:Class>
-    
-
-
-    <!-- http://www.targetvalidation.org/cttv_core/experiment/predicted_tolerated -->
-
-    <owl:Class rdf:about="&cttvcore;/experiment/predicted_tolerated">
-        <rdfs:subClassOf rdf:resource="&cttvcore;/experiment/predicted"/>
-    </owl:Class>
-    
-
-
-    <!-- http://www.targetvalidation.org/cttv_core/experiment/pro_protein -->
-
-    <owl:Class rdf:about="&cttvcore;/experiment/pro_protein">
-        <rdfs:subClassOf rdf:resource="&cttvcore;/experiment/protein_evidence"/>
+    <owl:Class rdf:about="http://www.targetvalidation.org/target_type/pro_protein">
+        <rdfs:subClassOf rdf:resource="http://www.targetvalidation.org/target_type/protein_evidence"/>
         <rdfs:comment>target is a pro protein that will undergo further modifications to become mature.</rdfs:comment>
     </owl:Class>
     
 
 
-    <!-- http://www.targetvalidation.org/cttv_core/experiment/protein -->
+    <!-- http://www.targetvalidation.org/target_type/protein -->
 
-    <owl:Class rdf:about="&cttvcore;/experiment/protein">
-        <rdfs:subClassOf rdf:resource="&cttvcore;/experiment/protein_evidence"/>
+    <owl:Class rdf:about="http://www.targetvalidation.org/target_type/protein">
+        <rdfs:subClassOf rdf:resource="http://www.targetvalidation.org/target_type/protein_evidence"/>
         <rdfs:comment>Target is a single protein chain</rdfs:comment>
     </owl:Class>
     
 
 
-    <!-- http://www.targetvalidation.org/cttv_core/experiment/protein_complex -->
+    <!-- http://www.targetvalidation.org/target_type/protein_complex -->
 
-    <owl:Class rdf:about="&cttvcore;/experiment/protein_complex">
-        <rdfs:subClassOf rdf:resource="&cttvcore;/experiment/protein_evidence"/>
+    <owl:Class rdf:about="http://www.targetvalidation.org/target_type/protein_complex">
+        <rdfs:subClassOf rdf:resource="http://www.targetvalidation.org/target_type/protein_evidence"/>
         <rdfs:comment>protein complex - this is a superclass. Target is a defined protein complex, consisting of multiple subunits 
 </rdfs:comment>
     </owl:Class>
     
 
 
-    <!-- http://www.targetvalidation.org/cttv_core/experiment/protein_complex_group -->
+    <!-- http://www.targetvalidation.org/target_type/protein_complex_group -->
 
-    <owl:Class rdf:about="&cttvcore;/experiment/protein_complex_group">
-        <rdfs:subClassOf rdf:resource="&cttvcore;/experiment/protein_complex"/>
+    <owl:Class rdf:about="http://www.targetvalidation.org/target_type/protein_complex_group">
+        <rdfs:subClassOf rdf:resource="http://www.targetvalidation.org/target_type/protein_complex"/>
         <rdfs:comment>Target is a poorly defined protein complex, where subunit composition is unclear (e.g., GABA-A receptor)</rdfs:comment>
     </owl:Class>
     
 
 
-    <!-- http://www.targetvalidation.org/cttv_core/experiment/protein_complex_heteropolymer -->
+    <!-- http://www.targetvalidation.org/target_type/protein_complex_heteropolymer -->
 
-    <owl:Class rdf:about="&cttvcore;/experiment/protein_complex_heteropolymer">
-        <rdfs:subClassOf rdf:resource="&cttvcore;/experiment/protein_complex"/>
+    <owl:Class rdf:about="http://www.targetvalidation.org/target_type/protein_complex_heteropolymer">
+        <rdfs:subClassOf rdf:resource="http://www.targetvalidation.org/target_type/protein_complex"/>
         <rdfs:comment>target is a heteropolymeric protein complex.</rdfs:comment>
     </owl:Class>
     
 
 
-    <!-- http://www.targetvalidation.org/cttv_core/experiment/protein_complex_homopolymer -->
+    <!-- http://www.targetvalidation.org/target_type/protein_complex_homopolymer -->
 
-    <owl:Class rdf:about="&cttvcore;/experiment/protein_complex_homopolymer">
-        <rdfs:subClassOf rdf:resource="&cttvcore;/experiment/protein_complex"/>
+    <owl:Class rdf:about="http://www.targetvalidation.org/target_type/protein_complex_homopolymer">
+        <rdfs:subClassOf rdf:resource="http://www.targetvalidation.org/target_type/protein_complex"/>
         <rdfs:comment>target is a homopolymeric protein complex.</rdfs:comment>
     </owl:Class>
     
 
 
-    <!-- http://www.targetvalidation.org/cttv_core/experiment/protein_evidence -->
+    <!-- http://www.targetvalidation.org/target_type/protein_evidence -->
 
-    <owl:Class rdf:about="&cttvcore;/experiment/protein_evidence">
-        <rdfs:subClassOf rdf:resource="&cttvcore;/experiment/experiment"/>
+    <owl:Class rdf:about="http://www.targetvalidation.org/target_type/protein_evidence">
+        <rdfs:subClassOf rdf:resource="http://www.targetvalidation.org/target_type/cttv_target"/>
         <rdfs:comment>superclass of protein evidence types. Please choose one of its children classes.</rdfs:comment>
     </owl:Class>
     
 
 
-    <!-- http://www.targetvalidation.org/cttv_core/experiment/protein_family -->
+    <!-- http://www.targetvalidation.org/target_type/protein_family -->
 
-    <owl:Class rdf:about="&cttvcore;/experiment/protein_family">
-        <rdfs:subClassOf rdf:resource="&cttvcore;/experiment/protein_evidence"/>
+    <owl:Class rdf:about="http://www.targetvalidation.org/target_type/protein_family">
+        <rdfs:subClassOf rdf:resource="http://www.targetvalidation.org/target_type/protein_evidence"/>
         <rdfs:comment>Target is a group of closely related proteins
 </rdfs:comment>
     </owl:Class>
     
 
 
-    <!-- http://www.targetvalidation.org/cttv_core/experiment/protein_isoform -->
+    <!-- http://www.targetvalidation.org/target_type/protein_isoform -->
 
-    <owl:Class rdf:about="&cttvcore;/experiment/protein_isoform">
-        <rdfs:subClassOf rdf:resource="&cttvcore;/experiment/protein_evidence"/>
+    <owl:Class rdf:about="http://www.targetvalidation.org/target_type/protein_isoform">
+        <rdfs:subClassOf rdf:resource="http://www.targetvalidation.org/target_type/protein_evidence"/>
     </owl:Class>
     
 
 
-    <!-- http://www.targetvalidation.org/cttv_core/experiment/protein_nucleic_acid_complex -->
+    <!-- http://www.targetvalidation.org/target_type/protein_nucleic_acid_complex -->
 
-    <owl:Class rdf:about="&cttvcore;/experiment/protein_nucleic_acid_complex">
-        <rdfs:subClassOf rdf:resource="&cttvcore;/experiment/protein_complex"/>
+    <owl:Class rdf:about="http://www.targetvalidation.org/target_type/protein_nucleic_acid_complex">
+        <rdfs:subClassOf rdf:resource="http://www.targetvalidation.org/target_type/protein_complex"/>
         <rdfs:comment>Target is a complex consisting of both protein and nucleic-acid components (e.g., ribosome)</rdfs:comment>
     </owl:Class>
     
 
 
-    <!-- http://www.targetvalidation.org/cttv_core/experiment/selectivity_group -->
+    <!-- http://www.targetvalidation.org/target_type/selectivity_group -->
 
-    <owl:Class rdf:about="&cttvcore;/experiment/selectivity_group">
-        <rdfs:subClassOf rdf:resource="&cttvcore;/experiment/protein_evidence"/>
+    <owl:Class rdf:about="http://www.targetvalidation.org/target_type/selectivity_group">
+        <rdfs:subClassOf rdf:resource="http://www.targetvalidation.org/target_type/protein_evidence"/>
         <rdfs:comment>Target is a pair of proteins for which the selectivity has been assessed</rdfs:comment>
     </owl:Class>
     
 
 
-    <!-- http://www.targetvalidation.org/cttv_core/experiment/tolerated -->
+    <!-- http://www.targetvalidation.org/target_type/transcript -->
 
-    <owl:Class rdf:about="&cttvcore;/experiment/tolerated">
-        <rdfs:subClassOf rdf:resource="&cttvcore;/experiment/unknown"/>
-    </owl:Class>
-    
-
-
-    <!-- http://www.targetvalidation.org/cttv_core/experiment/transcript -->
-
-    <owl:Class rdf:about="&cttvcore;/experiment/transcript">
-        <rdfs:subClassOf rdf:resource="&cttvcore;/experiment/transcript_evidence"/>
+    <owl:Class rdf:about="http://www.targetvalidation.org/target_type/transcript">
+        <rdfs:subClassOf rdf:resource="http://www.targetvalidation.org/target_type/transcript_evidence"/>
         <rdfs:comment>Target is a single transcript. Cannot ascertain whether the evidence is about an isoform.</rdfs:comment>
     </owl:Class>
     
 
 
-    <!-- http://www.targetvalidation.org/cttv_core/experiment/transcript_evidence -->
+    <!-- http://www.targetvalidation.org/target_type/transcript_evidence -->
 
-    <owl:Class rdf:about="&cttvcore;/experiment/transcript_evidence">
-        <rdfs:subClassOf rdf:resource="&cttvcore;/experiment/experiment"/>
+    <owl:Class rdf:about="http://www.targetvalidation.org/target_type/transcript_evidence">
+        <rdfs:subClassOf rdf:resource="http://www.targetvalidation.org/target_type/cttv_target"/>
         <rdfs:comment>superclass of transcript evidence types. Please choose one of its children classes.</rdfs:comment>
     </owl:Class>
     
 
 
-    <!-- http://www.targetvalidation.org/cttv_core/experiment/transcript_isoform -->
+    <!-- http://www.targetvalidation.org/target_type/transcript_isoform -->
 
-    <owl:Class rdf:about="&cttvcore;/experiment/transcript_isoform">
-        <rdfs:subClassOf rdf:resource="&cttvcore;/experiment/transcript_evidence"/>
+    <owl:Class rdf:about="http://www.targetvalidation.org/target_type/transcript_isoform">
+        <rdfs:subClassOf rdf:resource="http://www.targetvalidation.org/target_type/transcript_evidence"/>
         <rdfs:comment>The target is a transcript isoform.</rdfs:comment>
-    </owl:Class>
-    
-
-
-    <!-- http://www.targetvalidation.org/cttv_core/experiment/unknown -->
-
-    <owl:Class rdf:about="&cttvcore;/experiment/unknown">
-        <rdfs:subClassOf rdf:resource="&cttvcore;/experiment/cttv_activity"/>
-        <rdfs:comment>biological activity of target in disease is difficult to predict / unknown.</rdfs:comment>
-    </owl:Class>
-    
-
-
-    <!-- http://www.targetvalidation.org/cttv_core/experiment/up -->
-
-    <owl:Class rdf:about="&cttvcore;/experiment/up">
-        <rdfs:subClassOf rdf:resource="&cttvcore;/experiment/cttv_activity"/>
     </owl:Class>
 </rdf:RDF>
 

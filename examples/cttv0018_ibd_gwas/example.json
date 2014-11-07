@@ -1,21 +1,30 @@
 {
+    "validated_against_schema_version": 1.1,
+    "unique_association_fields": {
+        "pubmed_refs": "23128233",
+        "cttv_project_id": "cttv00018",
+        "disease": "http://identifiers.org/efo/EFO_0003767"
+    },
     "biological_subject": {
         "about": [
-            "miriam:ensembl:ENSG9023124"
+            "http://identifiers.org/ensembl/ENSG9023124"
         ],
         "properties": {
-            "association_context": "miriam:cttvexp:gene",
-            "activity": "miriam:cttvexp:predicted_damaging"
+            "association_context": "http://identifiers.org/cttv.target/gene",
+            "activity": "http://identifiers.org/cttv.activity/predicted_damaging"
         }
     },
-    "provenance": {
+    "evidence": {
         "date_asserted": "2014-09-11T10:59:43.511Z",
         "is_associated": true,
+        "association_score": {
+            "probability": null
+        },
         "evidence_codes": [
-            "miriam:obo:ECO_0000177",
-            "miriam:obo:ECO_0001113"
+            "http://identifiers.org/eco/ECO:0000177",
+            "http://identifiers.org/eco/ECO:0001113"
         ],
-        "type": {
+        "provenance_type": {
             "literature": {
                 "pubmed_refs": [
                     23128233
@@ -29,7 +38,7 @@
             "linkouts": [
                 {
                     "nice_name": "Original immunochip study",
-                    "url": "http://www.ncbi.nlm.nih.gov/pubmed/23128233"
+                    "url": "http://identifiers.org/pubmed/23128233"
                 }
             ]
         },
@@ -37,58 +46,62 @@
             {
                 "biological_subject": {
                     "about": [
-                        "miriam:ensembl:ENSG9023124"
+                        "http://identifiers.org/ensembl/ENSG9023124"
                     ]
                 },
-                "provenance": {
+                "evidence": {
+                    "association_score": {
+                        "probability": null
+                    },
                     "evidence_codes": [
-                        "miriam:obo:ECO_0000053"
+                        "http://identifiers.org/obo:ECO_0000053"
                     ],
                     "properties": {
-                        "experimental_evidence_specific": {
-                            "a1 (risk allele)": "C",
-                            "a2 (other allele)": "T",
-                            "odds ratio [std error]": "0.8538 [+-0.0001]",
-                            "freq_a1": "0.5624",
-                            "variation": "9_139266496_C/T",
-                            "genome_build": "37",
-                            "Rank out of n SNPs": "3",
+                        "experiment_specific": {
+                            "gene choice method": "coding evidence",
                             "Consequence": "missense_variant",
                             "sift": "tolerated(0.39)",
-                            "CADDP": "6.546",
-                            "probability of being causual": "0.0202556065553751"
+                            "CADDP": "6.546"
                         }
                     }
                 },
                 "biological_object": {
                     "about": [
-                        "miriam:dbsnp:rs9802421"
+                        "http://identifiers.org/dbsnp/rs9802421"
                     ]
                 }
             },
             {
                 "biological_subject": {
                     "about": [
-                        "miriam:dbsnp:rs9802421"
+                        "http://identifiers.org/dbsnp/rs9802421"
                     ]
                 },
                 "provenance": {
                     "evidence_codes": [
-                        "miriam:obo:ECO_0000177",
-                        "miriam:obo:ECO_0001113"
+                        "http://identifiers.org/eco/ECO:0000177",
+                        "http://identifiers.org/eco/ECO:0001113"
                     ],
                     "association_score": {
+                        "probability": 0.0202556065553751,
                         "p-value": 1.316e-44
                     },
                     "properties": {
                         "experimental_evidence_specific": {
-                            "HDRSIG": "HD106_sig1"
+                            "HDRSIG": "HD106_sig1",
+                            "a1 (risk allele)": "C",
+                            "a2 (other allele)": "T",
+                            "odds ratio [std error]": "0.8538 [+-0.0001]",
+                            "freq_a1": "0.5624",
+                            "variation": "9_139266496_C/T",
+                            "genome_build": "37",
+                            "Rank out of n SNPs": "3"
                         }
                     }
                 },
                 "biological_object": {
                     "about": [
-                        "miriam:efo:EFO_0003767"
+                        "http://identifiers.org/efo/EFO_0003767"
                     ]
                 }
             }
@@ -96,7 +109,7 @@
     },
     "biological_object": {
         "about": [
-            "miriam:efo:EFO_0003767"
+            "http://identifiers.org/efo/EFO_0003767"
         ]
     }
 }

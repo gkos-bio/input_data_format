@@ -1,6 +1,6 @@
 ## Quick document links
 
-#### ![info](help/images/info.gif) [**Changes  JSON schema from 1.0 to 1.1**](changes/version_changes.md)
+#### ![info](help/images/info.gif) [**Changes in JSON schema from 1.0 to 1.1**](changes/version_changes.md)
 
 #### ![info](help/images/info.gif) [**CTTV pipeline projects and evidence strings**](json_schema/project_tracker.md)
 

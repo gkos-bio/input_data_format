@@ -104,7 +104,7 @@
                 },
                 "biological_object": {
                     "about": [
-                        "http://identifiers.org/efo/EFO_0000537"
+                        "http://identifiers.org/efo/0000537"
                     ]
                 }
             }
@@ -112,11 +112,11 @@
     },
     "biological_object": {
         "about": [
-            "http://identifiers.org/efo/EFO_0000537"
+            "http://identifiers.org/efo/0000537"
         ],
         "properties": {
             "biosamples": [
-                "http://identifiers.org/obo/UBERON_0004535"
+                "http://identifiers.org/uberon/UBERON:0004535"
             ]
         }
     }

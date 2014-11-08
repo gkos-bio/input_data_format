@@ -28,13 +28,13 @@ The SLC26A1 and 2 genes encode proteins that facilitate sulfate uptake into cell
 - **http://identifiers.org/cttv.activity/loss_of_function** because normal biological activity of SLC26A2 is impaired due to mutations.
 
 - [**Evidence codes:**](../../json_schema/project_tracker.md)
-	1. **http://identifiers.org/obo/ECO_0000205** Evidence code for: curator inference
+	1. **http://identifiers.org/eco/ECO_0000205** Evidence code for: curator inference
 
 
 - [**Provenance types:**](../../json_schema/cttv_uris_namespaces.md) Provenance types are literature, expert and database since this is curated literature evidence from the Reactome database.
 
 - **EFO terms:**
-	1. **http://identifiers.org/obo/ECO_0001113** Evidence code for: point mutation evidence
+	1. **http://identifiers.org/eco/ECO_0001113** Evidence code for: point mutation evidence
 	2. **http://identifiers.org/orphanet/Orphanet_93298** EFO term for 'achondrogenesis type 1B (ACG-1B; MIM:600972)'
 
 ### Reactome entry points: http://identifiers.org/reactome/REACT_267687.1

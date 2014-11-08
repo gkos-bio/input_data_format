@@ -3,7 +3,7 @@
     "unique_association_fields": {
         "pubmed_refs": "23128233",
         "cttv_project_id": "cttv00018",
-        "disease": "http://identifiers.org/efo/EFO_0003767"
+        "disease": "http://identifiers.org/efo/0003767"
     },
     "biological_subject": {
         "about": [
@@ -56,7 +56,7 @@
 			"probability_method": null
                     },
                     "evidence_codes": [
-                        "http://identifiers.org/obo:ECO_0000053"
+                        "http://identifiers.org/eco/ECO:0000053"
                     ],
                     "properties": {
                         "experiment_specific": {
@@ -104,7 +104,7 @@
                 },
                 "biological_object": {
                     "about": [
-                        "http://identifiers.org/efo/EFO_0003767"
+                        "http://identifiers.org/efo/0003767"
                     ]
                 }
             }
@@ -112,7 +112,7 @@
     },
     "biological_object": {
         "about": [
-            "http://identifiers.org/efo/EFO_0003767"
+            "http://identifiers.org/efo/0003767"
         ]
     }
 }

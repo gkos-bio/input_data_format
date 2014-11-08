@@ -250,7 +250,7 @@
             "properties": {
                 "about": {
                     "type": "array",
-                    "description": "An array of http://identifiers.org/ URNs. For example, if denoting a set of EFO phenotypes: [http://identifiers.org/efo/EFO_0000537, http://identifiers.org/efo/EFO_0000522]",
+                    "description": "An array of http://identifiers.org/ URNs. For example, if denoting a set of EFO phenotypes: [http://identifiers.org/efo/0000537, http://identifiers.org/efo/0000522]",
                     "required": true,
                     "minItems": 1,
                     "uniqueItems": true,
@@ -269,7 +269,7 @@
                         "biosamples": {
                             "type": "array",
                             "required": false,
-                            "description": "An array of affected tissues expressed using its EFO term e.g. http://identifiers.org/obo/UBERON_0004535, the EFO resource ID for cardiovascular system",
+                            "description": "An array of affected tissues expressed using its EFO term e.g. http://identifiers.org/uberon/UBERON:0004535, the uberon URI for cardiovascular system",
                             "items": {
                                 "type": "string",
                                 "minItems": 1,

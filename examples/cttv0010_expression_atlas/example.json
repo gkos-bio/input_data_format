@@ -51,15 +51,15 @@
     },
     "biological_object": {
         "about": [
-            "http://identifiers.org/efo/EFO_0000637"
+            "http://identifiers.org/efo/0000637"
         ],
         "properties": {
             "biosamples": [
-                "http://identifiers.org/efo/EFO_0000298"
+                "http://identifiers.org/efo/0000298"
             ],
             "experiment_specific": {
-                "test_group": "http://identifiers.org/efo/EFO_0000637",
-                "reference_group": "http://identifiers.org/efo/EFO_0000761"
+                "test_group": "http://identifiers.org/efo/0000637",
+                "reference_group": "http://identifiers.org/efo/0000761"
             }
         }
     }

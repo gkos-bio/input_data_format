@@ -3,7 +3,7 @@
     "unique_association_fields": {
         "biological_subjects": "http://identifiers.org/uniprot/P50443",
         "reactome_id": "http://identifiers.org/reactome/REACT_267687.1",
-        "biological_objects": "http://identifiers.org/orphanet/Orphanet_93298"
+        "biological_objects": "http://identifiers.org/orphanet/93298"
     },
     "biological_subject": {
         "about": [
@@ -55,7 +55,7 @@
     },
     "biological_object": {
         "about": [
-            "http://identifiers.org/orphanet/Orphanet_93298"
+            "http://identifiers.org/orphanet/93298"
         ]
     }
 }

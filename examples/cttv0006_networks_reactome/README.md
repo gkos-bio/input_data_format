@@ -35,6 +35,6 @@ The SLC26A1 and 2 genes encode proteins that facilitate sulfate uptake into cell
 
 - **EFO terms:**
 	1. **http://identifiers.org/eco/ECO:0001113** Evidence code for: point mutation evidence
-	2. **http://identifiers.org/orphanet/Orphanet_93298** EFO term for 'achondrogenesis type 1B (ACG-1B; MIM:600972)'
+	2. **http://identifiers.org/orphanet/93298** EFO term for 'achondrogenesis type 1B (ACG-1B; MIM:600972)'
 
 ### Reactome entry points: http://identifiers.org/reactome/REACT_267687.1

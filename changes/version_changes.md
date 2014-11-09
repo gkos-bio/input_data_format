@@ -4,7 +4,7 @@
 --------|--------|--------
 -|{"validated_against_schema_version"}|This is a **required field**. Please indicate which version of the CTTV schema you have validated your JSON data against.
 {"unique_association_fields"}|{"unique_association_fields"}|This is the same as before and is a **required field**. Just to clarify, if you have an array of values that make a particular key unique, **please provide these as comma-separated concatenated values. [See example](../help/README.md#7-what-is-the-unique_association_fields-codeblock-in-the-json)**.
-{"provenance"}{"association_score"}|{"evidence"}{"association_score"}|This is now a **required field**. Ability to set to 'null' if it does not apply. [See help](../help/README.md#9-association_score-is-a-required-field-but-what-if-my-dataset-doesnt-estimate-this)
+{"provenance"}{"association_score"}|{"evidence"}{"association_score"}|This is now a **required field**. Ability to set to 'null' if it does not apply. [See help](../help/README.md#9-evidenceassociation_score-is-a-required-field-but-what-if-my-dataset-doesnt-estimate-this)
 {"provenance"}|{"evidence"}| Field has been renamed.
 {"provenance"}{"type"}|{"evidence"}{"provenance_type"}|Field has been renamed.
 {"biological_subject"}{"experimental_evidence_specific"}, {"provenance"}{"experimental_evidence_specific"}, {"biological_object"}{"experimental_evidence_specific"}|{"biological_subject"}{"experiment_specific"}, {"evidence"}{"experiment_specific"}, {"biological_object"}{"experiment_specific"}|Fields have been renamed.

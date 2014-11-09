@@ -24,8 +24,14 @@
             "http://identifiers.org/eco/ECO:0000205"
         ],
         "association_score": {
-            "probability": null,
-            "probability_method": null
+            "probability": {
+                "value": null,
+                "method": null
+            },
+            "pvalue": {
+                "value": null,
+                "method": null
+            }
         },
         "provenance_type": {
             "literature": {
@@ -77,8 +83,14 @@
                         "ACTION_TYPE": "ANTAGONIST"
                     },
                     "association_score": {
-                        "probability": null,
-                        "probability_method": null
+                        "probability": {
+                            "value": null,
+                            "method": null
+                        },
+                        "pvalue": {
+                            "value": null,
+                            "method": null
+                        }
                     }
                 },
                 "biological_object": {
@@ -98,8 +110,14 @@
                         "comment": "Marketed drug indication"
                     },
                     "association_score": {
-                        "probability": null,
-                        "probability_method": null
+                        "probability": {
+                            "value": null,
+                            "method": null
+                        },
+                        "pvalue": {
+                            "value": null,
+                            "method": null
+                        }
                     }
                 },
                 "biological_object": {

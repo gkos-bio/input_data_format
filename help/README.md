@@ -16,7 +16,7 @@ The aim of this document is to centralize answers to key questions about the CTT
     - [6. Do you have a package I can use to write out CTTV-JSON files?](#6-do-you-have-a-package-i-can-use-to-write-out-cttv-json-files)
     - [7. What is the 'unique_association_fields' codeblock in the JSON?](#7-what-is-the-unique_association_fields-codeblock-in-the-json)
     - [8. When do I use an 'evidence chain'?](#8-when-do-i-use-an-evidence-chain)
-    - [9. {association_score}{probability} is a required field. But what if my dataset doesn't estimate probability?](#9-association_scoreprobability-is-a-required-field-but-what-if-my-dataset-doesnt-estimate-probability)
+    - [9. {evidence}{association_score} is a required field. But what if my dataset doesn't estimate this?](#9-association_score-is-a-required-field-but-what-if-my-dataset-doesnt-estimate)
 - [Miriam registry questions](#miriam-registry-questions)
     - [1. What is identifiers.org/Miriam registry and what is its relevance to the CTTV platform?](#1-what-is-identifiersorgmiriam-registry-and-what-is-its-relevance-to-the-cttv-platform)
     - [2. When do I use the “http:// identifiers.org” URI prefix in the JSON?](#2-when-do-i-use-the-“http-identifiersorg”-uri-prefix-in-the-json)
@@ -103,14 +103,54 @@ You use this when there are >1 independent analytical steps used to associate a 
 
 - [gene to disease association via snp - ](../examples/cttv0018_ibd_gwas) There are 2 independent analyses in this that has resulted in a chain: 1) **Computational analysis** carried out to associate a gene target to its nearest nucleotide polymorphism, 2) **Genetics analysis** carried out to associate the nucleotide polymorphism to its effect in disease
 
-#### 9. {association_score}{probability} is a required field. But what if my dataset doesn't estimate probability?
-This is an estimate of the confidence of an assertion (as a probability) in the range 0-1. It is expected that this number will be specific to pipeline projects. If you do provide this value, please also indicate the method used to calculate it using the **{association_score}{probability_method}** field (currently free text). The 'probability' itself is a relative value within a data type and is not directly comparable between data types. The following is an example scenario where one could calculate this:
+#### 9. {evidence}{association_score} is a required field. But what if my dataset doesn't estimate this?
 
+**Probability**:
+This is an estimate of the confidence of an assertion (as a probability) in the range 0-1. It is expected that this number will be specific to pipeline projects. If you do provide this value, please also indicate the method used to calculate it using the **{probability}{method}** field (currently free text). The 'probability' itself is a relative value within a data type and is not directly comparable between data types. The following is an example scenario where one could calculate this:
+
+> 
 - **Curator uses their own numerical scores (e.g. in the range 1-10) to indicate strength of evidence:** Please normalize the values to the range 0-1. Please check with your curation group whether this is possible.
 
+> 
 - **If the above does not apply,** please provide a **'null'** value to indicate to us that such a calculation does not apply to your data.
 
+
 The methods for scoring will inevitably evolve.
+
+**Pvalue**:
+
+> 
+Same rules as for probability above.
+
+**Examples**:
+```javascript
+GWAS study:
+
+    "association_score": {
+        "probability": {
+            "value": 0.0202556065553751,
+            "method": "Please describe the method"
+        },
+        "pvalue": {
+            "value": 1.316e-44,
+            "method": "calculated from GWAS study"
+        }
+    }
+    
+ArrayAtlas study:
+
+    "association_score": {
+        "probability": {
+            "value": null,
+            "method": null
+        },
+        "pvalue": {
+            "value": 0.0000418,
+            "method": "pvalue from expression array comparison study"
+        }
+    }
+
+```
 
 ## Miriam registry questions
 

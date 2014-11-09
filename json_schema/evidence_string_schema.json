@@ -78,14 +78,11 @@
                     "type": "object",
                     "required": true,
                     "id": "urn:jsonschema:org:cttv:input:model:AssociationScore",
-                    "properties": {
-                        "p-value": {
-                            "type": "number",
-                            "minimum": 0,
-                            "maximum": 1,
-                            "required": false
-                        },
-                        "probability": {
+                    "probability": {
+                        "type": "object",
+                        "required": true,
+                        "id": "urn:jsonschema:org:cttv:input:model:ProbabilityScore",
+                        "value": {
                             "type": [
                                 "number",
                                 "null"
@@ -94,9 +91,33 @@
                             "maximum": 1,
                             "required": true
                         },
-                        "probability_method": {
-                          "type": [ "string", "null" ],
-                          "required": true
+                        "method": {
+                            "type": [
+                                "string",
+                                "null"
+                            ],
+                            "required": true
+                        }
+                    },
+                    "pvalue": {
+                        "type": "object",
+                        "required": true,
+                        "id": "urn:jsonschema:org:cttv:input:model:PValueScore",
+                        "value": {
+                            "type": [
+                                "number",
+                                "null"
+                            ],
+                            "minimum": 0,
+                            "maximum": 1,
+                            "required": true
+                        },
+                        "method": {
+                            "type": [
+                                "string",
+                                "null"
+                            ],
+                            "required": true
                         }
                     }
                 },

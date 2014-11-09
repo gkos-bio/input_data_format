@@ -16,9 +16,14 @@
     },
     "evidence": {
         "association_score": {
-            "probability": null,
-            "probability_method": null,
-            "p-value": 0.0000418
+            "probability": {
+                "value": null,
+                "method": null
+            },
+            "pvalue": {
+                "value": 0.0000418,
+                "method": "pvalue from array comparison study"
+            }
         },
         "provenance_type": {
             "database": {

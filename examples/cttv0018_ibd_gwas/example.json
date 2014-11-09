@@ -18,8 +18,14 @@
         "date_asserted": "2014-09-11T10:59:43.511Z",
         "is_associated": true,
         "association_score": {
-            "probability": null,
-	    "probability_method": null
+            "probability": {
+                "value": null,
+                "method": null
+            },
+            "pvalue": {
+                "value": null,
+                "method": null
+            }
         },
         "evidence_codes": [
             "http://identifiers.org/eco/ECO:0000177",
@@ -52,8 +58,14 @@
                 },
                 "evidence": {
                     "association_score": {
-                        "probability": null,
-			"probability_method": null
+                        "probability": {
+                            "value": null,
+                            "method": null
+                        },
+                        "pvalue": {
+                            "value": null,
+                            "method": null
+                        }
                     },
                     "evidence_codes": [
                         "http://identifiers.org/eco/ECO:0000053"
@@ -85,9 +97,14 @@
                         "http://identifiers.org/eco/ECO:0001113"
                     ],
                     "association_score": {
-                        "probability": 0.0202556065553751,
-			"probability_method": "Please describe the method used to calculate the probability",
-                        "p-value": 1.316e-44
+                        "probability": {
+                            "value": 0.0202556065553751,
+                            "method": "Please describe the method used to calculate the probability"
+                        },
+                        "pvalue": {
+                            "value": 1.316e-44,
+                            "method": "calculated from GWAS study"
+                        }
                     },
                     "properties": {
                         "experimental_evidence_specific": {

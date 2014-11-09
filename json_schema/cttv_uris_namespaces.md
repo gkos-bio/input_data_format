@@ -122,6 +122,8 @@ http://identifiers.org/cttv.activity/unknown
 
         http://identifiers.org/cttv.activity/predicted_tolerated
 
+    http://identifiers.org/cttv.activity/tolerated
+
 http://identifiers.org/cttv.activity/up
 
     http://identifiers.org/cttv.activity/drug_positive_modulator

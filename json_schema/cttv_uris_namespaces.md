@@ -123,6 +123,8 @@ http://identifiers.org/cttv.activity/unknown
         http://identifiers.org/cttv.activity/predicted_tolerated
 
     http://identifiers.org/cttv.activity/tolerated
+    
+    	http://identifiers.org/cttv.activity/tolerated_by_target
 
 http://identifiers.org/cttv.activity/up
 

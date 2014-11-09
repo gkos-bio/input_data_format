@@ -215,6 +215,14 @@
     
 
 
+    <!-- http://www.targetvalidation.org/activity/tolerated_by_target -->
+
+    <owl:Class rdf:about="http://www.targetvalidation.org/activity/tolerated_by_target">
+        <rdfs:subClassOf rdf:resource="http://www.targetvalidation.org/activity/tolerated"/>
+    </owl:Class>
+    
+
+
     <!-- http://www.targetvalidation.org/activity/unknown -->
 
     <owl:Class rdf:about="http://www.targetvalidation.org/activity/unknown">

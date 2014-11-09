@@ -16,7 +16,7 @@ The aim of this document is to centralize answers to key questions about the CTT
     - [6. Do you have a package I can use to write out CTTV-JSON files?](#6-do-you-have-a-package-i-can-use-to-write-out-cttv-json-files)
     - [7. What is the 'unique_association_fields' codeblock in the JSON?](#7-what-is-the-unique_association_fields-codeblock-in-the-json)
     - [8. When do I use an 'evidence chain'?](#8-when-do-i-use-an-evidence-chain)
-    - [9. {evidence}{association_score} is a required field. But what if my dataset doesn't estimate this?](#9-association_score-is-a-required-field-but-what-if-my-dataset-doesnt-estimate)
+    - [9. {evidence}{association_score} is a required field. But what if my dataset doesn't estimate this?](#9-association_score-is-a-required-field-but-what-if-my-dataset-doesnt-estimate-this)
 - [Miriam registry questions](#miriam-registry-questions)
     - [1. What is identifiers.org/Miriam registry and what is its relevance to the CTTV platform?](#1-what-is-identifiersorgmiriam-registry-and-what-is-its-relevance-to-the-cttv-platform)
     - [2. When do I use the “http:// identifiers.org” URI prefix in the JSON?](#2-when-do-i-use-the-“http-identifiersorg”-uri-prefix-in-the-json)
@@ -51,6 +51,7 @@ For now, please create a JSON array (one large file) and provide us with the URL
 
 #### 5. How do I validate the data I am providing?
 
+> 
 - You can do this using an **online validator** like [JSON schema lint validator](http://jsonschemalint.com/):
 	- Open [JSON schema lint validator](http://jsonschemalint.com/) in your web browser
 	- Copy the [CTTV JSON schema](https://github.com/CTTV/input_data_format/blob/master/json_schema/evidence_string_schema.json) into the 'JSON Schema' box
@@ -58,8 +59,11 @@ For now, please create a JSON array (one large file) and provide us with the URL
 	- Both boxes should light up green if all has worked!
 	- Try changing some values in the 'JSON' box and see if the schema still validates it!
 
+> 
 - You can do this **locally** using [our python script](../scripts/cttv0001_core_db/json_schema_validator)
-- The [JSON processor jq](http://stedolan.github.io/jq/) is also powerful.
+
+> 
+- - The [JSON processor jq](http://stedolan.github.io/jq/) is also powerful.
 
 #### 6. Do you have a package I can use to write out CTTV-JSON files?
 This is in development. You can [pull the latest version from here](../packages)
@@ -99,8 +103,10 @@ Reactome:
 #### 8. When do I use an 'evidence chain'?
 You use this when there are >1 independent analytical steps used to associate a target with a disease. There are 2 examples you can look at:
 
+> 
 - [biological target to disease association via drug - ](../examples/cttv0008_chembl) There are 2 independent analyses in this that has resulted in a chain: 1) **Experimental analysis** carried out to associate a protein/protein complex target to a drug, 2) **Clinical analysis** carried out to associate the drug to its effect in disease
 
+> 
 - [gene to disease association via snp - ](../examples/cttv0018_ibd_gwas) There are 2 independent analyses in this that has resulted in a chain: 1) **Computational analysis** carried out to associate a gene target to its nearest nucleotide polymorphism, 2) **Genetics analysis** carried out to associate the nucleotide polymorphism to its effect in disease
 
 #### 9. {evidence}{association_score} is a required field. But what if my dataset doesn't estimate this?

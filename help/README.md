@@ -16,7 +16,7 @@ The aim of this document is to centralize answers to key questions about the CTT
     - [6. Do you have a package I can use to write out CTTV-JSON files?](#6-do-you-have-a-package-i-can-use-to-write-out-cttv-json-files)
     - [7. What is the 'unique_association_fields' codeblock in the JSON?](#7-what-is-the-unique_association_fields-codeblock-in-the-json)
     - [8. When do I use an 'evidence chain'?](#8-when-do-i-use-an-evidence-chain)
-    - [9. {evidence}{association_score} is a required field. But what if my dataset doesn't estimate this?](#9-association_score-is-a-required-field-but-what-if-my-dataset-doesnt-estimate-this)
+    - [9. {evidence}{association_score} is a required field. But what if my dataset doesn't estimate this?](#9-evidence-association_score-is-a-required-field-but-what-if-my-dataset-doesnt-estimate-this)
 - [Miriam registry questions](#miriam-registry-questions)
     - [1. What is identifiers.org/Miriam registry and what is its relevance to the CTTV platform?](#1-what-is-identifiersorgmiriam-registry-and-what-is-its-relevance-to-the-cttv-platform)
     - [2. When do I use the “http:// identifiers.org” URI prefix in the JSON?](#2-when-do-i-use-the-“http-identifiersorg”-uri-prefix-in-the-json)

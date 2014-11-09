@@ -3,7 +3,7 @@ The aim of this document is to centralize answers to key questions about the CTT
 
 <!-- START doctoc generated TOC please keep comment here to allow auto update -->
 <!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
-**Table of Contents**
+**Table of Contents**  
 
 - ['Evidence code' questions](#evidence-code-questions)
     - [1. Which evidence codes should I use?](#1-which-evidence-codes-should-i-use)

@@ -98,19 +98,7 @@ The figure below shows the various definitions of 'biological activity' as used 
 
 ```javascript
 
-http://identifiers.org/cttv.activity/down
-
-    http://identifiers.org/cttv.activity/decreased_transcript_level
-
-    http://identifiers.org/cttv.activity/decreased_translational_product_level
-
-    http://identifiers.org/cttv.activity/drug_negative_modulator
-
-    http://identifiers.org/cttv.activity/loss_of_function
-
-    http://identifiers.org/cttv.activity/partial_loss_of_function
-
-http://identifiers.org/cttv.activity/unknown
+http://identifiers.org/cttv.activity/up_or_down
 
     http://identifiers.org/cttv.activity/damaging
 
@@ -125,6 +113,18 @@ http://identifiers.org/cttv.activity/unknown
     http://identifiers.org/cttv.activity/tolerated
     
     	http://identifiers.org/cttv.activity/tolerated_by_target
+
+http://identifiers.org/cttv.activity/down
+
+    http://identifiers.org/cttv.activity/decreased_transcript_level
+
+    http://identifiers.org/cttv.activity/decreased_translational_product_level
+
+    http://identifiers.org/cttv.activity/drug_negative_modulator
+
+    http://identifiers.org/cttv.activity/loss_of_function
+
+    http://identifiers.org/cttv.activity/partial_loss_of_function
 
 http://identifiers.org/cttv.activity/up
 

@@ -81,7 +81,7 @@
     <!-- http://www.targetvalidation.org/activity/damaging -->
 
     <owl:Class rdf:about="http://www.targetvalidation.org/activity/damaging">
-        <rdfs:subClassOf rdf:resource="http://www.targetvalidation.org/activity/unknown"/>
+        <rdfs:subClassOf rdf:resource="http://www.targetvalidation.org/activity/up_or_down"/>
     </owl:Class>
     
 
@@ -186,7 +186,7 @@
     <!-- http://www.targetvalidation.org/activity/predicted -->
 
     <owl:Class rdf:about="http://www.targetvalidation.org/activity/predicted">
-        <rdfs:subClassOf rdf:resource="http://www.targetvalidation.org/activity/unknown"/>
+        <rdfs:subClassOf rdf:resource="http://www.targetvalidation.org/activity/up_or_down"/>
     </owl:Class>
     
 
@@ -210,7 +210,7 @@
     <!-- http://www.targetvalidation.org/activity/tolerated -->
 
     <owl:Class rdf:about="http://www.targetvalidation.org/activity/tolerated">
-        <rdfs:subClassOf rdf:resource="http://www.targetvalidation.org/activity/unknown"/>
+        <rdfs:subClassOf rdf:resource="http://www.targetvalidation.org/activity/up_or_down"/>
     </owl:Class>
     
 
@@ -223,19 +223,19 @@
     
 
 
-    <!-- http://www.targetvalidation.org/activity/unknown -->
-
-    <owl:Class rdf:about="http://www.targetvalidation.org/activity/unknown">
-        <rdfs:subClassOf rdf:resource="http://www.targetvalidation.org/activity/cttv_activity"/>
-        <rdfs:comment>biological activity of target in disease is difficult to predict / unknown.</rdfs:comment>
-    </owl:Class>
-    
-
-
     <!-- http://www.targetvalidation.org/activity/up -->
 
     <owl:Class rdf:about="http://www.targetvalidation.org/activity/up">
         <rdfs:subClassOf rdf:resource="http://www.targetvalidation.org/activity/cttv_activity"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.targetvalidation.org/activity/up_or_down -->
+
+    <owl:Class rdf:about="http://www.targetvalidation.org/activity/up_or_down">
+        <rdfs:subClassOf rdf:resource="http://www.targetvalidation.org/activity/cttv_activity"/>
+        <rdfs:comment>biological activity of target in disease is difficult to predict / unknown.</rdfs:comment>
     </owl:Class>
     
 

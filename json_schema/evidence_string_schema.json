@@ -241,10 +241,14 @@
                                     "id": "urn:jsonschema:org:cttv:input:model:ProvenanceDatabaseXRef",
                                     "properties": {
                                         "id": {
-                                            "type": "string"
+                                            "type": "string",
+                                            "pattern": "http://identifiers.org/.+$",
+                                            "description": "Please use the identifiers.org DB namespace to identify the dbxref name: e.g. http://identifiers.org/orphanet"
                                         },
                                         "url": {
-                                            "type": "string"
+                                            "type": "string",
+                                            "pattern": "http://identifiers.org/.+/.+$",
+                                            "description": "Please use the identifiers.org URI syntax to point to the original resource: e.g. http://identifiers.org/orphanet/93298"                                            
                                         },
                                         "version": {
                                             "type": "string"

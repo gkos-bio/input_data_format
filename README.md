@@ -10,11 +10,9 @@
 
 ## Schema 1.1 overview
 
-![CTTV JSON schema 1.1](help/images/schema_1.1.png)
+![CTTV schema 1.1](help/images/schema_1.1.png)
 
 ## Folder content
-
-
 
 1. [**help**](./help/)	- Frequently asked questions.
 
@@ -27,8 +25,6 @@
 1. [**scripts**](./scripts/) - JSON-preparation scripts written by CTTV project members.
 
 1. [**packages**](./packages/) - Software packages written for generating CTTV "evidence string" objects
-
-
 
 ## What is the CTTV evidence string format?
 

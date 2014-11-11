@@ -8,7 +8,9 @@
 
 #### ![info](help/images/info.gif) [**CTTV URIs and namespaces**](json_schema/cttv_uris_namespaces.md)
 
+## Schema 1.1 overview
 
+![CTTV JSON schema 1.1](help/images/schema_1.1.png)
 
 ## Folder content
 

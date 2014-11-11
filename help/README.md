@@ -197,7 +197,7 @@ By using identifer.org URIs, we can point the CTTV web application to pre-resolv
 If you have a disease term which isn't yet mapped to EFO, please:
 
 1. Use the efo URI **'http://identifiers.org/efo/0000000'** in the JSON **{biological_object}{about}[0]** field.
-1. Provide your unmapped term under '**{biological_object}{properties}{experimental_evidence_specific}{unmapped_disease_term}**'
+1. Provide your unmapped term under '**{biological_object}{properties}{evidence_specific}{unmapped_disease_term}**'
     
 ```javascript
     "biological_object": {
@@ -205,7 +205,7 @@ If you have a disease term which isn't yet mapped to EFO, please:
             "http://identifiers.org/efo/0000000"
         ],
         "properties": {
-            "experimental_evidence_specific": {
+            "evidence_specific": {
                 "unmapped_disease_term" : "disease X which is not in EFO"
             }
         }

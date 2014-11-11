@@ -78,7 +78,7 @@ Evidence string structure:
 |----------------------------|-------------------------------|-----------------------------|--------|
 |[child term of protein_evidence as an array](./cttv_uris_namespaces.md)|yes|[EFO disease or phenotype as an array](http://www.ebi.ac.uk/efo/)|[click here](../examples/cttv0008_chembl)|
 
-**Download URL:** PLEASE FILL THIS IN
+**Download URL:** [Download](https://www.dropbox.com/sh/fldibtyodwfh7xa/AADDYA-RxXYDfnG7JKDTuuNya/cttv_chembl.v1.json.gz?dl=0)
 
 ## 5. GWAS catalog (CTTV009)
 **Tech lead: tburdett**
@@ -118,7 +118,7 @@ Evidence string structure:
 |----------------------------|-------------------------------|-----------------------------|--------|
 |[child term of transcript_evidence as an array](./cttv_uris_namespaces.md)|no|[EFO disease or phenotype as an array](http://www.ebi.ac.uk/efo/)|[click here](../examples/cttv0010_expression_atlas)|
 
-**Download URL:** http://www.ebi.ac.uk/~mkeays/cttv/expression_atlas_cttv_evidence_strings.json
+**Download URL:** [Download](http://www.ebi.ac.uk/~mkeays/cttv/expression_atlas_cttv_evidence_strings.json)
 
 ## 7. Uniprot (CTTV011)
 **Tech lead: eddturner**

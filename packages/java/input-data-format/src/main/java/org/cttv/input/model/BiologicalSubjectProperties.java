@@ -5,8 +5,6 @@ import com.fasterxml.jackson.annotation.JsonInclude.Include;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.HashMap;
-import java.util.LinkedList;
-import java.util.List;
 import java.util.Map;
 
 /**
@@ -15,46 +13,48 @@ import java.util.Map;
 @JsonInclude(Include.NON_NULL)
 public class BiologicalSubjectProperties {
 
-    private String associationContext;
-    private List<String> associatedSubjects;
+//    private String associationContext;
+//    private List<String> associatedSubjects;
+    private AssociationContext targetType;
     private String activity;
-    private Map<String, String> experimentalEvidenceSpecific;
+    private Map<String, String> experimentSpecific;
 
-    public BiologicalSubjectProperties(AssociationContext associationContext, Activity activity) {
-        this.associationContext = associationContext.getContext();
+    public BiologicalSubjectProperties(AssociationContext targetType, Activity activity) {
+//        this.associationContext = associationContext.getContext();
+        this.targetType = targetType;
         this.activity = activity.getActivity();
     }
 
-    public boolean addAssociatedSubjects(String associatedSubject){
-        if(this.associatedSubjects==null){
-            this.associatedSubjects = new LinkedList<String>();
-        }
-        return this.associatedSubjects.add(associatedSubject);
-    }
+//    public boolean addAssociatedSubjects(String associatedSubject){
+//        if(this.associatedSubjects==null){
+//            this.associatedSubjects = new LinkedList<String>();
+//        }
+//        return this.associatedSubjects.add(associatedSubject);
+//    }
 
     public String putExperimentalEvidenceSpecific(String propertyName, String value){
-        if(experimentalEvidenceSpecific==null){
-            experimentalEvidenceSpecific = new HashMap<String, String>();
+        if(experimentSpecific ==null){
+            experimentSpecific = new HashMap<String, String>();
         }
-        return experimentalEvidenceSpecific.put(propertyName, value);
+        return experimentSpecific.put(propertyName, value);
     }
 
-    @JsonProperty("association_context")
-    public String getAssociationContext() {
-        return associationContext;
-    }
-
-    @JsonProperty("associated_subjects")
-    public List<String> getAssociatedSubjects() {
-        return associatedSubjects;
-    }
+//    @JsonProperty("association_context")
+//    public String getAssociationContext() {
+//        return associationContext;
+//    }
+//
+//    @JsonProperty("associated_subjects")
+//    public List<String> getAssociatedSubjects() {
+//        return associatedSubjects;
+//    }
 
     public String getActivity() {
         return activity;
     }
 
-    @JsonProperty("experimental_evidence_specific")
-    public Map<String, String> getExperimentalEvidenceSpecific() {
-        return experimentalEvidenceSpecific;
+    @JsonProperty("experiment_specific")
+    public Map<String, String> getExperimentSpecific() {
+        return experimentSpecific;
     }
 }

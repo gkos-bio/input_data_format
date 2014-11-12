@@ -11,18 +11,18 @@ import java.util.List;
  */
 @JsonInclude(Include.NON_NULL)
 public class ProvenanceUrls {
-    private String biojs;
+//    private String biojs;
     private List<LinkOut> linkouts;
 
     public ProvenanceUrls() {
         //Nothing here
     }
 
-    public void setBiojs(String biojs) {
-        this.biojs = biojs;
-    }
+//    public void setBiojs(String biojs) {
+//        this.biojs = biojs;
+//    }
 
-    public boolean addLinkOout(LinkOut linkOut){
+    public boolean addLinkOut(LinkOut linkOut){
         if(linkOut==null) return false;
         if(linkouts==null){
             linkouts = new LinkedList<LinkOut>();
@@ -30,9 +30,9 @@ public class ProvenanceUrls {
         return linkouts.add(linkOut);
     }
 
-    public String getBiojs() {
-        return biojs;
-    }
+//    public String getBiojs() {
+//        return biojs;
+//    }
 
     public List<LinkOut> getLinkouts() {
         return linkouts;

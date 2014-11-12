@@ -9,13 +9,13 @@ import com.fasterxml.jackson.annotation.JsonProperty;
  */
 @JsonInclude(Include.NON_NULL)
 public class ProvenanceDatabase {
-    private boolean isTrue;
+//    private boolean isStatus;
     private String id;
     private String version;
     private ProvenanceDatabaseXRef dbXref;
 
     public ProvenanceDatabase(String id, String version) {
-        this.isTrue = true;
+//        this.isStatus = true;
         this.id = id;
         this.version = version;
     }
@@ -24,10 +24,10 @@ public class ProvenanceDatabase {
         this.dbXref = dbXref;
     }
 
-    @JsonProperty("true")
-    public boolean getIsTrue() {
-        return isTrue;
-    }
+//    @JsonProperty("true")
+//    public boolean getIsTrue() {
+//        return isStatus;
+//    }
 
     public String getId() {
         return id;

@@ -12,29 +12,29 @@ import java.util.List;
  */
 @JsonInclude(Include.NON_NULL)
 public class ProvenanceLiterature {
-    private boolean isTrue;
-    private List<Long> pubmedRefs;
+//    private boolean isStatus;
+    private List<String> pubmedRefs;
 
     public ProvenanceLiterature() {
-        this.isTrue = false;
+//        this.isStatus = false;
     }
 
-    public boolean addPubmdRef(Long pubmedRef){
+    public boolean addPubmdRef(String pubmedRef){
         if(pubmedRef==null) return false;
         if(pubmedRefs==null){
-            pubmedRefs = new LinkedList<Long>();
+            pubmedRefs = new LinkedList<String>();
         }
-        isTrue = true;
+//        isStatus = true;
         return pubmedRefs.add(pubmedRef);
     }
 
-    @JsonProperty("true")
-    public boolean getIsTrue() {
-        return isTrue;
-    }
+//    @JsonProperty("true")
+//    public boolean getIsTrue() {
+//        return isStatus;
+//    }
 
     @JsonProperty("pubmed_refs")
-    public List<Long> getPubmedRefs() {
+    public List<String> getPubmedRefs() {
         return pubmedRefs;
     }
 }

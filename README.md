@@ -26,7 +26,7 @@
 
 1. [**packages**](./packages/) - Software packages written for generating CTTV "evidence string" objects
 
-## What is the CTTV evidence string format?
+## What is the CTTV TD-association format?
 
 
 

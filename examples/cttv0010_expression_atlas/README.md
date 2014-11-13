@@ -1,4 +1,4 @@
-## Example of RNA-expression-based "evidence string"
+## Example of RNA-expression-based "TD-association"
 
 **Note:** 
 - All URIs, other than "[http://identifiers.org/cttv.target, http://identifiers.org/cttv.activity](../../json_schema/cttv_uris_namespaces.md):" already exist in [identifers.org / MIRIAM registry](http://www.ebi.ac.uk/miriam/main/collections/). We will request addition of the cttv URIs to MIRIAM registry.

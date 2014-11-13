@@ -2,9 +2,9 @@
 
 #### ![info](help/images/info.gif) [**Changes in JSON schema from 1.0 to 1.1**](changes/version_changes.md)
 
-#### ![info](help/images/info.gif) [**CTTV pipeline projects and evidence strings**](json_schema/project_tracker.md)
+#### ![info](help/images/info.gif) [**CTTV pipeline projects and target-disease associations (TD-associations)**](json_schema/project_tracker.md)
 
-#### ![info](help/images/info.gif) [**CTTV evidence string FAQs**](help/README.md)
+#### ![info](help/images/info.gif) [**CTTV TD-associations FAQs**](help/README.md)
 
 #### ![info](help/images/info.gif) [**CTTV URIs and namespaces**](json_schema/cttv_uris_namespaces.md)
 
@@ -34,7 +34,7 @@
 
 
 
-The CTTV “evidence string format” defines a graph-based model for capturing target (i.e. a gene or a protein) to disease evidence from a number of disparate data sources. It is effectively the “currency” for the CTTV database project (CTTV001) to receive and process disease evidence from different CTTV workstreams.
+The CTTV “TD-association format” defines a graph-based model for capturing target (i.e. a gene or a protein) to disease evidence from a number of disparate data sources. It is effectively the “currency” for the CTTV database project (CTTV001) to receive and process disease evidence from different CTTV workstreams.
 
 
 

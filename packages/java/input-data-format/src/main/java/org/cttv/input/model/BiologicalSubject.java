@@ -2,6 +2,8 @@ package org.cttv.input.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonInclude.Include;
+import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonPropertyDescription;
 
 import java.util.List;
 
@@ -20,10 +22,13 @@ public class BiologicalSubject {
         this.properties = properties;
     }
 
+    @JsonProperty(value = "about", required = true)
+    @JsonPropertyDescription("An array of identifier.org URIs. For example, if depicting a CTTV target, which is a heteropolymeric protein complex, use: [http://identifiers.org/uniprot/P251200, http://identifiers.org/uniprot/P35348, http://identifiers.org/uniprot/P35368]")
     public List<String> getAbout() {
         return about;
     }
 
+    @JsonProperty(value = "properties", required = false)
     public BiologicalSubjectProperties getProperties() {
         return properties;
     }

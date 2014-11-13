@@ -25,11 +25,14 @@ public class AssociationScore {
         this.pValue = 0.0d;
     }
 
+    //TODO: Add minimum and maximum annotation
+    @JsonProperty(value = "probability", required = true)
     public Double getProbability() {
         return probability;
     }
 
-    @JsonProperty("p-value")
+    //TODO: Add minimum and maximum annotation
+    @JsonProperty(value = "p-value", required = true)
     public Double getpValue() {
         return pValue;
     }

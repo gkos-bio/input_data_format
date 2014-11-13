@@ -1,10 +1,10 @@
 package org.cttv.input.model;
 
-import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.fasterxml.jackson.module.jsonSchema.JsonSchema;
-import com.fasterxml.jackson.module.jsonSchema.JsonSchemaGenerator;
-import org.junit.*;
+import org.junit.After;
+import org.junit.Assert;
+import org.junit.Before;
+import org.junit.Test;
 
 import java.io.IOException;
 
@@ -17,17 +17,6 @@ public class AssociationScoreTest {
     @Before
     public void before(){
         this.score = new AssociationScore(0.5, 0.5);
-        try {
-            ObjectMapper mapper = new ObjectMapper();
-            JsonSchemaGenerator generator = new JsonSchemaGenerator(mapper);
-            JsonSchema jsonSchema = generator.generateSchema(EvidenceString.class);
-            System.out.println(jsonSchema.get$schema());
-
-        } catch (JsonProcessingException e) {
-            e.printStackTrace();
-        }
-
-
     }
 
     @After

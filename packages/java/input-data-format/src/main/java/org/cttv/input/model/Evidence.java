@@ -21,20 +21,20 @@ public class Evidence {
     private ProvenanceUrls urls;
     private AssociationScore associationScore;
     private List<EvidenceString> chain;
-    private ExperimentalEvidenceSpecific experimentalEvidenceSpecific;
+    private ExperimentSpecific experimentSpecific;
 
     public Evidence(Date dateAsserted,
                     boolean isAssociated,
                     ProvenanceType provenanceType,
                     List<String> evidenceCodes,
-                    ProvenanceUrls urls) {
-//                    ExperimentalEvidenceSpecific experimentalEvidenceSpecific
+                    ProvenanceUrls urls,
+                    AssociationScore associationScore) {
         this.dateAsserted = dateAsserted;
         this.isAssociated = isAssociated;
         this.provenanceType = provenanceType;
         this.evidenceCodes = evidenceCodes;
         this.urls = urls;
-//        this.experimentalEvidenceSpecific = experimentalEvidenceSpecific;
+        this.associationScore = associationScore;
     }
 
     @JsonProperty("date_asserted")
@@ -62,15 +62,19 @@ public class Evidence {
         return urls;
     }
 
-    @JsonProperty("associated_score")
+    @JsonProperty("association_score")
     public AssociationScore getAssociationScore() {
         return associationScore;
     }
 
-//    @JsonProperty("experimental_evidence_specific")
-//    public ExperimentalEvidenceSpecific getExperimentalEvidenceSpecific() {
-//        return experimentalEvidenceSpecific;
-//    }
+    @JsonProperty("experiment_specific")
+    public ExperimentSpecific getExperimentSpecific() {
+        return experimentSpecific;
+    }
+    
+    public void setExperimentSpecific(ExperimentSpecific experimentSpecific) {
+        this.experimentSpecific = experimentSpecific;
+    }
 
     public void setAssociationScore(AssociationScore associationScore) {
         this.associationScore = associationScore;

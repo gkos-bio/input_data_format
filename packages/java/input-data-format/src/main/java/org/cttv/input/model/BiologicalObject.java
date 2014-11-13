@@ -14,7 +14,7 @@ public class BiologicalObject {
 
     private List<String> about;
 
-    private BiologicalObjectProperties properties;
+    private ExperimentSpecific experimentSpecific;
 
     public BiologicalObject(String about){
         this.about = new LinkedList<String>();
@@ -29,11 +29,11 @@ public class BiologicalObject {
         return about;
     }
 
-    public BiologicalObjectProperties getProperties() {
-        return properties;
+    public ExperimentSpecific getExperimentSpecific() {
+        return experimentSpecific;
     }
 
-    public void setProperties(BiologicalObjectProperties properties) {
-        this.properties = properties;
+    public void setExperimentSpecific(ExperimentSpecific experimentSpecific) {
+        this.experimentSpecific = experimentSpecific;
     }
 }

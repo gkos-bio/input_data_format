@@ -4,7 +4,7 @@
     <groupId>org.cttv.input</groupId>
     <artifactId>input-data-format</artifactId>
     <packaging>jar</packaging>
-    <version>0.3-SNAPSHOT</version>
+    <version>0.4-SNAPSHOT</version>
     <name>tools</name>
     <url>http://maven.apache.org</url>
 

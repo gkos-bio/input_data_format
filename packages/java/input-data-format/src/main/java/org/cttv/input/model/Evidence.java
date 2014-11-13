@@ -43,26 +43,27 @@ public class Evidence {
         return formatter.format(dateAsserted);
     }
 
-    @JsonProperty("is_associated", required = true)
+    @JsonProperty(value = "is_associated", required = true)
     public boolean isAssociated() {
         return isAssociated;
     }
 
-    @JsonProperty("provenance_type", required = true)
+    @JsonProperty(value = "provenance_type", required = true)
     public ProvenanceType getProvenanceType() {
         return provenanceType;
     }
 
-    @JsonProperty("evidence_codes", required = true)
+    @JsonProperty(value = "evidence_codes", required = true)
     public List<String> getEvidenceCodes() {
         return evidenceCodes;
     }
 
+    @JsonProperty(required = true)
     public ProvenanceUrls getUrls() {
         return urls;
     }
 
-    @JsonProperty("association_score", required = true)
+    @JsonProperty(value = "association_score", required = true)
     public AssociationScore getAssociationScore() {
         return associationScore;
     }
@@ -72,7 +73,7 @@ public class Evidence {
         return chain;
     }
 
-    @JsonProperty("experiment_specific", required = true)
+    @JsonProperty(value = "experiment_specific", required = true)
     public ExperimentSpecific getExperimentSpecific() {
         return experimentSpecific;
     }

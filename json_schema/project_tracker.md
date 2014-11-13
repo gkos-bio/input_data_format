@@ -35,7 +35,7 @@ Evidence code | Label | Description
 http://identifiers.org/eco/ECO:0000205 |curator inference|An evidence type that is based on conclusions drawn by a curator.
 http://identifiers.org/eco/ECO:0000001 | inference from background scientific knowledge | A curator inference that links the current annotation to a different evidence-based annotation via background knowledge of the curator.
 
-Evidence string structure:
+TD-association structure:
 
 |biological_subject (target) | provenance has evidence chain | biological_object (disease) | example|
 |----------------------------|-------------------------------|-----------------------------|--------|
@@ -53,7 +53,7 @@ Evidence code | Label | Description
 http://identifiers.org/eco/ECO:0000205 |curator inference|An evidence type that is based on conclusions drawn by a curator.
 http://identifiers.org/eco/ECO:0000001 | inference from background scientific knowledge | A curator inference that links the current annotation to a different evidence-based annotation via background knowledge of the curator.
 
-Evidence string structure:
+TD-association structure:
 
 |biological_subject (target) | provenance has evidence chain | biological_object (disease) | example|
 |----------------------------|-------------------------------|-----------------------------|--------|
@@ -72,7 +72,7 @@ http://identifiers.org/eco/ECO:0000205 |curator inference|An evidence type that 
 http://identifiers.org/eco/ECO:0000001 | inference from background scientific knowledge | A curator inference that links the current annotation to a different evidence-based annotation via background knowledge of the curator.|
 http://identifiers.org/eco/ECO:0000360 | biological target-disease association via drug |  - |
 
-Evidence string structure:
+TD-association structure:
 
 |biological_subject (target) | provenance has evidence chain | biological_object (disease) | example|
 |----------------------------|-------------------------------|-----------------------------|--------|
@@ -92,7 +92,7 @@ http://identifiers.org/eco/ECO:0001113 | point mutation evidence | |
 http://identifiers.org/eco/ECO:0000205 | curator inference | An evidence type that is based on conclusions drawn by a curator.|
 http://identifiers.org/eco/ECO:0000053 | computational combinatorial evidence | A type of combinatorial analysis where data are combined and evaluated by an algorithm.|
 
-Evidence string structure:
+TD-association structure:
 
 |biological_subject (target) | provenance has evidence chain | biological_object (disease) | example|
 |----------------------------|-------------------------------|-----------------------------|--------|
@@ -112,7 +112,7 @@ http://identifiers.org/eco/ECO:0000357 | differential gene expression from RNA-s
 http://identifiers.org/eco/ECO:0000358 | differential geneset expression from microarray experiment | Gene set enrichment analysis (GSEA) shows that a functional classification (e.g. reaction pathway, Gene Ontology term, etc) has statistically significant over-representation in a group of genes showing differential expression when assayed using a microarray platform.|
 http://identifiers.org/eco/ECO:0000359 | differential geneset expression from RNA-seq experiment | Gene set enrichment analysis (GSEA) shows that a functional classification (e.g. reaction pathway, Gene Ontology term, etc) has statistically significant over-representation in a group of genes showing differential expression when assayed using an RNA sequencing platform.|
 
-Evidence string structure:
+TD-association structure:
 
 |biological_subject (target) | provenance has evidence chain | biological_object (disease) | example|
 |----------------------------|-------------------------------|-----------------------------|--------|
@@ -130,7 +130,7 @@ Evidence code | Label | Description
 http://identifiers.org/eco/ECO:0000205 |curator inference|An evidence type that is based on conclusions drawn by a curator.
 http://identifiers.org/eco/ECO:0000001 | inference from background scientific knowledge | A curator inference that links the current annotation to a different evidence-based annotation via background knowledge of the curator.|
 
-Evidence string structure:
+TD-association structure:
 
 |biological_subject (target) | provenance has evidence chain | biological_object (disease) | example|
 |----------------------------|-------------------------------|-----------------------------|--------|
@@ -150,7 +150,7 @@ http://identifiers.org/eco/ECO:0001113 | point mutation evidence | |
 http://identifiers.org/eco/ECO:0000205 | curator inference | An evidence type that is based on conclusions drawn by a curator.|
 http://identifiers.org/eco/ECO:0000053 | computational combinatorial evidence | A type of combinatorial analysis where data are combined and evaluated by an algorithm.|
 
-Evidence string structure:
+TD-association structure:
 
 |biological_subject (target) | provenance has evidence chain | biological_object (disease) | example|
 |----------------------------|-------------------------------|-----------------------------|--------|
@@ -170,7 +170,7 @@ http://identifiers.org/eco/ECO:0001113 | point mutation evidence | |
 http://identifiers.org/eco/ECO:0000205 | curator inference | An evidence type that is based on conclusions drawn by a curator.|
 http://identifiers.org/eco/ECO:0000053 | computational combinatorial evidence | A type of combinatorial analysis where data are combined and evaluated by an algorithm.|
 
-Evidence string structure:
+TD-association structure:
 
 |biological_subject (target) | provenance has evidence chain | biological_object (disease) | example|
 |----------------------------|-------------------------------|-----------------------------|--------|

@@ -1,5 +1,5 @@
 # Purpose of this document
-The aim of this document is to centralize answers to key questions about the CTTV evidence string JSON format. It is intended to be read by individuals working on preparing their data to fit this model.
+The aim of this document is to centralize answers to key questions about the CTTV TD-association JSON format. It is intended to be read by individuals working on preparing their data to fit this model.
 
 <!-- START doctoc generated TOC please keep comment here to allow auto update -->
 <!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
@@ -7,7 +7,7 @@ The aim of this document is to centralize answers to key questions about the CTT
 
 - ['Evidence code' questions](#evidence-code-questions)
     - [1. Which evidence codes should I use?](#1-which-evidence-codes-should-i-use)
-- ['Creating evidence string JSONs' questions](#creating-evidence-string-jsons-questions)
+- ['Creating TD-association JSONs' questions](#creating-td-association-jsons-questions)
     - [1. Which fields are mandatory in the JSON schema?](#1-which-fields-are-mandatory-in-the-json-schema)
     - [2. Should I use ‘null’ when a field is not mandatory?](#2-should-i-use-‘null’-when-a-field-is-not-mandatory)
     - [3. Where can I see an example of the type of data I am trying to fit?](#3-where-can-i-see-an-example-of-the-type-of-data-i-am-trying-to-fit)
@@ -35,7 +35,7 @@ The aim of this document is to centralize answers to key questions about the CTT
 - If you need to use additional evidence codes to the ones above, please make sure you **[update this github markdown document](../json_schema/project_tracker.md)** with your new codes
 - For requesting new evidence codes, please contact **jamesmalone, cc samiulxhasan**
 
-## 'Creating evidence string JSONs' questions
+## 'Creating TD-association JSONs' questions
 
 #### 1. Which fields are mandatory in the JSON schema?
 Please look through the [CTTV JSON schema](../json_schema/evidence_string_schema.json) for fields marked as **"required" : true**. The only field that is not set as "required" : true is [**'unique_association_fields'**](#7-how-can-i-uniquely-identify-a-“target-disease”-association-json-in-my-json-array).

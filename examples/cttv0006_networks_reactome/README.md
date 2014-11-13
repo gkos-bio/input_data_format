@@ -1,6 +1,6 @@
 
 
-## An evidence string example: Association between a protein and a disease via curated Reactome pathway evidence
+## A TD-association example: Association between a protein and a disease via curated Reactome pathway evidence
 
 *Bijay Jassal, Samiul Hasan*
 

@@ -1,4 +1,4 @@
-## An example of an evidence string that links "biological target" to its disease indication via drug.
+## An example of a TD-association that links "biological target" to its disease indication via drug.
 
 ### Evidence string triple:
 

@@ -17,6 +17,11 @@ public class AssociationScore {
         this.pValue = pValue;
     }
 
+    public AssociationScore() {
+        this.probability = 1.0d;
+        this.pValue = 0.0d;
+    }
+
     public Double getProbability() {
         return probability;
     }

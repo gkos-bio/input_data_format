@@ -15,13 +15,16 @@ public class EvidenceString {
 
     private Map<String, String> uniqueAssociationFields;
     private BiologicalSubject biologicalSubject;
-    private Provenance provenance;
+    private Evidence evidence;
     private BiologicalObject biologicalObject;
+    private Double schemaVersion;
 
-    public EvidenceString(BiologicalSubject biologicalSubject, Provenance provenance, BiologicalObject biologicalObject) {
+    public EvidenceString(BiologicalSubject biologicalSubject, Evidence evidence, BiologicalObject biologicalObject, Map<String, String> uniqueAssociationFields, Double schemaVersion) {
         this.biologicalSubject = biologicalSubject;
-        this.provenance = provenance;
+        this.evidence = evidence;
         this.biologicalObject = biologicalObject;
+        this.uniqueAssociationFields = uniqueAssociationFields;
+        this.schemaVersion = schemaVersion;
     }
 
     public String putUniqueAssociationField(String key, String value){
@@ -36,8 +39,8 @@ public class EvidenceString {
         return biologicalSubject;
     }
 
-    public Provenance getProvenance() {
-        return provenance;
+    public Evidence getEvidence() {
+        return evidence;
     }
 
     @JsonProperty("biological_object")
@@ -48,5 +51,10 @@ public class EvidenceString {
     @JsonProperty("unique_association_fields")
     public Map<String, String> getUniqueAssociationFields() {
         return uniqueAssociationFields;
+    }
+
+    @JsonProperty("validated_against_schema_version")
+    public Double getSchemaVersion() {
+        return schemaVersion;
     }
 }

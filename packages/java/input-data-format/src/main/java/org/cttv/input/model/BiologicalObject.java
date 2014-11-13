@@ -13,7 +13,6 @@ import java.util.List;
 public class BiologicalObject {
 
     private List<String> about;
-
     private BiologicalObjectProperties properties;
 
     public BiologicalObject(String about){

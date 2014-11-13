@@ -12,28 +12,29 @@ import java.util.List;
  * @author Antonio Fabregat <fabregat@ebi.ac.uk>
  */
 @JsonInclude(Include.NON_NULL)
-public class Provenance {
+public class Evidence {
 
     private Date dateAsserted;
     private boolean isAssociated;
-    private ProvenanceType type;
+    private ProvenanceType provenanceType;
     private List<String> evidenceCodes;
     private ProvenanceUrls urls;
     private AssociationScore associationScore;
-    private ExperimentalEvidenceSpecific experimentalEvidenceSpecific;
+    private List<EvidenceString> chain;
+    private ExperimentSpecific experimentSpecific;
 
-    public Provenance(Date dateAsserted,
-                      boolean isAssociated,
-                      ProvenanceType type,
-                      List<String> evidenceCodes,
-                      ProvenanceUrls urls,
-                      ExperimentalEvidenceSpecific experimentalEvidenceSpecific) {
+    public Evidence(Date dateAsserted,
+                    boolean isAssociated,
+                    ProvenanceType provenanceType,
+                    List<String> evidenceCodes,
+                    ProvenanceUrls urls,
+                    AssociationScore associationScore) {
         this.dateAsserted = dateAsserted;
         this.isAssociated = isAssociated;
-        this.type = type;
+        this.provenanceType = provenanceType;
         this.evidenceCodes = evidenceCodes;
         this.urls = urls;
-        this.experimentalEvidenceSpecific = experimentalEvidenceSpecific;
+        this.associationScore = associationScore;
     }
 
     @JsonProperty("date_asserted")
@@ -47,8 +48,9 @@ public class Provenance {
         return isAssociated;
     }
 
-    public ProvenanceType getType() {
-        return type;
+    @JsonProperty("provenance_type")
+    public ProvenanceType getProvenanceType() {
+        return provenanceType;
     }
 
     @JsonProperty("evidence_codes")
@@ -60,17 +62,29 @@ public class Provenance {
         return urls;
     }
 
-    @JsonProperty("associated_score")
+    @JsonProperty("association_score")
     public AssociationScore getAssociationScore() {
         return associationScore;
     }
 
-    @JsonProperty("experimental_evidence_specific")
-    public ExperimentalEvidenceSpecific getExperimentalEvidenceSpecific() {
-        return experimentalEvidenceSpecific;
+    @JsonProperty("experiment_specific")
+    public ExperimentSpecific getExperimentSpecific() {
+        return experimentSpecific;
+    }
+    
+    public void setExperimentSpecific(ExperimentSpecific experimentSpecific) {
+        this.experimentSpecific = experimentSpecific;
     }
 
     public void setAssociationScore(AssociationScore associationScore) {
         this.associationScore = associationScore;
+    }
+
+    public List<EvidenceString> getChain() {
+        return chain;
+    }
+
+    public void setChain(List<EvidenceString> chain) {
+        this.chain = chain;
     }
 }

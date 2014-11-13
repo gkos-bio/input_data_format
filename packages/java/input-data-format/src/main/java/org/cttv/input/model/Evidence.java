@@ -27,6 +27,14 @@ public class Evidence {
                     boolean isAssociated,
                     ProvenanceType provenanceType,
                     List<String> evidenceCodes,
+                    ProvenanceUrls urls){
+        this(dateAsserted, isAssociated, provenanceType, evidenceCodes, urls, new AssociationScore());
+    }
+
+    public Evidence(Date dateAsserted,
+                    boolean isAssociated,
+                    ProvenanceType provenanceType,
+                    List<String> evidenceCodes,
                     ProvenanceUrls urls,
                     AssociationScore associationScore) {
         this.dateAsserted = dateAsserted;

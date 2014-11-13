@@ -15,9 +15,9 @@ import static org.junit.Assert.assertTrue;
 /**
  * Created by eddturner on 13/11/14.
  */
-public class UniProtEvidenceStringsTest {
+public class UniProtESSanityTest {
     // logger
-    private static final Logger logger = LoggerFactory.getLogger(UniProtEvidenceStringsTest.class);
+    private static final Logger logger = LoggerFactory.getLogger(UniProtESSanityTest.class);
 
     /**
      * test whether some valid json can be produced

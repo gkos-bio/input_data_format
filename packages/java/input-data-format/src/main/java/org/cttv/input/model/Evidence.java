@@ -36,6 +36,20 @@ public class Evidence {
         this.experimentalEvidenceSpecific = experimentalEvidenceSpecific;
     }
 
+    private Evidence(Builder builder) {
+        dateAsserted = builder.dateAsserted;
+        isAssociated = builder.isAssociated;
+        provenanceType = builder.provenanceType;
+        evidenceCodes = builder.evidenceCodes;
+        urls = builder.urls;
+        setAssociationScore(builder.associationScore);
+        experimentalEvidenceSpecific = builder.experimentalEvidenceSpecific;
+    }
+
+    public static Builder newBuilder() {
+        return new Builder();
+    }
+
     @JsonProperty("date_asserted")
     public String getDateAsserted() {
         SimpleDateFormat formatter = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss.SSSXXX");
@@ -73,5 +87,58 @@ public class Evidence {
 
     public void setAssociationScore(AssociationScore associationScore) {
         this.associationScore = associationScore;
+    }
+
+
+    public static final class Builder {
+        private Date dateAsserted;
+        private boolean isAssociated;
+        private ProvenanceType provenanceType;
+        private List<String> evidenceCodes;
+        private ProvenanceUrls urls;
+        private AssociationScore associationScore;
+        private ExperimentalEvidenceSpecific experimentalEvidenceSpecific;
+
+        private Builder() {
+        }
+
+        public Builder withDateAsserted(Date dateAsserted) {
+            this.dateAsserted = dateAsserted;
+            return this;
+        }
+
+        public Builder withIsAssociated(boolean isAssociated) {
+            this.isAssociated = isAssociated;
+            return this;
+        }
+
+        public Builder withProvenanceType(ProvenanceType provenanceType) {
+            this.provenanceType = provenanceType;
+            return this;
+        }
+
+        public Builder withEvidenceCodes(List<String> evidenceCodes) {
+            this.evidenceCodes = evidenceCodes;
+            return this;
+        }
+
+        public Builder withUrls(ProvenanceUrls urls) {
+            this.urls = urls;
+            return this;
+        }
+
+        public Builder withAssociationScore(AssociationScore associationScore) {
+            this.associationScore = associationScore;
+            return this;
+        }
+
+        public Builder withExperimentalEvidenceSpecific(ExperimentalEvidenceSpecific experimentalEvidenceSpecific) {
+            this.experimentalEvidenceSpecific = experimentalEvidenceSpecific;
+            return this;
+        }
+
+        public Evidence build() {
+            return new Evidence(this);
+        }
     }
 }

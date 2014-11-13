@@ -21,6 +21,15 @@ public class BiologicalObject {
         this.about.add(about);
     }
 
+    private BiologicalObject(Builder builder) {
+        about = builder.about;
+        setProperties(builder.properties);
+    }
+
+    public static Builder newBuilder() {
+        return new Builder();
+    }
+
     public boolean addAbout(String about){
         return this.about.add(about);
     }
@@ -35,5 +44,27 @@ public class BiologicalObject {
 
     public void setProperties(BiologicalObjectProperties properties) {
         this.properties = properties;
+    }
+
+    public static final class Builder {
+        private List<String> about;
+        private BiologicalObjectProperties properties;
+
+        private Builder() {
+        }
+
+        public Builder withAbout(List<String> about) {
+            this.about = about;
+            return this;
+        }
+
+        public Builder withProperties(BiologicalObjectProperties properties) {
+            this.properties = properties;
+            return this;
+        }
+
+        public BiologicalObject build() {
+            return new BiologicalObject(this);
+        }
     }
 }

@@ -18,6 +18,16 @@ public class ProvenanceType {
         this.database = database;
     }
 
+    private ProvenanceType(Builder builder) {
+        literature = builder.literature;
+        expert = builder.expert;
+        database = builder.database;
+    }
+
+    public static Builder newBuilder() {
+        return new Builder();
+    }
+
     public ProvenanceLiterature getLiterature() {
         return literature;
     }
@@ -28,5 +38,33 @@ public class ProvenanceType {
 
     public ProvenanceDatabase getDatabase() {
         return database;
+    }
+
+    public static final class Builder {
+        private ProvenanceLiterature literature;
+        private ProvenanceExpert expert;
+        private ProvenanceDatabase database;
+
+        private Builder() {
+        }
+
+        public Builder withLiterature(ProvenanceLiterature literature) {
+            this.literature = literature;
+            return this;
+        }
+
+        public Builder withExpert(ProvenanceExpert expert) {
+            this.expert = expert;
+            return this;
+        }
+
+        public Builder withDatabase(ProvenanceDatabase database) {
+            this.database = database;
+            return this;
+        }
+
+        public ProvenanceType build() {
+            return new ProvenanceType(this);
+        }
     }
 }

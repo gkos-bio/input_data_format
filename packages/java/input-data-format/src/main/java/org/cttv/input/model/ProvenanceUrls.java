@@ -18,6 +18,14 @@ public class ProvenanceUrls {
         //Nothing here
     }
 
+    private ProvenanceUrls(Builder builder) {
+        linkouts = builder.linkouts;
+    }
+
+    public static Builder newBuilder() {
+        return new Builder();
+    }
+
 //    public void setBiojs(String biojs) {
 //        this.biojs = biojs;
 //    }
@@ -36,5 +44,21 @@ public class ProvenanceUrls {
 
     public List<LinkOut> getLinkouts() {
         return linkouts;
+    }
+
+    public static final class Builder {
+        private List<LinkOut> linkouts;
+
+        private Builder() {
+        }
+
+        public Builder withLinkouts(List<LinkOut> linkouts) {
+            this.linkouts = linkouts;
+            return this;
+        }
+
+        public ProvenanceUrls build() {
+            return new ProvenanceUrls(this);
+        }
     }
 }

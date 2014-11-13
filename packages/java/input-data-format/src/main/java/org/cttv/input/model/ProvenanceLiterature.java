@@ -19,6 +19,14 @@ public class ProvenanceLiterature {
 //        this.isStatus = false;
     }
 
+    private ProvenanceLiterature(Builder builder) {
+        pubmedRefs = builder.pubmedRefs;
+    }
+
+    public static Builder newBuilder() {
+        return new Builder();
+    }
+
     public boolean addPubmdRef(String pubmedRef){
         if(pubmedRef==null) return false;
         if(pubmedRefs==null){
@@ -36,5 +44,21 @@ public class ProvenanceLiterature {
     @JsonProperty("pubmed_refs")
     public List<String> getPubmedRefs() {
         return pubmedRefs;
+    }
+
+    public static final class Builder {
+        private List<String> pubmedRefs;
+
+        private Builder() {
+        }
+
+        public Builder withPubmedRefs(List<String> pubmedRefs) {
+            this.pubmedRefs = pubmedRefs;
+            return this;
+        }
+
+        public ProvenanceLiterature build() {
+            return new ProvenanceLiterature(this);
+        }
     }
 }

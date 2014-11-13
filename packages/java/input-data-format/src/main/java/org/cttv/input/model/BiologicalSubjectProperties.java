@@ -25,6 +25,17 @@ public class BiologicalSubjectProperties {
         this.activity = activity.getActivity();
     }
 
+    private BiologicalSubjectProperties(Builder builder) {
+        associationContext = builder.associationContext;
+        associatedSubjects = builder.associatedSubjects;
+        activity = builder.activity;
+        experimentalEvidenceSpecific = builder.experimentalEvidenceSpecific;
+    }
+
+    public static Builder newBuilder() {
+        return new Builder();
+    }
+
     public boolean addAssociatedSubjects(String associatedSubject){
         if(this.associatedSubjects==null){
             this.associatedSubjects = new LinkedList<String>();
@@ -56,5 +67,39 @@ public class BiologicalSubjectProperties {
     @JsonProperty("experimental_evidence_specific")
     public Map<String, String> getExperimentalEvidenceSpecific() {
         return experimentalEvidenceSpecific;
+    }
+
+    public static final class Builder {
+        private String associationContext;
+        private List<String> associatedSubjects;
+        private String activity;
+        private Map<String, String> experimentalEvidenceSpecific;
+
+        private Builder() {
+        }
+
+        public Builder withAssociationContext(String associationContext) {
+            this.associationContext = associationContext;
+            return this;
+        }
+
+        public Builder withAssociatedSubjects(List<String> associatedSubjects) {
+            this.associatedSubjects = associatedSubjects;
+            return this;
+        }
+
+        public Builder withActivity(String activity) {
+            this.activity = activity;
+            return this;
+        }
+
+        public Builder withExperimentalEvidenceSpecific(Map<String, String> experimentalEvidenceSpecific) {
+            this.experimentalEvidenceSpecific = experimentalEvidenceSpecific;
+            return this;
+        }
+
+        public BiologicalSubjectProperties build() {
+            return new BiologicalSubjectProperties(this);
+        }
     }
 }

@@ -21,6 +21,15 @@ public class BiologicalObjectProperties {
         this.biosamples = biosamples;
     }
 
+    private BiologicalObjectProperties(Builder builder) {
+        biosamples = builder.biosamples;
+        experimentalEvidenceSpecific = builder.experimentalEvidenceSpecific;
+    }
+
+    public static Builder newBuilder() {
+        return new Builder();
+    }
+
     public String putExperimentalEvidenceSpecific(String propertyName, String value){
         if(experimentalEvidenceSpecific==null){
             experimentalEvidenceSpecific = new HashMap<String, String>();
@@ -35,5 +44,27 @@ public class BiologicalObjectProperties {
     @JsonProperty("experimental_evidence_specific")
     public Map<String, String> getExperimentalEvidenceSpecific() {
         return experimentalEvidenceSpecific;
+    }
+
+    public static final class Builder {
+        private List<String> biosamples;
+        private Map<String, String> experimentalEvidenceSpecific;
+
+        private Builder() {
+        }
+
+        public Builder withBiosamples(List<String> biosamples) {
+            this.biosamples = biosamples;
+            return this;
+        }
+
+        public Builder withExperimentalEvidenceSpecific(Map<String, String> experimentalEvidenceSpecific) {
+            this.experimentalEvidenceSpecific = experimentalEvidenceSpecific;
+            return this;
+        }
+
+        public BiologicalObjectProperties build() {
+            return new BiologicalObjectProperties(this);
+        }
     }
 }

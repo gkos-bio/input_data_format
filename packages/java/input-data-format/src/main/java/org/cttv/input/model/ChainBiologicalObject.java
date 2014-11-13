@@ -15,7 +15,31 @@ public class ChainBiologicalObject {
         this.about = about;
     }
 
+    private ChainBiologicalObject(Builder builder) {
+        about = builder.about;
+    }
+
+    public static Builder newBuilder() {
+        return new Builder();
+    }
+
     public String getAbout() {
         return about;
+    }
+
+    public static final class Builder {
+        private String about;
+
+        private Builder() {
+        }
+
+        public Builder withAbout(String about) {
+            this.about = about;
+            return this;
+        }
+
+        public ChainBiologicalObject build() {
+            return new ChainBiologicalObject(this);
+        }
     }
 }

@@ -17,6 +17,15 @@ public class AssociationScore {
         this.pValue = pValue;
     }
 
+    private AssociationScore(Builder builder) {
+        probability = builder.probability;
+        pValue = builder.pValue;
+    }
+
+    public static Builder newBuilder() {
+        return new Builder();
+    }
+
     public Double getProbability() {
         return probability;
     }
@@ -24,5 +33,27 @@ public class AssociationScore {
     @JsonProperty("p-value")
     public Double getpValue() {
         return pValue;
+    }
+
+    public static final class Builder {
+        private Double probability;
+        private Double pValue;
+
+        private Builder() {
+        }
+
+        public Builder withProbability(Double probability) {
+            this.probability = probability;
+            return this;
+        }
+
+        public Builder withPValue(Double pValue) {
+            this.pValue = pValue;
+            return this;
+        }
+
+        public AssociationScore build() {
+            return new AssociationScore(this);
+        }
     }
 }

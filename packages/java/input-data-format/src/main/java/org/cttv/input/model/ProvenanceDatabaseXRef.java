@@ -18,6 +18,16 @@ public class ProvenanceDatabaseXRef {
         this.version = version;
     }
 
+    private ProvenanceDatabaseXRef(Builder builder) {
+        id = builder.id;
+        url = builder.url;
+        version = builder.version;
+    }
+
+    public static Builder newBuilder() {
+        return new Builder();
+    }
+
     public String getId() {
         return id;
     }
@@ -28,5 +38,33 @@ public class ProvenanceDatabaseXRef {
 
     public String getVersion() {
         return version;
+    }
+
+    public static final class Builder {
+        private String id;
+        private String url;
+        private String version;
+
+        private Builder() {
+        }
+
+        public Builder withId(String id) {
+            this.id = id;
+            return this;
+        }
+
+        public Builder withUrl(String url) {
+            this.url = url;
+            return this;
+        }
+
+        public Builder withVersion(String version) {
+            this.version = version;
+            return this;
+        }
+
+        public ProvenanceDatabaseXRef build() {
+            return new ProvenanceDatabaseXRef(this);
+        }
     }
 }

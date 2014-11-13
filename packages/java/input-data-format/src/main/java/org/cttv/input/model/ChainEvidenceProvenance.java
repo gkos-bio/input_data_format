@@ -23,6 +23,16 @@ public class ChainEvidenceProvenance {
         this.associationScore = associationScore;
     }
 
+    private ChainEvidenceProvenance(Builder builder) {
+        evidenceCodes = builder.evidenceCodes;
+        experimentalEvidenceSpecific = builder.experimentalEvidenceSpecific;
+        associationScore = builder.associationScore;
+    }
+
+    public static Builder newBuilder() {
+        return new Builder();
+    }
+
     public String putExperimentalEvidenceSpecific(String propertyName, String value){
         if(experimentalEvidenceSpecific==null){
             experimentalEvidenceSpecific = new HashMap<String, String>();
@@ -43,5 +53,33 @@ public class ChainEvidenceProvenance {
     @JsonProperty("association_score")
     public AssociationScore getAssociationScore() {
         return associationScore;
+    }
+
+    public static final class Builder {
+        private List<String> evidenceCodes;
+        private Map<String, String> experimentalEvidenceSpecific;
+        private AssociationScore associationScore;
+
+        private Builder() {
+        }
+
+        public Builder withEvidenceCodes(List<String> evidenceCodes) {
+            this.evidenceCodes = evidenceCodes;
+            return this;
+        }
+
+        public Builder withExperimentalEvidenceSpecific(Map<String, String> experimentalEvidenceSpecific) {
+            this.experimentalEvidenceSpecific = experimentalEvidenceSpecific;
+            return this;
+        }
+
+        public Builder withAssociationScore(AssociationScore associationScore) {
+            this.associationScore = associationScore;
+            return this;
+        }
+
+        public ChainEvidenceProvenance build() {
+            return new ChainEvidenceProvenance(this);
+        }
     }
 }

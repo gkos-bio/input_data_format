@@ -20,6 +20,15 @@ public class ExperimentalEvidenceSpecific {
         //Nothing here
     }
 
+    private ExperimentalEvidenceSpecific(Builder builder) {
+        evidenceChain = builder.evidenceChain;
+        properties = builder.properties;
+    }
+
+    public static Builder newBuilder() {
+        return new Builder();
+    }
+
     public ChainEvidence putChainEvidence(String key, ChainEvidence chainEvidence){
         if(evidenceChain==null){
             evidenceChain = new HashMap<String, ChainEvidence>();
@@ -41,5 +50,27 @@ public class ExperimentalEvidenceSpecific {
 
     public Map<String, String> getProperties() {
         return properties;
+    }
+
+    public static final class Builder {
+        private Map<String, ChainEvidence> evidenceChain;
+        private Map<String, String> properties;
+
+        private Builder() {
+        }
+
+        public Builder withEvidenceChain(Map<String, ChainEvidence> evidenceChain) {
+            this.evidenceChain = evidenceChain;
+            return this;
+        }
+
+        public Builder withProperties(Map<String, String> properties) {
+            this.properties = properties;
+            return this;
+        }
+
+        public ExperimentalEvidenceSpecific build() {
+            return new ExperimentalEvidenceSpecific(this);
+        }
     }
 }

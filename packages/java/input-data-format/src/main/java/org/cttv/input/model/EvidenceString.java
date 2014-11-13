@@ -24,6 +24,17 @@ public class EvidenceString {
         this.biologicalObject = biologicalObject;
     }
 
+    private EvidenceString(Builder builder) {
+        uniqueAssociationFields = builder.uniqueAssociationFields;
+        biologicalSubject = builder.biologicalSubject;
+        evidence = builder.evidence;
+        biologicalObject = builder.biologicalObject;
+    }
+
+    public static Builder newBuilder() {
+        return new Builder();
+    }
+
     public String putUniqueAssociationField(String key, String value){
         if(uniqueAssociationFields ==null){
             uniqueAssociationFields = new HashMap<String, String>();
@@ -48,5 +59,39 @@ public class EvidenceString {
     @JsonProperty("unique_association_fields")
     public Map<String, String> getUniqueAssociationFields() {
         return uniqueAssociationFields;
+    }
+
+    public static final class Builder {
+        private Map<String, String> uniqueAssociationFields;
+        private BiologicalSubject biologicalSubject;
+        private Evidence evidence;
+        private BiologicalObject biologicalObject;
+
+        private Builder() {
+        }
+
+        public Builder withUniqueAssociationFields(Map<String, String> uniqueAssociationFields) {
+            this.uniqueAssociationFields = uniqueAssociationFields;
+            return this;
+        }
+
+        public Builder withBiologicalSubject(BiologicalSubject biologicalSubject) {
+            this.biologicalSubject = biologicalSubject;
+            return this;
+        }
+
+        public Builder withEvidence(Evidence evidence) {
+            this.evidence = evidence;
+            return this;
+        }
+
+        public Builder withBiologicalObject(BiologicalObject biologicalObject) {
+            this.biologicalObject = biologicalObject;
+            return this;
+        }
+
+        public EvidenceString build() {
+            return new EvidenceString(this);
+        }
     }
 }

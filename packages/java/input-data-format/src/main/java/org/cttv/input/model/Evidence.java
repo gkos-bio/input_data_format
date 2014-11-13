@@ -37,23 +37,23 @@ public class Evidence {
         this.associationScore = associationScore;
     }
 
-    @JsonProperty("date_asserted")
+    @JsonProperty(value = "date_asserted", required = true)
     public String getDateAsserted() {
         SimpleDateFormat formatter = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss.SSSXXX");
         return formatter.format(dateAsserted);
     }
 
-    @JsonProperty("is_associated")
+    @JsonProperty("is_associated", required = true)
     public boolean isAssociated() {
         return isAssociated;
     }
 
-    @JsonProperty("provenance_type")
+    @JsonProperty("provenance_type", required = true)
     public ProvenanceType getProvenanceType() {
         return provenanceType;
     }
 
-    @JsonProperty("evidence_codes")
+    @JsonProperty("evidence_codes", required = true)
     public List<String> getEvidenceCodes() {
         return evidenceCodes;
     }
@@ -62,26 +62,27 @@ public class Evidence {
         return urls;
     }
 
-    @JsonProperty("association_score")
+    @JsonProperty("association_score", required = true)
     public AssociationScore getAssociationScore() {
         return associationScore;
     }
 
-    @JsonProperty("experiment_specific")
+    @JsonProperty(required = true)
+    public List<EvidenceString> getChain() {
+        return chain;
+    }
+
+    @JsonProperty("experiment_specific", required = true)
     public ExperimentSpecific getExperimentSpecific() {
         return experimentSpecific;
     }
-    
+
     public void setExperimentSpecific(ExperimentSpecific experimentSpecific) {
         this.experimentSpecific = experimentSpecific;
     }
 
     public void setAssociationScore(AssociationScore associationScore) {
         this.associationScore = associationScore;
-    }
-
-    public List<EvidenceString> getChain() {
-        return chain;
     }
 
     public void setChain(List<EvidenceString> chain) {

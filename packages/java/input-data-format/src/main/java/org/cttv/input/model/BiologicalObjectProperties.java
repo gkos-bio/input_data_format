@@ -15,25 +15,25 @@ import java.util.Map;
 public class BiologicalObjectProperties {
 
     private List<String> biosamples;
-    private Map<String, String> experimentalEvidenceSpecific;
+    private Map<String, String> experimentSpecific;
 
     public BiologicalObjectProperties(List<String> biosamples) {
         this.biosamples = biosamples;
     }
 
-    public String putExperimentalEvidenceSpecific(String propertyName, String value){
-        if(experimentalEvidenceSpecific==null){
-            experimentalEvidenceSpecific = new HashMap<String, String>();
+    public String putExperimentSpecific(String propertyName, String value){
+        if(experimentSpecific ==null){
+            experimentSpecific = new HashMap<String, String>();
         }
-        return experimentalEvidenceSpecific.put(propertyName, value);
+        return experimentSpecific.put(propertyName, value);
     }
 
     public List<String> getBiosamples() {
         return biosamples;
     }
 
-    @JsonProperty("experimental_evidence_specific")
-    public Map<String, String> getExperimentalEvidenceSpecific() {
-        return experimentalEvidenceSpecific;
+    @JsonProperty("experiment_specific")
+    public Map<String, String> getExperimentSpecific() {
+        return experimentSpecific;
     }
 }

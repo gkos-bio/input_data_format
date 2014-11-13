@@ -13,8 +13,7 @@ import java.util.List;
 public class BiologicalObject {
 
     private List<String> about;
-
-    private ExperimentSpecific experimentSpecific;
+    private BiologicalObjectProperties properties;
 
     public BiologicalObject(String about){
         this.about = new LinkedList<String>();
@@ -29,11 +28,11 @@ public class BiologicalObject {
         return about;
     }
 
-    public ExperimentSpecific getExperimentSpecific() {
-        return experimentSpecific;
+    public BiologicalObjectProperties getProperties() {
+        return properties;
     }
 
-    public void setExperimentSpecific(ExperimentSpecific experimentSpecific) {
-        this.experimentSpecific = experimentSpecific;
+    public void setProperties(BiologicalObjectProperties properties) {
+        this.properties = properties;
     }
 }

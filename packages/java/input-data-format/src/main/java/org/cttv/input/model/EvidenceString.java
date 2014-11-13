@@ -15,12 +15,12 @@ public class EvidenceString {
 
     private Map<String, String> uniqueAssociationFields;
     private BiologicalSubject biologicalSubject;
-    private Provenance provenance;
+    private Evidence evidence;
     private BiologicalObject biologicalObject;
 
-    public EvidenceString(BiologicalSubject biologicalSubject, Provenance provenance, BiologicalObject biologicalObject) {
+    public EvidenceString(BiologicalSubject biologicalSubject, Evidence evidence, BiologicalObject biologicalObject) {
         this.biologicalSubject = biologicalSubject;
-        this.provenance = provenance;
+        this.evidence = evidence;
         this.biologicalObject = biologicalObject;
     }
 
@@ -36,8 +36,8 @@ public class EvidenceString {
         return biologicalSubject;
     }
 
-    public Provenance getProvenance() {
-        return provenance;
+    public Evidence getEvidence() {
+        return evidence;
     }
 
     @JsonProperty("biological_object")

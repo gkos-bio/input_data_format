@@ -1,53 +1,67 @@
 {
-	"unique_association_fields": {
-		"biological_subjects":"miriam:uniprot:P50443",
-		"reactome_id":"REACT_267687.1",
-		"biological_objects":"miriam:orphanet:Orphanet_93298"
-	},
-	"biological_subject": {	
-		"about": ["miriam:uniprot:P50443"],
-		"properties": {
-			"association_context": "miriam:cttvexp:protein",
-			"activity": "miriam:cttvexp:loss_of_function"
-		}	
-	},
-	"provenance": {
-		
-		"date_asserted": "2014-09-11T10:59:43.511Z",
-		"is_associated": true,
-		
-		"type": {
-			
-			"literature": {
-				"pubmed_refs": [11448940, 8528239, 7923357 ]
-			},
-			
-			"expert": {
-				"status" : true				
-			},
-			
-			"database": {
-				"id": "Reactome",
-				"version": "50"
-			}
-			
-		},
-		
-		"evidence_codes": ["miriam:obo:ECO_0000205", "miriam:obo:ECO_0001113"],
-		
-		"urls": {
-			"linkouts": [
-				{"nice_name":"Reactome disease pathway", "url": "http://www.reactome.org/PathwayBrowser/#REACT_267687.1"}
-			]
-		},
-		
-		"experimental_evidence_specific": {
-			"common_mutations":"255E, A585Vfs*6, L483P, R178X, N425D"
-		}
-		
-	},
-
-	"biological_object": {
-		"about": ["miriam:orphanet:Orphanet_93298"]	
-	}
+    "validated_against_schema_version": 1.1,
+    "unique_association_fields": {
+        "biological_subjects": "http://identifiers.org/uniprot/P50443",
+        "reactome_id": "http://identifiers.org/reactome/REACT_267687.1",
+        "biological_objects": "http://identifiers.org/orphanet/93298"
+    },
+    "biological_subject": {
+        "about": [
+            "http://identifiers.org/uniprot/P50443"
+        ],
+        "properties": {
+            "target_type": "http://identifiers.org/cttv.target/protein",
+            "activity": "http://identifiers.org/cttv.activity/loss_of_function"
+        }
+    },
+    "evidence": {
+        "date_asserted": "2014-09-11T10:59:43.511Z",
+        "is_associated": true,
+        "association_score": {
+            "probability": {
+                "value": null,
+                "method": null
+            },
+            "pvalue": {
+                "value": null,
+                "method": null
+            }
+        },
+        "provenance_type": {
+            "literature": {
+                "pubmed_refs": [
+                    "http://identifiers.org/pubmed/11448940",
+                    "http://identifiers.org/pubmed/8528239",
+                    "http://identifiers.org/pubmed/7923357"
+                ]
+            },
+            "expert": {
+                "status": true
+            },
+            "database": {
+                "id": "Reactome",
+                "version": "50"
+            }
+        },
+        "evidence_codes": [
+            "http://identifiers.org/eco/ECO:0000205",
+            "http://identifiers.org/eco/ECO:0001113"
+        ],
+        "urls": {
+            "linkouts": [
+                {
+                    "nice_name": "Reactome disease pathway",
+                    "url": "http://identifiers.org/reactome/REACT_267687.1"
+                }
+            ]
+        },
+        "evidence_specific": {
+            "common_mutations": "255E, A585Vfs*6, L483P, R178X, N425D"
+        }
+    },
+    "biological_object": {
+        "about": [
+            "http://identifiers.org/orphanet/93298"
+        ]
+    }
 }

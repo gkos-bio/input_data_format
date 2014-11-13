@@ -4,9 +4,9 @@
     <uri id="Imports Wizard Entry" name="http://edamontology.org" uri="EDAM.owl"/>
     <uri id="User Entered Import Resolution" name="http://purl.org/oban/oban_core.owl" uri="oban_core.owl"/>
     <group id="Folder Repository, directory=, recursive=true, Auto-Update=true, version=2" prefer="public" xml:base="">
-        <uri id="Automatically generated entry, Timestamp=1415024174567" name="http://edamontology.org/" uri="EDAM.owl"/>
-        <uri id="Automatically generated entry, Timestamp=1415024174567" name="http://purl.obolibrary.org/obo/eco.owl" uri="eco.owl"/>
-        <uri id="Automatically generated entry, Timestamp=1415024174567" name="http://purl.org/oban/" uri="oban_core.owl"/>
-        <uri id="Automatically generated entry, Timestamp=1415024174567" name="http://www.targetvalidation.org/cttv_core" uri="cttv_core.owl"/>
+        <uri id="Automatically generated entry, Timestamp=1415716254224" name="http://edamontology.org/" uri="EDAM.owl"/>
+        <uri id="Automatically generated entry, Timestamp=1415716254224" name="http://purl.obolibrary.org/obo/eco.owl" uri="eco.owl"/>
+        <uri id="Automatically generated entry, Timestamp=1415716254224" name="http://purl.org/oban/" uri="oban_core.owl"/>
+        <uri id="Automatically generated entry, Timestamp=1415716254224" name="http://www.targetvalidation.org/cttv_core" uri="cttv_core.owl"/>
     </group>
 </catalog>

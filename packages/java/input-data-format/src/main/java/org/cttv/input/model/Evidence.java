@@ -12,25 +12,25 @@ import java.util.List;
  * @author Antonio Fabregat <fabregat@ebi.ac.uk>
  */
 @JsonInclude(Include.NON_NULL)
-public class Provenance {
+public class Evidence {
 
     private Date dateAsserted;
     private boolean isAssociated;
-    private ProvenanceType type;
+    private ProvenanceType provenanceType;
     private List<String> evidenceCodes;
     private ProvenanceUrls urls;
     private AssociationScore associationScore;
     private ExperimentalEvidenceSpecific experimentalEvidenceSpecific;
 
-    public Provenance(Date dateAsserted,
-                      boolean isAssociated,
-                      ProvenanceType type,
-                      List<String> evidenceCodes,
-                      ProvenanceUrls urls,
-                      ExperimentalEvidenceSpecific experimentalEvidenceSpecific) {
+    public Evidence(Date dateAsserted,
+                    boolean isAssociated,
+                    ProvenanceType provenanceType,
+                    List<String> evidenceCodes,
+                    ProvenanceUrls urls,
+                    ExperimentalEvidenceSpecific experimentalEvidenceSpecific) {
         this.dateAsserted = dateAsserted;
         this.isAssociated = isAssociated;
-        this.type = type;
+        this.provenanceType = provenanceType;
         this.evidenceCodes = evidenceCodes;
         this.urls = urls;
         this.experimentalEvidenceSpecific = experimentalEvidenceSpecific;
@@ -47,8 +47,9 @@ public class Provenance {
         return isAssociated;
     }
 
-    public ProvenanceType getType() {
-        return type;
+    @JsonProperty("provenance_type")
+    public ProvenanceType getProvenanceType() {
+        return provenanceType;
     }
 
     @JsonProperty("evidence_codes")

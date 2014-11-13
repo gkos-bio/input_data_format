@@ -9,12 +9,12 @@ import com.fasterxml.jackson.annotation.JsonProperty;
  */
 @JsonInclude(Include.NON_NULL)
 public class ProvenanceExpert {
-    private boolean isTrue;
+    private boolean status;
     private String statement;
     private ProvenanceAuthor author;
 
-    public ProvenanceExpert(boolean isTrue){
-        this.isTrue = isTrue;
+    public ProvenanceExpert(boolean status){
+        this.status = status;
     }
 
     public void setStatement(String statement){
@@ -25,9 +25,8 @@ public class ProvenanceExpert {
         this.author = author;
     }
 
-    @JsonProperty("true")
-    public boolean isTrue() {
-        return isTrue;
+    public boolean getStatus() {
+        return status;
     }
 
     public String getStatement() {

@@ -1,8 +1,10 @@
 package org.cttv.input.model;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonInclude.Include;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonPropertyDescription;
 
 import java.text.SimpleDateFormat;
 import java.util.Date;
@@ -19,9 +21,8 @@ public class Evidence {
     private ProvenanceType provenanceType;
     private List<String> evidenceCodes;
     private ProvenanceUrls urls;
+    private EvidenceProperties properties;
     private AssociationScore associationScore;
-    private List<EvidenceString> chain;
-    private ExperimentSpecific experimentSpecific;
 
     public Evidence(Date dateAsserted,
                     boolean isAssociated,
@@ -46,6 +47,7 @@ public class Evidence {
     }
 
     @JsonProperty(value = "date_asserted", required = true)
+    @JsonFormat(pattern = "yyyy-MM-dd'T'HH:mm:ss.SSSXXX")
     public String getDateAsserted() {
         SimpleDateFormat formatter = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss.SSSXXX");
         return formatter.format(dateAsserted);
@@ -62,13 +64,20 @@ public class Evidence {
     }
 
     @JsonProperty(value = "evidence_codes", required = true)
+    @JsonFormat(pattern = "^http://identifiers.org/eco/ECO:[0-9]{7,7}$")
+    @JsonPropertyDescription("List of evidence codes in this format: http://identifiers.org/eco/ECO:nnnnnnn")
     public List<String> getEvidenceCodes() {
         return evidenceCodes;
     }
 
-    @JsonProperty(required = true)
+    @JsonProperty(value = "urls", required = false)
     public ProvenanceUrls getUrls() {
         return urls;
+    }
+
+    @JsonProperty(value = "properties", required = false)
+    public EvidenceProperties getProperties() {
+        return properties;
     }
 
     @JsonProperty(value = "association_score", required = true)
@@ -76,25 +85,11 @@ public class Evidence {
         return associationScore;
     }
 
-    @JsonProperty(required = true)
-    public List<EvidenceString> getChain() {
-        return chain;
-    }
-
-    @JsonProperty(value = "experiment_specific", required = true)
-    public ExperimentSpecific getExperimentSpecific() {
-        return experimentSpecific;
-    }
-
-    public void setExperimentSpecific(ExperimentSpecific experimentSpecific) {
-        this.experimentSpecific = experimentSpecific;
-    }
-
     public void setAssociationScore(AssociationScore associationScore) {
         this.associationScore = associationScore;
     }
 
-    public void setChain(List<EvidenceString> chain) {
-        this.chain = chain;
+    public void setProperties(EvidenceProperties properties) {
+        this.properties = properties;
     }
 }

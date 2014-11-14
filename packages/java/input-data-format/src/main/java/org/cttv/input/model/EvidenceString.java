@@ -18,14 +18,13 @@ public class EvidenceString {
     private BiologicalSubject biologicalSubject;
     private Evidence evidence;
     private BiologicalObject biologicalObject;
-    private String schemaVersion;
+    private Double schemaVersion = 1.1;
 
-    public EvidenceString(BiologicalSubject biologicalSubject, Evidence evidence, BiologicalObject biologicalObject, Map<String, String> uniqueAssociationFields, String schemaVersion) {
+    public EvidenceString(BiologicalSubject biologicalSubject, Evidence evidence, BiologicalObject biologicalObject, Map<String, String> uniqueAssociationFields) {
         this.biologicalSubject = biologicalSubject;
         this.evidence = evidence;
         this.biologicalObject = biologicalObject;
         this.uniqueAssociationFields = uniqueAssociationFields;
-        this.schemaVersion = schemaVersion;
     }
 
     public String putUniqueAssociationField(String key, String value){
@@ -60,7 +59,7 @@ public class EvidenceString {
 
     @JsonProperty(value = "validated_against_schema_version", required = true)
     @JsonPropertyDescription("The schema version number against which the JSON object was validated.")
-    public String getSchemaVersion() {
+    public Double getSchemaVersion() {
         return schemaVersion;
     }
 }

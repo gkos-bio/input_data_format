@@ -1,6 +1,6 @@
 ## Ideas and suggestions for schema 1.2
 
-1. Serve assoction arrays using a named method
+1. Serve associations using a named codeblock:
 	- { "associations" : [ TD, TD, TD, TD ] }
 1. Implement biojs link
 	- Depends on how biojs needs in CTTV emerge

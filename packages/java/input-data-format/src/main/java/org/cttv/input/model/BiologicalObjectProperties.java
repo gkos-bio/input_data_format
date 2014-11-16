@@ -18,8 +18,8 @@ public class BiologicalObjectProperties {
     private List<String> biosamples;
     private Map<String, String> experimentSpecific;
 
-    public BiologicalObjectProperties(List<String> biosamples) {
-        this.biosamples = biosamples;
+    public BiologicalObjectProperties() {
+        //nothing here
     }
 
     public String putExperimentSpecific(String propertyName, String value){
@@ -27,6 +27,10 @@ public class BiologicalObjectProperties {
             experimentSpecific = new HashMap<String, String>();
         }
         return experimentSpecific.put(propertyName, value);
+    }
+
+    public void setBiosamples(List<String> biosamples) {
+        this.biosamples = biosamples;
     }
 
     @JsonProperty(value = "biosamples", required = false)

@@ -1,5 +1,6 @@
 package org.cttv.input.model;
 
+import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonPropertyDescription;
 
@@ -8,6 +9,7 @@ import java.util.List;
 /**
  * @author Antonio Fabregat <fabregat@ebi.ac.uk>
  */
+@JsonInclude(JsonInclude.Include.NON_NULL)
 public class EvidenceProperties {
     private List<EvidenceString> chain;
     private ExperimentSpecific experimentSpecific;

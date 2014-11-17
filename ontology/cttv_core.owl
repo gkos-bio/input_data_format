@@ -56,15 +56,20 @@
 
     <owl:ObjectProperty rdf:about="http://www.targetvalidation.org/activity/has_gene_activity">
         <rdfs:comment>an activity that can only be carried out by a gene</rdfs:comment>
-        <rdfs:range rdf:resource="http://www.targetvalidation.org/activity/damaging_to_target"/>
         <rdfs:range rdf:resource="http://www.targetvalidation.org/activity/gain_of_function"/>
         <rdfs:subPropertyOf rdf:resource="http://www.targetvalidation.org/activity/has_activity"/>
         <rdfs:range rdf:resource="http://www.targetvalidation.org/activity/loss_of_function"/>
         <rdfs:range rdf:resource="http://www.targetvalidation.org/activity/partial_loss_of_function"/>
-        <rdfs:range rdf:resource="http://www.targetvalidation.org/activity/predicted_damaging"/>
-        <rdfs:range rdf:resource="http://www.targetvalidation.org/activity/predicted_tolerated"/>
-        <rdfs:range rdf:resource="http://www.targetvalidation.org/activity/tolerated_by_target"/>
         <rdfs:domain rdf:resource="http://www.targetvalidation.org/target_type/gene_evidence"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.targetvalidation.org/activity/has_mutation_consequence -->
+
+    <owl:ObjectProperty rdf:about="http://www.targetvalidation.org/activity/has_mutation_consequence">
+        <rdfs:subPropertyOf rdf:resource="http://www.targetvalidation.org/activity/has_activity"/>
+        <rdfs:range rdf:resource="http://www.targetvalidation.org/activity/up_or_down"/>
     </owl:ObjectProperty>
     
 
@@ -73,7 +78,6 @@
 
     <owl:ObjectProperty rdf:about="http://www.targetvalidation.org/activity/has_protein_activity">
         <rdfs:comment>an activity that can only be carried out by a protein</rdfs:comment>
-        <rdfs:range rdf:resource="http://www.targetvalidation.org/activity/damaging_to_target"/>
         <rdfs:range rdf:resource="http://www.targetvalidation.org/activity/decreased_translational_product_level"/>
         <rdfs:range rdf:resource="http://www.targetvalidation.org/activity/drug_negative_modulator"/>
         <rdfs:range rdf:resource="http://www.targetvalidation.org/activity/drug_positive_modulator"/>
@@ -82,9 +86,6 @@
         <rdfs:range rdf:resource="http://www.targetvalidation.org/activity/increased_translational_product_level"/>
         <rdfs:range rdf:resource="http://www.targetvalidation.org/activity/loss_of_function"/>
         <rdfs:range rdf:resource="http://www.targetvalidation.org/activity/partial_loss_of_function"/>
-        <rdfs:range rdf:resource="http://www.targetvalidation.org/activity/predicted_damaging"/>
-        <rdfs:range rdf:resource="http://www.targetvalidation.org/activity/predicted_tolerated"/>
-        <rdfs:range rdf:resource="http://www.targetvalidation.org/activity/tolerated_by_target"/>
         <rdfs:domain rdf:resource="http://www.targetvalidation.org/target_type/protein_evidence"/>
     </owl:ObjectProperty>
     

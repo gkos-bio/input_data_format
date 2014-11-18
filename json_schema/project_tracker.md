@@ -22,9 +22,6 @@ This live document is intended to keep track of data/information required of/bei
 
 Evidence codes: Doesn't apply
 
-**Download URL:** PLEASE FILL THIS IN
-
-
 ## 2. Networks - Reactome (CTTV006)
 **Tech lead: fabregat**
 
@@ -40,8 +37,6 @@ TD-association structure:
 |biological_subject (target) | provenance has evidence chain | biological_object (disease) | example|
 |----------------------------|-------------------------------|-----------------------------|--------|
 |[child term of protein_evidence as an array](./cttv_uris_namespaces.md)|no|[EFO disease or phenotype as an array](http://www.ebi.ac.uk/efo/)|[click here](../examples/cttv0006_networks_reactome)|
-
-**Download URL:** PLEASE FILL THIS IN
 
 ## 3. Networks - Intact (CTTV006)
 **Tech lead: maitesin**
@@ -59,7 +54,6 @@ TD-association structure:
 |----------------------------|-------------------------------|-----------------------------|--------|
 |[child term of protein_evidence as an array](./cttv_uris_namespaces.md)|no|[EFO disease or phenotype as an array](http://www.ebi.ac.uk/efo/)|[nearest example (Reactome); click here](../examples/cttv0006_networks_reactome)|
 
-**Download URL:** PLEASE FILL THIS IN
 
 ## 4. ChEMBL (CTTV008)
 **Tech lead: mark-davies**
@@ -78,7 +72,6 @@ TD-association structure:
 |----------------------------|-------------------------------|-----------------------------|--------|
 |[child term of protein_evidence as an array](./cttv_uris_namespaces.md)|yes|[EFO disease or phenotype as an array](http://www.ebi.ac.uk/efo/)|[click here](../examples/cttv0008_chembl)|
 
-**Download URL:** [Download](https://www.dropbox.com/sh/fldibtyodwfh7xa/AADDYA-RxXYDfnG7JKDTuuNya/cttv_chembl.v1.json.gz?dl=0)
 
 ## 5. GWAS catalog (CTTV009)
 **Tech lead: tburdett**
@@ -98,7 +91,6 @@ TD-association structure:
 |----------------------------|-------------------------------|-----------------------------|--------|
 |[child term of gene_evidence as an array](./cttv_uris_namespaces.md)|yes|[EFO disease or phenotype as an array](http://www.ebi.ac.uk/efo/)|[nearest GWAS example (click here)](../examples/cttv0018_ibd_gwas)|
 
-**Download URL:** PLEASE FILL THIS IN
 
 ## 6. Tissue specificity (CTTV010)
 **Tech lead: mkeays**
@@ -118,7 +110,6 @@ TD-association structure:
 |----------------------------|-------------------------------|-----------------------------|--------|
 |[child term of transcript_evidence as an array](./cttv_uris_namespaces.md)|no|[EFO disease or phenotype as an array](http://www.ebi.ac.uk/efo/)|[click here](../examples/cttv0010_expression_atlas)|
 
-**Download URL:** [Download](http://www.ebi.ac.uk/~mkeays/cttv/expression_atlas_cttv_evidence_strings.json)
 
 ## 7. Uniprot (CTTV011)
 **Tech lead: eddturner**
@@ -136,7 +127,6 @@ TD-association structure:
 |----------------------------|-------------------------------|-----------------------------|--------|
 |[child term of protein_evidence as an array](./cttv_uris_namespaces.md)|no|[EFO disease or phenotype as an array](http://www.ebi.ac.uk/efo/)|[Nearest example - Reactome; click here](../examples/cttv0006_networks_reactome)|
 
-**Download URL:** PLEASE FILL THIS IN
 
 ## 8. Variation (CTTV012)
 **Tech lead: javild**
@@ -156,7 +146,6 @@ TD-association structure:
 |----------------------------|-------------------------------|-----------------------------|--------|
 |[child term of gene_evidence as an array](./cttv_uris_namespaces.md)|yes|[EFO disease or phenotype as an array](http://www.ebi.ac.uk/efo/)|[Nearest GWAS example; click here](../examples/cttv0018_ibd_gwas)|
 
-**Download URL:** PLEASE FILL THIS IN
 
 ## 9. IBD_GWAS (CTTV018)
 **Tech lead: slwest**
@@ -176,4 +165,3 @@ TD-association structure:
 |----------------------------|-------------------------------|-----------------------------|--------|
 |[child term of gene_evidence as an array](./cttv_uris_namespaces.md)|yes|[EFO disease or phenotype as an array](http://www.ebi.ac.uk/efo/)|[click here](../examples/cttv0018_ibd_gwas)|
 
-**Download URL:** PLEASE FILL THIS IN

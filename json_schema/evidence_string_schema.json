@@ -203,7 +203,7 @@
                                         "email": {
                                             "required": false,
                                             "type": "string",
-                                            "pattern": "^[.]+@[.]+"
+                                            "format": "email"
                                         },
                                         "name": {
                                             "type": "string"

@@ -4,6 +4,7 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonInclude.Include;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonPropertyDescription;
+import org.apache.commons.lang3.StringUtils;
 
 import java.util.LinkedList;
 import java.util.List;
@@ -29,8 +30,8 @@ public class BiologicalObject {
     @JsonProperty(value = "about", required = true)
     @JsonPropertyDescription("An array of http://identifiers.org/ URNs. For example, if denoting a set of EFO phenotypes: [http://identifiers.org/efo/0000537, http://identifiers.org/efo/0000522]")
     //TODO: Add minItems and uniqueItems
-    public List<String> getAbout() {
-        return about;
+    public String getAbout() {
+        return StringUtils.join(about, ", ");
     }
 
 

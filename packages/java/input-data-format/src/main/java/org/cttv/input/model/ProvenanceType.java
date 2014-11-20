@@ -2,6 +2,7 @@ package org.cttv.input.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonInclude.Include;
+import com.fasterxml.jackson.annotation.JsonProperty;
 
 /**
  * @author Antonio Fabregat <fabregat@ebi.ac.uk>
@@ -18,14 +19,17 @@ public class ProvenanceType {
         this.database = database;
     }
 
+    @JsonProperty(value = "literature", required = false)
     public ProvenanceLiterature getLiterature() {
         return literature;
     }
 
+    @JsonProperty(value = "expert", required = false)
     public ProvenanceExpert getExpert() {
         return expert;
     }
 
+    @JsonProperty(value = "database", required = false)
     public ProvenanceDatabase getDatabase() {
         return database;
     }

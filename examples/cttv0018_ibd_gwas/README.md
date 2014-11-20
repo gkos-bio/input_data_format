@@ -1,4 +1,4 @@
-## An example of an evidence string that links "gene" to its disease indication via genetics evidence.
+## An example of a TD-association that links "gene" to its disease indication via genetics evidence.
 
 ### Evidence string triple:
 

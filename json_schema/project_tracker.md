@@ -22,9 +22,6 @@ This live document is intended to keep track of data/information required of/bei
 
 Evidence codes: Doesn't apply
 
-**Download URL:** PLEASE FILL THIS IN
-
-
 ## 2. Networks - Reactome (CTTV006)
 **Tech lead: fabregat**
 
@@ -35,13 +32,11 @@ Evidence code | Label | Description
 http://identifiers.org/eco/ECO:0000205 |curator inference|An evidence type that is based on conclusions drawn by a curator.
 http://identifiers.org/eco/ECO:0000001 | inference from background scientific knowledge | A curator inference that links the current annotation to a different evidence-based annotation via background knowledge of the curator.
 
-Evidence string structure:
+TD-association structure:
 
 |biological_subject (target) | provenance has evidence chain | biological_object (disease) | example|
 |----------------------------|-------------------------------|-----------------------------|--------|
 |[child term of protein_evidence as an array](./cttv_uris_namespaces.md)|no|[EFO disease or phenotype as an array](http://www.ebi.ac.uk/efo/)|[click here](../examples/cttv0006_networks_reactome)|
-
-**Download URL:** PLEASE FILL THIS IN
 
 ## 3. Networks - Intact (CTTV006)
 **Tech lead: maitesin**
@@ -53,13 +48,12 @@ Evidence code | Label | Description
 http://identifiers.org/eco/ECO:0000205 |curator inference|An evidence type that is based on conclusions drawn by a curator.
 http://identifiers.org/eco/ECO:0000001 | inference from background scientific knowledge | A curator inference that links the current annotation to a different evidence-based annotation via background knowledge of the curator.
 
-Evidence string structure:
+TD-association structure:
 
 |biological_subject (target) | provenance has evidence chain | biological_object (disease) | example|
 |----------------------------|-------------------------------|-----------------------------|--------|
 |[child term of protein_evidence as an array](./cttv_uris_namespaces.md)|no|[EFO disease or phenotype as an array](http://www.ebi.ac.uk/efo/)|[nearest example (Reactome); click here](../examples/cttv0006_networks_reactome)|
 
-**Download URL:** PLEASE FILL THIS IN
 
 ## 4. ChEMBL (CTTV008)
 **Tech lead: mark-davies**
@@ -72,13 +66,12 @@ http://identifiers.org/eco/ECO:0000205 |curator inference|An evidence type that 
 http://identifiers.org/eco/ECO:0000001 | inference from background scientific knowledge | A curator inference that links the current annotation to a different evidence-based annotation via background knowledge of the curator.|
 http://identifiers.org/eco/ECO:0000360 | biological target-disease association via drug |  - |
 
-Evidence string structure:
+TD-association structure:
 
 |biological_subject (target) | provenance has evidence chain | biological_object (disease) | example|
 |----------------------------|-------------------------------|-----------------------------|--------|
 |[child term of protein_evidence as an array](./cttv_uris_namespaces.md)|yes|[EFO disease or phenotype as an array](http://www.ebi.ac.uk/efo/)|[click here](../examples/cttv0008_chembl)|
 
-**Download URL:** [Download](https://www.dropbox.com/sh/fldibtyodwfh7xa/AADDYA-RxXYDfnG7JKDTuuNya/cttv_chembl.v1.json.gz?dl=0)
 
 ## 5. GWAS catalog (CTTV009)
 **Tech lead: tburdett**
@@ -92,13 +85,12 @@ http://identifiers.org/eco/ECO:0001113 | point mutation evidence | |
 http://identifiers.org/eco/ECO:0000205 | curator inference | An evidence type that is based on conclusions drawn by a curator.|
 http://identifiers.org/eco/ECO:0000053 | computational combinatorial evidence | A type of combinatorial analysis where data are combined and evaluated by an algorithm.|
 
-Evidence string structure:
+TD-association structure:
 
 |biological_subject (target) | provenance has evidence chain | biological_object (disease) | example|
 |----------------------------|-------------------------------|-----------------------------|--------|
 |[child term of gene_evidence as an array](./cttv_uris_namespaces.md)|yes|[EFO disease or phenotype as an array](http://www.ebi.ac.uk/efo/)|[nearest GWAS example (click here)](../examples/cttv0018_ibd_gwas)|
 
-**Download URL:** PLEASE FILL THIS IN
 
 ## 6. Tissue specificity (CTTV010)
 **Tech lead: mkeays**
@@ -112,13 +104,12 @@ http://identifiers.org/eco/ECO:0000357 | differential gene expression from RNA-s
 http://identifiers.org/eco/ECO:0000358 | differential geneset expression from microarray experiment | Gene set enrichment analysis (GSEA) shows that a functional classification (e.g. reaction pathway, Gene Ontology term, etc) has statistically significant over-representation in a group of genes showing differential expression when assayed using a microarray platform.|
 http://identifiers.org/eco/ECO:0000359 | differential geneset expression from RNA-seq experiment | Gene set enrichment analysis (GSEA) shows that a functional classification (e.g. reaction pathway, Gene Ontology term, etc) has statistically significant over-representation in a group of genes showing differential expression when assayed using an RNA sequencing platform.|
 
-Evidence string structure:
+TD-association structure:
 
 |biological_subject (target) | provenance has evidence chain | biological_object (disease) | example|
 |----------------------------|-------------------------------|-----------------------------|--------|
 |[child term of transcript_evidence as an array](./cttv_uris_namespaces.md)|no|[EFO disease or phenotype as an array](http://www.ebi.ac.uk/efo/)|[click here](../examples/cttv0010_expression_atlas)|
 
-**Download URL:** [Download](http://www.ebi.ac.uk/~mkeays/cttv/expression_atlas_cttv_evidence_strings.json)
 
 ## 7. Uniprot (CTTV011)
 **Tech lead: eddturner**
@@ -130,13 +121,12 @@ Evidence code | Label | Description
 http://identifiers.org/eco/ECO:0000205 |curator inference|An evidence type that is based on conclusions drawn by a curator.
 http://identifiers.org/eco/ECO:0000001 | inference from background scientific knowledge | A curator inference that links the current annotation to a different evidence-based annotation via background knowledge of the curator.|
 
-Evidence string structure:
+TD-association structure:
 
 |biological_subject (target) | provenance has evidence chain | biological_object (disease) | example|
 |----------------------------|-------------------------------|-----------------------------|--------|
 |[child term of protein_evidence as an array](./cttv_uris_namespaces.md)|no|[EFO disease or phenotype as an array](http://www.ebi.ac.uk/efo/)|[Nearest example - Reactome; click here](../examples/cttv0006_networks_reactome)|
 
-**Download URL:** PLEASE FILL THIS IN
 
 ## 8. Variation (CTTV012)
 **Tech lead: javild**
@@ -150,13 +140,12 @@ http://identifiers.org/eco/ECO:0001113 | point mutation evidence | |
 http://identifiers.org/eco/ECO:0000205 | curator inference | An evidence type that is based on conclusions drawn by a curator.|
 http://identifiers.org/eco/ECO:0000053 | computational combinatorial evidence | A type of combinatorial analysis where data are combined and evaluated by an algorithm.|
 
-Evidence string structure:
+TD-association structure:
 
 |biological_subject (target) | provenance has evidence chain | biological_object (disease) | example|
 |----------------------------|-------------------------------|-----------------------------|--------|
 |[child term of gene_evidence as an array](./cttv_uris_namespaces.md)|yes|[EFO disease or phenotype as an array](http://www.ebi.ac.uk/efo/)|[Nearest GWAS example; click here](../examples/cttv0018_ibd_gwas)|
 
-**Download URL:** PLEASE FILL THIS IN
 
 ## 9. IBD_GWAS (CTTV018)
 **Tech lead: slwest**
@@ -170,10 +159,9 @@ http://identifiers.org/eco/ECO:0001113 | point mutation evidence | |
 http://identifiers.org/eco/ECO:0000205 | curator inference | An evidence type that is based on conclusions drawn by a curator.|
 http://identifiers.org/eco/ECO:0000053 | computational combinatorial evidence | A type of combinatorial analysis where data are combined and evaluated by an algorithm.|
 
-Evidence string structure:
+TD-association structure:
 
 |biological_subject (target) | provenance has evidence chain | biological_object (disease) | example|
 |----------------------------|-------------------------------|-----------------------------|--------|
 |[child term of gene_evidence as an array](./cttv_uris_namespaces.md)|yes|[EFO disease or phenotype as an array](http://www.ebi.ac.uk/efo/)|[click here](../examples/cttv0018_ibd_gwas)|
 
-**Download URL:** PLEASE FILL THIS IN

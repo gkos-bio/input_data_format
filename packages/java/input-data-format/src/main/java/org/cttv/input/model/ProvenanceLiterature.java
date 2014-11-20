@@ -1,8 +1,10 @@
 package org.cttv.input.model;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonInclude.Include;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonPropertyDescription;
 
 import java.util.LinkedList;
 import java.util.List;
@@ -12,29 +14,24 @@ import java.util.List;
  */
 @JsonInclude(Include.NON_NULL)
 public class ProvenanceLiterature {
-    private boolean isTrue;
-    private List<Long> pubmedRefs;
+    private List<String> pubmedRefs;
 
     public ProvenanceLiterature() {
-        this.isTrue = false;
+        //Nothing here
     }
 
-    public boolean addPubmdRef(Long pubmedRef){
+    public boolean addPubmdRef(String pubmedRef){
         if(pubmedRef==null) return false;
         if(pubmedRefs==null){
-            pubmedRefs = new LinkedList<Long>();
+            pubmedRefs = new LinkedList<String>();
         }
-        isTrue = true;
         return pubmedRefs.add(pubmedRef);
     }
 
-    @JsonProperty("true")
-    public boolean getIsTrue() {
-        return isTrue;
-    }
-
     @JsonProperty("pubmed_refs")
-    public List<Long> getPubmedRefs() {
+    @JsonFormat(pattern = "http://identifiers.org/pubmed/[0-9]+$")
+    //TODO: Add minItems and uniqueItems properties
+    public List<String> getPubmedRefs() {
         return pubmedRefs;
     }
 }

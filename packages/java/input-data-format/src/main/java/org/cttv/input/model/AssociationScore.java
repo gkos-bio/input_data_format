@@ -5,6 +5,9 @@ import com.fasterxml.jackson.annotation.JsonInclude.Include;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 /**
+ * Association score is required. For curated databases the suggested values
+ * to include by default are probability=1.0 and p-Value=0.0
+ *
  * @author Antonio Fabregat <fabregat@ebi.ac.uk>
  */
 @JsonInclude(Include.NON_NULL)
@@ -17,11 +20,19 @@ public class AssociationScore {
         this.pValue = pValue;
     }
 
+    public AssociationScore() {
+        this.probability = 1.0d;
+        this.pValue = 0.0d;
+    }
+
+    //TODO: Add minimum and maximum annotation
+    @JsonProperty(value = "probability", required = true)
     public Double getProbability() {
         return probability;
     }
 
-    @JsonProperty("p-value")
+    //TODO: Add minimum and maximum annotation
+    @JsonProperty(value = "p-value", required = true)
     public Double getpValue() {
         return pValue;
     }

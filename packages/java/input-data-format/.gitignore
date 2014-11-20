@@ -19,7 +19,7 @@ tmp/**/*
 *.bak
 *.swp
 *~.nib
-local.properties
+local.experimentSpecific
 .classpath
 .settings/
 .loadpath

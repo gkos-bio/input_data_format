@@ -1,9 +1,30 @@
 #!/usr/bin/env perl
 #
 
+=pod
+
+=head1 NAME
+
+export_atlas_cttv_json.pl -- Create JSON report summarising all Expression Atlas human disease - gene associations for CTTV.
+
+=head1 DESCRIPTION
+
+This script creates a JSON document called
+expression_atlas_cttv_evidence_strings.json which summarises differential
+expression results for each gene found to be differentially expressed in all
+experiments about human disease currently in Expression Atlas (http://www.ebi.ac.uk/gxa).
+
+=head1 SYNOPSIS
+
+bsub export_atlas_cttv_json.pl
+
+=cut
+
 use strict;
 use warnings;
+use 5.10.0; # Use Perl 5.10.0 features.
 
+use sparql;
 use JSON::XS;
 use Log::Log4perl;
 use File::Spec;
@@ -26,6 +47,7 @@ use AtlasConfig::Reader qw(
 	parseAtlasConfig
 );
 
+# Auto flush buffer.
 $| = 1;
 
 my $logger_config = q(
@@ -58,37 +80,37 @@ my $atlasSiteConfig = get_atlas_site_config;
 
 # Get the filename of the property type EFO mappings.
 my $propertyTypeEfoMappingsFile = File::Spec->catfile( $ENV{ "ATLAS_PROD" }, $atlasSiteConfig->get_property_types_efo_mappings );
-# Create hash mapping the property types to their EFO URIs.
-my $propertyTypesToEfoUris = &make_property_types_to_efo_uris( $propertyTypeEfoMappingsFile );
 
 # Get an array of AtlasContrastDetails objects.
 my $allContrastDetails = get_atlas_contrast_details;
+
+my $efoUrisToIdOrgUris = map_efo_uris_to_identifiers_uris( $allContrastDetails );
 
 # Get the details for contrasts that have "disease" in the characteristics.
 # Return a hash sorting contrast details objects by disease EFO URI.
 # We also check during this process that array designs used have mappings to
 # Ensembl Homo sapiens. If not, we skip the contrast.
-my $disease2contrastDetails = &get_disease_contrast_details( $allContrastDetails );
+my $disease2contrastDetails = get_disease_contrast_details( $allContrastDetails, $efoUrisToIdOrgUris );
 
 # Get the contrast names and experiment types from the XML config files. Do it
 # before going through each gene, so that we don't end up opening the same file
 # hundreds of times (once per gene).
-my ( $expAcc2contrastID2contrastName, $expAcc2expType ) = &get_contrast_names_and_exp_type( $disease2contrastDetails );
+my ( $expAcc2contrastID2contrastName, $expAcc2expType ) = get_contrast_names_and_exp_type( $disease2contrastDetails );
 
 # Query Atlas for all the differentially expressed genes.
-my $geneID2expAcc2contrast2stats = &get_differential_genes_from_atlasdb;
+my $geneID2expAcc2contrast2stats = get_differential_genes_from_atlasdb();
 
 # Take all the genes that are DE in disease contrasts. The following hash looks like the following:
 # $h->{ geneID }->{ disease URI } = [ contrastDetails1, contrastDetails2 ]
-my $geneID2disease2contrastDetails = &get_all_disease_genes( $geneID2expAcc2contrast2stats, $disease2contrastDetails );
+my $geneID2disease2contrastDetails = get_all_disease_genes( $geneID2expAcc2contrast2stats, $disease2contrastDetails );
 
 # Create all the association records.
-my $allAssociations = &create_all_associations( 
+my $allAssociations = create_all_associations( 
+	$efoUrisToIdOrgUris,
 	$geneID2expAcc2contrast2stats, 
 	$geneID2disease2contrastDetails, 
 	$expAcc2contrastID2contrastName,
 	$expAcc2expType,
-	$propertyTypesToEfoUris,
 	$time 
 );
 
@@ -110,64 +132,186 @@ $logger->info( "JSON report written successfully." );
 #####
 
 
-#############
-# SUBROUTINES
-#############
+=head1 SUBROUTINES
 
+=over 2
 
+=item map_efo_uris_to_identifiers_uris
 
+Returns a hash mapping EFO URIs to their corresponding http://identifiers.org URIs.
 
-sub make_property_types_to_efo_uris {
+=cut
 
-	my ( $propertyTypeEfoMappingsFile ) = @_;
+sub map_efo_uris_to_identifiers_uris {
 
-	my $propertyTypesToEfoUris = {};
+	my ( $allContrastDetails ) = @_;
+	
+	$logger->info( "Mapping EFO URIs to http://identifiers.org URIs..." );
 
-	open( my $fh, "<", $propertyTypeEfoMappingsFile ) 
-		or $logger->logdie( "Cannot open $propertyTypeEfoMappingsFile : $!" );
+	# First, map all URIs to 1 to create a hash of unique URIs.
+	my $urisHash = {};
 
-	while( defined( my $line = <$fh> ) ) {
-		
-		chomp $line;
+	# Get the property value URIs from the contrast details.
+	foreach my $contrastDetails ( @{ $allContrastDetails } ) {
 
-		# Skip header.
-		if( $line =~ /^PROPERTY VALUE/ ) { next; }
+		my $characteristics = $contrastDetails->get_characteristics;
+		my $factors = $contrastDetails->get_factors;
 
-		# Split line on tabs.
-		my ( $propertyType, $ontoTerm, $ontoUrl ) = split "\t", $line;
+		foreach my $propertyHash ( $characteristics, $factors ) {
+			
+			foreach my $assayGroupType ( "test", "reference" ) {
 
-		# Skip this one if it's not mapped.
-		unless( $ontoTerm && $ontoUrl ) { next; }
-		
-		# Skip and warn if this term has more than one mapping.
-		my $moreThanOne = 0;
-		foreach my $ontoElement ( $ontoTerm, $ontoUrl ) {
-			if( $ontoElement =~ / / ) {
-				$moreThanOne++;
+				foreach my $propertyType ( keys %{ $propertyHash->{ $assayGroupType } } ) {
+
+					my $propertyValue = $propertyHash->{ $assayGroupType }->{ $propertyType };
+
+					my $efoUris = $contrastDetails->get_efo_uris( $propertyType, $propertyValue );
+
+					if( defined( $efoUris ) ) {
+						foreach my $efoUri ( @{ $efoUris } ) {
+							$urisHash->{ $efoUri } = 1;
+						}
+					}
+				}
 			}
 		}
-		if( $moreThanOne ) {
-			$logger->warn( "$propertyType seems to have more than one ontology mapping in $propertyTypeEfoMappingsFile, please check." );
-			next;
-		}
-
-		# Otherwise we're all good. Add the mapping to the hash.
-		$propertyTypesToEfoUris->{ $propertyType } = $ontoUrl . $ontoTerm;
+	}
+	
+	# Next need to get the http://identifiers.org URIs for each Zoomage URI.
+	foreach my $zoomageUri ( keys %{ $urisHash } ) {	
+		$urisHash->{ $zoomageUri } = query_identifiers_org( $zoomageUri );
 	}
 
-	return $propertyTypesToEfoUris;
+	$logger->info( "Finished mapping EFO URIs to http://identifiers.org URIs." );
+	
+	# Return the completed hash.
+	return $urisHash;
 }
 
 
-# Create a hash mapping disease EFO URIs to AtlasContrastDetails objects.
+=item query_identifiers_org
+
+Given an EFO (or other) URI, runs a query against the http://idenfiers.org
+SPARQL endpoint and returns the http://identifiers.org URI.
+
+=cut
+
+sub query_identifiers_org {
+
+	my ( $uriFromAtlas ) = @_;
+	
+	# Prefix for the query.
+	my $prefix = "PREFIX owl: <http://www.w3.org/2002/07/owl#>";
+
+	# Endpoint to query against.
+	my $endpoint = "http://identifiers.org/services/sparql";
+
+	# Query to get URIs.
+	my $query =
+	"SELECT ?uris WHERE {
+	<$uriFromAtlas> owl:sameAs  ?uris
+	}";
+
+	# Create a new sparql instance.
+	my $sparql = sparql->new();
+	
+	# Run the query against the endpoint, including the prefix.
+	my $result = $sparql->query( $endpoint, $prefix . $query );
+
+	# Empty hash to store http://identifiers.org URIs.
+	my $idOrgUris = {};
+
+	# Go through the URIs and find the http://identifiers.org ones.
+	foreach my $row ( @{ $result } ) {
+		my $uri = $row->{ "uris" };
+		
+		# Add relevant ones to the hash.
+		if( $uri =~ /identifiers\.org/ ) {
+			# Remove "<" and ">" from either side of the URI returned.
+			$uri =~ s/^<//;
+			$uri =~ s/>$//;
+
+			# Add the URI to the hash.
+			$idOrgUris->{ $uri } = 1;
+		}
+	}
+	
+	# Warn if we didn't get an http://identifiers.org URI and return the
+	# original one.
+	unless( keys %{ $idOrgUris } ) {
+		$logger->warn( "Did not get http://identifiers.org URI for $uriFromAtlas" );
+		return $uriFromAtlas;
+	}
+
+	# If we got more than one http://identifiers.org URI back then we need to
+	# choose one to use.
+	if( keys %{ $idOrgUris } > 1 ) {
+		my $idOrgUri = choose_id_org_uri( $idOrgUris );
+		return $idOrgUri;
+	}
+	else {
+		my ( $idOrgUri ) = keys %{ $idOrgUris };
+		return $idOrgUri;
+	}
+}
+
+
+=item choose_id_org_uri
+
+Given a hash with http://identifiers.org as keys, choose one of them based on
+an allowed list of patterns, and return it.
+
+=cut
+
+sub choose_id_org_uri {
+
+	my ( $uriHash ) = @_;
+
+	my $namespace = "http://identifiers.org";
+
+	# Array of patterns to match against.
+	# This will cater for all the cases we come across where we find more than
+	# one http://identifiers.org URIs. Add new patterns here and URI will be
+	# checked against them.
+	my @patternArray = (
+		"$namespace\/cl\/",
+		"$namespace\/go\/",
+		"$namespace\/pato\/",
+		"$namespace\/chebi\/",
+		"$namespace\/po\/",
+		"$namespace\/unit\/",
+		"$namespace\/bto\/"
+	);
+	
+	# Find the URI that matches a pattern from the @patternArray, and return it.
+	foreach my $uri ( keys %{ $uriHash } ) {
+		if( grep $uri =~ $_, @patternArray ) {
+			return $uri;
+		}
+	}
+
+	# If we're still here, we didn't return anything, so die as we couldn't
+	# choose a URI.
+	my $uris = join "\n", keys %{ $uriHash };
+	$logger->logdie( "Could not choose a URI from:\n$uris" );
+}
+
+
+
+=item get_disease_contrast_details
+
+Returns a hash mapping EFO URIs for all human diseases found to their AtlasContrastDetails object(s).
+
+=cut
+
 sub get_disease_contrast_details {
 
-	my ( $allContrastDetails ) = @_;
+	my ( $allContrastDetails, $efoUrisToIdOrgUris ) = @_;
 
 	$logger->info( "Looking for disease contrasts..." );
 	
 	# Get a hash of the human array designs in Atlas.
-	my $humanArrayDesigns = &get_human_array_designs;
+	my $humanArrayDesigns = get_human_array_designs();
 	
 	# Empty hashes to store the disease-contrastDetails associations, and the
 	# diseases that do not have a match in EFO.
@@ -186,7 +330,7 @@ sub get_disease_contrast_details {
 		if( !$organism ) { $logger->logdie( "No organism found for $expAcc" ); }
 		elsif( $organism !~ /homo sapiens/i ) { next; }
 		
-		my $experimentConfig = &get_experiment_config( $expAcc );
+		my $experimentConfig = get_experiment_config( $expAcc );
 
 		next unless $experimentConfig;
 		
@@ -195,7 +339,7 @@ sub get_disease_contrast_details {
 		# experiments (E-GEOD-11981).
 		if( $experimentConfig->get_atlas_experiment_type =~ /array/ ) {
 			
-			my $contrastArrayDesign = &get_array_design_for_contrast( $experimentConfig, $contrastDetails->get_contrast_id );
+			my $contrastArrayDesign = get_array_design_for_contrast( $experimentConfig, $contrastDetails->get_contrast_id );
 
 			unless( $humanArrayDesigns->{ $contrastArrayDesign } ) {
 				$logger->info( "$contrastArrayDesign in experiment $expAcc is not mapped to Ensembl gene IDs. Skipping." );
@@ -217,26 +361,35 @@ sub get_disease_contrast_details {
 				my $diseaseValue = $characteristics->{ "test" }->{ $diseaseType };
 
 				# Get the EFO URI for this disease value.
-				my $diseaseEfoUri = $contrastDetails->get_efo_uri( $diseaseType, $diseaseValue );
+				my $diseaseEfoUris = $contrastDetails->get_efo_uris( $diseaseType, $diseaseValue );
 			
-				# If we got an EFO URI back, make it into CTTV style (e.g. "efo:EFO_0000298")
-				if( defined( $diseaseEfoUri ) ) {
-					$diseaseEfoUri = &get_cttv_style_uri( $diseaseEfoUri );
+				my $diseaseUriString;
+
+				# If we got any EFO URIs back, make them into http://identifiers.org URIs.
+				if( defined( $diseaseEfoUris ) ) {
+					my $identifiersOrgUris = [];
+					foreach my $diseaseEfoUri ( @{ $diseaseEfoUris } ) {
+						my $idOrgUri = $efoUrisToIdOrgUris->{ $diseaseEfoUri };
+						push @{ $identifiersOrgUris }, $idOrgUri;
+					}
+					# Stick them together with commas, to make a key for the
+					# hash. This will be split to an array for the JSON report.
+					$diseaseUriString = join ",", @{ $identifiersOrgUris };
 				}
 				# If no EFO URI was found for this disease use the text term
 				# instead.
 				else {
-					$diseaseEfoUri = $diseaseValue;
+					$diseaseUriString = $diseaseValue;
 				}
 				
 				# Add the contrast details object to the hash, under the EFO
 				# URI for the disease.
-				if( exists( $disease2contrastDetails->{ $diseaseEfoUri } ) ) {
+				if( exists( $disease2contrastDetails->{ $diseaseUriString } ) ) {
 
-					push @{ $disease2contrastDetails->{ $diseaseEfoUri } }, $contrastDetails;
+					push @{ $disease2contrastDetails->{ $diseaseUriString } }, $contrastDetails;
 				}
 				else {
-					$disease2contrastDetails->{ $diseaseEfoUri } = [ $contrastDetails ];
+					$disease2contrastDetails->{ $diseaseUriString } = [ $contrastDetails ];
 				}
 			}
 		}	
@@ -250,156 +403,12 @@ sub get_disease_contrast_details {
 }
 
 
-sub get_array_design_for_contrast {
+=item get_human_array_designs
 
-	my ( $experimentConfig, $contrastID ) = @_;
-	
-	foreach my $analytics ( @{ $experimentConfig->get_atlas_analytics } ) {
+Returns a hash with all Homo sapiens microarray designs used in Expression
+Atlas as keys.
 
-		foreach my $contrast ( @{ $analytics->get_atlas_contrasts } ) {
-
-			if( $contrast->get_contrast_id eq $contrastID ) {
-
-				return $analytics->get_platform;
-			}
-		}
-	}
-
-	# If we're still here, something went wrong, so die.
-	$logger->logdie( "Could not get array design for contrast $contrastID in experiment ",
-		$experimentConfig->get_experiment_accession );
-}
-
-
-sub get_experiment_config {
-
-	my ( $expAcc ) = @_;
-
-	# Get the path to the Atlas experiments directory.
-	my $atlasExpsDir = $ENV{ "ATLAS_EXPS" };
-	
-	# Create the XML config file path.
-	my $atlasXMLfile = File::Spec->catfile( $atlasExpsDir, $expAcc, "$expAcc-configuration.xml" );
-	
-	# If we cannot read the XML config this means we can't get the
-	# experiment type or the contrast name. I think that means we have to
-	# die here as we can't continue without these. Running as fg_atlas the
-	# script should always have perimssion to read all files, so if it
-	# can't that means something is wrong.
-	#-------------------------------------------------- FIXME
-	# unless( -r $atlasXMLfile ) {
-	# 	$logger->logdie( "Cannot read \"$atlasXMLfile\" to get contrast names and experiment type. Cannot continue." );
-	# }
-	#-------------------------------------------------- 
-
-	# FIXME: remove when read-only dirs in $ATLAS_EXPS are fixed.
-	unless( -r $atlasXMLfile ) {
-		$logger->warn( "Cannot read \"$atlasXMLfile\" to get contrast names and experiment type. Skipping." );
-		return;
-	}
-
-	# Parse config.
-	my $experimentConfig = parseAtlasConfig( $atlasXMLfile );
-
-	return $experimentConfig;
-}
-
-
-sub get_cttv_style_uri {
-
-	my ( $efoUri ) = @_;
-
-	# Hash mapping namespaces to prefixes.
-	my $namespaceMap = {
-		"http://purl.obolibrary.org/obo" => "obo",
-		"http://www.ebi.ac.uk/efo" => "efo",
-		"http://www.orpha.net/ORDO" => 'ordo'
-	};
-	
-	# Split the URI into parts.
-	my %parts;
-	@parts{ my @keys = qw( schema auth path query frag ) } = uri_split( $efoUri );
-
-	my @splitPath = split "/", $parts{ "path" };
-	
-	my $id = pop @splitPath;
-	
-	my $namespace = uri_join( $parts{ "schema" }, $parts{ "auth" }, pop @splitPath );
-	
-	unless( $namespaceMap->{ $namespace } ) {
-		$logger->logdie( "No prefix found for $efoUri. Cannot continue." );
-	}
-
-	my $cttvStyleUri = $namespaceMap->{ $namespace } . ":" . $id;
-
-	return $cttvStyleUri;
-}
-
-
-# Get the contrast names and experiment types from the Atlas XML config files.
-sub get_contrast_names_and_exp_type {
-
-	my ( $disease2contrastDetails ) = @_;
-
-	# First get the experiment accessions and all their contrast IDs.
-	# This will be a hash like e.g. $h->{ <exp_acc> }->{ <contrast_id> } = 1;
-	my $expAcc2contrastID = {};
-	
-	# Go through the all the diseases and collect all the experiment accessions
-	# and contrast IDs. This will provide a comprehensive list of all the XML
-	# configs we need to open and what we need to get out of them.
-	foreach my $diseaseUri ( keys %{ $disease2contrastDetails } ) {
-
-		# Go through the contrast details for this disease...
-		foreach my $contrastDetails ( @{ $disease2contrastDetails->{ $diseaseUri } } ) {
-
-			my $expAcc = $contrastDetails->get_exp_acc;
-			my $contrastID = $contrastDetails->get_contrast_id;
-
-			$expAcc2contrastID->{ $expAcc }->{ $contrastID } = 1;
-		}
-	}
-	
-
-	# Now we have the list of experiments and their contrasts, we can open each
-	# XML config and get the information we need.
-	
-	# Empty hashes for the contrast names and experiment types for each
-	# experiment.
-	$_ = {} for my ( $expAcc2contrastID2contrastName, $expAcc2expType );
-	
-	# Go through the experiments for this disease, open the XML config,
-	# and get the experiment type and contrast names.
-	foreach my $expAcc ( keys %{ $expAcc2contrastID } ) {
-		
-		my $experimentConfig = &get_experiment_config( $expAcc );
-
-		unless( $experimentConfig ) {
-			delete $expAcc2contrastID->{ $expAcc };
-			next;
-		}
-
-		# Get the experiment type.
-		$expAcc2expType->{ $expAcc } = $experimentConfig->get_atlas_experiment_type;
-		
-		# Get all the analytics for this experiment.
-		my $allAnalytics = $experimentConfig->get_atlas_analytics;
-
-		# Index all the contrast names from this experiment by their contrast
-		# ID (in a hash).
-		my $expContrastNames = &index_contrast_names_by_id( $allAnalytics, $expAcc );
-		
-		# Now go through the contrast IDs that we have in the disease contrasts
-		# and collect the contrast names.
-		foreach my $contrastID ( keys %{ $expAcc2contrastID->{ $expAcc } } ) {
-
-			$expAcc2contrastID2contrastName->{ $expAcc }->{ $contrastID } = $expContrastNames->{ $contrastID };
-		}
-	}
-
-	return ( $expAcc2contrastID2contrastName, $expAcc2expType );
-}
-
+=cut
 
 # Read the Homo sapiens Ensembl annotation source from the git repository, and
 # return a hash of all the array designs found therein.
@@ -436,6 +445,148 @@ sub get_human_array_designs {
 }
 
 
+=item get_experiment_config
+
+Given an experiment accession, parse the experiment's Expression Atlas XML
+config into an AtlasConfig::ExperimentConfig object, and return it.
+
+=cut
+
+sub get_experiment_config {
+
+	my ( $expAcc ) = @_;
+
+	# Get the path to the Atlas experiments directory.
+	my $atlasExpsDir = $ENV{ "ATLAS_EXPS" };
+	
+	# Create the XML config file path.
+	my $atlasXMLfile = File::Spec->catfile( $atlasExpsDir, $expAcc, "$expAcc-configuration.xml" );
+	
+	# If we cannot read the XML config this means we can't get the
+	# experiment type or the contrast name. I think that means we have to
+	# die here as we can't continue without these. Running as fg_atlas the
+	# script should always have perimssion to read all files, so if it
+	# can't that means something is wrong.
+	#-------------------------------------------------- FIXME
+	# unless( -r $atlasXMLfile ) {
+	# 	$logger->logdie( "Cannot read \"$atlasXMLfile\" to get contrast names and experiment type. Cannot continue." );
+	# }
+	#-------------------------------------------------- 
+
+	# FIXME: remove when read-only dirs in $ATLAS_EXPS are fixed.
+	unless( -r $atlasXMLfile ) {
+		$logger->warn( "Cannot read \"$atlasXMLfile\" to get contrast names and experiment type. Skipping." );
+		return;
+	}
+
+	# Parse config.
+	my $experimentConfig = parseAtlasConfig( $atlasXMLfile );
+
+	return $experimentConfig;
+}
+
+
+=item get_array_design_for_contrast
+
+Given an Expression Atlas AtlasConfig::ExperimentConfig object and a contrast
+ID, return the array design (platform) associated.
+
+=cut
+
+sub get_array_design_for_contrast {
+
+	my ( $experimentConfig, $contrastID ) = @_;
+	
+	foreach my $analytics ( @{ $experimentConfig->get_atlas_analytics } ) {
+
+		foreach my $contrast ( @{ $analytics->get_atlas_contrasts } ) {
+
+			if( $contrast->get_contrast_id eq $contrastID ) {
+
+				return $analytics->get_platform;
+			}
+		}
+	}
+
+	# If we're still here, something went wrong, so die.
+	$logger->logdie( "Could not get array design for contrast $contrastID in experiment ",
+		$experimentConfig->get_experiment_accession );
+}
+
+
+=item get_contrast_names_and_exp_type
+
+Go through all the human disease comparisons found, and return two hashes: one
+mapping experiment accessions to comparison IDs to comparison names; the other
+mapping experiment accessions to Expression Atlas experiment types.
+
+=cut
+
+# Get the contrast names and experiment types from the Atlas XML config files.
+sub get_contrast_names_and_exp_type {
+
+	my ( $disease2contrastDetails ) = @_;
+
+	# First get the experiment accessions and all their contrast IDs.
+	# This will be a hash like e.g. $h->{ <exp_acc> }->{ <contrast_id> } = 1;
+	my $expAcc2contrastID = {};
+	
+	# Go through the all the diseases and collect all the experiment accessions
+	# and contrast IDs. This will provide a comprehensive list of all the XML
+	# configs we need to open and what we need to get out of them.
+	foreach my $diseaseUriString ( keys %{ $disease2contrastDetails } ) {
+
+		# Go through the contrast details for this disease...
+		foreach my $contrastDetails ( @{ $disease2contrastDetails->{ $diseaseUriString } } ) {
+
+			my $expAcc = $contrastDetails->get_exp_acc;
+			my $contrastID = $contrastDetails->get_contrast_id;
+
+			$expAcc2contrastID->{ $expAcc }->{ $contrastID } = 1;
+		}
+	}
+	
+
+	# Now we have the list of experiments and their contrasts, we can open each
+	# XML config and get the information we need.
+	
+	# Empty hashes for the contrast names and experiment types for each
+	# experiment.
+	$_ = {} for my ( $expAcc2contrastID2contrastName, $expAcc2expType );
+	
+	# Go through the experiments for this disease, open the XML config,
+	# and get the experiment type and contrast names.
+	foreach my $expAcc ( keys %{ $expAcc2contrastID } ) {
+		
+		my $experimentConfig = get_experiment_config( $expAcc );
+
+		unless( $experimentConfig ) {
+			delete $expAcc2contrastID->{ $expAcc };
+			next;
+		}
+
+		# Get the experiment type.
+		$expAcc2expType->{ $expAcc } = $experimentConfig->get_atlas_experiment_type;
+		
+		# Get all the analytics for this experiment.
+		my $allAnalytics = $experimentConfig->get_atlas_analytics;
+
+		# Index all the contrast names from this experiment by their contrast
+		# ID (in a hash).
+		my $expContrastNames = index_contrast_names_by_id( $allAnalytics, $expAcc );
+		
+		# Now go through the contrast IDs that we have in the disease contrasts
+		# and collect the contrast names.
+		foreach my $contrastID ( keys %{ $expAcc2contrastID->{ $expAcc } } ) {
+
+			$expAcc2contrastID2contrastName->{ $expAcc }->{ $contrastID } = $expContrastNames->{ $contrastID };
+		}
+	}
+
+	return ( $expAcc2contrastID2contrastName, $expAcc2expType );
+}
+
+
 # Take arrayref of AtlasConfig::Analytics objects and create a hash with
 # contrast IDs as keys and contrast names as values.
 sub index_contrast_names_by_id {
@@ -468,8 +619,14 @@ sub index_contrast_names_by_id {
 }
 
 
-# Get all the differentially expressed genes from the Atlas database. Returns
-# gene ID, experiment accession, contrast ID, log2 fold-change, and p-value.
+=item get_differential_genes_from_atlasdb
+
+Query the Expression Atlas database for all differentially expressed genes.
+Return a hash mapping gene IDs to experiment accessions to comparison names to
+log fold-changes and p-values.
+
+=cut
+
 sub get_differential_genes_from_atlasdb {
 	
 	# SQL query..
@@ -512,8 +669,14 @@ sub get_differential_genes_from_atlasdb {
 }
 
 
-# Create a hash mapping gene IDs to the disease EFO URI and
-# AtlasContrastDetails object(s) where each gene was differentially expressed.
+=item get_all_disease_genes
+
+Given hashes mapping differentially expressed genes to experiment accessions to
+comparisons to statistics, and human diseases to comparisons -- return a hash
+mapping gene IDs to disease EFO URI(s) to comparisons.
+
+=cut
+
 sub get_all_disease_genes {
 
 	my ( $geneID2expAcc2contrast2stats, $disease2contrastDetails ) = @_;
@@ -523,16 +686,16 @@ sub get_all_disease_genes {
 	# First it makes following steps easier if we create a new hash of gene
 	# IDs so that the experiment accession and contrast ID come first and then
 	# the gene IDs.
-	my $expAcc2contrastID2geneIDs = &rearrange_de_genes_hash( $geneID2expAcc2contrast2stats );
+	my $expAcc2contrastID2geneIDs = rearrange_de_genes_hash( $geneID2expAcc2contrast2stats );
 	
 	# Empty hash for the disease genes, their experiment accession(s) and contrast ID(s).
 	my $geneID2disease2contrastDetails = {};
 	
 	# Go through the diseases...
-	foreach my $disease ( keys %{ $disease2contrastDetails } ) {
+	foreach my $diseaseUriString ( keys %{ $disease2contrastDetails } ) {
 		
 		# Get the details of all contrasts for this disease.
-		my $thisDiseaseContrastDetails = $disease2contrastDetails->{ $disease };
+		my $thisDiseaseContrastDetails = $disease2contrastDetails->{ $diseaseUriString };
 		
 		# Go through the contrast details for this disease...
 		foreach my $contrastDetails ( @{ $thisDiseaseContrastDetails } ) {
@@ -551,13 +714,13 @@ sub get_all_disease_genes {
 				
 				# Add the contrast details object to the hash under this gene identifier
 				# and experiment accession.
-				if( exists( $geneID2disease2contrastDetails->{ $geneID }->{ $disease } ) ) {
+				if( exists( $geneID2disease2contrastDetails->{ $geneID }->{ $diseaseUriString } ) ) {
 
-					push @{ $geneID2disease2contrastDetails->{ $geneID }->{ $disease } }, $contrastDetails;
+					push @{ $geneID2disease2contrastDetails->{ $geneID }->{ $diseaseUriString } }, $contrastDetails;
 				}
 				else {
 
-					$geneID2disease2contrastDetails->{ $geneID }->{ $disease } = [ $contrastDetails ];
+					$geneID2disease2contrastDetails->{ $geneID }->{ $diseaseUriString } = [ $contrastDetails ];
 				}
 			}
 		}
@@ -571,10 +734,14 @@ sub get_all_disease_genes {
 }
 
 
-# When we create the hash of "disease genes" it's more convenient if the hash
-# of differentially expressed genes is ordered by experiment accession, and
-# then contrast ID, with each contrast ID pointing to an array of gene IDs.
-# This function performs the re-ordering.
+=item rearrange_de_genes_hash
+
+Given a hash mapping gene IDs to experiment accessions to comparison IDs to
+statistics, return a hash mapping experiment accessions to comparison IDs to
+gene IDs.
+
+=cut
+
 sub rearrange_de_genes_hash {
 
 	my ( $geneID2expAcc2contrast2stats ) = @_;
@@ -608,16 +775,22 @@ sub rearrange_de_genes_hash {
 }
 
 
-# Create all the gene-disease association records. We will end up with one
-# record per contrast, per gene.
+=item create_all_associations
+
+Given all the data gathered previously, create an hash for every gene-disease
+association modelling a CTTV JSON record. Collect all these hashes in an array
+and return this.
+
+=cut
+
 sub create_all_associations {
 
 	my ( 
+		$efoUrisToIdOrgUris,
 		$geneID2expAcc2contrast2stats, 
 		$geneID2disease2contrastDetails, 
 		$expAcc2contrastID2contrastName, 
 		$expAcc2expType,
-		$propertyTypesToEfoUris,
 		$time 
 	) = @_;
 	
@@ -630,30 +803,25 @@ sub create_all_associations {
 		# Get the stats for this gene.
 		my $expAcc2contrastID2stats = $geneID2expAcc2contrast2stats->{ $geneID };
 
-		foreach my $disease ( keys %{ $geneID2disease2contrastDetails->{ $geneID } } ) {
+		foreach my $diseaseUriString ( keys %{ $geneID2disease2contrastDetails->{ $geneID } } ) {
 			
-			foreach my $contrastDetails ( @{ $geneID2disease2contrastDetails->{ $geneID }->{ $disease } } ) {
+			# Split the URIs into an array if there's more than one.
+			my @diseaseUriArray = split /,/, $diseaseUriString;
+			
+			foreach my $contrastDetails ( @{ $geneID2disease2contrastDetails->{ $geneID }->{ $diseaseUriString } } ) {
 
+				# Get the experiment accession and the contrast ID for this
+				# contrast.
 				my $expAcc = $contrastDetails->get_exp_acc;
 				my $contrastID = $contrastDetails->get_contrast_id;
 
+				# Get the experiment type.
+				my $expType = $expAcc2expType->{ $expAcc };
+
 				# Get the evidence code for this association.
-				my $associationEvidenceCode = &get_association_evidence_code( $expAcc2expType->{ $expAcc } );
+				my $associationEvidenceCode = get_association_evidence_code( $expType );
 
-				# Create the links to ArrayExpress experiments.
-				my $arrayExpressLink = {
-					"nice_name" => "ArrayExpress Experiment overview",
-					"url" => "http://www.ebi.ac.uk/arrayexpress/$expAcc"
-				};
-				# Create the links to Atlas experiments.
-				my $atlasLink = {
-					"nice_name" => "Gene expression in Expression Atlas",
-					"url" => "http://wwwdev.ebi.ac.uk/gxa/experiments/$expAcc?geneQuery=$geneID"
-				};
 
-				# Combine the arrays of links.
-				my $aeAtlasLinks = [ $arrayExpressLink, $atlasLink ];
-				
 				# The association score will be the differential expression p-value.
 				my $associationScore = $geneID2expAcc2contrast2stats->{ $geneID }->{ $expAcc }->{ $contrastID }->{ "pvalue" };
 				$associationScore = sprintf( "%.2e", $associationScore );
@@ -663,43 +831,94 @@ sub create_all_associations {
 				$logFC = nearest( .01, $logFC ); 
 				
 				# Get the direction.
-				my $direction = $logFC > 0 ? "up" : "down";
+				my $direction = $logFC > 0 ? "increased_transcript_level" : "decreased_transcript_level";
 
 				# Make an array of organism part(s) and/or cell type(s) and/or
 				# cell line(s) for this contrast.
-				my $biosamplesArray = &create_biosamples_array( $contrastDetails );
+				my $biosamplesArray = create_biosamples_array( $contrastDetails, $efoUrisToIdOrgUris );
 
-				# Make a hash for all the characteristics and factors, to add
-				# to the biological_object's "experimental_evidence_specific"
-				# section.
-				my $characteristicsAndFactors = &merge_characteristics_and_factors( $contrastDetails, $propertyTypesToEfoUris );
+				# Make a hash for the factor values, to add to the
+				# biological_object's "experiment_specific" section.
+				my $factors = get_factor_uris( $contrastDetails, $efoUrisToIdOrgUris );
+				# Get the human-readable name for this comparison.
+				my $comparisonName = $expAcc2contrastID2contrastName->{ $expAcc }->{ $contrastID };
+				# Get the description of the differential expression statistics method.
+				my $deMethodDesc = get_de_method_description( $expAcc, $expType );
+
+				# identifiers.org URIs for gene ID, experiment accession,
+				# CTTV-specific terms.
+				my $geneIDuri = "http://identifiers.org/ensembl/$geneID";
+				my $gxaExptIDuri = "http://identifiers.org/gxa.expt/$expAcc";
+				my $aeExptIDuri = "http://identifiers.org/arrayexpress/$expAcc";
+				my $cttvTargetUri = "http://identifiers.org/cttv.target/transcript";
+				my $cttvActivityUri = "http://identifiers.org/cttv.activity/$direction";
+
+				# Create the links to ArrayExpress experiments.
+				my $arrayExpressLink = {
+					"nice_name" => "ArrayExpress Experiment overview",
+					"url" => $aeExptIDuri
+				};
+				# Create the links to Atlas experiments.
+				my $atlasLink = {
+					"nice_name" => "Gene expression in Expression Atlas",
+					"url" => "http://wwwdev.ebi.ac.uk/gxa/experiments/$expAcc?geneQuery=$geneID"
+				};
+				# Combine the arrays of links.
+				my $aeAtlasLinks = [ $arrayExpressLink, $atlasLink ];
+				
+				# Some names for tags, define them here to reduce risk of typos.
+				my $uniqueAssocTag = "unique_association_fields";
+				my $bioSubjTag = "biological_subject";
+				my $propertiesTag = "properties";
+				my $evidenceTag = "evidence";
+				my $assocScoreTag = "association_score";
+				my $urlsTag = "urls";
+				my $linkoutsTag = "linkouts";
+				my $exptSpecTag = "experiment_specific";
+				my $biolObjTag = "biological_object";
 
 				
 				# Create the hash for the JSON dump using the information gathered above.
-				# Add the biological subject (the gene).
-				my $associationRecord->{ "biological_subject" }->{ "about" } = "ensembl:$geneID";
-				$associationRecord->{ "biological_subject" }->{ "properties" }->{ "association_context" } = "cttvexp:transcript";
-				$associationRecord->{ "biological_subject" }->{ "properties" }->{ "activity" } = "cttvexp:$direction";
+				my $associationRecord->{ "validated_against_schema_version" } = get_schema_version();
 
-				# Add the provenance...
-				$associationRecord->{ "provenance" }->{ "date_asserted" } = $time;
-				$associationRecord->{ "provenance" }->{ "is_associated" } = 1;
-				$associationRecord->{ "provenance" }->{ "type" }->{ "database" }->{ "true" } = 1;
-				$associationRecord->{ "provenance" }->{ "type" }->{ "database" }->{ "id" } = "Expression_Atlas";
-				$associationRecord->{ "provenance" }->{ "type" }->{ "database" }->{ "version" } = "NA";
-				$associationRecord->{ "provenance" }->{ "evidence_codes" } = [ $associationEvidenceCode ];
-				$associationRecord->{ "provenance" }->{ "urls" }->{ "linkouts" } = $aeAtlasLinks;
-				$associationRecord->{ "provenance" }->{ "association_score" }->{ "p-value" } = $associationScore;
-				$associationRecord->{ "provenance" }->{ "experimental_evidence_specific" } = {
-					"study_id" => $expAcc,
-					"comparison_name" => $expAcc2contrastID2contrastName->{ $expAcc }->{ $contrastID },
-					"log2_fold_change" => $logFC
-				};
-				
+				# Add unique association fields.
+				$associationRecord->{ $uniqueAssocTag }->{ "geneID" } = $geneIDuri;
+				$associationRecord->{ $uniqueAssocTag }->{ "study_id" } = $gxaExptIDuri;
+				$associationRecord->{ $uniqueAssocTag }->{ "comparison_name" } = $comparisonName;
+
+				# Add the biological subject (the gene).
+				$associationRecord->{ $bioSubjTag }->{ "about" } = [ $geneIDuri ];
+				$associationRecord->{ $bioSubjTag }->{ $propertiesTag }->{ "target_type" } = $cttvTargetUri;
+				$associationRecord->{ $bioSubjTag }->{ $propertiesTag }->{ "activity" } = $cttvActivityUri;
+
+				# Add the evidence.
+				# The "association_score" field:
+				# The "probability" field -- this is null for Atlas.
+				$associationRecord->{ $evidenceTag }->{ $assocScoreTag }->{ "probability" }->{ "value" } = undef;
+				$associationRecord->{ $evidenceTag }->{ $assocScoreTag }->{ "probability" }->{ "method" } = undef;
+				# The "pvalue" field -- this is the p-value from the
+				# differential expression analysis.
+				$associationRecord->{ $evidenceTag }->{ $assocScoreTag }->{ "pvalue" }->{ "value" } = $associationScore;
+				$associationRecord->{ $evidenceTag }->{ $assocScoreTag }->{ "pvalue" }->{ "method" } = $deMethodDesc;
+				# The "provenance_type" field:
+				# The "database" field.
+				$associationRecord->{ $evidenceTag }->{ "provenance_type" }->{ "database" }->{ "version" } = "NA";
+				$associationRecord->{ $evidenceTag }->{ "provenance_type" }->{ "database" }->{ "id" } = "Expression_Atlas";
+				# The "urls" and "linkouts" fields:
+				$associationRecord->{ $evidenceTag }->{ $urlsTag }->{ $linkoutsTag } = $aeAtlasLinks;
+				# The "evidence_specific" fields:
+				$associationRecord->{ $evidenceTag }->{ $exptSpecTag }->{ "study_id" } = $gxaExptIDuri;
+				$associationRecord->{ $evidenceTag }->{ $exptSpecTag }->{ "comparison_name" } = $comparisonName;
+				$associationRecord->{ $evidenceTag }->{ $exptSpecTag }->{ "log2_fold_change" } = $logFC;
+				# Last fields, is_associated, the evidence codes, and the date.
+				$associationRecord->{ $evidenceTag }->{ "is_associated" } = JSON::XS->true;
+				$associationRecord->{ $evidenceTag }->{ "evidence_codes" } = [ $associationEvidenceCode ];
+				$associationRecord->{ $evidenceTag }->{ "date_asserted" } = $time;
+
 				# Add the biological object (the disease and samples).
-				$associationRecord->{ "biological_object" }->{ "about" } = $disease;
-				$associationRecord->{ "biological_object" }->{ "properties" }->{ "biosamples" } = $biosamplesArray;
-				$associationRecord->{ "biological_object" }->{ "properties" }->{ "experimental_evidence_specific" } = $characteristicsAndFactors;
+				$associationRecord->{ $biolObjTag }->{ "about" } = \@diseaseUriArray;
+				$associationRecord->{ $biolObjTag }->{ "properties" }->{ "biosamples" } = $biosamplesArray;
+				$associationRecord->{ $biolObjTag }->{ "properties" }->{ $exptSpecTag } = $factors;
 				
 				push @{ $allAssociations }, $associationRecord;
 			}
@@ -714,33 +933,47 @@ sub create_all_associations {
 }
 
 
-# Return the relevant ECO evidence code based on the experiment type.
+=item get_association_evidence_code
+
+Given an Expression Atlas experiment type, return the appropriate ECO URI.
+
+=cut
+
 sub get_association_evidence_code {
 
 	my ( $expType ) = @_;
 
 	if( $expType =~ /microarray/i ) {
-		return "obo:ECO_0000356";
+		return "http://identifiers.org/eco/ECO:0000356";
 	}
 	elsif( $expType =~ /rnaseq/i ) {
-		return "obo:ECO_0000357";
+		return "http://identifiers.org/eco/ECO:0000357";
 	}
 	else {
 		$logger->logdie( "Unknown experiment type: $expType"  );
 	}
 
 	# FIXME: We also need to account for the GSEA codes:
-	# obo:ECO_0000358 differential geneset expression evidence from microarray experiment
-	# obo:ECO_0000359 differential geneset expression evidence from RNA-seq experiment
+	# http://identifiers.org/eco/ECO:0000358 differential geneset expression evidence from microarray experiment
+	# http://identifiers.org/eco/ECO:0000359 differential geneset expression evidence from RNA-seq experiment
 	# But we are not including this data in the JSON report for now.
 }
 
+
+=item create_biosamples_array
+
+Given a comparison (AtlasContrastDetails object) and a hash mapping EFO URIs to
+http://identifiers.org URIs, create and return an array containing the
+http://identifiers.org URIs of all the tissues, cell lines, and/or cell types
+annotated in the comparison.
+
+=cut
 
 # Get the values for any "organism part", "cell type", and/or "cell line"
 # characteristics.
 sub create_biosamples_array {
 
-	my ( $contrastDetails ) = @_;
+	my ( $contrastDetails, $efoUrisToIdOrgUris ) = @_;
 
 	my $expAcc = $contrastDetails->get_exp_acc;
 	my $characteristics = $contrastDetails->get_characteristics;
@@ -758,11 +991,13 @@ sub create_biosamples_array {
 
 			my $value = $characteristics->{ "test" }->{ $type };
 
-			my $efoUri = $contrastDetails->get_efo_uri( $type, $value );
+			my $efoUris = $contrastDetails->get_efo_uris( $type, $value );
 
-			if( defined( $efoUri ) ) {
-				$efoUri = &get_cttv_style_uri( $efoUri );
-				push @{ $biosamplesArray }, $efoUri;
+			if( defined( $efoUris ) ) {
+				foreach my $efoUri ( @{ $efoUris } ) {
+					my $idOrgUri = $efoUrisToIdOrgUris->{ $efoUri };
+					push @{ $biosamplesArray }, $idOrgUri;
+				}
 			}
 			else {
 				push @{ $biosamplesArray }, $value;
@@ -774,66 +1009,162 @@ sub create_biosamples_array {
 }
 
 
-# Create a hash containing the types and values for characteristics and factors
-# for the test and reference assay group.
-sub merge_characteristics_and_factors {
+=item get_factor_uris
 
-	my ( $contrastDetails, $propertyTypesToEfoUris ) = @_;
+Given a comparison (AtlasContrastDetails object) and a hash mapping EFO URIs to
+http://identifiers.org URIs -- return a hash mapping the assay group types
+(test and reference) to property value http://identifiers.org URIs.
 
-	# Empty hash to store the factors and characteristics.
-	my $allAttributes = {};
+=cut
 
-	my $characteristics = $contrastDetails->get_characteristics;
+sub get_factor_uris {
+
+	my ( $contrastDetails, $efoUrisToIdOrgUris ) = @_;
+
 	my $factors = $contrastDetails->get_factors;
+
+	my $factorUris = {};
 	
 	# Go through the assay groups.
 	foreach my $assayGroupType ( "test", "reference" ) {
 		
-		# Go through the characteristics and factors.
-		foreach my $attributeHash ( $characteristics, $factors ) {
+		# Get the factors for this assay group.
+		my $agFactors = $factors->{ $assayGroupType };
+		
+		# Go through the factor types.
+		foreach my $factorType ( keys %{ $agFactors } ) {
 			
-			# Get the characteristics or factors for this assay group.
-			my $agAttributes = $attributeHash->{ $assayGroupType };
+			my $value = $agFactors->{ $factorType };
 			
-			# Go through the characteristic or factor types.
-			foreach my $type ( keys %{ $agAttributes } ) {
-				
-				my $value = $agAttributes->{ $type };
-
-				my $valueEfoUri = $contrastDetails->get_efo_uri( $type, $value );
-
-				if( defined( $valueEfoUri ) ) {
-					$valueEfoUri = &get_cttv_style_uri( $valueEfoUri );
-				}
-				else {
-					$valueEfoUri = $value;
-				}
-
-				# Get the EFO URI for the type, in CTTV style.
-				my $typeEfoUri = $propertyTypesToEfoUris->{ $type };
-
-				if( defined( $typeEfoUri ) ) {
-					$typeEfoUri = &get_cttv_style_uri( $typeEfoUri );
-				}
-				else {
-					$typeEfoUri = $type;
-				}
-
-				# Append "_group" to the assay group type (test or reference)
-				# for the JSON report.
-				my $jsonAssayGroupType = $assayGroupType . "_group";
-				
-				# If we haven't added this one already, add it to the hash
-				# under the assay group type.
-				unless( grep $_ eq $typeEfoUri, ( keys %{ $allAttributes->{ $jsonAssayGroupType } } ) ) {
-
-					$allAttributes->{ $jsonAssayGroupType }->{ $typeEfoUri } = $valueEfoUri;
+			# Get the Zoomaged URI for the factor value.
+			my $valueEfoUris = $contrastDetails->get_efo_uris( $factorType, $value );
+			
+			# If there is one, try and get an http://identifiers.org URI for
+			# it.
+			my $idOrgValueUri;
+			if( defined( $valueEfoUris ) ) {
+				foreach my $valueEfoUri ( @{ $valueEfoUris } ) {
+					$idOrgValueUri = $efoUrisToIdOrgUris->{ $valueEfoUri };
 				}
 			}
+			# Otherwise just use the free text value.
+			else {
+				$idOrgValueUri = $value;
+			}
+
+			$factorUris->{ $factorType }->{ $assayGroupType } = $idOrgValueUri;
+		}
+	}
+	
+	my $factorUrisForJson = {};
+
+	my $factorCounter = 1;
+	foreach my $factorType ( keys %{ $factorUris } ) {
+
+		my $testUri = $factorUris->{ $factorType }->{ "test" };
+		my $refUri = $factorUris->{ $factorType }->{ "reference" };
+		
+		$testUri //= "null";
+		$refUri //= "null";
+
+		unless( $testUri eq $refUri ) {
+			
+			my $testKey = "test_group_factor_" . $factorCounter;
+			my $refKey = "reference_group_factor_" . $factorCounter;
+			
+			# Change nulls to undefs so that they come out correctly in the JSON.
+			if( $testUri eq "null" ) {
+				$testUri = undef;
+			}
+			if( $refUri eq "null" ) {
+				$refUri = undef;
+			}
+
+			$factorUrisForJson->{ $testKey } = $testUri;
+			$factorUrisForJson->{ $refKey } = $refUri;
+
+			$factorCounter++;
+		}
+	}
+			
+	# Return the factor URIs ready to go in the JSON
+	# report.
+	return $factorUrisForJson;
+}
+
+
+=item get_de_method_description
+
+Given an experiment accession and an experiment type, return the description of
+the differential expression statistics.
+
+=cut
+
+sub get_de_method_description {
+
+	my ( $expAcc, $expType ) = @_;
+
+ 	my $platform = "";
+	if( $expType =~ /microarray/i ) { 
+		$platform = "microarray"; 
+	}
+	elsif( $expType =~ /rnaseq/i ) { 
+		$platform = "rna-seq"; 
+	}
+	else {
+		$logger->logdie( "Unknown experiment type: $expType" );
+	}
+
+	# Get the Atlas production directory.
+	my $atlasProdDir = $ENV{ "ATLAS_PROD" };
+
+	# Create the analysis methods file name.
+	my $analysisMethodsFilename = $expAcc . "-analysis-methods.tsv";
+
+	# Create the path analysis methods file.
+	my $analysisMethodsPath = File::Spec->catfile(
+		$atlasProdDir,
+		"analysis",
+		"differential",
+		$platform,
+		"experiments",
+		$expAcc,
+		$analysisMethodsFilename
+	);
+
+	open( my $fh, "<", $analysisMethodsPath )
+		or $logger->logdie( "Cannot open $analysisMethodsPath to get differential expression statistics method" );
+
+	while( defined( my $line = <$fh> ) ) {
+	
+		chomp $line;
+		
+		my @splitLine = split "\t", $line;
+		
+		if( $splitLine[ 0 ] =~ /differential expression/i ) {
+		
+			( my $description = $splitLine[ 1 ] ) =~ s/<.+?>//g;
+			
+			return $description;
 		}
 	}
 
-	# Return the merged factors and characteristics ready to go in the JSON
-	# report.
-	return $allAttributes;
+	# If we're still here, die because we haven't returned the description.
+	$logger->logdie( "Did not find differential expression statistics method description for $expAcc" );
 }
+
+
+=item get_schema_version
+
+Returns the schema version required to validate.
+
+=cut
+
+sub get_schema_version {
+	return 1.1;
+}
+
+=back
+
+=AUTHOR Maria Keays <mkeays@ebi.ac.uk>
+

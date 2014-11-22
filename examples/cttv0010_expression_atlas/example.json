@@ -1,71 +1,71 @@
 {
-    "validated_against_schema_version": 1.1,
-    "unique_association_fields": {
-        "geneID": "http://identifiers.org/ensembl/ENSG00000127720",
-        "study_id": "http://identifiers.org/gxa.expt/E-MEXP-3628",
-        "comparison_name": "'osteosarcoma' vs 'normal'"
-    },
-    "biological_subject": {
-        "about": [
-            "http://identifiers.org/ensembl/ENSG00000127720"
-        ],
-        "properties": {
-            "target_type": "http://identifiers.org/cttv.target/transcript",
-            "activity": "http://identifiers.org/cttv.activity/decreased_transcript_level"
-        }
-    },
-    "evidence": {
-        "association_score": {
-            "probability": {
-                "value": null,
-                "method": null
-            },
-            "pvalue": {
-                "value": 0.0000418,
-                "method": "pvalue from array comparison study"
-            }
-        },
-        "provenance_type": {
-            "database": {
-                "version": "NA",
-                "id": "Expression_Atlas"
-            }
-        },
-        "urls": {
-            "linkouts": [
-                {
-                    "url": "http://identifiers.org/gxa.expt/E-MEXP-3628",
-                    "nice_name": "ArrayExpress Experiment overview"
-                },
-                {
-                    "url": "http://wwwdev.ebi.ac.uk/gxa/experiments/E-MEXP-3628?geneQuery=ENSG00000127720",
-                    "nice_name": "Gene expression in Expression Atlas"
-                }
-            ]
-        },
-        "evidence_specific": {
-            "study_id": "http://identifiers.org/gxa.expt/E-MEXP-3628",
-            "comparison_name": "'osteosarcoma' vs 'normal'",
-            "log2_fold_change": "-1.21"
-        },
-        "is_associated": true,
-        "evidence_codes": [
-            "http://identifiers.org/eco/ECO:0000356"
-        ],
-        "date_asserted": "2014-10-16T07:55:03Z"
-    },
-    "biological_object": {
-        "about": [
-            "http://identifiers.org/efo/0000637"
-        ],
-        "properties": {
-            "biosamples": [
-                "http://identifiers.org/efo/0000298"
-            ],
-            "experiment_specific": {
-                "test_group": "http://identifiers.org/efo/0000637",
-                "reference_group": "http://identifiers.org/efo/0000761"
-            }
-        }
-    }
+	"biological_subject" : {
+		"about" : [
+			"http://identifiers.org/ensembl/ENSG00000127720"
+		],
+		"properties" : {
+			"target_type" : "http://identifiers.org/cttv.target/transcript",
+			"activity" : "http://identifiers.org/cttv.activity/decreased_transcript_level"
+		}
+	},
+	"evidence" : {
+		"provenance_type" : {
+			"database" : {
+				"version" : "NA",
+				"id" : "Expression_Atlas"
+			}
+		},
+		"experiment_specific" : {
+			"study_id" : "http://identifiers.org/gxa.expt/E-MEXP-3628",
+			"comparison_name" : "'osteosarcoma' vs 'normal'",
+			"log2_fold_change" : -1.2
+		},
+		"evidence_codes" : [
+			"http://identifiers.org/eco/ECO:0000356"
+		],
+		"date_asserted" : "2014-11-19T11:47:52Z",
+		"is_associated" : true,
+		"urls" : {
+			"linkouts" : [
+				{
+					"nice_name" : "ArrayExpress Experiment overview",
+					"url" : "http://identifiers.org/arrayexpress/E-MEXP-3628"
+				},
+				{
+					"nice_name" : "Gene expression in Expression Atlas",
+					"url" : "http://wwwdev.ebi.ac.uk/gxa/experiments/E-MEXP-3628?geneQuery=ENSG00000127720"
+				}
+			]
+		},
+		"association_score" : {
+			"pvalue" : {
+			"value" : "4.18e-05",
+			"method" : "Moderated t-statistics computed with limma version 3.16.8. Independent filtering performed using genefilter version 1.46.1, with gene variances as filter statistic. p-values adjusted using Benjamini & Hochberg (1995) FDR correction. By default, significant differential expression called if adjusted p <= 0.05."
+			},
+			"probability" : {
+				"value" : null,
+				"method" : null
+			}
+		}
+	},
+	"unique_association_fields" : {
+		"geneID" : "http://identifiers.org/ensembl/ENSG00000127720",
+		"study_id" : "http://identifiers.org/gxa.expt/E-MEXP-3628",
+		"comparison_name" : "'osteosarcoma' vs 'normal'"
+	},
+	"validated_against_schema_version" : 1.1,
+	"biological_object" : {
+		"about" : [
+			"http://identifiers.org/efo/0000637"
+		],
+		"properties" : {
+			"experiment_specific" : {
+				"test_group_factor_1" : "http://identifiers.org/efo/0000637",
+				"reference_group_factor_1" : "http://identifiers.org/efo/0000761"
+			},
+			"biosamples" : [
+				"http://identifiers.org/efo/0000298"
+			]
+		}
+	}
 }

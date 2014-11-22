@@ -28,6 +28,7 @@ public class BiologicalSubject {
         return about;
     }
 
+
     @JsonProperty(value = "properties", required = false)
     public BiologicalSubjectProperties getProperties() {
         return properties;

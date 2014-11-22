@@ -1,42 +1,36 @@
 {
     "validated_against_schema_version": 1.1,
     "unique_association_fields": {
-        "pubmed_refs": "23128233",
-        "cttv_project_id": "cttv00018",
-        "disease": "http://identifiers.org/efo/0003767"
+        "disease": "http://identifiers.org/efo/EFO_0000729",
+        "geneId": "http://identifiers.org/ensembl/ENSG00000157870",
+        "projectName": "CTTV018"
     },
     "biological_subject": {
         "about": [
-            "http://identifiers.org/ensembl/ENSG9023124"
+            "http://identifiers.org/ensembl/ENSG00000157870"
         ],
         "properties": {
-            "association_context": "http://identifiers.org/cttv.target/gene",
-            "activity": "http://identifiers.org/cttv.activity/predicted_damaging"
+            "association_context": "http://identifiers.org/cttv.target/gene"
         }
     },
     "evidence": {
-        "date_asserted": "2014-09-11T10:59:43.511Z",
-        "is_associated": true,
         "association_score": {
             "probability": {
-                "value": null,
-                "method": null
+                "method": null,
+                "value": null
             },
             "pvalue": {
-                "value": null,
-                "method": null
+                "method": null,
+                "value": null
             }
         },
+        "date_asserted": "2014-09-11T10:59:43.511Z",
         "evidence_codes": [
             "http://identifiers.org/eco/ECO:0000177",
             "http://identifiers.org/eco/ECO:0001113"
         ],
+        "is_associated": true,
         "provenance_type": {
-            "literature": {
-                "pubmed_refs": [
-                    "http://identifiers.org/pubmed/23128233"
-                ]
-            },
             "expert": {
                 "status": true
             }
@@ -48,88 +42,92 @@
                     "url": "http://identifiers.org/pubmed/23128233"
                 }
             ]
-        },
-        "evidence_chain": [
-            {
-                "biological_subject": {
-                    "about": [
-                        "http://identifiers.org/ensembl/ENSG9023124"
-                    ]
-                },
-                "evidence": {
-                    "association_score": {
-                        "probability": {
-                            "value": null,
-                            "method": null
-                        },
-                        "pvalue": {
-                            "value": null,
-                            "method": null
-                        }
-                    },
-                    "evidence_codes": [
-                        "http://identifiers.org/eco/ECO:0000053"
-                    ],
-                    "properties": {
-                        "experiment_specific": {
-                            "gene choice method": "coding evidence",
-                            "Consequence": "missense_variant",
-                            "sift": "tolerated(0.39)",
-                            "CADDP": "6.546"
-                        }
-                    }
-                },
-                "biological_object": {
-                    "about": [
-                        "http://identifiers.org/dbsnp/rs9802421"
-                    ]
-                }
+        }
+    },
+    "evidence_chain": [
+        {
+            "biological_object": {
+                "about": [
+                    "http://identifiers.org/dbsnp/rs2147905"
+                ]
             },
-            {
-                "biological_subject": {
-                    "about": [
-                        "http://identifiers.org/dbsnp/rs9802421"
-                    ]
-                },
-                "provenance": {
-                    "evidence_codes": [
-                        "http://identifiers.org/eco/ECO:0000177",
-                        "http://identifiers.org/eco/ECO:0001113"
-                    ],
-                    "association_score": {
-                        "probability": {
-                            "value": 0.0202556065553751,
-                            "method": "Please describe the method used to calculate the probability"
-                        },
-                        "pvalue": {
-                            "value": 1.316e-44,
-                            "method": "calculated from GWAS study"
-                        }
+            "biological_subject": {
+                "about": [
+                    "http://identifiers.org/ensembl/ENSG00000157870"
+                ]
+            },
+            "evidence": {
+                "association_score": {
+                    "probability": {
+                        "method": "GSProb",
+                        "value": 0.05
                     },
-                    "properties": {
-                        "experimental_evidence_specific": {
-                            "HDRSIG": "HD106_sig1",
-                            "a1 (risk allele)": "C",
-                            "a2 (other allele)": "T",
-                            "odds ratio [std error]": "0.8538 [+-0.0001]",
-                            "freq_a1": "0.5624",
-                            "variation": "9_139266496_C/T",
-                            "genome_build": "37",
-                            "Rank out of n SNPs": "3"
-                        }
+                    "pvalue": {
+                        "method": null,
+                        "value": null
                     }
                 },
-                "biological_object": {
-                    "about": [
-                        "http://identifiers.org/efo/0003767"
-                    ]
+                "evidence_codes": [
+                    "http://identifiers.org/eco/ECO:0000053"
+                ],
+                "properties": {
+                    "experiment_specific": {
+                        "Polyphen": "NA",
+                        "cadd": "",
+                        "most_severe_consequence": "upstream_gene_variant",
+                        "regulomeDB_score": "5",
+                        "sift": "",
+                        "snp_gene_assertion_method": "",
+                        "tssdistance": "35293"
+                    }
                 }
             }
-        ]
-    },
+        },
+        {
+            "biological_object": {
+                "about": [
+                    "http://identifiers.org/efo/0000729"
+                ]
+            },
+            "biological_subject": {
+                "about": [
+                    "http://identifiers.org/dbsnp/rs2147905"
+                ]
+            },
+            "evidence": {
+                "association_score": {
+                    "probability": {
+                        "method": "p_mean_95",
+                        "value": 0.04054621
+                    },
+                    "pvalue": {
+                        "method": null,
+                        "value": null
+                    }
+                },
+                "evidence_codes": [
+                    "http://identifiers.org/eco/ECO:0000177",
+                    "http://identifiers.org/eco/ECO:0001113"
+                ],
+                "properties": {
+                    "experiment_specific": {
+                        "a1(effect_allele)": "C",
+                        "a2(other_allele)": "T",
+                        "chromosome_position": "1:2482921",
+                        "freq_a1": "0.5624",
+                        "genetic_association_pvalue": 1.22e-10,
+                        "genome_build": "37",
+                        "hd_signal": "1_1",
+                        "odds ratio [std error]": "0.8538 [+-0.0001]",
+                        "rank": "4 out of 71"
+                    }
+                }
+            }
+        }
+    ],
     "biological_object": {
         "about": [
-            "http://identifiers.org/efo/0003767"
+            "http://identifiers.org/efo/0000729"
         ]
     }
 }

@@ -33,7 +33,6 @@ public class BiologicalObject {
         return about;
     }
 
-
     @JsonProperty(value = "properties", required = false)
     public BiologicalObjectProperties getProperties() {
         return properties;

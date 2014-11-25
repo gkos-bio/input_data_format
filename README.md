@@ -1,12 +1,12 @@
 ## Quick document links
 
-#### ![info](help/images/info.gif) [**Changes in JSON schema from 1.0 to 1.1**](changes/version_changes.md)
-
 #### ![info](help/images/info.gif) [**CTTV pipeline projects and target-disease associations (TD-associations)**](json_schema/project_tracker.md)
 
 #### ![info](help/images/info.gif) [**CTTV TD-associations FAQs**](help/README.md)
 
 #### ![info](help/images/info.gif) [**CTTV URIs and namespaces**](json_schema/cttv_uris_namespaces.md)
+
+#### ![info](help/images/info.gif) [**Changes in JSON schema from 1.0 to 1.1**](changes/version_changes.md)
 
 ## Schema 1.1 overview
 

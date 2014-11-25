@@ -10,7 +10,8 @@
             "http://identifiers.org/ensembl/ENSG00000157870"
         ],
         "properties": {
-            "association_context": "http://identifiers.org/cttv.target/gene"
+            "target_type": "http://identifiers.org/cttv.target/gene",
+            "activity": "http://identifiers.org/cttv.activity/up_or_down"
         }
     },
     "evidence": {

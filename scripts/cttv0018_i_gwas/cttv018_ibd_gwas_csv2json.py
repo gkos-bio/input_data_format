@@ -2,6 +2,10 @@
 '''
 Script to build a CTTV JSON file (schema version 1.1) for project CTTV018_IBD_GWAS.
 It takes a CSV file as input for the JSON.
+2014-11-28:
+Corrected nesting of the "evidence_chain" object by placing it under "evidence".
+Removed redundant "proerties" object that contained ""experiment_specific" objects in
+evidence chain methods.
 '''
 import csv
 import json
@@ -133,7 +137,6 @@ class MakeJson:
                     ]
                 }
             },
-            "evidence_chain": [],
             "biological_object": {
                 "about": [
                     "http://identifiers.org/efo/"
@@ -166,16 +169,14 @@ class MakeJson:
                 "evidence_codes": [
                     "http://identifiers.org/eco/ECO:0000053"
                 ],
-                "properties": {
-                    "experiment_specific": {
-                        "Polyphen": null,
-                        "cadd": null,
-                        "most_severe_consequence": null,
-                        "regulomeDB_score": null,
-                        "sift": null,
-                        "snp_gene_assertion_method": null,
-                        "tssdistance": null
-                    }
+                "experiment_specific": {
+                    "Polyphen": null,
+                    "cadd": null,
+                    "most_severe_consequence": null,
+                    "regulomeDB_score": null,
+                    "sift": null,
+                    "snp_gene_assertion_method": null,
+                    "tssdistance": null
                 }
             }
         }'''
@@ -206,18 +207,16 @@ class MakeJson:
                     "http://identifiers.org/eco/ECO:0000177",
                     "http://identifiers.org/eco/ECO:0001113"
                 ],
-                "properties": {
-                    "experiment_specific": {
-                        "a1(effect_allele)": null,
-                        "a2(other_allele)": null,
-                        "chromosome_position": null,
-                        "freq_a1": null,
-                        "genetic_association_pvalue": null,
-                        "genome_build": null,
-                        "hd_signal": null,
-                        "odds ratio [std error]": null,
-                        "rank": null
-                    }
+                "experiment_specific": {
+                    "a1(effect_allele)": null,
+                    "a2(other_allele)": null,
+                    "chromosome_position": null,
+                    "freq_a1": null,
+                    "genetic_association_pvalue": null,
+                    "genome_build": null,
+                    "hd_signal": null,
+                    "odds ratio [std error]": null,
+                    "rank": null
                 }
             }
         }    
@@ -255,7 +254,7 @@ class MakeJson:
         else:
             self.evstr_chain0_json['biological_object']['about'][0] += variant_id
         for key in evstr_chain0_attr_map.keys():
-            self.evstr_chain0_json['evidence']['properties']['experiment_specific'][key] = evstr_chain0_attr_map[key]
+            self.evstr_chain0_json['evidence']['experiment_specific'][key] = evstr_chain0_attr_map[key]
         return self.evstr_chain0_json
     def make_evstr_chain1(self, variant_id, evstr_chain1_attr_map):
         '''
@@ -274,7 +273,7 @@ class MakeJson:
         self.evstr_chain1_json['evidence']['association_score']['probability'] = evstr_chain1_attr_map['value']
         del evstr_chain1_attr_map['value']
         for key in evstr_chain1_attr_map.keys():
-            self.evstr_chain1_json['evidence']['properties']['experiment_specific'][key] = evstr_chain1_attr_map[key]
+            self.evstr_chain1_json['evidence']['experiment_specific'][key] = evstr_chain1_attr_map[key]
         return self.evstr_chain1_json
 if __name__ == '__main__':
     '''
@@ -282,7 +281,7 @@ if __name__ == '__main__':
     If the input file columns change, this script will need to change.    
     To run, make script executable and set "csv_file" variable below to path to target input CSV file.
     '''
-    csv_file = 'IBD_finemap_credibleSNPs_171114_CTTV_added_column.txt'
+    csv_file = '/Users/mmaguire/CTTV/json/ibd_json/IBD_finemap_credibleSNPs_171114_CTTV_added_column.txt'
     (biol_sub_idx, biol_obj_idx, snp_id_idx) = (1, 7, 8)
     pff = ParseFlatFile(csv_file, biol_sub_idx, biol_obj_idx, snp_id_idx)
     evidence0_index_map = {
@@ -315,7 +314,7 @@ if __name__ == '__main__':
             evstr_chain1_attr_map = pff.get_evstr_chain_attribute_map(key[0], key[1], variant_id, evidence1_index_map)
             evidence_chain.append(mj.make_evstr_chain0(variant_id, evstr_chain0_attr_map))
             evidence_chain.append(mj.make_evstr_chain1(variant_id, evstr_chain1_attr_map))
-        main_json['evidence_chain'] = evidence_chain
+        main_json['evidence']['evidence_chain'] = evidence_chain
         json_list.append(main_json)
     main_json_str = json.dumps(json_list)
     print main_json_str

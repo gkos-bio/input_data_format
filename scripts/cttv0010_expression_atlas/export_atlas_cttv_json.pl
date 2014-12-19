@@ -861,7 +861,7 @@ sub create_all_associations {
 				# Create the links to Atlas experiments.
 				my $atlasLink = {
 					"nice_name" => "Gene expression in Expression Atlas",
-					"url" => "http://wwwdev.ebi.ac.uk/gxa/experiments/$expAcc?geneQuery=$geneID"
+					"url" => "http://www.ebi.ac.uk/gxa/experiments/$expAcc?geneQuery=$geneID"
 				};
 				# Combine the arrays of links.
 				my $aeAtlasLinks = [ $arrayExpressLink, $atlasLink ];

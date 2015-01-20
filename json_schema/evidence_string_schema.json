@@ -20,6 +20,7 @@
         },
         "biological_subject": {
             "type": "object",
+            "required": true,
             "id": "urn:jsonschema:org:cttv:input:model:BiologicalSubject",
             "description": "The biological subject is any biological entity that can be expressed with an identifiers.org URI e.g. http://identifiers.org/ensembl/ENSG9023124 or http://identifiers.org/pfam/PF00619",
             "properties": {
@@ -78,10 +79,12 @@
                     "type": "object",
                     "required": true,
                     "id": "urn:jsonschema:org:cttv:input:model:AssociationScore",
+                    "properties": {
                     "probability": {
                         "type": "object",
                         "required": true,
                         "id": "urn:jsonschema:org:cttv:input:model:ProbabilityScore",
+                        "properties": {
                         "value": {
                             "type": [
                                 "number",
@@ -97,12 +100,13 @@
                                 "null"
                             ],
                             "required": true
-                        }
+                        } }
                     },
                     "pvalue": {
                         "type": "object",
                         "required": true,
                         "id": "urn:jsonschema:org:cttv:input:model:PValueScore",
+                        "properties": {
                         "value": {
                             "type": [
                                 "number",
@@ -119,6 +123,8 @@
                             ],
                             "required": true
                         }
+                        }
+                    }
                     }
                 },
                 "urls": {

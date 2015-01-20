@@ -8,7 +8,7 @@
         "validated_against_schema_version": {
             "description": "The schema version number against which the JSON object was validated.",
             "required": true,
-            "type": "number"
+            "type": "string"
         },
         "unique_association_fields": {
             "description": "A combination of keys whose values uniquely identify each JSON object. For some data sources, the values for some keys may be comma-separated concatenations",
